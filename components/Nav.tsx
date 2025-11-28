@@ -33,6 +33,11 @@ import { FaEnvelope } from "react-icons/fa";
 import PopupForm from "./PopupForm";
 import Button from "./Button";
 import ButtonFill from "./Button";
+import {
+  faEnvelope,
+  faLocationDot,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
 
 type Service = {
   title: string;
@@ -141,7 +146,7 @@ const Nav: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 w-full z-50">
       {/* Top Info Bar */}
-      <div className="bg-[#011c40] shadow text-white text-sm px-4 md:px-12 py-2 flex justify-between items-center flex-wrap gap-2">
+      {/* <div className="bg-[#011c40] shadow text-white text-sm px-4 md:px-12 py-2 flex justify-between items-center flex-wrap gap-2">
         <div className="hidden lg:flex items-center gap-2">
           <MapPin className="w-4 h-4 text-[var(--primary-color)]" />
           <span>Plot # 2, Sanjay Nagar, Gulabi Bagh, Delhi 110007, India</span>
@@ -202,7 +207,7 @@ const Nav: React.FC = () => {
           ))}
         </div>
       </div>
-      <hr className="border-0 h-[1px] bg-[#A7EBF2]" />
+      <hr className="border-0 h-[1px] bg-[#A7EBF2]" /> */}
 
       {/* Main Nav */}
       <div className="px-4 md:px-12 bg-gradient-to-b from-[#011c40] via-[#023859]  to-[#26658c] container mx-auto">
@@ -431,6 +436,29 @@ const Nav: React.FC = () => {
 
           {/* Social */}
           <div className="mt-auto">
+            <h4 className="text-sm text-gray-400 mb-2">Contact us</h4>
+            <div className="flex flex-col gap-2 mb-4 text-gray-300 text-sm">
+              <a
+                href="mailto:support@bigwigmediadigital.com"
+                className="flex items-center gap-2 hover:text-white"
+              >
+                <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4" />
+                support@bigwigmediadigital.com
+              </a>
+
+              <a
+                href="tel:+919685892813"
+                className="flex items-center gap-2 hover:text-white"
+              >
+                <FontAwesomeIcon icon={faPhone} className="w-4 h-4" />
+                +91 96858 92813
+              </a>
+
+              <div className="flex items-center gap-2">
+                <FontAwesomeIcon icon={faLocationDot} className="w-4 h-4" />
+                Plot # 2, Sanjay Nagar, Gulabi Bagh, Delhi 110007, India
+              </div>
+            </div>
             <h4 className="text-sm text-gray-400 mb-2">Follow us</h4>
             <div className="flex gap-3 mb-4">
               {socialLinks.map((s, i) => (

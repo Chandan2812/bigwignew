@@ -8,7 +8,11 @@ import {
   faXTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEnvelope,
+  faLocation,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
 import logo from "../Assets/bigwig digital logo (11).png";
 import line2 from "../Assets/line2.png";
 import Image from "next/image";
@@ -43,7 +47,7 @@ function Footer() {
                 unmatched creativity. Let’s build something extraordinary
                 together.
               </p>
-              <div className="flex gap-3 mt-4">
+              {/* <div className="flex gap-3 mt-4">
                 {[
                   "https://media.istockphoto.com/id/482478655/photo/arab-emirates-flag.jpg?s=612x612&w=0&k=20&c=fJfB5DUYTEWrJ96RbIxJoLo7uQrYkCPqo0F2BTNNp8A=",
                   "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/1200px-Flag_of_New_Zealand.svg.png",
@@ -60,7 +64,7 @@ function Footer() {
                     draggable="false"
                   />
                 ))}
-              </div>
+              </div> */}
             </div>
 
             {/* Columns */}
@@ -124,16 +128,20 @@ function Footer() {
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center">
                     <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-                    <a
-                      href="mailto:vipul@bigwigmedia.in"
+                    <Link
+                      href="support@bigwigmediadigital.com"
                       className="hover:underline"
                     >
                       support@bigwigmediadigital.com
-                    </a>
+                    </Link>
                   </li>
                   <li className="flex items-center">
                     <FontAwesomeIcon icon={faPhone} className="mr-2" />
                     +91 96858 92813
+                  </li>
+                  <li className="flex items-center">
+                    <FontAwesomeIcon icon={faLocation} className="mr-2" />
+                    Plot # 2, Sanjay Nagar, Gulabi Bagh, Delhi 110007, India
                   </li>
                 </ul>
               </div>
