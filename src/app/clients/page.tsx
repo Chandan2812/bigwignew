@@ -7,22 +7,61 @@ import Nav from "../../../components/Nav";
 import Footer from "../../../components/Footer";
 import Image from "next/image";
 
-const images = [
-  "https://res.cloudinary.com/dqrlkbsdq/image/upload/v1762152048/logo_npwakv.webp",
-  "https://res.cloudinary.com/dcq2oziz4/image/upload/v1759493003/Granth_logo_6_kyrd5s.png",
-  "https://res.cloudinary.com/dcq2oziz4/image/upload/v1759493217/logo-01-C0F3dP5k_y93g4q.svg",
-  "https://res.cloudinary.com/dcq2oziz4/image/upload/v1759494155/WhatsApp_Image_2025-10-03_at_17.51.27_4308166d_d3ll1m.jpg",
-  "https://res.cloudinary.com/dcq2oziz4/image/upload/v1759494916/Gear_Tek_Logo-removebg-preview_j5p3wc.png",
-  "https://res.cloudinary.com/dcq2oziz4/image/upload/v1759495461/Pearls_light_logo_m623gc.png",
-  "https://res.cloudinary.com/dcq2oziz4/image/upload/v1759493348/Screenshot_2025-10-03_173836_egmouo.png",
-  "https://res.cloudinary.com/dcq2oziz4/image/upload/v1759493451/Screenshot_2025-10-03_174033_n9gbp7.png",
-  "https://res.cloudinary.com/dcq2oziz4/image/upload/v1759494780/Screenshot_2025-10-03_180244_utdinx.png",
-  "https://www.stellarbinge.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.3fb31e53.png&w=384&q=75&dpl=dpl_55KVEMQgqTHhJzShfN5EefE2pTXK",
-  "https://www.integratedlognet.com/assets/ILN%20Logo%20v2-E6ypUoII.png",
-  "https://riverfront.vercel.app/assets/Logo%20for%20riverfront%20-CAIVvev0.png",
-  "https://res.cloudinary.com/dqrlkbsdq/image/upload/v1763112478/DBN_logo_x7wjzx.webp",
-  "https://res.cloudinary.com/dqrlkbsdq/image/upload/v1763112443/logo_1_tnncgd.webp",
-  "https://www.homesandlandgoa.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.b166d281.png&w=640&q=75&dpl=dpl_CAHgoDqvf7txY4ReKMyGa6ZD9Ti4",
+const clients = [
+  {
+    img: "https://res.cloudinary.com/dqrlkbsdq/image/upload/v1762152048/logo_npwakv.webp",
+    link: "https://khalsapropertydealers.com/",
+  },
+  {
+    img: "https://res.cloudinary.com/dcq2oziz4/image/upload/v1759493003/Granth_logo_6_kyrd5s.png",
+    link: "https://granthdreamhomes.co.in/",
+  },
+  {
+    img: "https://res.cloudinary.com/dcq2oziz4/image/upload/v1759493217/logo-01-C0F3dP5k_y93g4q.svg",
+    link: "https://www.closefriendstraders.info/",
+  },
+  {
+    img: "https://res.cloudinary.com/dcq2oziz4/image/upload/v1759494155/WhatsApp_Image_2025-10-03_at_17.51.27_4308166d_d3ll1m.jpg",
+  },
+  {
+    img: "https://res.cloudinary.com/dcq2oziz4/image/upload/v1759494916/Gear_Tek_Logo-removebg-preview_j5p3wc.png",
+  },
+  {
+    img: "https://res.cloudinary.com/dcq2oziz4/image/upload/v1759495461/Pearls_light_logo_m623gc.png",
+    link: "https://pearlsindia.co.in",
+  },
+  {
+    img: "https://res.cloudinary.com/dcq2oziz4/image/upload/v1759493348/Screenshot_2025-10-03_173836_egmouo.png",
+    link: "https://www.billiondollarfx.com",
+  },
+  {
+    img: "https://res.cloudinary.com/dcq2oziz4/image/upload/v1759493451/Screenshot_2025-10-03_174033_n9gbp7.png",
+    link: "https://mondus.vercel.app",
+  },
+  {
+    img: "https://www.stellarbinge.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.3fb31e53.png&w=384&q=75&dpl=dpl_55KVEMQgqTHhJzShfN5EefE2pTXK",
+    link: "https://www.stellarbinge.com",
+  },
+  {
+    img: "https://www.integratedlognet.com/assets/ILN%20Logo%20v2-E6ypUoII.png",
+    link: "https://www.integratedlognet.com/",
+  },
+  {
+    img: "https://riverfront.vercel.app/assets/Logo%20for%20riverfront%20-CAIVvev0.png",
+    link: "https://riverfront.vercel.app/",
+  },
+  {
+    img: "https://res.cloudinary.com/dqrlkbsdq/image/upload/v1763112478/DBN_logo_x7wjzx.webp",
+    link: "https://www.destinybynumberrs.com/",
+  },
+  {
+    img: "https://res.cloudinary.com/dqrlkbsdq/image/upload/v1763112443/logo_1_tnncgd.webp",
+    link: "https://www.ethicalinfrastructures.com/",
+  },
+  {
+    img: "https://www.homesandlandgoa.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.b166d281.png&w=640&q=75&dpl=dpl_CAHgoDqvf7txY4ReKMyGa6ZD9Ti4",
+    link: "https://homesandlandgoa.com",
+  },
 ];
 
 const stylePairs = [
@@ -77,7 +116,7 @@ function Clients() {
   }, []);
 
   return (
-    <div>
+    <div className="bg-[var(--color1)]">
       <Nav />
 
       <title>Our Clients</title>
@@ -87,31 +126,40 @@ function Clients() {
       />
       <link rel="canonical" href="https://www.bigwigmediadigital.com/clients" />
 
-      <div className="px-4 py-8 max-w-6xl mx-auto">
+      <div className="px-4 py-28 mt-7 max-w-6xl mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-6">
-          {images.map((img, index) => {
+          {clients.map((client, index) => {
+            const { img, link } = client;
             const { hoverBg, hoverBorder } =
               stylePairs[index % stylePairs.length];
+
             return (
               <div
                 className="group aspect-square w-full"
                 data-aos="zoom-in"
                 key={index}
               >
-                <div
-                  className={`bg-gray-200 border-gray-300 border-8 rounded-sm 
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full h-full"
+                >
+                  <div
+                    className={`bg-gray-200 border-gray-300 border-8 rounded-sm 
           flex items-center justify-center w-full h-full 
           transition duration-300 
           ${hoverBg} ${hoverBorder}`}
-                >
-                  <Image
-                    src={img}
-                    alt={`Client ${index + 1}`}
-                    className="w-4/5 object-contain grayscale group-hover:grayscale-0 transition duration-300"
-                    width={200}
-                    height={200}
-                  />
-                </div>
+                  >
+                    <Image
+                      src={img}
+                      alt={`Client ${index + 1}`}
+                      className="w-4/5 object-contain grayscale group-hover:grayscale-0 transition duration-300"
+                      width={200}
+                      height={200}
+                    />
+                  </div>
+                </a>
               </div>
             );
           })}
