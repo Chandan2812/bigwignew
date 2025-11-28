@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Footer from "../../../components/Footer";
 import Nav from "../../../components/Nav";
-import ceo from "../../../Assets/ceo.png";
+import ceo from "../../../Assets/owner.webp";
 
 function About() {
   return (
-    <div className="bg-white  text-gray-800 ">
+    <div className="bg-[var(--color1)]  text-white ">
       <Nav />
       <title>About BigWig Digital</title>
       <meta
@@ -13,7 +13,7 @@ function About() {
         content="Learn about BigWig Digital, our mission, team, and approach to delivering digital success."
       />
       <link rel="canonical" href="https://www.bigwigmediadigital.com/about" />{" "}
-      <div className="max-w-5xl mx-auto px-6 py-12">
+      <div className="w-11/12 md:w-5/6 mx-auto py-12 mt-20">
         {/* About Us */}
         <section className="mb-12">
           <h1 className="text-3xl font-bold mb-4 text-[var(--primary-color)]">

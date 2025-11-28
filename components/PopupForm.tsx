@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import ButtonFill from "./Button";
 
@@ -50,13 +49,14 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
   });
 
   const validateForm = () => {
-    let newErrors = {
+    const newErrors = {
       name: "",
       email: "",
       phone: "",
       services: "",
       message: "",
     };
+
     let isValid = true;
 
     if (!formData.name.trim()) {
@@ -78,6 +78,11 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
 
     if (selectedServices.length === 0) {
       newErrors.services = "Please select at least one service.";
+      isValid = false;
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Please enter your requirements.";
       isValid = false;
     }
 
@@ -109,10 +114,6 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
       setStatusMessage("");
       setStep("form");
     }, 600);
-  };
-
-  const handlePhoneChange = (value: string) => {
-    setFormData({ ...formData, phone: value });
   };
 
   const toggleService = (service: string) => {
@@ -257,7 +258,10 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
                 <option value="+1">🇺🇸 +1</option>
                 <option value="+44">🇬🇧 +44</option>
                 <option value="+61">🇦🇺 +61</option>
+                <option value="+64">🇳🇿 +64</option>
                 <option value="+971">🇦🇪 +971</option>
+                <option value="+81">🇯🇵 +81</option>
+                <option value="+49">🇩🇪 +49</option>
               </select>
 
               {/* Phone Number Field */}
