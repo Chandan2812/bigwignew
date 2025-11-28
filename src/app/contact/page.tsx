@@ -54,7 +54,7 @@ export default function ContactPage() {
       return {
         ...prev,
         services: isSelected
-          ? prev.services.filter((s) => s !== service)
+          ? prev.services.filter((s: string) => s !== service)
           : [...prev.services, service],
       };
     });
