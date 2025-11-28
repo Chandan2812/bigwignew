@@ -41,6 +41,50 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
     services: [] as string[],
   });
 
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    services: "",
+    message: "",
+  });
+
+  const validateForm = () => {
+    let newErrors = {
+      name: "",
+      email: "",
+      phone: "",
+      services: "",
+      message: "",
+    };
+    let isValid = true;
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Full name is required.";
+      isValid = false;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Enter a valid email address.";
+      isValid = false;
+    }
+
+    const phoneNumber = formData.phone.split(" ")[1] || "";
+    if (phoneNumber.length < 6 || phoneNumber.length > 15) {
+      newErrors.phone = "Enter a valid phone number.";
+      isValid = false;
+    }
+
+    if (selectedServices.length === 0) {
+      newErrors.services = "Please select at least one service.";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
   const [otp, setOtp] = useState("");
 
   useEffect(() => {
@@ -87,12 +131,14 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
 
   const handleSendOtp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!validateForm()) return;
     setLoading(true);
     setStatusMessage("");
 
     try {
       await axios.post(
-        "https://bigwigdigitalbackend.onrender.com/api/lead/send-otp",
+        `${process.env.NEXT_PUBLIC_API_BASE}/api/lead/send-otp`,
         { ...formData, services: selectedServices }
       );
 
@@ -116,7 +162,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
 
     try {
       await axios.post(
-        "https://bigwigdigitalbackend.onrender.com/api/lead/verify-otp",
+        `${process.env.NEXT_PUBLIC_API_BASE}/api/lead/verify-otp`,
         {
           email: formData.email,
           otp,
@@ -177,6 +223,9 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
                 className="w-full p-3 border rounded-lg"
                 required
               />
+              {errors.name && (
+                <p className="text-red-400 text-sm">{errors.name}</p>
+              )}
 
               <input
                 type="email"
@@ -187,14 +236,48 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
                 className="w-full p-3 border rounded-lg"
                 required
               />
+              {errors.email && (
+                <p className="text-red-400 text-sm">{errors.email}</p>
+              )}
             </div>
 
-            <PhoneInput
-              country="in"
-              value={formData.phone}
-              onChange={handlePhoneChange}
-              inputClass="!w-full py-6 px-2 rounded-lg"
-            />
+            <div className="flex gap-3">
+              {/* Country Code Dropdown */}
+              <select
+                className="p-3 border rounded-lg bg-[var(--color1)] text-white w-32"
+                value={formData.phone.split(" ")[0] || "+91"}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    phone: `${e.target.value} ${formData.phone.split(" ")[1] || ""}`,
+                  })
+                }
+              >
+                <option value="+91">🇮🇳 +91</option>
+                <option value="+1">🇺🇸 +1</option>
+                <option value="+44">🇬🇧 +44</option>
+                <option value="+61">🇦🇺 +61</option>
+                <option value="+971">🇦🇪 +971</option>
+              </select>
+
+              {/* Phone Number Field */}
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                className="w-full p-3 border rounded-lg bg-[var(--color1)] text-white"
+                value={formData.phone.split(" ")[1] || ""}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    phone: `${formData.phone.split(" ")[0] || "+91"} ${e.target.value}`,
+                  })
+                }
+                required
+              />
+              {errors.phone && (
+                <p className="text-red-400 text-sm">{errors.phone}</p>
+              )}
+            </div>
 
             {/* SERVICES SECTION */}
             <div>
@@ -214,6 +297,9 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
                   </label>
                 ))}
               </div>
+              {errors.services && (
+                <p className="text-red-400 text-sm">{errors.services}</p>
+              )}
             </div>
 
             <textarea
@@ -233,7 +319,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
             />
           </div>
         ) : (
-          <form className="space-y-4" onSubmit={handleVerifyOtp}>
+          <div className="space-y-4">
             <input
               type="text"
               placeholder="Enter OTP"
@@ -243,14 +329,11 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
               required
             />
 
-            <button
-              type="submit"
-              disabled={loading}
-              className=" text-white w-full py-3 rounded-full font-semibold"
-            >
-              {loading ? "Verifying..." : "Verify OTP"}
-            </button>
-          </form>
+            <ButtonFill
+              onClick={() => handleVerifyOtp}
+              text={loading ? "Verifying..." : "Verify OTP"}
+            />
+          </div>
         )}
 
         {statusMessage && (
