@@ -60,7 +60,7 @@ export default function ContactPage() {
     });
   };
 
-  const handleSendOtp = async (e: any) => {
+  const handleSendOtp = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setStatusMessage("");
 
@@ -91,7 +91,7 @@ export default function ContactPage() {
     }
   };
 
-  const handleVerifyOtp = async (e: any) => {
+  const handleVerifyOtp = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setLoading(true);
     setStatusMessage("");
