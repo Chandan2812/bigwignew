@@ -108,7 +108,7 @@ export default function About() {
         </div>
 
         {/* RIGHT SIDE IMAGE */}
-        <div className="md:w-1/2">
+        <div className="w-full md:w-1/2">
           <Image
             src={aboutImg}
             alt="About Bigwig Digital"
