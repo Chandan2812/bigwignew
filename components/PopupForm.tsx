@@ -159,7 +159,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
         </div>
 
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 text-[var(--color4)]">
-          Let's Grow Together 🚀
+          Let&#39;s Grow Together 🚀
         </h2>
         <p className="text-center text-gray-200 mb-6">
           Tell us what you need — we’ll connect you instantly.
