@@ -38,7 +38,7 @@ type Service = {
   title: string;
   slug: string;
   desc?: string;
-  icon: any;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 };
 
 const services: Service[] = [

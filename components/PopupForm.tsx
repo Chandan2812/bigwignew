@@ -79,11 +79,13 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
     );
   };
 
-  const handleChange = (e: any) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSendOtp = async (e: any) => {
+  const handleSendOtp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setStatusMessage("");
@@ -96,14 +98,18 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
 
       setStatusMessage("OTP sent successfully!");
       setStep("otp");
-    } catch (err: any) {
-      setStatusMessage(err.response?.data?.message || "Error sending OTP.");
+    } catch (err: unknown) {
+      if (axios.isAxiosError(err)) {
+        setStatusMessage(err.response?.data?.message || "Error sending OTP.");
+      } else {
+        setStatusMessage("Error sending OTP.");
+      }
     } finally {
       setLoading(false);
     }
   };
 
-  const handleVerifyOtp = async (e: any) => {
+  const handleVerifyOtp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setStatusMessage("");
@@ -119,8 +125,12 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
 
       setStatusMessage("Lead Saved Successfully!");
       setTimeout(handleClose, 2000);
-    } catch (err: any) {
-      setStatusMessage("Invalid OTP.");
+    } catch (err: unknown) {
+      if (axios.isAxiosError(err)) {
+        setStatusMessage(err.response?.data?.message || "Invalid OTP.");
+      } else {
+        setStatusMessage("Invalid OTP.");
+      }
     } finally {
       setLoading(false);
     }
