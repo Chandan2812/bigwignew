@@ -13,6 +13,7 @@ export default function ContactPage() {
     "Performance Marketing",
     "Content Marketing",
     "Website Development",
+    "Social Media Optimization",
     "Email Marketing",
     "Graphic Designing",
     "Influencer Marketing",
