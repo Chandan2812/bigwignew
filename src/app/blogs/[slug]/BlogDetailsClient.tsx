@@ -122,7 +122,7 @@ export default function BlogDetailsClient({ slug }: { slug: string }) {
 
       <Navbar />
 
-      <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col lg:flex-row gap-8">
+      <div className="w-11/12 md:w-5/6 mx-auto px-4 py-10 flex flex-col lg:flex-row gap-8">
         {/* Blog Content */}
         <div className="w-full lg:w-2/3">
           <h1 className="text-3xl font-bold mb-4">{blog.title}</h1>
