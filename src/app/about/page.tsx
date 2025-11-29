@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import why from "../../../Assets/Handleey-Social-Media-Post.webp";
 import owner from "../../../Assets/owner.webp";
+import GetInTouch from "../../../components/GetInTouch";
 
 export default function About() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -383,6 +384,10 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* ================= FINAL CTA SECTION ================= */}
+
+      <GetInTouch />
 
       <Footer />
       <PopupForm isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />

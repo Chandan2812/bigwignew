@@ -84,7 +84,7 @@ export default function AboutSection() {
             <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-[var(--color3)]/30 blur-3xl rounded-full"></div>
 
             {/* Glass Card Behind */}
-            <div className="absolute -bottom-12 -right-12 w-72 h-72 bg-[var(--color2)]/70 backdrop-blur-xl border border-[var(--color5)]/20 rounded-3xl rotate-12 shadow-lg"></div>
+            <div className="hidden lg:absolute -bottom-12 -right-12 w-72 h-72 bg-[var(--color2)]/70 backdrop-blur-xl border border-[var(--color5)]/20 rounded-3xl rotate-12 shadow-lg"></div>
 
             {/* Main Image */}
             <div className="relative z-20 rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
