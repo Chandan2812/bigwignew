@@ -19,6 +19,7 @@ import video from "../../../Assets/services/Video Shoots.png";
 import website from "../../../Assets/services/Website Development.png";
 import Image from "next/image";
 import ButtonFill from "../../../components/Button";
+import GetInTouch from "../../../components/GetInTouch";
 
 const services = [
   {
@@ -177,11 +178,11 @@ function Services() {
           <span className="text-[var(--color5)]">Our Services</span>
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {services.map((service, index) => (
             <div
               key={index}
-              className="rounded-xl bg-transparent p-4 transition-all duration-300"
+              className="rounded-xl bg-transparent transition-all duration-300"
             >
               {/* LAPTOP CARD */}
               <div className="rounded-xl p-3 shadow-2xl">
@@ -224,7 +225,7 @@ transition-all duration-500 "
           ))}
         </div>
       </div>
-
+      <GetInTouch />
       <Footer />
     </div>
   );
