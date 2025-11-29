@@ -299,7 +299,7 @@ export default function About() {
                 <h4 className="text-lg font-semibold text-white mt-4">
                   Creative Engineering
                 </h4>
-                <p className="text-gray-400 text-sm max-w-[220px] mt-2">
+                <p className="text-gray-300 text-sm max-w-[220px] mt-2">
                   Concepts turn into compelling visuals, content, and
                   experiences.
                 </p>
@@ -316,12 +316,12 @@ export default function About() {
                 <h4 className="text-lg font-semibold text-white mt-4 absolute -left-[60px] -top-[110px] min-w-[200px] ">
                   Precision Deployment
                 </h4>
-                <p className="text-gray-400 text-sm max-w-[220px] mt-2 absolute -left-[60px] -top-[70px] min-w-[200px] ">
+                <p className="text-gray-300 text-sm max-w-[220px] mt-2 absolute -left-[60px] -top-[70px] min-w-[200px] ">
                   Campaigns go live with tactical execution across chosen
                   platforms.
                 </p>
               </div>
-              {/* STEP 4 — Top */}
+              {/* STEP 5 — Top */}
               <div className="absolute left-[880px] top-[35px] text-center">
                 <div
                   className="bg-[#0d223c] border border-white/10 rounded-full w-24 h-24
@@ -332,7 +332,7 @@ export default function About() {
                 <h4 className="text-lg font-semibold text-white mt-4">
                   Optimization & Evolution
                 </h4>
-                <p className="text-gray-400 text-sm max-w-[220px] mt-2  ">
+                <p className="text-gray-300 text-sm max-w-[220px] mt-2  ">
                   We track, refine, and scale - because great performance should
                   never plateau.
                 </p>
