@@ -4,7 +4,7 @@ import Image from "next/image";
 import Nav from "../../../components/Nav";
 import Footer from "../../../components/Footer";
 
-import heroImg from "../../../Assets/Grow_your_business-removebg-preview.webp"; // replace with your hero image
+import heroImg from "../../../Assets/hero/banner-slider-3.jpg"; // replace with your hero image
 import aboutImg from "../../../Assets/Handleey-SMS-New-removebg-preview.webp"; // replace with your image
 import { useState } from "react";
 import PopupForm from "../../../components/PopupForm";
@@ -238,17 +238,16 @@ export default function About() {
 
                 {/* UPDATED — 6-POINT ZIGZAG LINE */}
                 <path
-                  d="M 130 80 
-                      L 400 200 
-                      L 680 80 
-                      L 1020 200 
-                      L 1280 80 
-                      L 1600 200"
+                  d="M 220 80 
+                      L 490 200 
+                      L 770 80 
+                      L 1110 200 
+                      L 1370 80 
+                      "
                   stroke="#38BDF8"
                   strokeWidth="3"
                   fill="none"
                   strokeLinecap="round"
-                  marker-end="url(#arrow)"
                 />
               </svg>
             </div>
@@ -256,7 +255,7 @@ export default function About() {
             {/* DESKTOP — ABSOLUTE POSITION STEPS */}
             <div className="hidden md:block relative h-[300px] ">
               {/* STEP 1 — Top Left */}
-              <div className="absolute -left-[50px] top-[35px] text-center">
+              <div className="absolute -left-[10px] top-[35px] text-center">
                 <div
                   className="bg-[#0d223c] border border-white/10 rounded-full w-24 h-24 
           flex items-center justify-center shadow-lg mx-auto"
@@ -273,7 +272,7 @@ export default function About() {
               </div>
 
               {/* STEP 2 — Bottom */}
-              <div className="absolute left-[220px] top-[120px] text-center">
+              <div className="absolute left-[260px] top-[120px] text-center">
                 <div
                   className="bg-[#0d223c] border border-white/10 rounded-full w-24 h-24
           flex items-center justify-center shadow-lg mx-auto"
@@ -283,14 +282,14 @@ export default function About() {
                 <h4 className="text-base font-semibold text-white mt-4 absolute -left-[40px] -top-[110px] min-w-[200px] ">
                   Strategic Blueprinting
                 </h4>
-                <p className="text-gray-300 text-sm min-w-[300px] mt-2 absolute -left-[100px] -top-[70px]">
+                <p className="text-gray-300 text-sm min-w-[200px] mt-2 absolute -left-[50px] -top-[70px]">
                   We map clear, data-led directions that align with your brand’s
                   objectives.
                 </p>
               </div>
 
               {/* STEP 3 — Top */}
-              <div className="absolute left-[370px] top-[35px] text-center">
+              <div className="absolute left-[410px] top-[35px] text-center">
                 <div
                   className="bg-[#0d223c] border border-white/10 rounded-full w-24 h-24
           flex items-center justify-center shadow-lg mx-auto"
@@ -307,23 +306,23 @@ export default function About() {
               </div>
 
               {/* STEP 4 — Bottom */}
-              <div className="absolute left-[650px] top-[120px] text-center">
+              <div className="absolute left-[720px] top-[120px] text-center">
                 <div
                   className="bg-[#0d223c] border border-white/10 rounded-full w-24 h-24
           flex items-center justify-center shadow-lg mx-auto"
                 >
                   <Rocket size={38} className="text-[#38BDF8]" />
                 </div>
-                <h4 className="text-lg font-semibold text-white mt-4 absolute -left-[40px] -top-[110px] min-w-[200px] ">
+                <h4 className="text-lg font-semibold text-white mt-4 absolute -left-[60px] -top-[110px] min-w-[200px] ">
                   Precision Deployment
                 </h4>
-                <p className="text-gray-400 text-sm max-w-[220px] mt-2 absolute -left-[40px] -top-[70px] min-w-[200px] ">
+                <p className="text-gray-400 text-sm max-w-[220px] mt-2 absolute -left-[60px] -top-[70px] min-w-[200px] ">
                   Campaigns go live with tactical execution across chosen
                   platforms.
                 </p>
               </div>
               {/* STEP 4 — Top */}
-              <div className="absolute left-[820px] top-[35px] text-center">
+              <div className="absolute left-[880px] top-[35px] text-center">
                 <div
                   className="bg-[#0d223c] border border-white/10 rounded-full w-24 h-24
           flex items-center justify-center shadow-lg mx-auto"
