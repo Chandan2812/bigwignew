@@ -7,6 +7,7 @@ import Fuse from "fuse.js";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useParams } from "next/navigation";
+import GetInTouch from "../../../components/GetInTouch";
 
 interface BlogPost {
   _id: string;
@@ -108,8 +109,8 @@ export default function Blogs() {
         <div className="flex-1 ">
           <div className="bg-white rounded-3xl shadow-sm p-8 md:p-10 bg-gradient-to-bl from-[var(--color2)] via-[var(--color1)] to-[var(--color2)]">
             {/* HEADING */}
-            <h1 className="text-center text-white text-3xl md:text-4xl font-semibold mb-10">
-              Featured Articles
+            <h1 className="text-center text-[var(--color5)] text-3xl md:text-4xl font-semibold mb-10">
+              Featured Blogs
             </h1>
 
             {/* SEARCH */}
@@ -260,7 +261,7 @@ export default function Blogs() {
         {/* RIGHT SIDEBAR (CATEGORIES) */}
         <div className="w-72 hidden lg:block sticky top-32 self-start">
           <div className="bg-gradient-to-bl from-[var(--color2)] via-[var(--color1)] to-[var(--color2)] rounded-2xl shadow-md p-6 ">
-            <h3 className="text-xl font-semibold mb-5 text-white">
+            <h3 className="text-xl font-semibold mb-5 text-[var(--color5)] ">
               Categories
             </h3>
 
@@ -306,7 +307,7 @@ export default function Blogs() {
           </div>
         </div>
       </div>
-
+      <GetInTouch />
       <Footer />
     </div>
   );

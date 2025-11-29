@@ -6,6 +6,7 @@ import axios from "axios";
 import Nav from "../../../../../components/Nav";
 import Footer from "../../../../../components/Footer";
 import Image from "next/image";
+import GetInTouch from "../../../../../components/GetInTouch";
 
 interface BlogPost {
   _id: string;
@@ -109,7 +110,7 @@ export default function CategoryBlogs() {
         <div className="flex-1">
           <div className="bg-white rounded-3xl shadow-sm p-8 md:p-10 bg-gradient-to-bl from-[var(--color2)] via-[var(--color1)] to-[var(--color2)]">
             {/* HEADING */}
-            <h1 className="text-3xl font-semibold mb-8 capitalize text-white">
+            <h1 className="text-3xl font-semibold mb-8 capitalize text-[var(--color5)] ">
               Category: {String(categoryName).replace(/-/g, " ")}
             </h1>
 
@@ -209,7 +210,7 @@ export default function CategoryBlogs() {
         {/* RIGHT SIDEBAR */}
         <div className="w-72 hidden lg:block sticky top-32 self-start">
           <div className="bg-gradient-to-bl from-[var(--color2)] via-[var(--color1)] to-[var(--color2)] rounded-2xl shadow-md p-6 ">
-            <h3 className="text-xl font-semibold mb-5 text-white">
+            <h3 className="text-xl font-semibold mb-5 text-[var(--color5)] ">
               Categories
             </h3>
 
@@ -250,7 +251,7 @@ export default function CategoryBlogs() {
           </div>
         </div>
       </div>
-
+      <GetInTouch />
       <Footer />
     </div>
   );
