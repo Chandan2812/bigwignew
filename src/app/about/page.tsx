@@ -16,9 +16,13 @@ import {
   Facebook,
   FileText,
   Globe2,
+  Layers,
   Linkedin,
   ListChecks,
+  Rocket,
+  ScanSearch,
   Send,
+  Sparkles,
   TrendingUp,
   Twitter,
 } from "lucide-react";
@@ -159,9 +163,9 @@ export default function About() {
             We are a team of curious minds and problem-solvers who blend
             creativity with precision. As a 360° digital marketing agency, our
             mission is simple, to power brands with smart, scalable digital
-            strategies that help them rise, compete, and lead. Whether you're an
-            emerging startup or an established enterprise, we build digital
-            journeys that attract, engage, and convert.
+            strategies that help them rise, compete, and lead. Whether
+            you&#39;re an emerging startup or an established enterprise, we
+            build digital journeys that attract, engage, and convert.
           </p>
 
           {/* STATS BOXES */}
@@ -257,7 +261,7 @@ export default function About() {
                   className="bg-[#0d223c] border border-white/10 rounded-full w-24 h-24 
           flex items-center justify-center shadow-lg mx-auto"
                 >
-                  <ListChecks size={38} className="text-[#38BDF8]" />
+                  <ScanSearch size={38} className="text-[#38BDF8]" />
                 </div>
                 <h4 className="text-base font-semibold text-white mt-4">
                   Understanding the Landscape
@@ -274,7 +278,7 @@ export default function About() {
                   className="bg-[#0d223c] border border-white/10 rounded-full w-24 h-24
           flex items-center justify-center shadow-lg mx-auto"
                 >
-                  <FileText size={38} className="text-[#38BDF8]" />
+                  <Layers size={38} className="text-[#38BDF8]" />
                 </div>
                 <h4 className="text-base font-semibold text-white mt-4 absolute -left-[40px] -top-[110px] min-w-[200px] ">
                   Strategic Blueprinting
@@ -291,7 +295,7 @@ export default function About() {
                   className="bg-[#0d223c] border border-white/10 rounded-full w-24 h-24
           flex items-center justify-center shadow-lg mx-auto"
                 >
-                  <Cog size={38} className="text-[#38BDF8]" />
+                  <Sparkles size={38} className="text-[#38BDF8]" />
                 </div>
                 <h4 className="text-lg font-semibold text-white mt-4">
                   Creative Engineering
@@ -308,7 +312,7 @@ export default function About() {
                   className="bg-[#0d223c] border border-white/10 rounded-full w-24 h-24
           flex items-center justify-center shadow-lg mx-auto"
                 >
-                  <Send size={38} className="text-[#38BDF8]" />
+                  <Rocket size={38} className="text-[#38BDF8]" />
                 </div>
                 <h4 className="text-lg font-semibold text-white mt-4 absolute -left-[40px] -top-[110px] min-w-[200px] ">
                   Precision Deployment
@@ -324,7 +328,7 @@ export default function About() {
                   className="bg-[#0d223c] border border-white/10 rounded-full w-24 h-24
           flex items-center justify-center shadow-lg mx-auto"
                 >
-                  <Send size={38} className="text-[#38BDF8]" />
+                  <TrendingUp size={38} className="text-[#38BDF8]" />
                 </div>
                 <h4 className="text-lg font-semibold text-white mt-4">
                   Optimization & Evolution
@@ -341,49 +345,65 @@ export default function About() {
               {/* Card */}
               <div className="bg-[#0d223c] border border-white/10 p-6 rounded-xl text-center">
                 <div className="bg-[#112a45] rounded-full w-20 h-20 mx-auto flex items-center justify-center mb-4">
-                  <ListChecks size={34} className="text-[#38BDF8]" />
+                  <ScanSearch size={34} className="text-[#38BDF8]" />
                 </div>
                 <h4 className="text-xl font-semibold text-white">
-                  Choose a Service
+                  Understanding the Landscape
                 </h4>
                 <p className="text-gray-400 text-sm mt-2">
-                  Select a service for your brand.
+                  We analyze markets, competition, and audience behavior to
+                  uncover real opportunities.
                 </p>
               </div>
 
               <div className="bg-[#0d223c] border border-white/10 p-6 rounded-xl text-center">
                 <div className="bg-[#112a45] rounded-full w-20 h-20 mx-auto flex items-center justify-center mb-4">
-                  <FileText size={34} className="text-[#38BDF8]" />
+                  <Layers size={34} className="text-[#38BDF8]" />
                 </div>
                 <h4 className="text-xl font-semibold text-white">
-                  Define Requirements
+                  Strategic Blueprinting
                 </h4>
                 <p className="text-gray-400 text-sm mt-2">
-                  Share your goals & details.
+                  We map clear, data-led directions that align with your brand’s
+                  objectives.
                 </p>
               </div>
 
               <div className="bg-[#0d223c] border border-white/10 p-6 rounded-xl text-center">
                 <div className="bg-[#112a45] rounded-full w-20 h-20 mx-auto flex items-center justify-center mb-4">
-                  <Cog size={34} className="text-[#38BDF8]" />
+                  <Sparkles size={34} className="text-[#38BDF8]" />
                 </div>
                 <h4 className="text-xl font-semibold text-white">
-                  Development & Planning
+                  Creative Engineering
                 </h4>
                 <p className="text-gray-400 text-sm mt-2">
-                  We start the development process.
+                  Concepts turn into compelling visuals, content, and
+                  experiences.
                 </p>
               </div>
 
               <div className="bg-[#0d223c] border border-white/10 p-6 rounded-xl text-center">
                 <div className="bg-[#112a45] rounded-full w-20 h-20 mx-auto flex items-center justify-center mb-4">
-                  <Send size={34} className="text-[#38BDF8]" />
+                  <Rocket size={34} className="text-[#38BDF8]" />
                 </div>
                 <h4 className="text-xl font-semibold text-white">
-                  Final Delivery
+                  Precision Deployment
                 </h4>
                 <p className="text-gray-400 text-sm mt-2">
-                  We deliver and optimize results.
+                  Campaigns go live with tactical execution across chosen
+                  platforms.
+                </p>
+              </div>
+              <div className="bg-[#0d223c] border border-white/10 p-6 rounded-xl text-center">
+                <div className="bg-[#112a45] rounded-full w-20 h-20 mx-auto flex items-center justify-center mb-4">
+                  <TrendingUp size={34} className="text-[#38BDF8]" />
+                </div>
+                <h4 className="text-xl font-semibold text-white">
+                  Optimization & Evolution
+                </h4>
+                <p className="text-gray-400 text-sm mt-2">
+                  We track, refine, and scale - because great performance should
+                  never plateau.
                 </p>
               </div>
             </div>
