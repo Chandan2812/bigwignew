@@ -6,6 +6,7 @@ import axios from "axios";
 import Nav from "../../../../../components/Nav";
 import Footer from "../../../../../components/Footer";
 import Image from "next/image";
+import GetInTouch from "../../../../../components/GetInTouch";
 
 interface BlogPost {
   _id: string;
@@ -250,7 +251,7 @@ export default function CategoryBlogs() {
           </div>
         </div>
       </div>
-
+      <GetInTouch />
       <Footer />
     </div>
   );

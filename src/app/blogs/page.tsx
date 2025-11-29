@@ -7,6 +7,7 @@ import Fuse from "fuse.js";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useParams } from "next/navigation";
+import GetInTouch from "../../../components/GetInTouch";
 
 interface BlogPost {
   _id: string;
@@ -306,7 +307,7 @@ export default function Blogs() {
           </div>
         </div>
       </div>
-
+      <GetInTouch />
       <Footer />
     </div>
   );

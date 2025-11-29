@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../../../../components/Nav";
 import Footer from "../../../../components/Footer";
+import GetInTouch from "../../../../components/GetInTouch";
 
 interface BlogType {
   title: string;
@@ -215,7 +216,7 @@ export default function BlogDetailsClient({ slug }: { slug: string }) {
           </div>
         </div>
       )}
-
+      <GetInTouch />
       <Footer />
     </div>
   );
