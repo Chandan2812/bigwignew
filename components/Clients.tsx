@@ -46,12 +46,22 @@ export default function Client() {
         {/* Left Content */}
         <div data-aos="fade-right">
           <p className="text-[var(--color5)] text-lg font-semibold border-b w-fit mb-3 uppercase tracking-widest">
-            Client List
+            Our Clientele
           </p>
 
           <h2 className="text-3xl md:text-4xl font-bold leading-tight text-[var(--color4)] drop-shadow-lg mb-5">
-            Not just clients, they are more like partners
+            Brands That Believe in What We Build
           </h2>
+          <p className="text-gray-200 mb-6 whitespace-pre-wrap">
+            Over the years, we’ve collaborated with a wide range of brands each
+            with its own vision, challenges, and ambitions. Every partnership
+            has strengthened our belief in creating digital experiences that
+            deliver real impact. <br />
+            <br />
+            The logos represent the brands that have trusted us with their
+            digital journey. Each one reflects the quality of our work, the
+            relationships we build, and the results we consistently deliver.
+          </p>
 
           <Link href="/clients">
             <ButtonFill text=" View All Clients" />

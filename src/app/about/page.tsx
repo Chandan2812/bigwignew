@@ -10,10 +10,12 @@ import { useState } from "react";
 import PopupForm from "../../../components/PopupForm";
 import ButtonFill from "../../../components/Button";
 import {
+  Award,
   BarChart3,
   Cog,
   Facebook,
   FileText,
+  Globe2,
   Linkedin,
   ListChecks,
   Send,
@@ -23,6 +25,7 @@ import {
 import why from "../../../Assets/Handleey-Social-Media-Post.webp";
 import owner from "../../../Assets/owner.webp";
 import GetInTouch from "../../../components/GetInTouch";
+import Client from "../../../components/Clients";
 
 export default function About() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -42,7 +45,7 @@ export default function About() {
         />
 
         {/* Text Overlay */}
-        <div className="relative z-10 text-center px-6">
+        {/* <div className="relative z-10 text-center px-6">
           <h1 className="text-4xl md:text-5xl font-bold text-white">
             Strategic Digital Marketing Agency
           </h1>
@@ -51,7 +54,7 @@ export default function About() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
             dictum leo nec sem facilisis, id faucibus velit elementum.
           </p>
-        </div>
+        </div> */}
       </section>
 
       {/* ================= ABOUT SECTION ================= */}
@@ -59,46 +62,60 @@ export default function About() {
       <section className="w-11/12 md:w-5/6 mx-auto py-12 flex flex-col md:flex-row items-center gap-14">
         {/* LEFT SIDE TEXT */}
         <div className="md:w-1/2">
-          <p className="text-[var(--color5)] text-lg font-semibold border-b mb-3 w-fit tracking-widest">
-            ABOUT US
+          <p className="text-[var(--color5)] uppercase text-lg font-semibold border-b mb-3 w-fit tracking-widest">
+            The Bigwig Story
           </p>
 
           <h2 className="text-3xl md:text-4xl font-semibold text-[var(--color4)] mb-6">
-            We Help Brands Grow With Strategy, Creativity & Digital Innovation
+            Building Brands That Win in the Digital Age
           </h2>
 
-          <p className="text-lg text-gray-200 leading-relaxed mb-6">
-            Bigwig Media Digital is a full-funnel digital marketing agency
-            helping brands scale through performance-driven strategies, stunning
-            creatives, and a data-first approach.
+          <p className="text-base text-gray-200 leading-relaxed mb-6">
+            At Bigwig Media Digital, we don’t just deliver marketing - we craft
+            digital experiences that connect, convert, and create lasting
+            impact. Based in New Delhi, India, we are a full-stack Digital
+            Marketing Powerhouse driven by Creative Thinkers, Strategic
+            Planners, and Platform-Obsessed Specialists who live and breathe the
+            online world.
             <br />
             <br />
-            Whether you&#39;re a startup looking for visibility or an
-            established brand aiming for aggressive growth—our team blends
-            content, design, paid media, and technology to deliver consistent
-            results across platforms like Google, Meta, YouTube & more.
+            From the moment an algorithm shifts on Google, Instagram, YouTube,
+            Facebook, or Twitter, Our Team is already two steps ahead. With more
+            than Eight Years of deep-rooted expertise, we design integrated,
+            data-powered strategies that help businesses grow, compete, and
+            dominate their digital landscapes.
           </p>
 
           {/* STATS BOXES */}
-          <div className="grid grid-cols-2 gap-5 mt-6">
-            {/* Box 1 */}
-            <div className="bg-[#1E293B]/60 border border-white/10 rounded-xl p-5 shadow-md hover:shadow-lg transition">
-              <div className="w-12 h-12 rounded-lg bg-[#38BDF8]/20 flex items-center justify-center mb-3">
+          {/* <div className="grid grid-cols-2 gap-5 mt-6">
+          
+            <div className="bg-[#1E293B]/60 border border-white/10 rounded-xl p-5 shadow-md hover:shadow-lg transition flex items-center gap-4">
+              <div className="w-12 h-12 rounded-lg bg-[#38BDF8]/20 flex items-center justify-center">
                 <BarChart3 className="text-[#38BDF8] w-6 h-6" />
               </div>
-              <h3 className="text-3xl font-bold text-white">94%</h3>
-              <p className="text-gray-400 text-sm mt-1">Client Satisfaction</p>
+
+              <div>
+                <h3 className="text-3xl font-bold text-white leading-tight">
+                  94%
+                </h3>
+                <p className="text-gray-400 text-sm">Client Satisfaction</p>
+              </div>
             </div>
 
-            {/* Box 2 */}
-            <div className="bg-[#1E293B]/60 border border-white/10 rounded-xl p-5 shadow-md hover:shadow-lg transition">
-              <div className="w-12 h-12 rounded-lg bg-[#38BDF8]/20 flex items-center justify-center mb-3">
+          
+            <div className="bg-[#1E293B]/60 border border-white/10 rounded-xl p-5 shadow-md hover:shadow-lg transition flex items-center gap-4">
+              <div className="w-12 h-12 rounded-lg bg-[#38BDF8]/20 flex items-center justify-center">
                 <TrendingUp className="text-[#38BDF8] w-6 h-6" />
               </div>
-              <h3 className="text-3xl font-bold text-white">65%</h3>
-              <p className="text-gray-400 text-sm mt-1">Average Growth</p>
+
+              <div>
+                <h3 className="text-3xl font-bold text-white leading-tight">
+                  65%
+                </h3>
+                <p className="text-gray-400 text-sm">Average Growth</p>
+              </div>
             </div>
-          </div>
+          </div> */}
 
           {/* BUTTON */}
           <ButtonFill
@@ -113,8 +130,68 @@ export default function About() {
           <Image
             src={aboutImg}
             alt="About Bigwig Digital"
-            className="rounded-2xl shadow-xl w-full object-cover"
+            className="rounded-2xl  w-full object-cover"
           />
+        </div>
+      </section>
+
+      {/* ================= WHO WE ARE SECTION ================= */}
+      <section className="w-11/12 md:w-5/6 mx-auto py-12 flex flex-col-reverse md:flex-row items-center gap-14">
+        {/* LEFT SIDE IMAGE */}
+        <div className="w-full md:w-1/2">
+          <Image
+            src={aboutImg}
+            alt="About Bigwig Digital"
+            className="rounded-2xl  w-full object-cover"
+          />
+        </div>
+        {/* RIGHT SIDE TEXT */}
+        <div className="md:w-1/2">
+          <p className="text-[var(--color5)] uppercase text-lg font-semibold border-b mb-3 w-fit tracking-widest">
+            Who We Are
+          </p>
+
+          <h2 className="text-3xl md:text-4xl font-semibold text-[var(--color4)] mb-6">
+            A team built to power brands digitally.
+          </h2>
+
+          <p className="text-base text-gray-200 leading-relaxed mb-6">
+            We are a team of curious minds and problem-solvers who blend
+            creativity with precision. As a 360° digital marketing agency, our
+            mission is simple, to power brands with smart, scalable digital
+            strategies that help them rise, compete, and lead. Whether you're an
+            emerging startup or an established enterprise, we build digital
+            journeys that attract, engage, and convert.
+          </p>
+
+          {/* STATS BOXES */}
+          <div className="grid grid-cols-2 gap-5 mt-6">
+            <div className="bg-[#1E293B]/60 border border-white/10 rounded-xl p-5 shadow-md hover:shadow-lg transition flex items-center gap-4">
+              <div className="w-12 h-12 rounded-lg bg-[#38BDF8]/20 flex items-center justify-center">
+                <Award className="text-[#38BDF8] w-6 h-6" />
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-semibold text-white leading-tight">
+                  8+ Years
+                </h3>
+                <p className="text-gray-400 text-sm">Industry Experience</p>
+              </div>
+            </div>
+
+            <div className="bg-[#1E293B]/60 border border-white/10 rounded-xl p-5 shadow-md hover:shadow-lg transition flex items-center gap-4">
+              <div className="w-12 h-12 rounded-lg bg-[#38BDF8]/20 flex items-center justify-center">
+                <Globe2 className="text-[#38BDF8] w-6 h-6" />
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-semibold text-white leading-tight">
+                  25+ Industries
+                </h3>
+                <p className="text-gray-400 text-sm">We’ve Worked Across</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -123,11 +200,11 @@ export default function About() {
         <div className="w-11/12 md:w-5/6 mx-auto">
           {/* Title */}
           <div className="text-center mb-5">
-            <p className="text-[var(--color5)] text-lg font-semibold mb-3 tracking-widest inline-block border-b-2 border-[var(--color5)]">
-              OUR PROCESS
+            <p className="text-[var(--color5)] uppercase text-lg font-semibold mb-3 tracking-widest inline-block border-b-2 border-[var(--color5)]">
+              Our Blueprint for Success
             </p>
             <h2 className="text-3xl md:text-4xl font-semibold text-[var(--color4)] mb-6">
-              Our Working Process
+              Turning smart ideas into measurable outcomes.
             </h2>
           </div>
 
@@ -155,8 +232,14 @@ export default function About() {
                   </marker>
                 </defs>
 
+                {/* UPDATED — 6-POINT ZIGZAG LINE */}
                 <path
-                  d="M 150 80 L 500 200 L 850 80 L 1200 200 L 1550 80"
+                  d="M 130 80 
+                      L 400 200 
+                      L 680 80 
+                      L 1020 200 
+                      L 1280 80 
+                      L 1600 200"
                   stroke="#38BDF8"
                   strokeWidth="3"
                   fill="none"
@@ -169,39 +252,41 @@ export default function About() {
             {/* DESKTOP — ABSOLUTE POSITION STEPS */}
             <div className="hidden md:block relative h-[300px] ">
               {/* STEP 1 — Top Left */}
-              <div className="absolute left-[20px] top-[35px] text-center">
+              <div className="absolute -left-[50px] top-[35px] text-center">
                 <div
                   className="bg-[#0d223c] border border-white/10 rounded-full w-24 h-24 
           flex items-center justify-center shadow-lg mx-auto"
                 >
                   <ListChecks size={38} className="text-[#38BDF8]" />
                 </div>
-                <h4 className="text-lg font-semibold text-white mt-4">
-                  Choose a Service
+                <h4 className="text-base font-semibold text-white mt-4">
+                  Understanding the Landscape
                 </h4>
-                <p className="text-gray-400 text-sm max-w-[220px] mt-2">
-                  Select the service that fits your brand.
+                <p className="text-gray-300 text-sm max-w-[220px] mt-2">
+                  We analyze markets, competition, and audience behavior to
+                  uncover real opportunities.
                 </p>
               </div>
 
               {/* STEP 2 — Bottom */}
-              <div className="absolute left-[280px] top-[120px] text-center">
+              <div className="absolute left-[220px] top-[120px] text-center">
                 <div
                   className="bg-[#0d223c] border border-white/10 rounded-full w-24 h-24
           flex items-center justify-center shadow-lg mx-auto"
                 >
                   <FileText size={38} className="text-[#38BDF8]" />
                 </div>
-                <h4 className="text-lg font-semibold text-white mt-4">
-                  Define Requirements
+                <h4 className="text-base font-semibold text-white mt-4 absolute -left-[40px] -top-[110px] min-w-[200px] ">
+                  Strategic Blueprinting
                 </h4>
-                <p className="text-gray-400 text-sm max-w-[220px] mt-2">
-                  Share your goals, vision & brand details.
+                <p className="text-gray-300 text-sm min-w-[300px] mt-2 absolute -left-[100px] -top-[70px]">
+                  We map clear, data-led directions that align with your brand’s
+                  objectives.
                 </p>
               </div>
 
               {/* STEP 3 — Top */}
-              <div className="absolute left-[560px] top-[35px] text-center">
+              <div className="absolute left-[370px] top-[35px] text-center">
                 <div
                   className="bg-[#0d223c] border border-white/10 rounded-full w-24 h-24
           flex items-center justify-center shadow-lg mx-auto"
@@ -209,15 +294,32 @@ export default function About() {
                   <Cog size={38} className="text-[#38BDF8]" />
                 </div>
                 <h4 className="text-lg font-semibold text-white mt-4">
-                  Development & Planning
+                  Creative Engineering
                 </h4>
                 <p className="text-gray-400 text-sm max-w-[220px] mt-2">
-                  We plan, design & start execution.
+                  Concepts turn into compelling visuals, content, and
+                  experiences.
                 </p>
               </div>
 
               {/* STEP 4 — Bottom */}
-              <div className="absolute left-[840px] top-[120px] text-center">
+              <div className="absolute left-[650px] top-[120px] text-center">
+                <div
+                  className="bg-[#0d223c] border border-white/10 rounded-full w-24 h-24
+          flex items-center justify-center shadow-lg mx-auto"
+                >
+                  <Send size={38} className="text-[#38BDF8]" />
+                </div>
+                <h4 className="text-lg font-semibold text-white mt-4 absolute -left-[40px] -top-[110px] min-w-[200px] ">
+                  Precision Deployment
+                </h4>
+                <p className="text-gray-400 text-sm max-w-[220px] mt-2 absolute -left-[40px] -top-[70px] min-w-[200px] ">
+                  Campaigns go live with tactical execution across chosen
+                  platforms.
+                </p>
+              </div>
+              {/* STEP 4 — Top */}
+              <div className="absolute left-[820px] top-[35px] text-center">
                 <div
                   className="bg-[#0d223c] border border-white/10 rounded-full w-24 h-24
           flex items-center justify-center shadow-lg mx-auto"
@@ -225,10 +327,11 @@ export default function About() {
                   <Send size={38} className="text-[#38BDF8]" />
                 </div>
                 <h4 className="text-lg font-semibold text-white mt-4">
-                  Final Delivery
+                  Optimization & Evolution
                 </h4>
-                <p className="text-gray-400 text-sm max-w-[220px] mt-2">
-                  Final delivery with optimization.
+                <p className="text-gray-400 text-sm max-w-[220px] mt-2  ">
+                  We track, refine, and scale - because great performance should
+                  never plateau.
                 </p>
               </div>
             </div>
@@ -292,50 +395,54 @@ export default function About() {
         <div className="w-11/12 md:w-5/6 mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
           {/* Left Text Side */}
           <div className="md:w-1/2">
-            <p className="text-[var(--color5)] text-lg font-semibold border-b mb-3 w-fit tracking-widest">
-              WHY CHOOSE US
+            <p className="text-[var(--color5)] uppercase text-lg font-semibold border-b mb-3 w-fit tracking-widest">
+              Why We’re the Right Partner
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--color4)] mb-6">
-              We Deliver Excellence
+              Digital Excellence, Delivered Consistently
             </h2>
             <p className="text-gray-200 mb-8">
-              Our team provides innovative solutions tailored to your business.
-              We focus on delivering quality, efficiency, and reliability in
-              every project.
+              We believe in going beyond the conventional. Every project we take
+              on is powered by insight, creativity, and performance-driven
+              execution.
             </p>
 
             {/* Small Box Content */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-[var(--color2)] p-4 rounded-lg shadow-md">
                 <h3 className="font-semibold mb-1 text-[var(--color4)]">
-                  Expert Team
+                  Built for the Modern Brand
                 </h3>
                 <p className="text-gray-200 text-sm">
-                  Skilled professionals delivering top-quality results.
+                  We shape digital experiences that create visibility, value,
+                  and long-term impact.
                 </p>
               </div>
               <div className="bg-[var(--color2)] p-4 rounded-lg shadow-md">
                 <h3 className="font-semibold mb-1 text-[var(--color4)]">
-                  Innovative Solutions
+                  Powered by a Passionate Team
                 </h3>
                 <p className="text-gray-200 text-sm">
-                  Creative strategies to solve complex challenges.
+                  Strategists, creators, analysts & media experts working
+                  together to deliver excellence.
                 </p>
               </div>
               <div className="bg-[var(--color2)] p-4 rounded-lg shadow-md">
                 <h3 className="font-semibold mb-1 text-[var(--color4)]">
-                  24/7 Support
+                  A Strong Track Record
                 </h3>
                 <p className="text-gray-200 text-sm">
-                  Always available to assist you whenever needed.
+                  8+ years of transforming brands into industry leaders through
+                  digital innovation.
                 </p>
               </div>
               <div className="bg-[var(--color2)] p-4 rounded-lg shadow-md">
                 <h3 className="font-semibold mb-1 text-[var(--color4)]">
-                  Proven Results
+                  Trusted by Leading Brands
                 </h3>
                 <p className="text-gray-200 text-sm">
-                  Delivering measurable outcomes for every client.
+                  Our clientele spans industries like eCommerce, retail, tech,
+                  events, and more.{" "}
                 </p>
               </div>
             </div>
@@ -352,6 +459,8 @@ export default function About() {
         </div>
       </section>
 
+      <Client />
+
       <section className="py-12">
         <div className="w-11/12 md:w-5/6 mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
           {/* Left Side Image */}
@@ -365,17 +474,22 @@ export default function About() {
 
           {/* Right Side Text */}
           <div className="md:w-1/2 text-center md:text-left">
-            <p className="text-[var(--color5)] font-semibold mb-2 tracking-widest inline-block border-b-2 border-[var(--color5)]">
-              FOUNDER’S NOTE
+            <p className="text-[var(--color5)] uppercase font-semibold mb-2 tracking-widest inline-block border-b-2 border-[var(--color5)]">
+              The Mind Behind Bigwig
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--color4)] mb-6">
               A Message from Our Founder
             </h2>
-            <p className="text-gray-200 mb-6">
-              “Our mission has always been to deliver exceptional digital
-              solutions that help our clients grow and succeed. We focus on
-              innovation, quality, and building lasting relationships with every
-              project we take on.”
+            <p className="text-gray-200 mb-6 whitespace-pre-wrap">
+              “Bigwig Media Digital was born from a desire to help brands
+              navigate the digital world with clarity and confidence. My vision
+              has always been simple, combining smart strategy with meaningful
+              creativity to deliver results that truly matter. <br />
+              <br />
+              Every brand we work with becomes a part of our journey. Your
+              challenges guide our thinking, and your growth drives our passion.
+              Thank you for trusting us to power your digital presence, we’re
+              committed to building success with you, every step of the way.”
             </p>
             <h3 className="text-xl font-semibold text-gray-100 mb-1">
               Amandeep Singh
@@ -388,6 +502,16 @@ export default function About() {
       {/* ================= FINAL CTA SECTION ================= */}
 
       <GetInTouch />
+
+      <section className="w-full py-10 bg-gradient-to-r from-[var(--color1)] via-[var(--color2)] to-[var(--color3)] flex justify-center items-center">
+        <h2 className="text-center text-2xl md:text-3xl font-semibold text-[var(--color5)] px-6 leading-relaxed">
+          We live by our motto –
+          <span className="font-bold text-[var(--color4)]">
+            {" "}
+            “We create super-rich experiences online!”
+          </span>
+        </h2>
+      </section>
 
       <Footer />
       <PopupForm isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />

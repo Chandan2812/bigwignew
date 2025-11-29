@@ -109,8 +109,10 @@ export default function BlogDetailsClient({ slug }: { slug: string }) {
     return <div className="pt-40 text-center text-red-600">{error}</div>;
   if (!blog) return null;
 
+  const currentSlug = blog.category?.replace(/\s+/g, "-").toLowerCase() || "";
+
   return (
-    <div className="bg-white text-black min-h-screen">
+    <div className="bg-[var(--color1)] text-white min-h-screen">
       {/* ✅ Schema Markup */}
       {Array.isArray(blog.schemaMarkup) &&
         blog.schemaMarkup.map((markup, idx) => (
@@ -123,7 +125,7 @@ export default function BlogDetailsClient({ slug }: { slug: string }) {
 
       <Navbar />
 
-      <div className="w-11/12 md:w-5/6 mx-auto px-4 py-10 flex flex-col lg:flex-row gap-8">
+      <div className="w-11/12 md:w-5/6 mx-auto px-4 py-10 flex flex-col lg:flex-row gap-8 text-white">
         {/* Blog Content */}
         <div className="w-full lg:w-2/3">
           <h1 className="text-3xl font-bold mb-4">{blog.title}</h1>
@@ -163,25 +165,50 @@ export default function BlogDetailsClient({ slug }: { slug: string }) {
         </div>
 
         {/* Categories Sidebar */}
-        <div className="w-full lg:w-1/3">
-          <div className="sticky top-36 bg-white border p-4 rounded-lg shadow">
-            <h2 className="text-xl font-semibold mb-4">Blog Categories</h2>
-            <ul className="space-y-2">
-              {categories.map((cat, idx) => (
-                <li
-                  key={idx}
-                  onClick={() =>
-                    router.push(
-                      `/blogs/category/${cat
-                        .toLowerCase()
-                        .replace(/\s+/g, "-")}`
-                    )
-                  }
-                  className="text-sm text-blue-600 hover:underline cursor-pointer"
-                >
-                  {cat}
-                </li>
-              ))}
+        <div className="hidden lg:block w-72 sticky top-32 self-start">
+          <div
+            className="bg-gradient-to-bl from-[var(--color2)] via-[var(--color1)] to-[var(--color2)]
+                  rounded-2xl shadow-md p-6"
+          >
+            <h3 className="text-xl font-semibold mb-5 text-[var(--color5)]">
+              Categories
+            </h3>
+
+            <ul className="space-y-3">
+              {categories.map((cat, idx) => {
+                const slug = cat.replace(/\s+/g, "-").toLowerCase();
+                const active = slug === currentSlug;
+
+                return (
+                  <li
+                    key={idx}
+                    onClick={() => router.push(`/blogs/category/${slug}`)}
+                    className={`
+    group relative cursor-pointer select-none
+    pl-6 pr-4 py-2 rounded-xl text-sm capitalize transition-all duration-300 
+    ${
+      active
+        ? "translate-x-[-8px] bg-blue-100 text-blue-700 font-semibold shadow-lg"
+        : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:-translate-y-1 hover:translate-x-1 hover:shadow-lg"
+    }
+  `}
+                  >
+                    {/* Glow Border */}
+                    <div
+                      className={`
+      absolute inset-0 rounded-xl pointer-events-none transition-all duration-300
+      ${
+        active
+          ? "opacity-100 border border-blue-400/60 shadow-[0_0_15px_3px_rgba(59,130,246,0.55)]"
+          : "opacity-0 group-hover:opacity-100 border border-blue-300/40 shadow-[0_0_10px_2px_rgba(59,130,246,0.3)]"
+      }
+    `}
+                    ></div>
+
+                    {cat}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
