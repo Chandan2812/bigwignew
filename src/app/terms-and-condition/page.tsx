@@ -214,7 +214,7 @@ export default function TermsOfUse() {
               </h2>
               <p>
                 Both parties agree to maintain confidentiality of shared
-                information. Neither party may hire or solicit the other's
+                information. Neither party may hire or solicit the other&#39;s
                 employees for 24 months after project completion.
               </p>
             </div>
