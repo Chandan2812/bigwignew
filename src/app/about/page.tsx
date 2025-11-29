@@ -72,10 +72,10 @@ export default function About() {
             creatives, and a data-first approach.
             <br />
             <br />
-            Whether you're a startup looking for visibility or an established
-            brand aiming for aggressive growth—our team blends content, design,
-            paid media, and technology to deliver consistent results across
-            platforms like Google, Meta, YouTube & more.
+            Whether you&#39;re a startup looking for visibility or an
+            established brand aiming for aggressive growth—our team blends
+            content, design, paid media, and technology to deliver consistent
+            results across platforms like Google, Meta, YouTube & more.
           </p>
 
           {/* STATS BOXES */}
