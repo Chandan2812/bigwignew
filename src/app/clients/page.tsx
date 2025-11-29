@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import Nav from "../../../components/Nav";
 import Footer from "../../../components/Footer";
 import Image from "next/image";
+import GetInTouch from "../../../components/GetInTouch";
 
 const clients = [
   {
@@ -165,6 +166,7 @@ function Clients() {
           })}
         </div>
       </div>
+      <GetInTouch />
       <Footer />
     </div>
   );

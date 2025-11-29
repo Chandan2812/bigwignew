@@ -10,6 +10,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import Nav from "../../../components/Nav";
 import Footer from "../../../components/Footer";
 import Image from "next/image";
+import GetInTouch from "../../../components/GetInTouch";
 
 type Category = "all" | "creative" | "ai" | "cgi" | "videos" | "websites";
 
@@ -54,7 +55,7 @@ const GallerySection: React.FC = () => {
         href="https://www.bigwigmediadigital.com/our-works"
       />
       <section className="py-5 w-11/12 md:w-5/6 mx-auto  ">
-        <h2 className="text-5xl font-bold text-center mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
           <span className="text-[var(--color5)]">Our Work</span>
         </h2>
 
@@ -202,6 +203,7 @@ const GallerySection: React.FC = () => {
           </div>
         )}
       </section>
+      <GetInTouch />
       <Footer />
     </div>
   );
