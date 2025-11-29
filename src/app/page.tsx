@@ -33,7 +33,7 @@ export default function Home() {
       {/* <HowWeWork /> */}
       <Blogs />
       <FAQ />
-      {/* <RainbowSteps /> */}
+      <RainbowSteps />
       {/* <LocationsSection /> */}
       <Footer />
     </div>

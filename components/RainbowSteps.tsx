@@ -64,7 +64,7 @@ export default function RainbowSteps() {
   ];
 
   return (
-    <section className="py-20 flex flex-col items-center relative overflow-visible">
+    <section className="py-20 flex flex-col items-center relative overflow-visible bg-[var(--color1)]">
       <div className="relative w-[780px] max-w-full mx-auto">
         {/* MAIN IMAGE */}
         <Image src={rainbowImg} alt="Rainbow Arc" className="w-full" />
@@ -94,8 +94,12 @@ export default function RainbowSteps() {
                     style={item.popupPos} // 🎯 popup exact placement
                   >
                     <Icon size={38} className="text-blue-600 drop-shadow-lg" />
-                    <h4 className="font-bold text-lg mt-2">{item.title}</h4>
-                    <p className="text-sm leading-relaxed">{item.desc}</p>
+                    <h4 className="font-bold text-lg mt-2 text-white">
+                      {item.title}
+                    </h4>
+                    <p className="text-sm leading-relaxed text-white">
+                      {item.desc}
+                    </p>
                   </div>
                 )}
               </div>
