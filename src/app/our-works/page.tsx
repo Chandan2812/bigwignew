@@ -42,7 +42,7 @@ const GallerySection: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full text-black bg-white">
+    <div className="w-full text-white bg-[var(--color1)]">
       <Nav />
       <title>Our Work</title>
       <meta
@@ -53,10 +53,9 @@ const GallerySection: React.FC = () => {
         rel="canonical"
         href="https://www.bigwigmediadigital.com/our-works"
       />
-      <section className="py-5 max-w-7xl mx-auto px-4">
+      <section className="py-5 w-11/12 md:w-5/6 mx-auto mt-16 md:mt-20 ">
         <h2 className="text-5xl font-bold text-center mb-4">
-          <span className="text-[#4E6CBA]">Our</span>{" "}
-          <span className="text-[#DA4D42]">Work</span>
+          <span className="text-[var(--color5)]">Our Work</span>
         </h2>
 
         {/* Filter Tabs */}
@@ -67,8 +66,8 @@ const GallerySection: React.FC = () => {
               onClick={() => setActiveCategory(key)}
               className={`uppercase tracking-wide ${
                 activeCategory === key
-                  ? "text-[#4E6CBA] underline underline-offset-4"
-                  : "text-gray-500 hover:text-[#4E6CBA]"
+                  ? "text-[var(--color4)] underline underline-offset-4"
+                  : "text-gray-500 hover:text-[var(--color4)]"
               }`}
             >
               {label}

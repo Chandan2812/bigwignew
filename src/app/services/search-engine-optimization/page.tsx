@@ -127,12 +127,12 @@ function Seo() {
 
       <Nav />
       <section
-        className="relative bg-cover bg-center bg-no-repeat py-10 px-4"
+        className="relative bg-cover bg-center bg-no-repeat py-10 mt-16 md:mt-20"
         style={{ backgroundImage: `url(${hero.src})` }}
       >
         <div className="bg-black/40 absolute inset-0 z-0" />
 
-        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div className="relative z-10 w-11/12 md:w-5/6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div className="text-white space-y-6 md:pr-8">
             <h1 className="text-3xl md:text-4xl font-semibold text-white leading-snug">
@@ -171,7 +171,7 @@ function Seo() {
         </div>
       </section>
 
-      <section className="bg-white  py-12 px-6 md:px-12">
+      <section className="bg-white  py-12">
         <div className="w-11/12 md:w-5/6 mx-auto">
           {/* Heading */}
           <div className="mb-10 text-center">
@@ -419,7 +419,7 @@ function Seo() {
       <WhyBigwig />
 
       {/* FAQ Section */}
-      <section className="bg-gray-50 py-12">
+      {/* <section className="bg-gray-50 py-12">
         <div className="w-11/12 md:w-5/6 mx-auto space-y-10">
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)] text-center">
             Frequently Asked Questions
@@ -454,7 +454,7 @@ function Seo() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
       {/* Services Table Section */}
       <section className="bg-white py-12">
         <div className="w-11/12 md:w-5/6 mx-auto space-y-10">
