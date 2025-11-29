@@ -16,7 +16,7 @@ export default function TermsOfUse() {
         href="https://www.bigwigmediadigital.com/terms-and-condition"
       />
 
-      <div className="py-12 w-11/12 md:w-2/3 mx-auto mt-16 md:mt-20 text-white">
+      <div className="py-12 w-11/12 md:w-2/3 mx-auto text-white">
         {/* HEADER */}
         <h1 className="text-4xl font-bold text-center text-[var(--color5)] mb-4">
           Terms & Conditions

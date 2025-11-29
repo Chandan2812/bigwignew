@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
   return (
     <div className="bg-[var(--color1)] text-white">
       <Nav />
-      <div className="py-12  min-h-screen mt-16 md:mt-20">
+      <div className="py-12  min-h-screen">
         <div>
           <title>Privacy Policy</title>
           <meta

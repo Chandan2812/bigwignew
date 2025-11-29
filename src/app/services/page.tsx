@@ -172,7 +172,7 @@ function Services() {
       />
 
       {/* NEW GRID DESIGN */}
-      <div className=" py-12 mt-16 md:mt-20 w-11/12 md:w-5/6 mx-auto">
+      <div className=" py-12 w-11/12 md:w-5/6 mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
           <span className="text-[var(--color5)]">Our Services</span>
         </h2>

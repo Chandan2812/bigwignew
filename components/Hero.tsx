@@ -100,7 +100,7 @@ export default function SliceRevealSlider() {
   };
 
   return (
-    <div className="relative w-full h-[60vh] md:h-[70vh] lg:[100vh] overflow-hidden overflow-x-hidden bg-black mt-16 md:mt-20">
+    <div className="relative w-full h-[60vh] md:h-[70vh] lg:[100vh] overflow-hidden overflow-x-hidden bg-black">
       {/* IMAGE SLICES */}
       {Array.from({ length: slices }).map((_, i) => (
         <div

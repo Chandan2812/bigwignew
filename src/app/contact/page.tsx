@@ -133,7 +133,7 @@ export default function ContactPage() {
       <Nav />
 
       <div
-        className="w-full min-h-screen bg-cover bg-center relative py-12 mt-16"
+        className="w-full min-h-screen bg-cover bg-center relative py-12 "
         style={{
           backgroundImage:
             "url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764323168/kaitlyn-baker-vZJdYl5JVXY-unsplash_skfolb.jpg')",
@@ -141,7 +141,7 @@ export default function ContactPage() {
       >
         <div className="absolute inset-0 bg-black/70"></div>
 
-        <div className="relative w-11/12 md:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 mt-14">
+        <div className="relative w-11/12 md:w-5/6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* LEFT SIDE */}
           <div>
             <h1 className="text-4xl font-bold mb-13">CONTACT US</h1>

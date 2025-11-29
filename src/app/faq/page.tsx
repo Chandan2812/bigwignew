@@ -127,7 +127,7 @@ const FAQ = () => {
       />
       <link rel="canonical" href="https://www.bigwigmediadigital.com/faq" />
 
-      <div className="md:w-3/4 w-11/12 mx-auto py-14 mt-20">
+      <div className="md:w-3/4 w-11/12 mx-auto py-12">
         <h1 className="text-center text-3xl md:text-4xl font-bold mb-10 text-[var(--color5)]">
           Frequently Asked Questions
         </h1>

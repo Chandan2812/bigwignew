@@ -126,7 +126,7 @@ function Clients() {
       />
       <link rel="canonical" href="https://www.bigwigmediadigital.com/clients" />
 
-      <div className="px-4 py-28 mt-7 max-w-6xl mx-auto">
+      <div className=" py-12 mt-7 w-11/12 md:w-5/6 mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-6">
           {clients.map((client, index) => {
             const { img, link } = client;

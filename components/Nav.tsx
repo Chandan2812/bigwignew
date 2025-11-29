@@ -144,7 +144,7 @@ const Nav: React.FC = () => {
   const cols = splitIntoColumns(services, 3);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50">
+    <header className="sticky top-0 left-0 w-full z-50 bg-gradient-to-b from-[#011c40] via-[#023859]  to-[#26658c]">
       {/* Top Info Bar */}
       {/* <div className="bg-[#011c40] shadow text-white text-sm px-4 md:px-12 py-2 flex justify-between items-center flex-wrap gap-2">
         <div className="hidden lg:flex items-center gap-2">
@@ -210,7 +210,7 @@ const Nav: React.FC = () => {
       <hr className="border-0 h-[1px] bg-[#A7EBF2]" /> */}
 
       {/* Main Nav */}
-      <div className="px-4 md:px-12 bg-gradient-to-b from-[#011c40] via-[#023859]  to-[#26658c] container mx-auto">
+      <div className=" px-4 md:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-5 items-center  ">
           {/* Logo */}
           <div className="flex items-center col-span-1">

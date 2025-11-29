@@ -31,7 +31,7 @@ export default function About() {
       <Nav />
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative w-full h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[50vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <Image
           src={heroImg}

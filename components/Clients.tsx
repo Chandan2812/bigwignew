@@ -23,7 +23,7 @@ export default function Client() {
   }, []);
 
   return (
-    <div className="pt-8 pb-12 bg-[var(--color1)] text-white">
+    <div className="pt-8 pb-12 bg-[var(--color1)] text-white overflow-x-hidden">
       {/* 👇 INLINE CSS FOR ANIMATION */}
       <style jsx>{`
         @keyframes colorCycle {

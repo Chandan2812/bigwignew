@@ -53,7 +53,7 @@ const GallerySection: React.FC = () => {
         rel="canonical"
         href="https://www.bigwigmediadigital.com/our-works"
       />
-      <section className="py-5 w-11/12 md:w-5/6 mx-auto mt-16 md:mt-20 ">
+      <section className="py-5 w-11/12 md:w-5/6 mx-auto  ">
         <h2 className="text-5xl font-bold text-center mb-4">
           <span className="text-[var(--color5)]">Our Work</span>
         </h2>

@@ -52,10 +52,10 @@ export default function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-12 bg-[var(--color1)] text-white"
+      className="relative py-12 bg-[var(--color1)] text-white overflow-x-hidden"
     >
       <div className="w-11/12 md:w-5/6 mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* LEFT SIDE */}
           <div className="space-y-6">
             <p className="text-[var(--color5)] text-lg font-semibold border-b w-fit tracking-widest">
@@ -79,15 +79,8 @@ export default function AboutSection() {
           </div>
 
           {/* RIGHT SIDE */}
-          <div className="relative">
-            {/* Accent Glow Behind Image */}
-            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-[var(--color3)]/30 blur-3xl rounded-full"></div>
-
-            {/* Glass Card Behind */}
-            <div className="hidden lg:absolute -bottom-12 -right-12 w-72 h-72 bg-[var(--color2)]/70 backdrop-blur-xl border border-[var(--color5)]/20 rounded-3xl rotate-12 shadow-lg"></div>
-
-            {/* Main Image */}
-            <div className="relative z-20 rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
+          <div className="relative w-full overflow-hidden">
+            <div className="relative z-20 rounded-3xl overflow-hidden w-full shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
               <Image
                 src={aboutImg}
                 alt="About Bigwig"
@@ -98,19 +91,13 @@ export default function AboutSection() {
         </div>
 
         {/* STATS */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-16 w-full">
           {stats.map((stat, i) => (
             <div
               key={i}
               className="rounded-2xl p-6 backdrop-blur-xl bg-[var(--color2)]/40 
-                     border border-[var(--color5)]/40 relative overflow-hidden shadow-lg"
+                     border border-[var(--color5)]/40 relative overflow-hidden shadow-lg w-full"
             >
-              {/* Neon Highlight */}
-              <div
-                className="absolute -right-6 -top-6 w-20 h-20 rounded-full 
-                          bg-[var(--color4)] blur-2xl opacity-80"
-              ></div>
-
               <h3 className="text-4xl font-extrabold text-[var(--color5)] drop-shadow-sm">
                 {count[i]}+
               </h3>

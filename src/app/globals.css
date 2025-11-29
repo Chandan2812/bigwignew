@@ -222,7 +222,7 @@
   animation: curtainUp 0.6s ease forwards;
 }
 
-html,
+/* html,
 body {
   overflow-x: hidden !important;
-}
+} */

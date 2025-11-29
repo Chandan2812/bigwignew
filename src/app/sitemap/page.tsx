@@ -156,7 +156,7 @@ export default function CategoriesSection() {
   return (
     <div className="bg-[var(--color1)] text-white">
       <Nav />
-      <div className="w-11/12 mx-auto p-4 md:p-8 mt-16 md:mt-20">
+      <div className="w-11/12 mx-auto p-4 md:p-8">
         {/* <h2 className="text-lg md:text-xl font-bold mb-4">Categories</h2> */}
         <div className="space-y-8">
           {categoriesData.map((category, idx) => (

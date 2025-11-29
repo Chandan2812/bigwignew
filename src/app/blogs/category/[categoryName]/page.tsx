@@ -104,7 +104,7 @@ export default function CategoryBlogs() {
       <Nav />
 
       {/* Page Layout */}
-      <div className="max-w-7xl mx-auto mt-16 py-20 flex gap-8 px-4">
+      <div className="w-11/12 md:w-5/6 mx-auto py-12 flex gap-8 px-4">
         {/* LEFT SECTION */}
         <div className="flex-1">
           <div className="bg-white rounded-3xl shadow-sm p-8 md:p-10 bg-gradient-to-bl from-[var(--color2)] via-[var(--color1)] to-[var(--color2)]">
