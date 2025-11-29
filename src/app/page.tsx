@@ -14,6 +14,7 @@ import FAQ from "../../components/Faq";
 import LocationsSection from "../../components/Location";
 import Footer from "../../components/Footer";
 import ServicesPage from "../../components/Services";
+import RainbowSteps from "../../components/RainbowSteps";
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
       {/* <HowWeWork /> */}
       <Blogs />
       <FAQ />
+      {/* <RainbowSteps /> */}
       {/* <LocationsSection /> */}
       <Footer />
     </div>
