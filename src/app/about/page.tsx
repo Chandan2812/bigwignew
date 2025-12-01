@@ -30,6 +30,7 @@ import why from "../../../Assets/Handleey-Social-Media-Post.webp";
 import owner from "../../../Assets/owner.webp";
 import GetInTouch from "../../../components/GetInTouch";
 import Client from "../../../components/Clients";
+import RainbowSteps from "../../../components/RainbowSteps";
 
 export default function About() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -409,6 +410,8 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* <RainbowSteps/> */}
 
       <section className="py-12 bg-[var(--color1)]">
         <div className="w-11/12 md:w-5/6 mx-auto px-4 flex flex-col md:flex-row items-center gap-12">

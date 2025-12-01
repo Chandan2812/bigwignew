@@ -24,6 +24,7 @@ export default function Home() {
       <Partners />
       <Stats />
       <Client />
+      <RainbowSteps />
       <ServicesPage />
       {/* <ScrollOverlappingText />
       <FlipCard /> */}
@@ -33,7 +34,7 @@ export default function Home() {
       {/* <HowWeWork /> */}
       <Blogs />
       <FAQ />
-      <RainbowSteps />
+
       {/* <LocationsSection /> */}
       <Footer />
     </div>

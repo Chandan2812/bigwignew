@@ -1,11 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-// Lucide Icons
 import { Star, Heart, Target, Magnet, TrendingUp } from "lucide-react";
-
 import rainbowImg from "../Assets/bg01.png";
 
 type StepItem = {
@@ -13,12 +11,12 @@ type StepItem = {
   title: string;
   desc: string;
   Icon: React.ComponentType<{ size?: number; className?: string }>;
-  numberPos: { left: string; top: string }; // <-- Number position
-  popupPos: { left: string; top: string }; // <-- Popup custom position
+  numberPos: { left: string; top: string };
+  popupPos: { left: string; top: string };
 };
 
 export default function RainbowSteps() {
-  const [active, setActive] = useState<number | null>(null);
+  const [active, setActive] = useState(0);
 
   const data: StepItem[] = [
     {
@@ -27,7 +25,7 @@ export default function RainbowSteps() {
       desc: "Let’s spread the word!",
       Icon: Star,
       numberPos: { left: "22%", top: "63%" },
-      popupPos: { left: "-450%", top: "-100%" }, // 🌟 YOU CONTROL THIS
+      popupPos: { left: "-500%", top: "-100%" },
     },
     {
       num: "02",
@@ -43,7 +41,7 @@ export default function RainbowSteps() {
       desc: "Chase your customers across the internet",
       Icon: Target,
       numberPos: { left: "48%", top: "18%" },
-      popupPos: { left: "-35%", top: "-500%" },
+      popupPos: { left: "-180%", top: "-400%" },
     },
     {
       num: "04",
@@ -51,7 +49,7 @@ export default function RainbowSteps() {
       desc: "Keep making your customers come back to you",
       Icon: Magnet,
       numberPos: { left: "62%", top: "18%" },
-      popupPos: { left: "60%", top: "-480%" },
+      popupPos: { left: "60%", top: "-380%" },
     },
     {
       num: "05",
@@ -63,63 +61,99 @@ export default function RainbowSteps() {
     },
   ];
 
+  // 🔥 Auto Highlight Logic (Large Screens Only)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % data.length);
+    }, 1200);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="py-20 flex flex-col items-center relative overflow-visible bg-[var(--color1)]">
-      <div className="relative w-[780px] max-w-full mx-auto">
-        {/* MAIN IMAGE */}
+    <section className="py-12 relative bg-[var(--color1)] flex flex-col">
+      {/* ---------- TITLE & SUBTITLE ---------- */}
+      <div className="w-11/12 md:w-5/6 mx-auto mb-12">
+        <p className="text-[var(--color5)] text-lg font-semibold border-b w-fit mb-3 uppercase tracking-widest">
+          How We Work
+        </p>
+
+        <h2 className="text-3xl md:text-4xl font-bold leading-tight text-[var(--color4)] drop-shadow-lg max-w-2xl">
+          A Journey That Builds Brands,
+          <br /> Step by Step
+        </h2>
+      </div>
+
+      {/* ---------- LARGE SCREEN INTERACTIVE RAINBOW ---------- */}
+      <div className="relative w-[780px] max-w-full mx-auto hidden lg:block">
         <Image src={rainbowImg} alt="Rainbow Arc" className="w-full" />
 
-        {/* INTERACTIVE LAYER */}
-        <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0">
           {data.map((item, i) => {
             const Icon = item.Icon;
+            const isActive = active === i;
 
             return (
               <div
                 key={i}
-                className="absolute pointer-events-auto cursor-pointer select-none"
-                style={item.numberPos} // 🎯 number position
-                onMouseEnter={() => setActive(i)}
-                onMouseLeave={() => setActive(null)}
+                className="absolute select-none"
+                style={item.numberPos}
               >
                 {/* NUMBER */}
                 <span className="font-extrabold text-4xl text-white drop-shadow-xl">
                   {item.num}
                 </span>
 
-                {/* POPUP */}
-                {active === i && (
-                  <div
-                    className="absolute z-50 animate-bounceIn flex flex-col items-center text-center"
-                    style={item.popupPos} // 🎯 popup exact placement
-                  >
-                    <Icon size={38} className="text-blue-600 drop-shadow-lg" />
-                    <h4 className="font-bold text-lg mt-2 text-white">
-                      {item.title}
-                    </h4>
-                    <p className="text-sm leading-relaxed text-white">
-                      {item.desc}
-                    </p>
-                  </div>
-                )}
+                {/* POPUP — Always Visible but with Opacity Variation */}
+                <div
+                  className={`absolute flex flex-col items-center text-center min-w-[200px] transition-all duration-500
+                    ${isActive ? "opacity-100 scale-100 z-10" : "opacity-30 scale-90 z-10"}
+                  `}
+                  style={item.popupPos}
+                >
+                  <Icon
+                    size={38}
+                    className="text-[var(--color5)] drop-shadow-lg"
+                  />
+                  <h4 className="font-bold text-lg mt-2 text-white">
+                    {item.title}
+                  </h4>
+                  <p className="text-sm leading-relaxed text-white">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             );
           })}
         </div>
       </div>
 
-      {/* Bounce animation */}
-      <style>{`
-        @keyframes bounceIn {
-          0% { opacity: 0; transform: scale(0.4); }
-          60% { opacity: 1; transform: scale(1.1); }
-          80% { transform: scale(0.95); }
-          100% { transform: scale(1); }
-        }
-        .animate-bounceIn {
-          animation: bounceIn 0.35s ease-out forwards;
-        }
-      `}</style>
+      {/* ---------- MOBILE + TABLET GRID VERSION (Unchanged) ---------- */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-11/12 max-w-4xl mt-10 lg:hidden">
+        {data.map((item, i) => {
+          const Icon = item.Icon;
+          return (
+            <div
+              key={i}
+              className="bg-[var(--color2)] border border-white/10 rounded-2xl p-6 shadow-lg hover:scale-[1.03] duration-300"
+            >
+              <div className="flex items-center gap-4 mb-3">
+                <span className="text-3xl font-extrabold text-[var(--color5)]">
+                  {item.num}
+                </span>
+                <Icon size={36} className="text-[var(--color5)]" />
+              </div>
+
+              <h4 className="text-xl font-bold text-white mb-1">
+                {item.title}
+              </h4>
+              <p className="text-white/80 text-sm leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 }
