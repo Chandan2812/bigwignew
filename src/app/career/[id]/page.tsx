@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import Nav from "../../../../components/Nav";
 import Footer from "../../../../components/Footer";
 import ApplicationForm from "../../../../components/ApplicationForm";
+import GetInTouch from "../../../../components/GetInTouch";
 
 interface Job {
   _id: string;
@@ -139,7 +140,7 @@ export default function JobDetailsPage() {
           </div>
         </div>
       </div>
-
+      <GetInTouch />
       <Footer />
     </div>
   );

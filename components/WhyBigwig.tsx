@@ -81,7 +81,8 @@ const ParticlesScript = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const particles: any[] = [];
+    const particles: Particle[] = [];
+
     const numParticles = 70;
 
     class Particle {

@@ -234,10 +234,10 @@ export default function Career() {
         <section className="py-12 grid md:grid-cols-2 gap-8 items-center bg-gradient-to-r from-[var(--color2)]/10 to-[var(--color3)]/6 rounded-2xl p-8">
           <div>
             <h3 className="text-xl md:text-2xl font-bold text-[var(--color4)]">
-              Didn't find a role?
+              Didn&#39;t find a role?
             </h3>
             <p className="text-white/70 mt-2">
-              Send your resume and we'll keep it on file for future
+              Send your resume and we&#39;ll keep it on file for future
               opportunities.
             </p>
           </div>
