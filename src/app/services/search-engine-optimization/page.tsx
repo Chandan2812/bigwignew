@@ -21,6 +21,7 @@ import { useState } from "react";
 import Image from "next/image";
 import ButtonFill from "../../../../components/Button";
 import PopupForm from "../../../../components/PopupForm";
+import GetInTouch from "../../../../components/GetInTouch";
 
 const stats = [
   {
@@ -481,83 +482,103 @@ function Seo() {
             Our Other Services
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                label: "Search Engine Optimization",
-                url: "/services/search-engine-optimization",
-              },
-              {
-                label: "Social Media Marketing",
-                url: "/services/social-media-marketing",
-              },
-              {
-                label: "Performance Marketing",
-                url: "/services/performance-marketing",
-              },
-              {
-                label: "Content Marketing",
-                url: "/services/content-marketing",
-              },
-              {
-                label: "Website Designing & Development",
-                url: "/services/website-design-development",
-              },
-              { label: "Email Marketing", url: "/services/email-marketing" },
-              {
-                label: "Social Media Optimization",
-                url: "/services/social-media-optimization",
-              },
-              {
-                label: "Graphic Designing",
-                url: "/services/graphic-designing",
-              },
-              {
-                label: "AI and CGI Marketing",
-                url: "/services/ai-cgi-marketing",
-              },
-              {
-                label: "Landing Page Optimization",
-                url: "/services/landing-page-optimization",
-              },
-              { label: "Video Shoot", url: "/services/video-shoot" },
-              { label: "Public Relations", url: "/services/public-relations" },
-              {
-                label: "Influencer Marketing",
-                url: "/services/influencer-marketing",
-              },
-              {
-                label: "Online Reputation Management",
-                url: "/services/online-reputation-management",
-              },
-            ].map((item, idx) => (
-              <a
-                key={idx}
-                href={item.url}
-                target="blank"
-                className="
-            group relative p-5 rounded-xl 
-            backdrop-blur-xl bg-white/5 
-            border border-white/10 shadow-lg
-            hover:border-[var(--primary-color)] 
-            hover:shadow-[0_0_20px_var(--primary-color)]
-            transition-all duration-300 
-            flex items-center justify-center text-center
-          "
-              >
-                {/* Glow outline */}
-                <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-[var(--primary-color)] transition-all duration-300"></div>
+          {/* TABLE WRAPPER */}
+          <div
+            className="
+        rounded-2xl 
+        overflow-hidden 
+        backdrop-blur-xl bg-white/5 
+        border border-white/10 
+        shadow-[0_0_30px_rgba(0,255,255,0.15)] 
+        relative
+      "
+          >
+            {/* Scan Line */}
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent animate-scan"></div>
 
-                {/* Label text */}
-                <span className="text-base font-semibold text-gray-200 group-hover:text-[var(--primary-color)] transition-colors duration-300">
-                  {item.label}
-                </span>
-              </a>
-            ))}
+            <table className="min-w-full text-sm text-gray-200 relative z-10">
+              <tbody>
+                {[
+                  [
+                    "Search Engine Optimization",
+                    "Social Media Marketing",
+                    "Performance Marketing",
+                  ],
+                  [
+                    "Content Marketing",
+                    "Website Designing & Development",
+                    "Email Marketing",
+                  ],
+                  [
+                    "Social Media Optimization",
+                    "Graphic Designing & Video Editing",
+                    "Influencer Marketing",
+                  ],
+                  ["Online Reputation Management", "", "Affiliate Marketing"],
+                ].map((row, rowIndex) => (
+                  <tr key={rowIndex} className="divide-x divide-white/10">
+                    {row.map((cell, colIndex) => (
+                      <td
+                        key={colIndex}
+                        className="
+                    h-20 
+                    border-b border-white/10 
+                    relative group overflow-hidden
+                  "
+                      >
+                        {cell && (
+                          <a
+                            href={`/services/${cell
+                              .toLowerCase()
+                              .replace(/ /g, "-")
+                              .replace(/\&/g, "and")}`}
+                            target="_blank"
+                            className="
+                        flex items-center justify-center 
+                        w-full h-full px-4 text-center 
+                        font-semibold
+                        text-gray-200
+                        transition-all duration-300
+                        hover:text-[var(--primary-color)]
+                      "
+                          >
+                            {/* Neon card effect */}
+                            <span
+                              className="
+                          absolute inset-0 
+                          rounded-xl 
+                          border border-transparent
+                          group-hover:border-[var(--primary-color)]
+                          group-hover:shadow-[0_0_20px_var(--primary-color)]
+                          transition-all duration-300
+                        "
+                            ></span>
+
+                            <span className="relative z-10">{cell}</span>
+                          </a>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
-      </section>
 
+        {/* Animations */}
+        <style>{`
+    @keyframes scan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-scan {
+      animation: scan 4s linear infinite;
+    }
+  `}</style>
+      </section>
+      <GetInTouch />
       <PopupForm isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
 
       <Footer />

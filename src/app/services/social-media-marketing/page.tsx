@@ -18,6 +18,11 @@ import ContactForm from "../../../../components/ContactForm";
 import { JSX, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
+import ButtonFill from "../../../../components/Button";
+import PopupForm from "../../../../components/PopupForm";
+import { useEffect, useRef } from "react";
+import VanillaTilt from "vanilla-tilt";
+import GetInTouch from "../../../../components/GetInTouch";
 
 const icons: Record<string, JSX.Element> = {
   "Meta Ads": (
@@ -54,11 +59,53 @@ const faqs = [
   },
 ];
 
+const adPlatforms = [
+  {
+    title: "Meta Ads",
+    text: "We create compelling ad campaigns that grab attention and drive action across Facebook and Instagram.",
+  },
+  {
+    title: "LinkedIn Ads",
+    text: "B2B targeting done right. Reach decision-makers with sponsored content & lead-gen forms.",
+  },
+  {
+    title: "TikTok Ads",
+    text: "Engage Gen Z with viral short-form video ads driven by trends and creativity.",
+  },
+  {
+    title: "Snapchat Ads",
+    text: "Target mobile-first audiences with immersive story ads and high-engagement formats.",
+  },
+  {
+    title: "Twitter (X) Ads",
+    text: "Run trending campaigns with precise hashtag, keyword, and interest-based targeting.",
+  },
+  {
+    title: "YouTube Ads",
+    text: "Build brand awareness through skippable, non-skippable, and in-feed video ads.",
+  },
+];
+
 function SocialMediaMarketing() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const tiltRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  useEffect(() => {
+    tiltRefs.current.forEach((card) => {
+      if (card) {
+        VanillaTilt.init(card, {
+          max: 18,
+          speed: 300,
+          glare: true,
+          "max-glare": 0.25,
+          scale: 1.04,
+        });
+      }
+    });
+  }, []);
   return (
-    <div>
+    <div className="bg-[var(--color1)]">
       <title>Social Media Marketing Experts</title>
       <meta
         name="description"
@@ -74,7 +121,7 @@ function SocialMediaMarketing() {
         className="relative bg-cover bg-center bg-no-repeat py-10 px-4"
         style={{ backgroundImage: `url(${hero.src})` }}
       >
-        <div className="bg-black/20 absolute inset-0 z-0" />
+        <div className="bg-black/40 absolute inset-0 z-0" />
 
         <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
@@ -84,7 +131,7 @@ function SocialMediaMarketing() {
             </h1>
 
             <p
-              className="text-2xl md:text-4xl font-semibold text-[#4e6cba]"
+              className="text-2xl md:text-4xl font-semibold text-[var(--color5)]"
               style={{
                 letterSpacing: "0.5px",
               }}
@@ -117,11 +164,11 @@ function SocialMediaMarketing() {
               We’re here to help you grow, scale, and stand out, across every
               major social media platform.
             </p>
-            <a href="/contact">
-              <button className="mt-4 px-6 py-3 bg-[var(--primary-color)] text-white rounded-full font-semibold hover:bg-opacity-80 transition">
-                Contact Us
-              </button>
-            </a>
+
+            <ButtonFill
+              onClick={() => setIsPopupOpen(true)}
+              text="Contact Us"
+            />
           </div>
 
           {/* Right Form */}
@@ -129,16 +176,16 @@ function SocialMediaMarketing() {
         </div>
       </section>
 
-      <section className="py-12 space-y-10 text-black ">
+      <section className="py-12 space-y-10 text-white ">
         {/* Section Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[var(--primary-color)]">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-[var(--color5)]">
           Social Media Marketing Agency in India
         </h2>
 
         {/* Two-column Layout */}
         <div className="w-11/12 md:w-5/6 mx-auto grid md:grid-cols-2 gap-10 items-start">
           {/* Left Content */}
-          <div className="space-y-6 text-md leading-relaxed">
+          <div className="space-y-6 text-md leading-relaxed text-justify">
             <p>
               Social media marketing is the process of leveraging platforms like
               Facebook, Instagram, LinkedIn, and YouTube to build brand
@@ -184,7 +231,16 @@ function SocialMediaMarketing() {
 
         {/* Box goes below */}
         <div className="w-11/12 md:w-5/6 mx-auto">
-          <div className="bg-[var(--primary-color)] text-white p-6 md:p-8 rounded-xl shadow space-y-4">
+          <div
+            className=" relative p-6 rounded-xl overflow-hidden
+        bg-[#0a0f14]/80 border border-[#1e293b]
+        shadow-[0_0_25px_rgba(0,0,0,0.4)]
+        hover:border-[var(--primary-color)]
+        hover:shadow-[0_0_30px_rgba(167,235,242,0.35)]
+        transition-all duration-300"
+          >
+            {/* Matrix background overlay */}
+            <div className="absolute inset-0 opacity-[0.20] pointer-events-none bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen"></div>
             <h3 className="text-2xl font-semibold">
               Why Hiring a Social Media Marketing Agency in India is Essential
               for Business Growth
@@ -212,7 +268,16 @@ function SocialMediaMarketing() {
           </div>
 
           {/* Intro above the table */}
-          <div className="mt-10 bg-[var(--primary-color)] border border-gray-700 rounded-xl p-6 space-y-2">
+          <div
+            className="mt-10  relative p-6 rounded-xl overflow-hidden
+        bg-[#0a0f14]/80 border border-[#1e293b]
+        shadow-[0_0_25px_rgba(0,0,0,0.4)]
+        hover:border-[var(--primary-color)]
+        hover:shadow-[0_0_30px_rgba(167,235,242,0.35)]
+        transition-all duration-300"
+          >
+            {/* Matrix background overlay */}
+            <div className="absolute inset-0 opacity-[0.20] pointer-events-none bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen"></div>
             <h3 className="text-xl md:text-2xl font-semibold text-white">
               Benefits of Hiring a Social Media Marketing Agency in India
             </h3>
@@ -225,230 +290,263 @@ function SocialMediaMarketing() {
           </div>
 
           {/* ✅ Beautiful Comparison Table */}
-          <div className="mt-6  rounded-xl shadow-lg overflow-hidden">
-            <table className="min-w-full text-sm text-black">
-              <thead className="bg-gradient-to-r from-[#0a0f1d] to-[#0f172a] text-white">
-                <tr>
-                  <th className="px-6 py-3 text-left font-semibold">Factor</th>
-                  <th className="px-6 py-3 text-left font-semibold">
+          <div className="mt-10 rounded-2xl overflow-hidden relative shadow-[0_0_25px_rgba(0,255,255,0.15)]">
+            {/* Matrix hologram background */}
+            <div className="absolute inset-0 opacity-[0.06] bg-[url('https://i.imgur.com/2JYwQ7U.gif')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
+
+            {/* Outer glow border */}
+            <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-[var(--primary-color)] transition-all duration-500 pointer-events-none"></div>
+
+            <table className="min-w-full text-sm relative z-10 backdrop-blur-xl">
+              {/* HEADER */}
+              <thead className="bg-gradient-to-r from-[#0d1120] via-[#122033] to-[#0d1120] text-white shadow-[0_0_30px_rgba(0,255,255,0.2)]">
+                <tr className="uppercase tracking-wide text-[var(--primary-color)]">
+                  <th className="px-6 py-4 font-semibold border-r border-cyan-900/40 text-[var(--color5)]">
+                    Factor
+                  </th>
+                  <th className="px-6 py-4 font-semibold border-r border-cyan-900/40 text-[var(--color5)]">
                     In-House Marketing Team
                   </th>
-                  <th className="px-6 py-3 text-left font-semibold">
+                  <th className="px-6 py-4 font-semibold text-[var(--color5)]">
                     Social Media Marketing Agency in India
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
-                <tr>
-                  <td className="px-6 py-4 font-medium">Expertise</td>
-                  <td className="px-6 py-4">
-                    Limited to team’s knowledge and experience
-                  </td>
-                  <td className="px-6 py-4">
-                    Access to specialists with deep expertise across multiple
-                    platforms
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 font-medium">Tools & Technology</td>
-                  <td className="px-6 py-4">
-                    Often rely on basic or free tools
-                  </td>
-                  <td className="px-6 py-4">
-                    Advanced paid tools for analytics, automation, and targeting
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 font-medium">Scalability</td>
-                  <td className="px-6 py-4">
-                    Difficult to scale quickly without adding staff
-                  </td>
-                  <td className="px-6 py-4">
-                    Flexible and scalable campaigns as per business goals
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 font-medium">Cost Efficiency</td>
-                  <td className="px-6 py-4">
-                    Higher long-term costs (salaries, training, tools)
-                  </td>
-                  <td className="px-6 py-4">
-                    More cost-effective with bundled services and expertise
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 font-medium">
-                    Creativity & Innovation
-                  </td>
-                  <td className="px-6 py-4">May face creative limitations</td>
-                  <td className="px-6 py-4">
-                    Fresh, innovative strategies tailored to your brand
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 font-medium">Time Management</td>
-                  <td className="px-6 py-4">Team may juggle multiple roles</td>
-                  <td className="px-6 py-4">
-                    Agency focuses solely on campaign success and ROI
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 font-medium">
-                    Performance Tracking
-                  </td>
-                  <td className="px-6 py-4">Basic reporting and KPIs</td>
-                  <td className="px-6 py-4">
-                    Data-driven insights, A/B testing, and measurable results
-                  </td>
-                </tr>
+
+              {/* BODY */}
+              <tbody className="divide-y divide-cyan-900/30 text-gray-200">
+                {[
+                  [
+                    "Expertise",
+                    "Limited to team’s knowledge and experience",
+                    "Access to specialists with deep multi-platform expertise",
+                  ],
+                  [
+                    "Tools & Technology",
+                    "Often rely on basic or free tools",
+                    "Advanced paid tools for analytics, automation, & targeting",
+                  ],
+                  [
+                    "Scalability",
+                    "Hard to scale without hiring",
+                    "Instant scale-up aligned with business goals",
+                  ],
+                  [
+                    "Cost Efficiency",
+                    "High long-term costs (salary, training, tools)",
+                    "Cost-efficient bundled services",
+                  ],
+                  [
+                    "Creativity & Innovation",
+                    "Internal creative limitations",
+                    "Fresh innovative strategies tailored to your brand",
+                  ],
+                  [
+                    "Time Management",
+                    "Team juggles multiple roles",
+                    "Agency focused on performance & ROI",
+                  ],
+                  [
+                    "Performance Tracking",
+                    "Basic KPIs, limited insights",
+                    "Data-driven insights, A/B tests & measurable results",
+                  ],
+                ].map((row, i) => (
+                  <tr
+                    key={i}
+                    className="transition-all duration-300 hover:bg-cyan-500/10 hover:shadow-[0_0_15px_rgba(0,255,255,0.2)]"
+                  >
+                    <td className="px-6 py-4 font-semibold text-[var(--color5)] border-r border-cyan-900/20">
+                      {row[0]}
+                    </td>
+                    <td className="px-6 py-4 border-r border-cyan-900/20">
+                      {row[1]}
+                    </td>
+                    <td className="px-6 py-4">{row[2]}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
+
+            {/* SCAN LINE ANIMATION */}
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent animate-scan pointer-events-none"></div>
           </div>
         </div>
       </section>
 
-      <section className="py-12 bg-white  text-black ">
+      <section className="py-12  text-black ">
         {/* Section Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[var(--primary-color)] mb-12">
-          our main social media advertising services in India
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-[var(--color5)] mb-12">
+          Our main social media advertising services in India
         </h2>
 
-        <div className="w-11/12 md:w-5/6 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
-          {[
-            {
-              title: "Meta Ads",
-              text: "We create compelling ad campaigns that grab attention and drive action across Facebook and Instagram. Perfect for eCommerce, D2C, and lead-gen brands.",
-            },
-            {
-              title: "LinkedIn Ads",
-              text: "B2B targeting done right. From sponsored content to lead-gen forms, we help you connect with decision-makers on the world’s largest professional network.",
-            },
-            {
-              title: "TikTok Ads",
-              text: "Engage Gen Z and young adults with short-form video ads that are creative, impactful, and trend-driven.",
-            },
-            {
-              title: "Snapchat Ads",
-              text: "Reach highly engaged, mobile-first users through immersive video and story-based ad formats.",
-            },
-            {
-              title: "Twitter (X) Ads",
-              text: "Launch trending campaigns, promote tweets, or generate traffic with precise keyword, hashtag, and interest-based targeting.",
-            },
-            {
-              title: "YouTube Ads",
-              text: "Build awareness and engagement with skippable, non-skippable, and in-feed video ads. Perfect for brand storytelling and video-first funnels.",
-            },
-          ].map((item, i) => (
+        <div className="w-11/12 md:w-5/6 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto relative">
+          {/* MATRIX BACKGROUND */}
+          <div className="absolute inset-0 opacity-[0.05] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764576928/23148_rqpqvq.jpg')] bg-cover bg-center pointer-events-none mix-blend-screen"></div>
+
+          {adPlatforms.map((item, i) => (
             <div
               key={i}
-              className="border-l-4 border-[var(--primary-color)] rounded-xl p-6 shadow hover:shadow-lg transition-all duration-300"
+              ref={(el: HTMLDivElement | null) => {
+                tiltRefs.current[i] = el;
+              }}
+              className="
+            relative group p-6 rounded-xl
+            backdrop-blur-xl bg-white/5
+            border border-white/10 shadow-xl
+            hover:shadow-[0_0_25px_var(--primary-color)]
+            transition-all duration-300 cursor-pointer
+          "
             >
-              <div className="flex items-center justify-between mb-2">
-                <h4 className="text-xl font-semibold text-[var(--primary-color)]">
-                  {item.title}
-                </h4>
-                <div className="text-2xl">{icons[item.title]}</div>
+              {/* Outer Neon Border Glow */}
+              <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-[var(--primary-color)] transition-all duration-300"></div>
+
+              {/* Inner Glow Line */}
+              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[var(--primary-color)]/0 via-[var(--primary-color)] to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+
+              {/* MATRIX HOLOGRAM OVERLAY */}
+              <div className="absolute inset-0 opacity-[0.22] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764576928/23148_rqpqvq.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
+
+              {/* Content */}
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="text-xl font-semibold text-[var(--primary-color)] tracking-wide group-hover:drop-shadow-[0_0_6px_var(--primary-color)] transition">
+                    {item.title}
+                  </h4>
+
+                  <div className="text-3xl text-[var(--primary-color)] group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_6px_var(--primary-color)]">
+                    {icons[item.title]}
+                  </div>
+                </div>
+
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  {item.text}
+                </p>
               </div>
-              <p className="text-sm text-gray-700 ">{item.text}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Why Choose Section */}
-      <section className="w-11/12 md:w-5/6 mx-auto py-12 space-y-10">
-        <div className="space-y-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)]">
-            Why choose BigWig Media Digital for social media marketing in India
-          </h2>
-          <p className="text-lg text-gray-800  leading-relaxed">
-            Choosing the right social media marketing agency in India can make
-            all the difference in your brand’s growth. At BigWig Media Digital,
-            we don’t just run campaigns—we craft data-driven strategies designed
-            for conversions and measurable ROI.
-          </p>
+      <section className="w-11/12 md:w-5/6 mx-auto py-16 space-y-14 relative">
+        {/* Matrix Cyber Background */}
+        <div className="absolute inset-0 opacity-[0.16]  mix-blend-screen pointer-events-none"></div>
 
-          <ul className="list-disc pl-6 space-y-2 text-gray-800  text-base md:text-lg">
-            <li>
-              <span className="text-[var(--primary-color)]">
-                Platform-Specific Expertise:
-              </span>{" "}
-              Each platform has its own algorithm, ad types, and targeting
-              rules. We build custom campaigns designed to get the most out of
-              each channel.
-            </li>
-            <li>
-              <span className="text-[var(--primary-color)]">
-                Creative + Strategy:
-              </span>{" "}
-              We blend eye-catching visuals, persuasive copy, and clear CTAs
-              with data-backed targeting strategies that deliver clicks and
-              conversions.
-            </li>
-            <li>
-              <span className="text-[var(--primary-color)]">
-                Conversion-Focused Funnels:
-              </span>{" "}
-              From awareness to retargeting, we build full-funnel ad strategies
-              that nurture leads and drive purchases.
-            </li>
-            <li>
-              <span className="text-[var(--primary-color)]">
-                Transparent Reporting & Optimization:
-              </span>{" "}
-              We track what matters CPC, CTR, ROAS, CPL and optimize every week
-              to improve performance.
-            </li>
-            <li>
-              <span className="text-[var(--primary-color)]">
-                Budget-Friendly Scaling:
-              </span>{" "}
-              Whether you’re starting with ₹5,000 or scaling up to ₹5 lakhs, we
-              help you make the most of your budget without compromising
-              performance.
-            </li>
-          </ul>
-        </div>
+        {/* MAIN CONTAINER */}
+        <div className="relative z-10 space-y-8">
+          {/* Title + Paragraph (inside capsule) */}
+          <div
+            className="
+      rounded-full 
+      bg-white/5 
+      backdrop-blur-xl  
+      border border-white/10 
+      shadow-[0_0_25px_rgba(0,255,255,0.15)] 
+      p-8 md:p-10
+      space-y-6
+    "
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)]">
+              Why choose BigWig Media Digital for social media marketing in
+              India
+            </h2>
 
-        {/* What You Get Section */}
-        <div className="space-y-6">
-          <h3 className="text-2xl font-semibold text-[var(--primary-color)]">
-            What You Get with Our Social Media Ad Management
-          </h3>
+            <p className="text-lg text-gray-200 leading-relaxed">
+              Choosing the right social media marketing agency in India can make
+              all the difference in your brand’s growth. At BigWig Media
+              Digital, we don’t just run campaigns—we craft data-driven
+              strategies designed for conversions.
+            </p>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-gray-800 text-base">
-            {[
-              "Campaign strategy and funnel design",
-              "Audience research and targeting setup",
-              "Ad creative (copy + visuals)",
-              "A/B testing of creatives and copy",
-              "Pixel and conversion tracking",
-              "Weekly reporting and performance analysis",
-              "Ongoing optimization and scaling",
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-2">
-                <svg
-                  className="w-5 h-5 mt-1 text-[var(--primary-color)] shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
+            {/* FUTURISTIC BULLET LIST */}
+            <ul className="space-y-4 text-gray-200 text-base md:text-lg">
+              {[
+                [
+                  "Platform-Specific Expertise:",
+                  "Custom campaigns based on platform algorithms, ad types & rules.",
+                ],
+                [
+                  "Creative + Strategy:",
+                  "Eye-catching visuals + persuasive copy + data-backed targeting.",
+                ],
+                [
+                  "Conversion-Focused Funnels:",
+                  "Full-funnel strategy from awareness to purchase.",
+                ],
+                [
+                  "Transparent Reporting & Optimization:",
+                  "Track CPC, CTR, ROAS, CPL with weekly optimization.",
+                ],
+                [
+                  "Budget-Friendly Scaling:",
+                  "Scale from ₹5,000 to ₹5,00,000 with maximum performance.",
+                ],
+              ].map((item, i) => (
+                <li key={i} className="flex gap-3">
+                  <div className="w-3 h-3 mt-2 rounded-full bg-[var(--primary-color)] shadow-[0_0_10px_var(--primary-color)]"></div>
+                  <span>
+                    <span className="text-[var(--primary-color)] font-semibold">
+                      {item[0]}
+                    </span>{" "}
+                    {item[1]}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* WHAT YOU GET SECTION */}
+          <div className="space-y-8">
+            <h3 className="text-2xl font-semibold text-[var(--primary-color)] tracking-wide drop-shadow-[0_0_10px_var(--primary-color)]">
+              What You Get with Our Social Media Ad Management
+            </h3>
+
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {[
+                "Campaign strategy and funnel design",
+                "Audience research and targeting setup",
+                "Ad creative (copy + visuals)",
+                "A/B testing of creatives and copy",
+                "Pixel and conversion tracking",
+                "Weekly reporting and performance analysis",
+                "Ongoing optimization and scaling",
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="
+              group flex items-center gap-3 
+              p-4 rounded-full 
+              bg-white/5 backdrop-blur-xl 
+              border border-white/10 
+              hover:border-[var(--primary-color)] 
+              shadow-md hover:shadow-[0_0_20px_var(--primary-color)]
+              transition-all duration-300
+            "
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 011.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>{item}</span>
-              </div>
-            ))}
+                  <svg
+                    className="w-6 h-6 text-[var(--primary-color)] group-hover:scale-110 transition-transform"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 011.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span className="text-gray-200">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
       {/* FAQ Section */}
-      <section className="bg-gray-50 py-12">
+      <section className=" py-12">
         <div className="w-11/12 md:w-5/6 mx-auto space-y-10">
-          <h2 className="text-3xl md:text-3xl font-bold text-[var(--primary-color)] text-center">
+          <h2 className="text-3xl md:text-3xl font-bold text-[var(--color5)] text-center">
             Frequently Asked Questions (FAQs) – Social Media Marketing Agency in
             India
           </h2>
@@ -457,24 +555,24 @@ function SocialMediaMarketing() {
             {faqs.map((item, index) => (
               <div
                 key={index}
-                className="border border-gray-200 rounded-lg shadow-sm bg-white"
+                className="border border-gray-200 rounded-lg shadow-sm "
               >
                 <button
-                  className="flex justify-between items-center w-full p-4 text-left text-gray-900 font-medium focus:outline-none"
+                  className="flex justify-between items-center w-full p-4 text-left text-white font-medium focus:outline-none"
                   onClick={() =>
                     setOpenIndex(openIndex === index ? null : index)
                   }
                 >
                   <span>{item.q}</span>
                   {openIndex === index ? (
-                    <ChevronUp className="w-5 h-5 text-gray-500" />
+                    <ChevronUp className="w-5 h-5 text-gray-200" />
                   ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-500" />
+                    <ChevronDown className="w-5 h-5 text-gray-200" />
                   )}
                 </button>
 
                 {openIndex === index && (
-                  <div className="p-4 pt-0 text-gray-700">{item.a}</div>
+                  <div className="p-4 pt-0 text-gray-200">{item.a}</div>
                 )}
               </div>
             ))}
@@ -482,101 +580,134 @@ function SocialMediaMarketing() {
         </div>
       </section>
       {/* Services Table Section */}
-      <section className="bg-white py-12">
-        <div className="w-11/12 md:w-5/6 mx-auto space-y-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)] text-center">
+      <section className="py-20 relative overflow-hidden">
+        {/* Matrix glow background */}
+        <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
+
+        <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--primary-color)]">
             Our Other Services
           </h2>
 
-          <div className="overflow-x-auto rounded-xl shadow-lg">
-            <table className="w-full table-auto border border-gray-300 border-collapse text-center">
+          {/* TABLE WRAPPER */}
+          <div
+            className="
+        rounded-2xl 
+        overflow-hidden 
+        backdrop-blur-xl bg-white/5 
+        border border-white/10 
+        shadow-[0_0_30px_rgba(0,255,255,0.15)] 
+        relative
+      "
+          >
+            {/* Scan Line */}
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent animate-scan"></div>
+
+            <table className="min-w-full text-sm text-gray-200 relative z-10">
               <tbody>
-                <tr className="">
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600  hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/search-engine-optimization">
-                      Search Engine Optimization
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600  hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/social-media-marketing">
-                      Social Media Marketing
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600  hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/performance-marketing">
-                      Performance Marketing
-                    </a>
-                  </td>
-                </tr>
+                {[
+                  [
+                    "Search Engine Optimization",
+                    "Social Media Marketing",
+                    "Performance Marketing",
+                  ],
+                  [
+                    "Content Marketing",
+                    "Website Designing & Development",
+                    "Email Marketing",
+                  ],
+                  [
+                    "Social Media Optimization",
+                    "Graphic Designing & Video Editing",
+                    "Influencer Marketing",
+                  ],
+                  ["Online Reputation Management", "", "Affiliate Marketing"],
+                ].map((row, rowIndex) => (
+                  <tr key={rowIndex} className="divide-x divide-white/10">
+                    {row.map((cell, colIndex) => (
+                      <td
+                        key={colIndex}
+                        className="
+                    h-20 
+                    border-b border-white/10 
+                    relative group overflow-hidden
+                  "
+                      >
+                        {cell && (
+                          <a
+                            href={`/services/${cell
+                              .toLowerCase()
+                              .replace(/ /g, "-")
+                              .replace(/\&/g, "and")}`}
+                            target="_blank"
+                            className="
+                        flex items-center justify-center 
+                        w-full h-full px-4 text-center 
+                        font-semibold
+                        text-gray-200
+                        transition-all duration-300
+                        hover:text-[var(--primary-color)]
+                      "
+                          >
+                            {/* Neon card effect */}
+                            <span
+                              className="
+                          absolute inset-0 
+                          rounded-xl 
+                          border border-transparent
+                          group-hover:border-[var(--primary-color)]
+                          group-hover:shadow-[0_0_20px_var(--primary-color)]
+                          transition-all duration-300
+                        "
+                            ></span>
 
-                <tr>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/content-marketing">Content Marketing</a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/website-design-development">
-                      Website Designing & Development
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/email-marketing">Email Marketing</a>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/social-media-optimization">
-                      Social Media Optimization
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/graphic-designing">Graphic Designing</a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/ai-cgi-marketing">
-                      AI and CGI Marketing
-                    </a>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/landing-page-optimization">
-                      Landing Page Optimization
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/video-shoot">Video Shoot</a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/public-relations">Public Relations</a>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/influencer-marketing">
-                      Influencer Marketing
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300"></td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/online-reputation-management">
-                      Online Reputation Management
-                    </a>
-                  </td>
-                </tr>
+                            <span className="relative z-10">{cell}</span>
+                          </a>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
         </div>
+
+        {/* Animations */}
+        <style>{`
+    @keyframes scan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-scan {
+      animation: scan 4s linear infinite;
+    }
+  `}</style>
       </section>
 
       <OurProcess />
       <WhyBigwig />
+      <GetInTouch />
       <Footer />
     </div>
   );
 }
 
 export default SocialMediaMarketing;
+
+{
+  /* Animations */
+}
+<style>
+  {`
+@keyframes scan {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+.animate-scan {
+  animation: scan 5s linear infinite;
+}
+`}
+</style>;
