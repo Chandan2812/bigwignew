@@ -283,8 +283,8 @@ social media, performance marketing, content, and web design to help brands grow
 
               <p className="text-gray-300 leading-relaxed">
                 Across industries like lifestyle, tech, hospitality, and
-                e-commerce, we've helped brands grow visibility, engagement, and
-                revenue through innovative digital solutions.
+                e-commerce, we&#39;ve helped brands grow visibility, engagement,
+                and revenue through innovative digital solutions.
               </p>
 
               <p className="text-gray-300 leading-relaxed">
