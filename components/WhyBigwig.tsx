@@ -145,12 +145,12 @@ const WhyBigwig: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative py-20 px-4 overflow-hidden">
+    <section className="relative py-12 px-4 overflow-hidden">
       {/* PARTICLES CANVAS */}
       <canvas id="particles-canvas" className="absolute inset-0"></canvas>
 
       {/* Title */}
-      <h2 className="text-center text-4xl md:text-5xl font-extrabold mb-14 text-[var(--color5)] tracking-wide drop-shadow-[0_0_12px_var(--primary-color)]">
+      <h2 className="text-center text-3xl md:text-4xl font-bold mb-14 text-[var(--color5)] tracking-wide drop-shadow-[0_0_12px_var(--primary-color)]">
         Why BigWig Media Digital
       </h2>
 
