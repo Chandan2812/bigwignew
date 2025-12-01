@@ -23,6 +23,7 @@ import ContactForm from "../../../../components/ContactForm";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
+import ButtonFill from "../../../../components/Button";
 
 const ppcBenefits = [
   {
@@ -165,9 +166,10 @@ const featureSettings = {
 
 function PerformanceMarketing() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   return (
-    <div>
+    <div className="bg-[var(--color1)]">
       <title>ROI-Driven Performance Marketing</title>
       <meta
         name="description"
@@ -193,7 +195,7 @@ function PerformanceMarketing() {
             </h1>
 
             <p
-              className="text-3xl md:text-4xl font-semibold flex items-center gap-2 text-[#4e6cba]"
+              className="text-3xl md:text-4xl font-semibold flex items-center gap-2 text-[var(--color5)]"
               style={{
                 textShadow: "0 2px 6px rgba(0,0,0,0.6)",
                 letterSpacing: "0.5px",
@@ -211,11 +213,10 @@ function PerformanceMarketing() {
             <p className="text-base md:text-lg max-w-md text-white/90">
               Turn Clicks into Customers with Our ROI-Focused PPC Campaigns
             </p>
-            <a href="/contact">
-              <button className="mt-4 px-6 py-3 bg-[var(--primary-color)] text-white rounded-full font-semibold hover:bg-opacity-80 transition">
-                Contact Us
-              </button>
-            </a>
+            <ButtonFill
+              onClick={() => setIsPopupOpen(true)}
+              text="Contact Us"
+            />
           </div>
 
           {/* Right Form */}
@@ -223,14 +224,14 @@ function PerformanceMarketing() {
         </div>
       </section>
 
-      <section className="bg-white text-black  py-12">
+      <section className=" text-white  py-12">
         <div className="w-11/12 md:w-5/6 mx-auto space-y-20">
           {/* Intro */}
 
           <div className="grid md:grid-cols-2 gap-10 items-center">
             {/* Left Content */}
             <div className="space-y-6 text-center md:text-left">
-              <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)]">
+              <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)]">
                 Best PPC Company in India
               </h2>
               <p className="text-lg leading-relaxed text-justify md:text-left">
@@ -274,7 +275,7 @@ function PerformanceMarketing() {
 
           {/* Why Choose Us */}
           <div className="space-y-6">
-            <h3 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)] text-center">
+            <h3 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center">
               Why Choose BigWig Media Digital – The Best PPC Company in India
               for Your Business?
             </h3>
@@ -300,21 +301,75 @@ function PerformanceMarketing() {
               {features.map((item, i) => (
                 <div
                   key={i}
-                  className="bg-white  border-l-4 border-[var(--primary-color)] p-6 rounded-xl shadow"
+                  className="
+        relative p-6 rounded-xl
+        backdrop-blur-xl bg-white/5 
+        border border-white/10 
+        shadow-[0_0_20px_rgba(0,255,255,0.15)]
+        hover:shadow-[0_0_25px_var(--primary-color)]
+        hover:border-[var(--primary-color)]
+        transition-all duration-300
+        overflow-hidden group
+      "
                 >
-                  <h4 className="text-lg font-semibold mb-2 text-[var(--primary-color)]">
-                    {item.title}
-                  </h4>
-                  <p className="text-sm text-gray-700 ">{item.text}</p>
+                  {/* Neon scan lines */}
+                  <div className="absolute inset-0 pointer-events-none opacity-40">
+                    {[...Array(5)].map((_, idx) => (
+                      <div
+                        key={idx}
+                        className="
+              absolute left-0 w-full h-[2px]
+              bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+              animate-scanLine
+            "
+                        style={{
+                          top: `${20 + idx * 35}px`,
+                          animationDelay: `${idx * 0.25}s`,
+                        }}
+                      ></div>
+                    ))}
+                  </div>
+
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <h4 className="text-lg font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)]">
+                      {item.title}
+                    </h4>
+                    <p className="text-sm text-gray-200 leading-relaxed">
+                      {item.text}
+                    </p>
+                  </div>
+
+                  {/* Glow border */}
+                  <div
+                    className="
+        absolute inset-0 rounded-xl 
+        border border-transparent 
+        group-hover:border-[var(--primary-color)]
+        transition-all duration-300
+      "
+                  ></div>
                 </div>
               ))}
+
+              {/* Neon animation */}
+              <style>{`
+    @keyframes scanLine {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-scanLine {
+      animation: scanLine 3s linear infinite;
+    }
+  `}</style>
             </div>
           </div>
 
           {/* Our Team */}
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-[var(--primary-color)]">
+              <h3 className="text-2xl font-semibold text-[var(--color5)]">
                 Dedicated PPC Experts for Your Business Growth
               </h3>
               <p className="text-lg leading-relaxed">
@@ -342,7 +397,7 @@ function PerformanceMarketing() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center text-black ">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
               {[
                 { icon: <FaSearchDollar />, label: "Search Advertising" },
                 {
@@ -356,14 +411,62 @@ function PerformanceMarketing() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center gap-2 p-6 border border-gray-200  shadow-md rounded-xl bg-white "
+                  className="
+        relative p-6 rounded-xl
+        backdrop-blur-xl bg-white/5
+        border border-white/10 
+        shadow-[0_0_20px_rgba(0,255,255,0.15)]
+        hover:shadow-[0_0_25px_var(--primary-color)]
+        hover:border-[var(--primary-color)]
+        transition-all duration-300 
+        flex flex-col items-center justify-center gap-3
+        text-gray-200 overflow-hidden group
+      "
                 >
-                  <div className="text-[var(--primary-color)] text-3xl">
+                  {/* Floating neon scan lines */}
+                  <div className="absolute inset-0 pointer-events-none opacity-40">
+                    {[...Array(4)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="
+              absolute left-0 w-full h-[2px]
+              bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+              animate-scanLine
+            "
+                        style={{
+                          top: `${25 + i * 35}px`,
+                          animationDelay: `${i * 0.3}s`,
+                        }}
+                      ></div>
+                    ))}
+                  </div>
+
+                  {/* Icon */}
+                  <div className="text-[var(--primary-color)] text-4xl drop-shadow-[0_0_10px_var(--primary-color)] group-hover:scale-110 transition-transform duration-300">
                     {item.icon}
                   </div>
-                  <span className="text-lg font-medium">{item.label}</span>
+
+                  {/* Label */}
+                  <span className="text-lg font-medium group-hover:text-[var(--primary-color)] transition-colors duration-300">
+                    {item.label}
+                  </span>
+
+                  {/* Glow border */}
+                  <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-[var(--primary-color)] transition-all duration-300"></div>
                 </div>
               ))}
+
+              {/* Scan Line Animation */}
+              <style>{`
+    @keyframes scanLine {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-scanLine {
+      animation: scanLine 3.5s linear infinite;
+    }
+  `}</style>
             </div>
           </div>
         </div>
@@ -371,7 +474,7 @@ function PerformanceMarketing() {
 
       <section className="bg-gray py-12">
         <div className="w-11/12 md:w-5/6 mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-[var(--primary-color)]">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-[var(--color5)]">
             Benefits of PPC Services in India for Your Business
           </h2>
           {/* Mobile View: Slider */}
@@ -396,49 +499,164 @@ function PerformanceMarketing() {
             {ppcBenefits.map((benefit, index) => (
               <div
                 key={index}
-                className="relative bg-white rounded-2xl shadow-lg border-l-4 border-[var(--primary-color)] p-6 pl-6"
+                className="
+        relative 
+        rounded-2xl p-6
+        backdrop-blur-xl bg-white/5
+        border border-white/10 
+        shadow-[0_0_25px_rgba(0,255,255,0.15)]
+        hover:border-[var(--primary-color)]
+        hover:shadow-[0_0_25px_var(--primary-color)]
+        transition-all duration-300 
+        overflow-hidden group
+      "
               >
-                <h3 className="text-lg font-semibold mb-2 text-[var(--primary-color)]">
+                {/* Neon scanning lines */}
+                <div className="absolute inset-0 pointer-events-none opacity-40">
+                  {[...Array(6)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="
+              absolute left-0 w-full h-[2px]
+              bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+              animate-scanBenefit
+            "
+                      style={{
+                        top: `${25 + i * 35}px`,
+                        animationDelay: `${i * 0.25}s`,
+                      }}
+                    ></div>
+                  ))}
+                </div>
+
+                {/* Content */}
+                <h3 className="text-lg font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)] relative z-10">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-700  text-sm leading-relaxed">
+
+                <p className="text-gray-200 text-sm leading-relaxed relative z-10">
                   {benefit.content}
                 </p>
+
+                {/* Glow border */}
+                <div
+                  className="
+        absolute inset-0 
+        rounded-2xl 
+        border border-transparent 
+        group-hover:border-[var(--primary-color)]
+        transition-all duration-300
+      "
+                ></div>
               </div>
             ))}
+
+            {/* Animation */}
+            <style>{`
+    @keyframes scanBenefit {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-scanBenefit {
+      animation: scanBenefit 3.2s linear infinite;
+    }
+  `}</style>
           </div>
         </div>
       </section>
-      <section className="py-12 bg-white text-black">
-        <div className="w-11/12 md:w-5/6 mx-auto space-y-10">
-          <h2 className="text-3xl font-bold text-center text-[var(--primary-color)]">
-            How is PPC Service Helpful for New Business?
-          </h2>
+      <section className="py-16 relative overflow-hidden">
+        {/* Matrix / Cyber Glow Background */}
+        <div className="absolute inset-0 opacity-[0.15] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
 
-          <div className="space-y-6 leading-relaxed text-lg ">
-            <p>
-              Following PPC promotion, a business can receive immediate results
-              in a matter of seconds. Compared to SEO or SMO services, PPC
-              services drive traffic to a website considerably more quickly.
-              Either way, it&#39;s an inorganic or paid service. Each time the
-              advertisement is clicked, we must pay. Clicks, appearances, lead
-              generation, app installs, and many more actions can be considered
-              activities.
-            </p>
+        <div className="w-11/12 md:w-5/6 mx-auto space-y-10 relative z-10">
+          {/* Title Capsule */}
+          <div
+            className="
+        w-fit mx-auto px-8 py-3 rounded-full 
+        backdrop-blur-xl bg-white/10 
+        border border-white/20
+        shadow-[0_0_20px_rgba(0,255,255,0.25)]
+      "
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-[var(--color5)] tracking-wide drop-shadow-[0_0_10px_var(--primary-color)]">
+              How is PPC Service Helpful for New Business?
+            </h2>
+          </div>
 
-            <p>
-              The PPC sector is quite competitive. Managing many specialized
-              components is part of PPC. These focus elements can be obtained by
-              downgrading a dedicated PPC company for PPC management and
-              organization work promotion.
-            </p>
+          {/* Main Content Container */}
+          <div
+            className="
+        relative p-8 md:p-10 rounded-2xl 
+        backdrop-blur-xl bg-white/5 
+        border border-white/10
+        shadow-[0_0_30px_rgba(0,255,255,0.15)]
+        overflow-hidden
+      "
+          >
+            {/* Neon scan lines inside content */}
+            <div className="absolute inset-0 pointer-events-none opacity-40">
+              {[...Array(7)].map((_, i) => (
+                <div
+                  key={i}
+                  className="
+              absolute left-0 w-full h-[2px]
+              bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+              animate-scanSlow
+            "
+                  style={{
+                    top: `${50 + i * 45}px`,
+                    animationDelay: `${i * 0.25}s`,
+                  }}
+                ></div>
+              ))}
+            </div>
+
+            {/* Content */}
+            <div className="relative z-10 space-y-6 text-lg text-gray-200 leading-relaxed">
+              <p>
+                PPC advertising gives businesses{" "}
+                <span className="text-[var(--color5)] font-semibold drop-shadow-[0_0_8px_var(--primary-color)]">
+                  instant visibility and immediate results
+                </span>
+                . Unlike SEO or SMO, PPC delivers targeted visitors within
+                minutes of launching a campaign. Since it is a paid strategy,
+                every click counts and contributes to measurable outcomes such
+                as clicks, impressions, leads, sales, app installs, and more.
+              </p>
+
+              <p>
+                The PPC domain is competitive and requires deep expertise.
+                Successful PPC involves{" "}
+                <span className="text-[var(--color5)]  font-semibold">
+                  campaign structure, keyword research, bidding strategy,
+                  audience design, landing page optimization, creative testing
+                </span>{" "}
+                and continuous performance adjustments. Partnering with a
+                dedicated PPC agency ensures every component is correctly
+                optimized to maximize ROI and prevent wasted spend.
+              </p>
+            </div>
           </div>
         </div>
+
+        {/* Animations */}
+        <style>{`
+    @keyframes scanSlow {
+      0% { transform: translateX(-100%); opacity: 0; }
+      60% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-scanSlow {
+      animation: scanSlow 4.5s linear infinite;
+    }
+  `}</style>
       </section>
+
       {/* FAQ Section */}
-      <section className="bg-gray-50 py-12">
+      <section className=" py-12">
         <div className="w-11/12 md:w-5/6 mx-auto space-y-10">
-          <h2 className="text-3xl md:text-3xl font-bold text-[var(--primary-color)] text-center">
+          <h2 className="text-3xl md:text-3xl font-bold text-[var(--color5)] text-center">
             Frequently Asked Questions (FAQs) – Social Media Marketing Agency in
             India
           </h2>
@@ -447,24 +665,24 @@ function PerformanceMarketing() {
             {faqs.map((item, index) => (
               <div
                 key={index}
-                className="border border-gray-200 rounded-lg shadow-sm bg-white"
+                className="border border-gray-200 rounded-lg shadow-sm "
               >
                 <button
-                  className="flex justify-between items-center w-full p-4 text-left text-gray-900 font-medium focus:outline-none"
+                  className="flex justify-between items-center w-full p-4 text-left text-white font-medium focus:outline-none"
                   onClick={() =>
                     setOpenIndex(openIndex === index ? null : index)
                   }
                 >
                   <span>{item.q}</span>
                   {openIndex === index ? (
-                    <ChevronUp className="w-5 h-5 text-gray-500" />
+                    <ChevronUp className="w-5 h-5 text-gray-200" />
                   ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-500" />
+                    <ChevronDown className="w-5 h-5 text-gray-200" />
                   )}
                 </button>
 
                 {openIndex === index && (
-                  <div className="p-4 pt-0 text-gray-700">{item.a}</div>
+                  <div className="p-4 pt-0 text-gray-200">{item.a}</div>
                 )}
               </div>
             ))}
@@ -472,94 +690,110 @@ function PerformanceMarketing() {
         </div>
       </section>
       {/* Services Table Section */}
-      <section className="bg-white py-12">
-        <div className="w-11/12 md:w-5/6 mx-auto space-y-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)] text-center">
+      <section className="py-20 relative overflow-hidden">
+        {/* Matrix glow background */}
+        <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
+
+        <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--primary-color)]">
             Our Other Services
           </h2>
 
-          <div className="overflow-x-auto rounded-xl shadow-lg">
-            <table className="w-full table-auto border border-gray-300 border-collapse text-center">
+          {/* TABLE WRAPPER */}
+          <div
+            className="
+        rounded-2xl 
+        overflow-hidden 
+        backdrop-blur-xl bg-white/5 
+        border border-white/10 
+        shadow-[0_0_30px_rgba(0,255,255,0.15)] 
+        relative
+      "
+          >
+            {/* Scan Line */}
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent animate-scan"></div>
+
+            <table className="min-w-full text-sm text-gray-200 relative z-10">
               <tbody>
-                <tr className="">
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600  hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/search-engine-optimization">
-                      Search Engine Optimization
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600  hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/social-media-marketing">
-                      Social Media Marketing
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600  hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/performance-marketing">
-                      Performance Marketing
-                    </a>
-                  </td>
-                </tr>
+                {[
+                  [
+                    "Search Engine Optimization",
+                    "Social Media Marketing",
+                    "Performance Marketing",
+                  ],
+                  [
+                    "Content Marketing",
+                    "Website Designing & Development",
+                    "Email Marketing",
+                  ],
+                  [
+                    "Social Media Optimization",
+                    "Graphic Designing & Video Editing",
+                    "Influencer Marketing",
+                  ],
+                  ["Online Reputation Management", "", "Affiliate Marketing"],
+                ].map((row, rowIndex) => (
+                  <tr key={rowIndex} className="divide-x divide-white/10">
+                    {row.map((cell, colIndex) => (
+                      <td
+                        key={colIndex}
+                        className="
+                    h-20 
+                    border-b border-white/10 
+                    relative group overflow-hidden
+                  "
+                      >
+                        {cell && (
+                          <a
+                            href={`/services/${cell
+                              .toLowerCase()
+                              .replace(/ /g, "-")
+                              .replace(/\&/g, "and")}`}
+                            target="_blank"
+                            className="
+                        flex items-center justify-center 
+                        w-full h-full px-4 text-center 
+                        font-semibold
+                        text-gray-200
+                        transition-all duration-300
+                        hover:text-[var(--primary-color)]
+                      "
+                          >
+                            {/* Neon card effect */}
+                            <span
+                              className="
+                          absolute inset-0 
+                          rounded-xl 
+                          border border-transparent
+                          group-hover:border-[var(--primary-color)]
+                          group-hover:shadow-[0_0_20px_var(--primary-color)]
+                          transition-all duration-300
+                        "
+                            ></span>
 
-                <tr>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/content-marketing">Content Marketing</a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/website-design-development">
-                      Website Designing & Development
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/email-marketing">Email Marketing</a>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/social-media-optimization">
-                      Social Media Optimization
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/graphic-designing">Graphic Designing</a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/ai-cgi-marketing">
-                      AI and CGI Marketing
-                    </a>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/landing-page-optimization">
-                      Landing Page Optimization
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/video-shoot">Video Shoot</a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/public-relations">Public Relations</a>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/influencer-marketing">
-                      Influencer Marketing
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300"></td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/online-reputation-management">
-                      Online Reputation Management
-                    </a>
-                  </td>
-                </tr>
+                            <span className="relative z-10">{cell}</span>
+                          </a>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
         </div>
+
+        {/* Animations */}
+        <style>{`
+    @keyframes scan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-scan {
+      animation: scan 4s linear infinite;
+    }
+  `}</style>
       </section>
       <OurProcess />
 

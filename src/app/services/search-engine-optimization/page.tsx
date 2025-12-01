@@ -249,13 +249,8 @@ function Seo() {
             {stats.map((item, i) => (
               <div
                 key={i}
-                className="
-          group relative overflow-hidden rounded-2xl p-6 
-          backdrop-blur-md bg-white/10 border border-white/20 
-          shadow-[0_0_20px_rgba(167,235,242,0.3)]
-          hover:shadow-[0_0_35px_rgba(167,235,242,0.6)]
-          transition-all duration-300
-        "
+                className="group relative overflow-hidden rounded-2xl p-6 backdrop-blur-md bg-white/10 border border-white/20 shadow-[0_0_20px_rgba(167,235,242,0.3)] hover:shadow-[0_0_35px_rgba(167,235,242,0.6)] transition-all duration-300
+               "
               >
                 {/* Glow gradient line */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-[#A7EBF260] to-transparent"></div>
@@ -356,12 +351,12 @@ function Seo() {
               <div
                 key={index}
                 className="
-        relative p-6 rounded-xl overflow-hidden
-        bg-[#0a0f14]/80 border border-[#1e293b]
-        shadow-[0_0_25px_rgba(0,0,0,0.4)]
-        hover:border-[var(--primary-color)]
-        hover:shadow-[0_0_30px_rgba(167,235,242,0.35)]
-        transition-all duration-300
+                relative p-6 rounded-xl overflow-hidden
+                bg-[#0a0f14]/80 border border-[#1e293b]
+                shadow-[0_0_25px_rgba(0,0,0,0.4)]
+                hover:border-[var(--primary-color)]
+                hover:shadow-[0_0_30px_rgba(167,235,242,0.35)]
+                transition-all duration-300
       "
               >
                 {/* Matrix background overlay */}
