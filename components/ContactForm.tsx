@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import axios from "axios";
+import ButtonFill from "./Button"; // <-- import your component
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -76,6 +77,7 @@ const ContactForm = () => {
         {step === "done" ? "Thank You!" : "Get in Touch"}
       </h3>
 
+      {/* ---------------- FORM STEP ---------------- */}
       {step === "form" && (
         <form onSubmit={handleFormSubmit} className="space-y-4">
           <input
@@ -114,16 +116,16 @@ const ContactForm = () => {
             onChange={handleChange}
             className="w-full px-4 py-2 rounded border border-white/30 bg-transparent text-white placeholder-white/70"
           ></textarea>
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-[var(--primary-color)] text-white py-2 rounded font-semibold hover:bg-opacity-90 transition"
-          >
-            {loading ? "Sending OTP to your mail" : "Submit"}
-          </button>
+
+          <ButtonFill
+            text={loading ? "Sending OTP to your mail..." : "Submit"}
+            onClick={() => {}}
+            className="w-full !py-3 !text-white"
+          />
         </form>
       )}
 
+      {/* ---------------- OTP STEP ---------------- */}
       {step === "otp" && (
         <form onSubmit={handleOtpSubmit} className="space-y-4">
           <input
@@ -133,16 +135,16 @@ const ContactForm = () => {
             onChange={(e) => setOtp(e.target.value)}
             className="w-full px-4 py-2 rounded border border-white/30 bg-transparent text-white placeholder-white/70"
           />
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-[var(--primary-color)] text-white py-2 rounded font-semibold hover:bg-opacity-90 transition"
-          >
-            {loading ? "Verifying..." : "Verify OTP"}
-          </button>
+
+          <ButtonFill
+            text={loading ? "Verifying..." : "Verify OTP"}
+            onClick={() => {}}
+            className="w-full !py-3"
+          />
         </form>
       )}
 
+      {/* ---------------- SUCCESS STEP ---------------- */}
       {step === "done" && (
         <p className="text-white text-center">
           Your message has been submitted successfully.

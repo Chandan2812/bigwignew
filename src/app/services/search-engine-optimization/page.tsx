@@ -19,6 +19,8 @@ import {
 import ContactForm from "../../../../components/ContactForm";
 import { useState } from "react";
 import Image from "next/image";
+import ButtonFill from "../../../../components/Button";
+import PopupForm from "../../../../components/PopupForm";
 
 const stats = [
   {
@@ -112,9 +114,10 @@ const faqs = [
 
 function Seo() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   return (
-    <div>
+    <div className="bg-[var(--color1)]">
       <title>SEO Services for Higher Ranking</title>
       <meta
         name="description"
@@ -127,7 +130,7 @@ function Seo() {
 
       <Nav />
       <section
-        className="relative bg-cover bg-center bg-no-repeat py-10 mt-16 md:mt-20"
+        className="relative bg-cover bg-center bg-no-repeat py-10 "
         style={{ backgroundImage: `url(${hero.src})` }}
       >
         <div className="bg-black/40 absolute inset-0 z-0" />
@@ -140,7 +143,7 @@ function Seo() {
             </h1>
 
             <p
-              className="text-3xl md:text-4xl font-semibold flex items-center gap-2 text-[#4e6cba]"
+              className="text-3xl md:text-4xl font-semibold flex items-center gap-2 text-[var(--color5)]"
               style={{
                 textShadow: "0 2px 6px rgba(0,0,0,0.6)", // softer but effective
                 letterSpacing: "0.5px",
@@ -159,11 +162,11 @@ function Seo() {
               We help businesses grow their online presence with tailored SEO
               strategies in India. Connect with us and see the difference.
             </p>
-            <a href="/contact">
-              <button className="mt-4 px-6 py-3 bg-[var(--primary-color)] text-white rounded-full font-semibold hover:bg-opacity-80 transition">
-                Contact Us
-              </button>
-            </a>
+
+            <ButtonFill
+              onClick={() => setIsPopupOpen(true)}
+              text="Contact Us"
+            />
           </div>
 
           {/* Right Form */}
@@ -171,11 +174,11 @@ function Seo() {
         </div>
       </section>
 
-      <section className="bg-white  py-12">
+      <section className="  py-12">
         <div className="w-11/12 md:w-5/6 mx-auto">
           {/* Heading */}
           <div className="mb-10 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)]">
               What is SEO & Why is it Important for Your business?
             </h2>
           </div>
@@ -184,7 +187,7 @@ function Seo() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             {/* Left content */}
             <div className="space-y-6">
-              <p className="text-gray-700  text-lg leading-relaxed">
+              <p className="text-white text-lg leading-relaxed text-justify">
                 Many people mistakenly believe that SEO is merely a business
                 etiquette. The process of increasing a website&#39;s or online
                 content&#39;s visibility in search engine results pages (SERPs),
@@ -194,14 +197,14 @@ function Seo() {
                 strategy focuses on four important areas
               </p>
 
-              <ul className="list-[upper-roman] pl-6 space-y-2 text-gray-800 ">
+              <ul className="list-disc pl-6 space-y-2 text-gray-100 ">
                 <li>Analysis of Keywords</li>
                 <li>Establishing Backlinks</li>
                 <li>Production of Content</li>
                 <li>Upkeep of technical systems</li>
               </ul>
 
-              <p className="text-gray-700  text-lg leading-relaxed">
+              <p className="text-white  text-lg leading-relaxed">
                 These elements form the foundation of the approaches used by
                 different <strong>SEO agencies</strong>, regardless of the kind
                 of SEO.
@@ -223,12 +226,12 @@ function Seo() {
       <div className="w-11/12 md:w-5/6 mx-auto flex flex-col md:flex-row items-center gap-8 py-12">
         {/* Left Content */}
         <div className="md:w-1/2 space-y-4 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)]">
             Drive Organic Traffic with the Best SEO Agency in India
           </h2>
-          <p className="text-lg text-gray-600  text-justify">
+          <p className="text-lg text-white  text-justify">
             <a href="https://www.bigwigmediadigital.com/">
-              <strong>BigWig Digital</strong>
+              <strong className="text-[var(--color4)]">BigWig Digital</strong>
             </a>{" "}
             is recognized as a leading SEO Agency in India, delivering powerful
             and result-driven SEO solutions for businesses worldwide. With more
@@ -245,24 +248,41 @@ function Seo() {
             {stats.map((item, i) => (
               <div
                 key={i}
-                className="bg-gray-100  rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform duration-300"
+                className="
+          group relative overflow-hidden rounded-2xl p-6 
+          backdrop-blur-md bg-white/10 border border-white/20 
+          shadow-[0_0_20px_rgba(167,235,242,0.3)]
+          hover:shadow-[0_0_35px_rgba(167,235,242,0.6)]
+          transition-all duration-300
+        "
               >
-                <div className="mb-4">{item.icon}</div>
-                <p className="text-gray-800  font-medium text-sm">
+                {/* Glow gradient line */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-[#A7EBF260] to-transparent"></div>
+
+                {/* Icon */}
+                <div className="relative z-10 mb-4 text-[#A7EBF2] group-hover:scale-110 transition-transform duration-300">
+                  {item.icon}
+                </div>
+
+                {/* Text */}
+                <p className="relative z-10 text-white text-sm font-light tracking-wide">
                   {item.text}
                 </p>
+
+                {/* Neon border animation */}
+                <span className="absolute top-0 left-0 w-full h-full border border-[#A7EBF2] opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></span>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      <section className="bg-white  py-12 px-4">
+      <section className="py-12 px-4">
         <div className="w-11/12 md:w-5/6 mx-auto space-y-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-[var(--primary-color)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-[var(--color5)]">
             All in One SEO Services Under One Roof
           </h2>
-          <p className="text-lg text-gray-600  text-justify">
+          <p className="text-lg text-white  text-justify">
             As a trusted SEO Agency in India, we combine advanced SEO
             strategies, in-depth keyword research, and white-hat techniques to
             drive sustainable organic traffic, improve rankings, and boost ROI.
@@ -270,7 +290,6 @@ function Seo() {
             services ensure your brand stays ahead of the competition.
           </p>
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Card Item */}
             {[
               {
                 title: "Local search engine optimization",
@@ -295,260 +314,283 @@ function Seo() {
               {
                 title: "Answer Engine Optimization (AEO)",
                 points: [
-                  `We arrange your material such that it shows up in Google's "People Also Ask" and featured snippets.`,
-                  `Your chances of ranking as the top response to voice search inquiries are increased by our optimization strategies.`,
-                  `We produce organized, conversational material that corresponds with the way people pose inquiries.`,
-                  `Our use of schema markup improves the search engine visibility of your material.`,
-                  `With our AEO strategy, you'll gain more credibility and click-throughs.`,
+                  `We arrange your material to appear inside Google's "People Also Ask" and featured snippets.`,
+                  `Your chances of ranking as the top voice search answer improve with our strategies.`,
+                  `We produce structured conversational content aligned with human query patterns.`,
+                  `Schema markup increases your content’s visibility and authority.`,
+                  `AEO boosts trust and dramatically increases click-through rates.`,
                 ],
               },
               {
                 title: "Geotargeted SEO (GEO)",
                 points: [
-                  `To reach audiences in various cities or regions, we develop region-specific methods.`,
-                  `Hyper-targeted traffic is generated by the local landing pages our team creates.`,
-                  `We help you dominate local search engine results pages by optimizing for geo-specific keywords.`,
-                  `Through localized content and backlinks, we bolster your visibility.`,
-                  `We help you rank in every area you serve, making us perfect for businesses with many locations.`,
+                  `We develop region-specific SEO strategies for multi-city or multi-state ranking.`,
+                  `Local landing pages create hyper-targeted traffic for each service area.`,
+                  `We optimize for geo-focused keywords to dominate local SERPs.`,
+                  `Localized content & backlinks strengthen authority.`,
+                  `Perfect for brands aiming to rank in multiple locations.`,
                 ],
               },
               {
                 title: "E-commerce SEO",
                 points: [
-                  `We enhance your store to increase organic sales and product visibility.`,
-                  `Your product's rankings on Google and other search engines are raised by our tactics.`,
-                  `For higher conversion rates, we improve user experience and address technical problems.`,
-                  `We write product descriptions and URLs that are optimized for search engines to draw in customers.`,
-                  `You can achieve long-term success with our e-commerce SEO without depending too much on advertisements.`,
+                  `We optimize your online store for higher organic sales and visibility.`,
+                  `Search engine rankings for products are improved with our SEO methods.`,
+                  `We fix technical issues and enhance UX to maximize conversions.`,
+                  `SEO-friendly product descriptions & URLs attract buyers.`,
+                  `Achieve long-term ROI without relying heavily on paid ads.`,
                 ],
               },
               {
                 title: "International SEO",
                 points: [
-                  `We increase your website's visibility across the globe by helping it rank in several languages and countries.`,
-                  `To prevent content misunderstanding, our team uses geo-targeting and hreflang tags.`,
-                  `For every target market and culture, we localize your approach and content.`,
-                  `Baidu, Yandex, and Bing are some of the regional search engines that we optimize for.`,
-                  `When you work with us, your brand is prepared to compete and prosper globally.`,
+                  `We help your website rank globally across different languages & countries.`,
+                  `Proper hreflang setup ensures accurate geo-content delivery.`,
+                  `We localize strategy & content for each region’s culture.`,
+                  `We optimize for regional search engines like Baidu & Yandex.`,
+                  `Your brand becomes globally visible & competitive.`,
                 ],
               },
             ].map((item, index) => (
               <div
                 key={index}
-                className="relative pl-6 border-l-4 border-[var(--primary-color)] bg-gray-100  p-6 rounded-xl shadow-md"
+                className="
+        relative p-6 rounded-xl overflow-hidden
+        bg-[#0a0f14]/80 border border-[#1e293b]
+        shadow-[0_0_25px_rgba(0,0,0,0.4)]
+        hover:border-[var(--primary-color)]
+        hover:shadow-[0_0_30px_rgba(167,235,242,0.35)]
+        transition-all duration-300
+      "
               >
-                <h3 className="text-xl font-semibold text-[var(--primary-color)] mb-3">
-                  {item.title}
-                </h3>
-                <ul className="list-disc  space-y-2 text-gray-700  text-base">
-                  {item.points.map((point, i) => (
-                    <li key={i}>{point}</li>
-                  ))}
-                </ul>
+                {/* Matrix background overlay */}
+                <div className="absolute inset-0 opacity-[0.20] pointer-events-none bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen"></div>
+
+                {/* Content Layer */}
+                <div className="relative z-10">
+                  <h3 className="text-xl font-semibold text-[var(--color5)] mb-4 tracking-wide">
+                    {item.title}
+                  </h3>
+
+                  <ul className="space-y-2 text-gray-300 text-sm leading-relaxed">
+                    {item.points.map((point, i) => (
+                      <li key={i} className="list-disc ml-4">
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Glow border animation */}
+                <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-[var(--primary-color)] transition-all duration-300"></div>
               </div>
             ))}
           </div>
-          <h3 className="text-3xl md:text-4xl font-bold text-center text-[var(--primary-color)]">
-            The Best SEO Agency for SEO Services in India and beyond!
-          </h3>
-          <p className="text-lg text-gray-600  text-justify">
-            Choosing the right partner for your digital growth is not just about
-            rankings - it&#39;s about trust, transparency, and results. At
-            BigWig Media Digital, we redefine what it means to offer SEO
-            services in India by focusing on strategies that actually move the
-            needle for your business.
-          </p>
-          <h3 className="text-lg text-gray-600  text-justify">
-            Here&#39;s what makes us different:
-          </h3>
-          <ul className="list-disc list-inside space-y-4 text-gray-700">
-            <li>
-              <strong>Tailored for You, Not Templates</strong> – We don’t
-              believe in one-size-fits-all SEO. Every business is unique, so our
-              strategies are customized to your goals, audience, and industry.
-            </li>
 
-            <li>
-              <strong>SEO That Builds Brands</strong> – Beyond keyword rankings,
-              our focus is on creating lasting visibility that strengthens your
-              brand identity online.
-            </li>
+          <div className="relative overflow-hidden bg-[#06090f]/80 border border-white/10 backdrop-blur-xl rounded-3xl p-10 md:p-14 shadow-[0_0_30px_rgba(0,255,255,0.12)]">
+            {/* HOLOGRAPHIC SCAN LINE */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent animate-scan"></div>
+            </div>
 
-            <li>
-              <strong>Balance of Local & Global SEO</strong> – Whether you want
-              to dominate your local market or expand internationally, our
-              expertise covers both.
-            </li>
+            {/* MATRIX PARTICLE BACKGROUND */}
+            <div className="absolute inset-0 opacity-[0.20] mix-blend-screen bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center pointer-events-none"></div>
 
-            <li>
-              <strong>Transparent Growth Tracking</strong> – No jargon, no
-              hidden metrics. You see real progress through clear reports and
-              measurable ROI.
-            </li>
+            {/* HOLOGRAPHIC GLOW BORDER */}
+            <div className="absolute inset-0 rounded-3xl border border-transparent hover:border-[var(--primary-color)] transition-all duration-500 shadow-[inset_0_0_40px_rgba(167,235,242,0.15)]"></div>
 
-            <li>
-              <strong>Always Ahead of the Curve</strong> – With algorithm
-              updates and evolving trends, we ensure your SEO strategy is
-              future-proof and compliant with Google’s guidelines.
-            </li>
+            <div className="relative z-10 space-y-10">
+              {/* PREMIUM HEADING WITH ANIMATED CAPSULE */}
+              <div className="w-fit mx-auto px-8 py-3 rounded-full bg-white/5 backdrop-blur-2xl border border-[var(--primary-color)] shadow-[0_0_20px_rgba(167,235,242,0.35)] animate-pulseGlow">
+                <h3 className="text-3xl md:text-4xl font-bold text-center text-[var(--color5)] tracking-wide">
+                  The Best SEO Agency for SEO Services in India and Beyond!
+                </h3>
+              </div>
 
-            <li>
-              <strong>
-                BigWig Media Digital isn’t just another SEO company in India
-              </strong>{" "}
-              – We’re a growth partner. With us, you gain more than visibility;
-              you gain authority, engagement, and business impact that lasts.
-            </li>
-          </ul>
-          <p className="text-lg text-gray-600  text-justify">
-            BigWig Media Digital isn’t just another SEO company in India - we’re
-            a growth partner. With us, you gain more than visibility; you gain
-            authority, engagement, and business impact that lasts
-          </p>
+              {/* LEAD PARAGRAPH */}
+              <p className="text-lg text-white/90 tracking-wide leading-relaxed text-justify">
+                Choosing the right partner for your digital growth is not just
+                about rankings — it’s about trust, transparency, and real
+                business impact. At BigWig Media Digital, we elevate SEO
+                services in India with strategies that push genuine growth.
+              </p>
+
+              {/* SUBTITLE WITH HOLOGRAPHIC UNDERLINE */}
+              <div className="relative inline-block">
+                <h3 className="text-xl font-semibold text-[var(--primary-color)] tracking-wide">
+                  Here’s what makes us different:
+                </h3>
+
+                <div className="absolute left-0 -bottom-1 h-[3px] w-full bg-gradient-to-r from-[var(--primary-color)]/80 via-cyan-400 to-transparent rounded-full animate-lineGlow"></div>
+              </div>
+
+              {/* FUTURISTIC BULLET LIST */}
+              <ul className="space-y-6 text-gray-300 text-base leading-relaxed">
+                {[
+                  `<strong class="text-[var(--primary-color)]">Tailored for You, Not Templates</strong> – Every business is unique, so our SEO strategies are fully customized.`,
+                  `<strong class="text-[var(--primary-color)]">SEO That Builds Brands</strong> – We don’t chase rankings… we build long-term brand authority.`,
+                  `<strong class="text-[var(--primary-color)]">Local + Global SEO Expertise</strong> – Scale within your city or dominate international markets.`,
+                  `<strong class="text-[var(--primary-color)]">Transparent Growth Tracking</strong> – Clean, crystal-clear reporting with zero jargon.`,
+                  `<strong class="text-[var(--primary-color)]">Ahead of Algorithm Updates</strong> – We future-proof your SEO strategy through trend intelligence.`,
+                  `<strong class="text-[var(--primary-color)]">More Than Visibility — True Impact</strong> – Gain authority, trust, and conversions that last.`,
+                ].map((point, i) => (
+                  <li
+                    key={i}
+                    className="relative pl-6 group"
+                    dangerouslySetInnerHTML={{
+                      __html: `
+            <span class='absolute left-0 top-2 w-3 h-3 rounded-full bg-[var(--primary-color)] shadow-[0_0_10px_var(--primary-color)] group-hover:shadow-[0_0_18px_var(--primary-color)] transition-all duration-300'></span>
+            ${point}
+          `,
+                    }}
+                  />
+                ))}
+              </ul>
+
+              {/* FOOTER PARAGRAPH */}
+              <p className="text-lg text-gray-300 text-justify pt-6 border-t border-white/10">
+                BigWig Media Digital isn’t just another SEO company — we’re your
+                long-term growth partner. We help you earn visibility,
+                credibility, and sustained business impact that powers your
+                future.
+              </p>
+            </div>
+          </div>
+
           <div className="flex justify-center">
-            <a href="/contact">
-              <button className="mt-8 px-6 py-3 bg-[var(--primary-color)]  text-white rounded-full font-semibold hover:bg-opacity-80 transition">
-                Let’s Connect
-              </button>
-            </a>
+            {/* <button className="mt-8 px-6 py-3 bg-[var(--primary-color)]  text-white rounded-full font-semibold hover:bg-opacity-80 transition">
+                
+              </button> */}
+            <ButtonFill
+              onClick={() => setIsPopupOpen(true)}
+              text="Let’s Connect"
+            />
           </div>
         </div>
       </section>
 
       <OurProcess />
       <WhyBigwig />
-
-      {/* FAQ Section */}
-      {/* <section className="bg-gray-50 py-12">
-        <div className="w-11/12 md:w-5/6 mx-auto space-y-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)] text-center">
-            Frequently Asked Questions
-          </h2>
-
-          <div className="space-y-4">
-            {faqs.map((item, index) => (
-              <div
-                key={index}
-                className="border border-gray-200 rounded-lg shadow-sm bg-white"
-              >
-                <button
-                  className="flex justify-between items-center w-full p-4 text-left focus:outline-none"
-                  onClick={() =>
-                    setOpenIndex(openIndex === index ? null : index)
-                  }
-                >
-                  <h3 className="text-lg md:text-xl font-semibold text-gray-900">
-                    {index + 1}. {item.q}
-                  </h3>
-                  {openIndex === index ? (
-                    <ChevronUp className="w-5 h-5 text-gray-500" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-500" />
-                  )}
-                </button>
-
-                {openIndex === index && (
-                  <div className="p-4 pt-0 text-gray-700">{item.a}</div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
       {/* Services Table Section */}
-      <section className="bg-white py-12">
-        <div className="w-11/12 md:w-5/6 mx-auto space-y-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)] text-center">
+      <section className="py-20 relative overflow-hidden">
+        {/* Matrix glow background */}
+        <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
+
+        <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--primary-color)]">
             Our Other Services
           </h2>
 
-          <div className="overflow-x-auto rounded-xl shadow-lg">
-            <table className="w-full table-auto border border-gray-300 border-collapse text-center">
-              <tbody>
-                <tr className="">
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600  hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/search-engine-optimization">
-                      Search Engine Optimization
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600  hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/social-media-marketing">
-                      Social Media Marketing
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600  hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/performance-marketing">
-                      Performance Marketing
-                    </a>
-                  </td>
-                </tr>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                label: "Search Engine Optimization",
+                url: "/services/search-engine-optimization",
+              },
+              {
+                label: "Social Media Marketing",
+                url: "/services/social-media-marketing",
+              },
+              {
+                label: "Performance Marketing",
+                url: "/services/performance-marketing",
+              },
+              {
+                label: "Content Marketing",
+                url: "/services/content-marketing",
+              },
+              {
+                label: "Website Designing & Development",
+                url: "/services/website-design-development",
+              },
+              { label: "Email Marketing", url: "/services/email-marketing" },
+              {
+                label: "Social Media Optimization",
+                url: "/services/social-media-optimization",
+              },
+              {
+                label: "Graphic Designing",
+                url: "/services/graphic-designing",
+              },
+              {
+                label: "AI and CGI Marketing",
+                url: "/services/ai-cgi-marketing",
+              },
+              {
+                label: "Landing Page Optimization",
+                url: "/services/landing-page-optimization",
+              },
+              { label: "Video Shoot", url: "/services/video-shoot" },
+              { label: "Public Relations", url: "/services/public-relations" },
+              {
+                label: "Influencer Marketing",
+                url: "/services/influencer-marketing",
+              },
+              {
+                label: "Online Reputation Management",
+                url: "/services/online-reputation-management",
+              },
+            ].map((item, idx) => (
+              <a
+                key={idx}
+                href={item.url}
+                target="blank"
+                className="
+            group relative p-5 rounded-xl 
+            backdrop-blur-xl bg-white/5 
+            border border-white/10 shadow-lg
+            hover:border-[var(--primary-color)] 
+            hover:shadow-[0_0_20px_var(--primary-color)]
+            transition-all duration-300 
+            flex items-center justify-center text-center
+          "
+              >
+                {/* Glow outline */}
+                <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-[var(--primary-color)] transition-all duration-300"></div>
 
-                <tr>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/content-marketing">Content Marketing</a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/website-design-development">
-                      Website Designing & Development
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/email-marketing">Email Marketing</a>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/social-media-optimization">
-                      Social Media Optimization
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/graphic-designing">Graphic Designing</a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/ai-cgi-marketing">
-                      AI and CGI Marketing
-                    </a>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/landing-page-optimization">
-                      Landing Page Optimization
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/video-shoot">Video Shoot</a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/public-relations">Public Relations</a>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/influencer-marketing">
-                      Influencer Marketing
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300"></td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/online-reputation-management">
-                      Online Reputation Management
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                {/* Label text */}
+                <span className="text-base font-semibold text-gray-200 group-hover:text-[var(--primary-color)] transition-colors duration-300">
+                  {item.label}
+                </span>
+              </a>
+            ))}
           </div>
         </div>
       </section>
+
+      <PopupForm isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
 
       <Footer />
     </div>
   );
 }
-
 export default Seo;
+<style>
+  {`
+  @keyframes scan {
+    0% { transform: translateY(-100%); opacity: 0; }
+    50% { opacity: 0.7; }
+    100% { transform: translateY(100%); opacity: 0; }
+  }
+  .animate-scan {
+    animation: scan 5s linear infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 25px rgba(167,235,242,0.25); }
+    50% { box-shadow: 0 0 40px rgba(167,235,242,0.55); }
+  }
+  .animate-pulseGlow {
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+
+  @keyframes lineGlow {
+    0% { opacity: 0.4; width: 70%; }
+    50% { opacity: 1; width: 100%; }
+    100% { opacity: 0.4; width: 70%; }
+  }
+  .animate-lineGlow {
+    animation: lineGlow 4s ease-in-out infinite;
+  }
+`}
+</style>;
