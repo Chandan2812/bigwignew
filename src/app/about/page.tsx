@@ -202,10 +202,10 @@ export default function About() {
       </section>
 
       {/* ================= OUR WORKING PROCESS SECTION ================= */}
-      <section className=" py-12 relative bg-gradient-to-b from-[var(--color1)] via-[var(--color2)] to-[var(--color1)]">
+      <section className="py-12 relative bg-gradient-to-b from-[var(--color1)] via-[var(--color2)] to-[var(--color1)]">
         <div className="w-11/12 md:w-5/6 mx-auto">
           {/* Title */}
-          <div className="text-center mb-5">
+          <div className="text-center mb-8">
             <p className="text-[var(--color5)] uppercase text-lg font-semibold mb-3 tracking-widest inline-block border-b-2 border-[var(--color5)]">
               Our Blueprint for Success
             </p>
@@ -214,7 +214,60 @@ export default function About() {
             </h2>
           </div>
 
-          <Image src={process} alt="Bigwig Media Digital" />
+          {/* DESKTOP — SHOW INFOGRAPHIC IMAGE */}
+          <div className="hidden md:block">
+            <Image
+              src={process}
+              alt="Bigwig Process"
+              className="w-full mx-auto"
+            />
+          </div>
+
+          {/* MOBILE/TABLET — SHOW BOXES */}
+          <div className="md:hidden mt-10 grid grid-cols-1 gap-6">
+            {[
+              {
+                title: "Understanding the Landscape",
+                desc: "We analyze markets, competition, and audience behavior to uncover real opportunities.",
+              },
+              {
+                title: "Strategic Blueprinting",
+                desc: "We map clear, data-led directions that align with your brand’s objectives.",
+              },
+              {
+                title: "Creative Engineering",
+                desc: "Concepts turn into compelling visuals, content, and experiences.",
+              },
+              {
+                title: "Precision Deployment",
+                desc: "Campaigns go live with tactical execution across chosen platforms.",
+              },
+              {
+                title: "Optimization & Evolution",
+                desc: "We track, refine, and scale because great performance should never plateau.",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="
+            bg-[var(--color1)]/70 border border-white/10 rounded-2xl
+            shadow-[0_0_20px_rgba(0,0,0,0.3)] p-5 relative overflow-hidden
+            transition-all duration-300 hover:shadow-[0_0_25px_rgba(167,235,242,0.35)]
+          "
+              >
+                {/* Decorative blob */}
+                <div className="absolute -right-8 -top-8 w-32 h-32 bg-[var(--color4)]/20 blur-2xl rounded-full"></div>
+
+                {/* Content */}
+                <h3 className="text-lg font-semibold text-[var(--color5)] mb-2 relative z-10">
+                  {item.title}
+                </h3>
+                <p className="text-white/80 text-sm leading-relaxed relative z-10">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
