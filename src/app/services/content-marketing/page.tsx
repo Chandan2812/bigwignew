@@ -230,7 +230,7 @@ function ContentMarketing() {
           {/* PARAGRAPHS */}
           <div className="space-y-6 text-gray-200 text-lg leading-relaxed">
             <p>
-              Content marketing is more than writing—it's about building
+              Content marketing is more than writing—it&#39;s about building
               <span className="text-[var(--primary-color)] font-semibold drop-shadow-[0_0_8px_var(--primary-color)]">
                 {" "}
                 authority, trust, and long-term visibility
@@ -744,7 +744,7 @@ function ContentMarketing() {
               Let BigWig Digital help you stand out with content that’s
               strategic, scalable, and search-ready. <br />
               <br />
-              Whether you're a growing startup or an established brand, our{" "}
+              Whether you&#39;re a growing startup or an established brand, our{" "}
               <strong>
                 <a
                   href="https://www.bigwigdigital.in/"

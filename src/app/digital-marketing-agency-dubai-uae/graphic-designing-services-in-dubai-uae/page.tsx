@@ -546,7 +546,7 @@ function SMODubai() {
               Let’s Create Something Extraordinary
             </h3>
             <p className="text-gray-300 text-base leading-relaxed mb-5 relative z-10">
-              Your brand deserves visuals that create impact. Whether you're
+              Your brand deserves visuals that create impact. Whether you&#39;re
               launching a product, rebranding, or promoting —
               <strong> BigWig Media Digital </strong>
               delivers standout Graphic Designing Services in Dubai.

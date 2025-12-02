@@ -224,8 +224,8 @@ function SMODubai() {
                 📊 Want a Free Social Media Audit for Your Brand?
               </h3>
               <p className="text-white/80 text-lg leading-relaxed max-w-2xl mx-auto">
-                Discover what's working, and unlock new opportunities with the
-                best
+                Discover what&#39;s working, and unlock new opportunities with
+                the best
                 <strong> Social Media Optimization Services in Dubai</strong>.
               </p>
             </div>
