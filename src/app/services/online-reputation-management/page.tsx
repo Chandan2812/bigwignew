@@ -171,7 +171,7 @@ function OnlineReputationManagement() {
     bg-white/10 backdrop-blur-2xl 
     border border-white/10 
     shadow-[0_0_25px_rgba(0,255,255,0.25)]
-    hover:shadow-[0_0_40px_var(--primary-color)]
+    hover:shadow-[0_0_40px_var(--color5)]
     transition-all duration-300
     overflow-hidden
   "
@@ -183,7 +183,7 @@ function OnlineReputationManagement() {
                   key={i}
                   className="
           absolute left-0 w-full h-[2px]
-          bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+          bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
           animate-ormScan
         "
                   style={{
@@ -223,7 +223,7 @@ function OnlineReputationManagement() {
             </p>
 
             {/* Neon Border Hover */}
-            <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-[var(--primary-color)] transition-all"></div>
+            <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
 
             {/* Animation */}
             <style>{`
@@ -247,7 +247,7 @@ function OnlineReputationManagement() {
         <div className="relative w-11/12 md:w-5/6 mx-auto space-y-12 z-10">
           {/* Title */}
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] drop-shadow-[0_0_12px_var(--primary-color)]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] drop-shadow-[0_0_12px_var(--color5)]">
               What Our ORM Services Can Help You With
             </h2>
           </div>
@@ -274,7 +274,7 @@ function OnlineReputationManagement() {
                           key={i}
                           className="
                     absolute left-0 w-full h-[2px]
-                    bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                    bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                     animate-ormServiceScan
                   "
                           style={{
@@ -285,7 +285,7 @@ function OnlineReputationManagement() {
                       ))}
                     </div>
 
-                    <h4 className="text-xl font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_8px_var(--primary-color)] relative z-10">
+                    <h4 className="text-xl font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_8px_var(--color5)] relative z-10">
                       {item.title}
                     </h4>
                     <p className="text-gray-200 text-sm leading-relaxed relative z-10">
@@ -293,7 +293,7 @@ function OnlineReputationManagement() {
                     </p>
 
                     {/* Glow Border */}
-                    <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--primary-color)] transition-all"></div>
+                    <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
                   </div>
                 </div>
               ))}
@@ -310,7 +310,7 @@ function OnlineReputationManagement() {
           backdrop-blur-xl bg-white/10
           border border-white/10
           shadow-[0_0_25px_rgba(0,255,255,0.2)]
-          hover:shadow-[0_0_35px_var(--primary-color)]
+          hover:shadow-[0_0_35px_var(--color5)]
           transition-all duration-300
           overflow-hidden flex flex-col 
         "
@@ -322,7 +322,7 @@ function OnlineReputationManagement() {
                       key={i}
                       className="
                 absolute left-0 w-full h-[2px]
-                bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                 animate-ormServiceScan
               "
                       style={{
@@ -334,7 +334,7 @@ function OnlineReputationManagement() {
                 </div>
 
                 {/* Title */}
-                <h4 className="text-xl font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)] relative z-10">
+                <h4 className="text-xl font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)] relative z-10">
                   {item.title}
                 </h4>
 
@@ -344,7 +344,7 @@ function OnlineReputationManagement() {
                 </p>
 
                 {/* Glow Border */}
-                <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--primary-color)] transition-all"></div>
+                <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
               </div>
             ))}
           </div>
@@ -370,7 +370,7 @@ function OnlineReputationManagement() {
         <div className="relative z-10 w-11/12 md:w-5/6 mx-auto space-y-14">
           {/* Title */}
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
               Why Your Online Reputation Deserves Serious Attention
             </h2>
           </div>
@@ -408,7 +408,7 @@ function OnlineReputationManagement() {
             bg-white/10 backdrop-blur-xl 
             border border-white/10 
             shadow-[0_0_25px_rgba(0,255,255,0.2)]
-            hover:shadow-[0_0_35px_var(--primary-color)]
+            hover:shadow-[0_0_35px_var(--color5)]
             transition-all duration-300 
             overflow-hidden min-h-[300px] flex flex-col gap-4
           "
@@ -420,7 +420,7 @@ function OnlineReputationManagement() {
                       key={i}
                       className="
                   absolute left-0 w-full h-[2px]
-                  bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                  bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                   animate-ormScanLine
                 "
                       style={{
@@ -432,7 +432,7 @@ function OnlineReputationManagement() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-semibold text-[var(--color5)] drop-shadow-[0_0_8px_var(--primary-color)] relative z-10">
+                <h3 className="text-2xl font-semibold text-[var(--color5)] drop-shadow-[0_0_8px_var(--color5)] relative z-10">
                   {item.title}
                 </h3>
                 <p className="text-gray-200 text-sm leading-relaxed relative z-10">
@@ -443,7 +443,7 @@ function OnlineReputationManagement() {
                 </p>
 
                 {/* Neon Hover Border */}
-                <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-[var(--primary-color)] transition-all"></div>
+                <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
               </div>
             ))}
           </div>
@@ -468,7 +468,7 @@ function OnlineReputationManagement() {
 
         <div className="relative w-11/12 md:w-5/6 mx-auto space-y-10 z-10">
           {/* Title */}
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center drop-shadow-[0_0_12px_var(--primary-color)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center drop-shadow-[0_0_12px_var(--color5)]">
             Benefits of Strong Online Reputation Management
           </h2>
 
@@ -491,7 +491,7 @@ function OnlineReputationManagement() {
             backdrop-blur-xl bg-white/10 
             border border-white/10 
             shadow-[0_0_20px_rgba(0,255,255,0.15)]
-            hover:shadow-[0_0_25px_var(--primary-color)]
+            hover:shadow-[0_0_25px_var(--color5)]
             transition-all duration-300
             overflow-hidden group
           "
@@ -501,14 +501,14 @@ function OnlineReputationManagement() {
                   <div
                     className="
               absolute left-0 w-full h-[2px]
-              bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+              bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
               animate-benefitScan
             "
                   ></div>
                 </div>
 
                 {/* Icon */}
-                <span className="text-[var(--color5)] text-2xl drop-shadow-[0_0_10px_var(--primary-color)]">
+                <span className="text-[var(--color5)] text-2xl drop-shadow-[0_0_10px_var(--color5)]">
                   ✔
                 </span>
 
@@ -516,7 +516,7 @@ function OnlineReputationManagement() {
                 <span className="text-gray-200 text-lg">{point}</span>
 
                 {/* Hover Outline Glow */}
-                <div className="absolute inset-0 rounded-full border border-transparent group-hover:border-[var(--primary-color)] transition-all"></div>
+                <div className="absolute inset-0 rounded-full border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
               </li>
             ))}
           </ul>
@@ -538,6 +538,111 @@ function OnlineReputationManagement() {
 
       <OurProcess />
       <WhyBigwig />
+      <section className="py-20 relative overflow-hidden">
+        {/* Matrix glow background */}
+        <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
+
+        <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--color5)]">
+            Our Other Services
+          </h2>
+
+          {/* TABLE WRAPPER */}
+          <div
+            className="
+        rounded-2xl 
+        overflow-hidden 
+        backdrop-blur-xl bg-white/5 
+        border border-white/10 
+        shadow-[0_0_30px_rgba(0,255,255,0.15)] 
+        relative
+      "
+          >
+            {/* Scan Line */}
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent animate-scan"></div>
+
+            <table className="min-w-full text-sm text-gray-200 relative z-10">
+              <tbody>
+                {[
+                  [
+                    "Search Engine Optimization",
+                    "Social Media Marketing",
+                    "Performance Marketing",
+                  ],
+                  [
+                    "Content Marketing",
+                    "Website Designing & Development",
+                    "Email Marketing",
+                  ],
+                  [
+                    "Social Media Optimization",
+                    "Graphic Designing & Video Editing",
+                    "Influencer Marketing",
+                  ],
+                  ["Online Reputation Management", "", "Affiliate Marketing"],
+                ].map((row, rowIndex) => (
+                  <tr key={rowIndex} className="divide-x divide-white/10">
+                    {row.map((cell, colIndex) => (
+                      <td
+                        key={colIndex}
+                        className="
+                    h-20 
+                    border-b border-white/10 
+                    relative group overflow-hidden
+                  "
+                      >
+                        {cell && (
+                          <a
+                            href={`/services/${cell
+                              .toLowerCase()
+                              .replace(/ /g, "-")
+                              .replace(/\&/g, "and")}`}
+                            target="_blank"
+                            className="
+                        flex items-center justify-center 
+                        w-full h-full px-4 text-center 
+                        font-semibold
+                        text-gray-200
+                        transition-all duration-300
+                        hover:text-[var(--color5)]
+                      "
+                          >
+                            {/* Neon card effect */}
+                            <span
+                              className="
+                          absolute inset-0 
+                          rounded-xl 
+                          border border-transparent
+                          group-hover:border-[var(--color5)]
+                          group-hover:shadow-[0_0_20px_var(--color5)]
+                          transition-all duration-300
+                        "
+                            ></span>
+
+                            <span className="relative z-10">{cell}</span>
+                          </a>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Animations */}
+        <style>{`
+    @keyframes scan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-scan {
+      animation: scan 4s linear infinite;
+    }
+  `}</style>
+      </section>
       <GetInTouch />
       <PopupForm isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
       <Footer />

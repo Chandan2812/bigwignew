@@ -228,7 +228,7 @@ function InfluencerMarketing() {
         <div className="absolute inset-0 opacity-[0.18] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
 
         {/* Heading */}
-        <h2 className="relative z-10 text-3xl md:text-4xl font-bold text-[var(--color5)] mb-10 text-center drop-shadow-[0_0_10px_var(--primary-color)]">
+        <h2 className="relative z-10 text-3xl md:text-4xl font-bold text-[var(--color5)] mb-10 text-center drop-shadow-[0_0_10px_var(--color5)]">
           Where Influencer Marketing Creates Maximum Impact
         </h2>
 
@@ -243,7 +243,7 @@ function InfluencerMarketing() {
               bg-white/10 backdrop-blur-xl 
               border border-white/10
               shadow-[0_0_25px_rgba(0,255,255,0.15)]
-              hover:shadow-[0_0_35px_var(--primary-color)]
+              hover:shadow-[0_0_35px_var(--color5)]
               transition-all duration-300
               relative overflow-hidden
               min-h-[200px]
@@ -256,7 +256,7 @@ function InfluencerMarketing() {
                         key={i}
                         className="
                     absolute left-0 w-full h-[2px]
-                    bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                    bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                     animate-impactScan
                   "
                         style={{
@@ -267,7 +267,7 @@ function InfluencerMarketing() {
                     ))}
                   </div>
 
-                  <h4 className="text-xl font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_8px_var(--primary-color)]">
+                  <h4 className="text-xl font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_8px_var(--color5)]">
                     {item.title}
                   </h4>
                   <p className="text-gray-200 text-sm leading-relaxed">
@@ -275,7 +275,7 @@ function InfluencerMarketing() {
                   </p>
 
                   {/* Glow Border */}
-                  <div className="absolute inset-0 rounded-2xl border border-transparent hover:border-[var(--primary-color)] transition-all duration-300"></div>
+                  <div className="absolute inset-0 rounded-2xl border border-transparent hover:border-[var(--color5)] transition-all duration-300"></div>
                 </div>
               </div>
             ))}
@@ -293,7 +293,7 @@ function InfluencerMarketing() {
           bg-white/10 backdrop-blur-xl
           border border-white/10
           shadow-[0_0_25px_rgba(0,255,255,0.15)]
-          hover:shadow-[0_0_35px_var(--primary-color)]
+          hover:shadow-[0_0_35px_var(--color5)]
           transition-all duration-300
           min-h-[200px]
         "
@@ -305,7 +305,7 @@ function InfluencerMarketing() {
                     key={i}
                     className="
                 absolute left-0 w-full h-[2px]
-                bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                 animate-impactScan
               "
                     style={{
@@ -316,7 +316,7 @@ function InfluencerMarketing() {
                 ))}
               </div>
 
-              <h4 className="text-xl font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_8px_var(--primary-color)]">
+              <h4 className="text-xl font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_8px_var(--color5)]">
                 {item.title}
               </h4>
 
@@ -325,7 +325,7 @@ function InfluencerMarketing() {
               </p>
 
               {/* Neon border on hover */}
-              <div className="absolute inset-0 border border-transparent rounded-2xl group-hover:border-[var(--primary-color)] transition-all"></div>
+              <div className="absolute inset-0 border border-transparent rounded-2xl group-hover:border-[var(--color5)] transition-all"></div>
             </div>
           ))}
         </div>
@@ -355,7 +355,7 @@ function InfluencerMarketing() {
         bg-white/10 backdrop-blur-xl 
         border border-white/10
         shadow-[0_0_25px_rgba(0,255,255,0.18)]
-        hover:shadow-[0_0_35px_var(--primary-color)]
+        hover:shadow-[0_0_35px_var(--color5)]
         transition-all duration-300
         overflow-hidden
       "
@@ -367,7 +367,7 @@ function InfluencerMarketing() {
                   key={i}
                   className="
               absolute left-0 w-full h-[2px]
-              bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+              bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
               animate-scanInflu
             "
                   style={{
@@ -378,7 +378,7 @@ function InfluencerMarketing() {
               ))}
             </div>
 
-            <h2 className="text-3xl font-semibold text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)]">
+            <h2 className="text-3xl font-semibold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
               Influencer Campaigns That Balance Creativity and Strategy
             </h2>
 
@@ -404,7 +404,7 @@ function InfluencerMarketing() {
             </p>
 
             {/* Neon border on hover */}
-            <div className="absolute inset-0 border border-transparent rounded-2xl group-hover:border-[var(--primary-color)] transition-all"></div>
+            <div className="absolute inset-0 border border-transparent rounded-2xl group-hover:border-[var(--color5)] transition-all"></div>
           </div>
 
           {/* ================= RIGHT BLOCK ================= */}
@@ -414,7 +414,7 @@ function InfluencerMarketing() {
         bg-white/10 backdrop-blur-xl 
         border border-white/10
         shadow-[0_0_25px_rgba(0,255,255,0.18)]
-        hover:shadow-[0_0_35px_var(--primary-color)]
+        hover:shadow-[0_0_35px_var(--color5)]
         transition-all duration-300
         overflow-hidden
       "
@@ -426,7 +426,7 @@ function InfluencerMarketing() {
                   key={i}
                   className="
               absolute left-0 w-full h-[2px]
-              bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+              bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
               animate-scanInflu
             "
                   style={{
@@ -437,7 +437,7 @@ function InfluencerMarketing() {
               ))}
             </div>
 
-            <h2 className="text-3xl font-semibold text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)]">
+            <h2 className="text-3xl font-semibold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
               Scalable Solutions for Brands of All Sizes
             </h2>
 
@@ -458,7 +458,7 @@ function InfluencerMarketing() {
             </p>
 
             {/* Neon border on hover */}
-            <div className="absolute inset-0 border border-transparent rounded-2xl group-hover:border-[var(--primary-color)] transition-all"></div>
+            <div className="absolute inset-0 border border-transparent rounded-2xl group-hover:border-[var(--color5)] transition-all"></div>
           </div>
         </div>
 
@@ -487,7 +487,7 @@ function InfluencerMarketing() {
         bg-white/10 backdrop-blur-xl 
         border border-white/10 
         shadow-[0_0_25px_rgba(0,255,255,0.2)]
-        hover:shadow-[0_0_40px_var(--primary-color)]
+        hover:shadow-[0_0_40px_var(--color5)]
         transition-all duration-300
       "
           >
@@ -498,7 +498,7 @@ function InfluencerMarketing() {
                   key={i}
                   className="
               absolute left-0 w-full h-[2px]
-              bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+              bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
               animate-influScan
             "
                   style={{
@@ -509,7 +509,7 @@ function InfluencerMarketing() {
               ))}
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)] mb-6">
               Benefits of Influencer Marketing
             </h2>
 
@@ -519,14 +519,14 @@ function InfluencerMarketing() {
                   key={index}
                   className="flex items-start gap-3 text-gray-200 text-sm leading-relaxed"
                 >
-                  <FaCheckCircle className="text-[var(--color5)] text-lg mt-1 drop-shadow-[0_0_6px_var(--primary-color)]" />
+                  <FaCheckCircle className="text-[var(--color5)] text-lg mt-1 drop-shadow-[0_0_6px_var(--color5)]" />
                   <span>{point}</span>
                 </li>
               ))}
             </ul>
 
             {/* Glowing border hover */}
-            <div className="absolute inset-0 rounded-2xl border border-transparent hover:border-[var(--primary-color)] transition-all"></div>
+            <div className="absolute inset-0 rounded-2xl border border-transparent hover:border-[var(--color5)] transition-all"></div>
           </div>
 
           {/* ================= RIGHT BLOCK ================= */}
@@ -536,7 +536,7 @@ function InfluencerMarketing() {
         bg-white/10 backdrop-blur-xl 
         border border-white/10 
         shadow-[0_0_25px_rgba(0,255,255,0.2)]
-        hover:shadow-[0_0_40px_var(--primary-color)]
+        hover:shadow-[0_0_40px_var(--color5)]
         transition-all duration-300
       "
           >
@@ -595,6 +595,112 @@ function InfluencerMarketing() {
 
       <OurProcess />
       <WhyBigwig />
+      <section className="py-20 relative overflow-hidden">
+        {/* Matrix glow background */}
+        <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
+
+        <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--color5)]">
+            Our Other Services
+          </h2>
+
+          {/* TABLE WRAPPER */}
+          <div
+            className="
+        rounded-2xl 
+        overflow-hidden 
+        backdrop-blur-xl bg-white/5 
+        border border-white/10 
+        shadow-[0_0_30px_rgba(0,255,255,0.15)] 
+        relative
+      "
+          >
+            {/* Scan Line */}
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent animate-scan"></div>
+
+            <table className="min-w-full text-sm text-gray-200 relative z-10">
+              <tbody>
+                {[
+                  [
+                    "Search Engine Optimization",
+                    "Social Media Marketing",
+                    "Performance Marketing",
+                  ],
+                  [
+                    "Content Marketing",
+                    "Website Designing & Development",
+                    "Email Marketing",
+                  ],
+                  [
+                    "Social Media Optimization",
+                    "Graphic Designing & Video Editing",
+                    "Influencer Marketing",
+                  ],
+                  ["Online Reputation Management", "", "Affiliate Marketing"],
+                ].map((row, rowIndex) => (
+                  <tr key={rowIndex} className="divide-x divide-white/10">
+                    {row.map((cell, colIndex) => (
+                      <td
+                        key={colIndex}
+                        className="
+                    h-20 
+                    border-b border-white/10 
+                    relative group overflow-hidden
+                  "
+                      >
+                        {cell && (
+                          <a
+                            href={`/services/${cell
+                              .toLowerCase()
+                              .replace(/ /g, "-")
+                              .replace(/\&/g, "and")}`}
+                            target="_blank"
+                            className="
+                        flex items-center justify-center 
+                        w-full h-full px-4 text-center 
+                        font-semibold
+                        text-gray-200
+                        transition-all duration-300
+                        hover:text-[var(--color5)]
+                      "
+                          >
+                            {/* Neon card effect */}
+                            <span
+                              className="
+                          absolute inset-0 
+                          rounded-xl 
+                          border border-transparent
+                          group-hover:border-[var(--color5)]
+                          group-hover:shadow-[0_0_20px_var(--color5)]
+                          transition-all duration-300
+                        "
+                            ></span>
+
+                            <span className="relative z-10">{cell}</span>
+                          </a>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Animations */}
+        <style>{`
+    @keyframes scan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-scan {
+      animation: scan 4s linear infinite;
+    }
+  `}</style>
+      </section>
+      <GetInTouch />
       <PopupForm isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
 
       <Footer />

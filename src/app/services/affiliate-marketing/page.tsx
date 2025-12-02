@@ -260,10 +260,10 @@ function AffiliateMarketing() {
           inline-block px-10 py-4 rounded-full
           text-3xl md:text-4xl font-bold
           text-[var(--color5)]
-          border border-[var(--primary-color)]
+          border border-[var(--color5)]
           backdrop-blur-xl bg-white/5
-          shadow-[0_0_25px_var(--primary-color)]
-          drop-shadow-[0_0_10px_var(--primary-color)]
+          shadow-[0_0_25px_var(--color5)]
+          drop-shadow-[0_0_10px_var(--color5)]
         "
             >
               Performance-Driven Affiliate Marketing Services in India
@@ -298,7 +298,7 @@ function AffiliateMarketing() {
               backdrop-blur-xl bg-white/10
               border border-white/10
               shadow-[0_0_20px_rgba(0,255,255,0.15)]
-              hover:shadow-[0_0_30px_var(--primary-color)]
+              hover:shadow-[0_0_30px_var(--color5)]
               transition-all duration-300
               overflow-hidden
             "
@@ -310,7 +310,7 @@ function AffiliateMarketing() {
                         key={j}
                         className="
                     absolute left-0 w-full h-[2px]
-                    bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                    bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                     animate-affScan
                   "
                         style={{
@@ -335,8 +335,8 @@ function AffiliateMarketing() {
               className="
           relative p-10 rounded-2xl 
           backdrop-blur-xl bg-white/10
-          border border-[var(--primary-color)]
-          shadow-[0_0_25px_var(--primary-color)]
+          border border-[var(--color5)]
+          shadow-[0_0_25px_var(--color5)]
           transition-all duration-300
           overflow-hidden
           space-y-6
@@ -349,7 +349,7 @@ function AffiliateMarketing() {
                     key={j}
                     className="
                 absolute left-0 w-full h-[2px]
-                bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                 animate-affScan
               "
                     style={{
@@ -360,7 +360,7 @@ function AffiliateMarketing() {
                 ))}
               </div>
 
-              <h3 className="text-2xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)]">
+              <h3 className="text-2xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
                 Why Your Brand Needs Affiliate Marketing
               </h3>
 
@@ -415,10 +415,10 @@ function AffiliateMarketing() {
         inline-block px-10 py-4 rounded-full 
         text-3xl md:text-4xl font-bold 
         text-[var(--color5)]
-        border border-[var(--primary-color)]
+        border border-[var(--color5)]
         backdrop-blur-xl bg-white/5
-        shadow-[0_0_25px_var(--primary-color)]
-        drop-shadow-[0_0_10px_var(--primary-color)]
+        shadow-[0_0_25px_var(--color5)]
+        drop-shadow-[0_0_10px_var(--color5)]
       "
             >
               Industries We Work With
@@ -433,7 +433,7 @@ function AffiliateMarketing() {
               backdrop-blur-xl bg-white/10 
               border border-white/10
               shadow-[0_0_20px_rgba(0,255,255,0.15)]
-              hover:shadow-[0_0_30px_var(--primary-color)]
+              hover:shadow-[0_0_30px_var(--color5)]
               transition-all duration-300
               min-h-[240px]
               overflow-hidden
@@ -446,7 +446,7 @@ function AffiliateMarketing() {
                         key={i}
                         className="
                     absolute left-0 w-full h-[2px]
-                    bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                    bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                     animate-scan
                   "
                         style={{
@@ -467,7 +467,7 @@ function AffiliateMarketing() {
                     >
                       {item.icon}
                     </div>
-                    <h4 className="text-base font-semibold text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)]">
+                    <h4 className="text-base font-semibold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
                       {item.title}
                     </h4>
                   </div>
@@ -487,10 +487,10 @@ function AffiliateMarketing() {
               <h3
                 className="
             inline-block px-8 py-3 rounded-full 
-            text-2xl font-bold text-[var(--primary-color)]
-            border border-[var(--primary-color)]
+            text-2xl font-bold text-[var(--color5)]
+            border border-[var(--color5)]
             bg-white/5 backdrop-blur-xl
-            shadow-[0_0_25px_var(--primary-color)]
+            shadow-[0_0_25px_var(--color5)]
           "
               >
                 Scalable, Transparent & Results-First
@@ -509,7 +509,7 @@ function AffiliateMarketing() {
               p-6 rounded-2xl backdrop-blur-xl bg-white/10 
               border border-white/10 
               shadow-[0_0_20px_rgba(0,255,255,0.15)]
-              hover:shadow-[0_0_30px_var(--primary-color)]
+              hover:shadow-[0_0_30px_var(--color5)]
               transition-all duration-300 relative overflow-hidden
             "
                 >
@@ -520,7 +520,7 @@ function AffiliateMarketing() {
                         key={j}
                         className="
                     absolute left-0 w-full h-[2px]
-                    bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                    bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                     animate-scan
                   "
                         style={{
@@ -534,29 +534,6 @@ function AffiliateMarketing() {
                   <p className="text-gray-200 text-lg relative z-10">{txt}</p>
                 </div>
               ))}
-
-              {/* LIST */}
-              <ul className="space-y-4 text-gray-200 text-lg">
-                {[
-                  "Strategic Partner Selection – We connect you with affiliates who match your niche and audience.",
-                  "End-to-End Management – From campaign setup to tracking and payments, we handle it all.",
-                  "Data-Driven Insights – Detailed performance reports keep you in control.",
-                  "Trusted Relationships – We focus on quality affiliates who build brand reputation, not just traffic.",
-                  "Scalable Growth – As your program expands, we help you tap into new audiences globally.",
-                ].map((point, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <div className="w-3 h-3 rounded-full bg-[var(--primary-color)] shadow-[0_0_10px_var(--primary-color)] mt-2"></div>
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <p className="text-gray-200 text-lg">
-                With BigWig Media Digital, you’ll never have to worry about
-                low-quality traffic or shady promotions. Instead, you gain a
-                scalable affiliate model that strengthens your reputation,
-                reach, and revenue through trusted digital voices.
-              </p>
             </div>
 
             {/* RIGHT IMAGE */}
@@ -573,13 +550,38 @@ function AffiliateMarketing() {
             </div>
           </div>
 
+          <div>
+            {" "}
+            {/* LIST */}
+            <ul className="space-y-4 text-gray-200 text-lg">
+              {[
+                "Strategic Partner Selection – We connect you with affiliates who match your niche and audience.",
+                "End-to-End Management – From campaign setup to tracking and payments, we handle it all.",
+                "Data-Driven Insights – Detailed performance reports keep you in control.",
+                "Trusted Relationships – We focus on quality affiliates who build brand reputation, not just traffic.",
+                "Scalable Growth – As your program expands, we help you tap into new audiences globally.",
+              ].map((point, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <div className="w-3 h-3 rounded-full bg-[var(--color5)] shadow-[0_0_10px_var(--color5)] mt-2"></div>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-gray-200 text-lg">
+              With BigWig Media Digital, you’ll never have to worry about
+              low-quality traffic or shady promotions. Instead, you gain a
+              scalable affiliate model that strengthens your reputation, reach,
+              and revenue through trusted digital voices.
+            </p>
+          </div>
+
           {/* SECTION 3 — WHY BIGWIG */}
           <div
             className="
         relative p-10 rounded-3xl text-center 
         backdrop-blur-xl bg-white/10 
-        border border-[var(--primary-color)]
-        shadow-[0_0_35px_var(--primary-color)]
+        border border-[var(--color5)]
+        shadow-[0_0_35px_var(--color5)]
         space-y-6
         overflow-hidden
       "
@@ -591,7 +593,7 @@ function AffiliateMarketing() {
                   key={j}
                   className="
               absolute left-0 w-full h-[2px]
-              bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+              bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
               animate-scan
             "
                   style={{
@@ -602,7 +604,7 @@ function AffiliateMarketing() {
               ))}
             </div>
 
-            <h3 className="text-3xl font-bold text-[var(--color5)] drop-shadow-[0_0_15px_var(--primary-color)]">
+            <h3 className="text-3xl font-bold text-[var(--color5)] drop-shadow-[0_0_15px_var(--color5)]">
               Why BigWig for Affiliate Marketing Services
             </h3>
 
@@ -646,8 +648,8 @@ function AffiliateMarketing() {
           text-[var(--color5)]
           border border-[var(--color5)]
           backdrop-blur-xl bg-white/10
-          shadow-[0_0_25px_var(--primary-color)]
-          drop-shadow-[0_0_15px_var(--primary-color)]
+          shadow-[0_0_25px_var(--color5)]
+          drop-shadow-[0_0_15px_var(--color5)]
         "
             >
               Benefits of Affiliate Marketing Services
@@ -673,7 +675,7 @@ function AffiliateMarketing() {
                 backdrop-blur-xl bg-white/10
                 border border-white/10
                 shadow-[0_0_25px_rgba(0,255,255,0.15)]
-                hover:shadow-[0_0_35px_var(--primary-color)]
+                hover:shadow-[0_0_35px_var(--color5)]
                 transition-all duration-300
                 space-y-4
               "
@@ -685,7 +687,7 @@ function AffiliateMarketing() {
                           key={i}
                           className="
                       absolute left-0 w-full h-[2px]
-                      bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                      bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                       animate-scan
                     "
                           style={{
@@ -697,11 +699,11 @@ function AffiliateMarketing() {
                     </div>
 
                     {/* Icon */}
-                    <div className="bg-white/10 border border-white/20 backdrop-blur-lg shadow-[0_0_10px_var(--primary-color)] p-3 rounded-full w-fit mx-auto">
+                    <div className="bg-white/10 border border-white/20 backdrop-blur-lg shadow-[0_0_10px_var(--color5)] p-3 rounded-full w-fit mx-auto">
                       {item.icon}
                     </div>
 
-                    <h4 className="text-lg font-semibold text-[var(--color5)] text-center drop-shadow-[0_0_10px_var(--primary-color)]">
+                    <h4 className="text-lg font-semibold text-[var(--color5)] text-center drop-shadow-[0_0_10px_var(--color5)]">
                       {item.title}
                     </h4>
 
@@ -724,7 +726,7 @@ function AffiliateMarketing() {
             backdrop-blur-xl bg-white/10 
             border border-white/10
             shadow-[0_0_25px_rgba(0,255,255,0.18)]
-            hover:shadow-[0_0_40px_var(--primary-color)]
+            hover:shadow-[0_0_40px_var(--color5)]
             transition-all duration-300
             min-h-[220px] flex flex-col justify-between
           "
@@ -736,7 +738,7 @@ function AffiliateMarketing() {
                       key={i}
                       className="
                   absolute left-0 w-full h-[2px]
-                  bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                  bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                   animate-scan
                 "
                       style={{
@@ -751,12 +753,12 @@ function AffiliateMarketing() {
                   <div
                     className="
                 bg-white/10 border border-[var(--color5)] p-3 rounded-full 
-                shadow-[0_0_10px_var(--primary-color)]
+                shadow-[0_0_10px_var(--color5)]
               "
                   >
                     {item.icon}
                   </div>
-                  <h4 className="text-lg font-semibold text-[var(--color5)] drop-shadow-[0_0_8px_var(--primary-color)]">
+                  <h4 className="text-lg font-semibold text-[var(--color5)] drop-shadow-[0_0_8px_var(--color5)]">
                     {item.title}
                   </h4>
                 </div>
@@ -808,7 +810,7 @@ function AffiliateMarketing() {
                   key={i}
                   className="
               absolute left-0 w-full h-[2px]
-              bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+              bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
               animate-scanline
             "
                   style={{
@@ -820,7 +822,7 @@ function AffiliateMarketing() {
             </div>
 
             {/* Title */}
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)] leading-snug">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)] leading-snug">
               Ready to Build a Performance-Driven Partner Network?
             </h2>
 
@@ -868,7 +870,7 @@ function AffiliateMarketing() {
             </div>
 
             {/* Neon Border Glow */}
-            <div className="absolute inset-0 rounded-3xl border border-transparent hover:border-[var(--primary-color)] transition-all duration-300 pointer-events-none"></div>
+            <div className="absolute inset-0 rounded-3xl border border-transparent hover:border-[var(--color5)] transition-all duration-300 pointer-events-none"></div>
           </div>
         </div>
 
@@ -888,7 +890,7 @@ function AffiliateMarketing() {
       {/* FAQ Section */}
       <section className=" py-12">
         <div className="w-11/12 md:w-5/6 mx-auto space-y-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--primary-color)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--color5)]">
             Frequently Asked Questions
           </h2>
 
@@ -925,7 +927,7 @@ function AffiliateMarketing() {
         <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
 
         <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--primary-color)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--color5)]">
             Our Other Services
           </h2>
 
@@ -941,7 +943,7 @@ function AffiliateMarketing() {
       "
           >
             {/* Scan Line */}
-            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent animate-scan"></div>
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent animate-scan"></div>
 
             <table className="min-w-full text-sm text-gray-200 relative z-10">
               <tbody>
@@ -986,7 +988,7 @@ function AffiliateMarketing() {
                         font-semibold
                         text-gray-200
                         transition-all duration-300
-                        hover:text-[var(--primary-color)]
+                        hover:text-[var(--color5)]
                       "
                           >
                             {/* Neon card effect */}
@@ -995,8 +997,8 @@ function AffiliateMarketing() {
                           absolute inset-0 
                           rounded-xl 
                           border border-transparent
-                          group-hover:border-[var(--primary-color)]
-                          group-hover:shadow-[0_0_20px_var(--primary-color)]
+                          group-hover:border-[var(--color5)]
+                          group-hover:shadow-[0_0_20px_var(--color5)]
                           transition-all duration-300
                         "
                             ></span>
