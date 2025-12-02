@@ -195,7 +195,7 @@ function GraphicDesigning() {
             </p>
           </div>
 
-          <div className="relative bg-[var(--primary-color)]/5 p-10 rounded-2xl backdrop-blur-xl overflow-hidden">
+          <div className="relative bg-[var(--color5)]/5 p-10 rounded-2xl backdrop-blur-xl overflow-hidden">
             {/* Hologram Lines Background */}
             <div className="absolute inset-0 opacity-20 pointer-events-none">
               {[...Array(6)].map((_, i) => (
@@ -203,7 +203,7 @@ function GraphicDesigning() {
                   key={i}
                   className="
           absolute left-0 w-full h-[2px]
-          bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+          bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
           animate-gfxScan
         "
                   style={{
@@ -220,10 +220,10 @@ function GraphicDesigning() {
       text-2xl md:text-3xl font-bold 
       text-[var(--color5)] 
       mb-10 text-center md:text-left 
-      drop-shadow-[0_0_10px_var(--primary-color)]
+      drop-shadow-[0_0_10px_var(--color5)]
       inline-block px-8 py-3 rounded-full
       border border-[var(--color5)]
-      shadow-[0_0_20px_var(--primary-color)]
+      shadow-[0_0_20px_var(--color5)]
       bg-white/5 backdrop-blur-xl
     "
             >
@@ -251,7 +251,7 @@ function GraphicDesigning() {
           rounded-2xl backdrop-blur-xl bg-white/10 
           border border-[var(--color3)] 
           hover:border-[var(--color5)] 
-          hover:shadow-[0_0_20px_var(--primary-color)]
+          hover:shadow-[0_0_20px_var(--color5)]
           transition-all duration-300 
           min-h-[100px]
           overflow-hidden
@@ -264,7 +264,7 @@ function GraphicDesigning() {
                         key={i}
                         className="
                 absolute left-0 w-full h-[2px]
-                bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                 animate-gfxScan
               "
                         style={{
@@ -282,7 +282,7 @@ function GraphicDesigning() {
             bg-white/10 backdrop-blur-lg 
             border border-white/20
             shadow-[0_0_10px_rgba(0,255,255,0.3)]
-            group-hover:shadow-[0_0_15px_var(--primary-color)]
+            group-hover:shadow-[0_0_15px_var(--color5)]
             transition-all
           "
                   >
@@ -295,7 +295,7 @@ function GraphicDesigning() {
                   </div>
 
                   {/* Hover neon border */}
-                  <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--primary-color)] transition-all"></div>
+                  <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
                 </div>
               ))}
             </div>
@@ -343,10 +343,10 @@ function GraphicDesigning() {
               className="
           text-2xl md:text-4xl font-bold text-[var(--color5)]
           px-10 py-3 rounded-full
-          border border-[var(--primary-color)]
-          shadow-[0_0_25px_var(--primary-color)]
+          border border-[var(--color5)]
+          shadow-[0_0_25px_var(--color5)]
           backdrop-blur-xl bg-white/5
-          drop-shadow-[0_0_10px_var(--primary-color)]
+          drop-shadow-[0_0_10px_var(--color5)]
           text-center
         "
             >
@@ -398,9 +398,9 @@ function GraphicDesigning() {
                 className={`
             relative p-6 rounded-2xl 
             backdrop-blur-xl bg-white/10 
-            ${item.border} border-[var(--primary-color)] 
+            ${item.border} border-[var(--color5)] 
             shadow-[0_0_20px_rgba(0,255,255,0.15)]
-            hover:shadow-[0_0_30px_var(--primary-color)]
+            hover:shadow-[0_0_30px_var(--color5)]
             transition-all duration-300
             overflow-hidden min-h-[200px]
           `}
@@ -412,7 +412,7 @@ function GraphicDesigning() {
                       key={j}
                       className="
                           absolute left-0 w-full h-[2px]
-                          bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                          bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                           animate-gdScan
                 "
                       style={{
@@ -424,7 +424,7 @@ function GraphicDesigning() {
                 </div>
 
                 {/* TITLE */}
-                <h4 className="font-semibold text-xl mb-3 text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)]">
+                <h4 className="font-semibold text-xl mb-3 text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
                   {item.title}
                 </h4>
 
@@ -434,7 +434,7 @@ function GraphicDesigning() {
                 </p>
 
                 {/* HOVER NEON BORDER */}
-                <div className="absolute inset-0 border border-transparent rounded-2xl group-hover:border-[var(--primary-color)] transition-all"></div>
+                <div className="absolute inset-0 border border-transparent rounded-2xl group-hover:border-[var(--color5)] transition-all"></div>
               </div>
             ))}
           </div>

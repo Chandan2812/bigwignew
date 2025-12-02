@@ -32,31 +32,31 @@ const features = [
     title: "Strategy Meets Creativity",
     content:
       "We combine brand strategy, content planning, and storytelling to build profiles that not only look great but perform even better.",
-    icon: <FaPalette className="text-3xl text-[var(--primary-color)]" />,
+    icon: <FaPalette className="text-3xl text-[var(--color5)]" />,
   },
   {
     title: "Industry-Focused Optimization",
     content:
       "From fashion and beauty to SaaS and healthcare, we create social content that speaks your industry’s language and tone.",
-    icon: <FaIndustry className="text-3xl text-[var(--primary-color)]" />,
+    icon: <FaIndustry className="text-3xl text-[var(--color5)]" />,
   },
   {
     title: "SEO-Driven Social Content",
     content:
       "We use keywords, hashtags, and trending topics to enhance discoverability across both social platforms and search engines.",
-    icon: <FaSearch className="text-3xl text-[var(--primary-color)]" />,
+    icon: <FaSearch className="text-3xl text-[var(--color5)]" />,
   },
   {
     title: "Real Engagement",
     content:
       "It’s not just about numbers. We help you create meaningful engagement and build a loyal follower base that interacts and converts.",
-    icon: <FaComments className="text-3xl text-[var(--primary-color)]" />,
+    icon: <FaComments className="text-3xl text-[var(--color5)]" />,
   },
   {
     title: "Weekly Reporting & Insights",
     content:
       "We track profile visits, reach, engagement, and growth, giving you actionable insights into your brand’s organic progress.",
-    icon: <FaChartLine className="text-3xl text-[var(--primary-color)]" />,
+    icon: <FaChartLine className="text-3xl text-[var(--color5)]" />,
   },
 ];
 
@@ -157,7 +157,7 @@ function SocialMediaOptimization() {
         </div>
 
         {/* Section 2 - Highlighted Statement */}
-        <div className="bg-[var(--primary-color)]/10 border border-[var(--color5)] rounded-full p-6 md:p-8 text-center space-y-4">
+        <div className="bg-[var(--color5)]/10 border border-[var(--color5)] rounded-full p-6 md:p-8 text-center space-y-4">
           <p className="text-lg text-[var(--color5)] font-medium">
             We don’t just post, we create, optimize, engage, and build
             communities. If you&#39;re looking to establish authority, connect
@@ -216,12 +216,12 @@ function SocialMediaOptimization() {
               <h2
                 className="
           inline-block px-10 py-3 rounded-full 
-          border border-[var(--primary-color)]
-          shadow-[0_0_20px_var(--primary-color)]
+          border border-[var(--color5)]
+          shadow-[0_0_20px_var(--color5)]
           backdrop-blur-xl bg-white/5 
           text-3xl md:text-4xl font-bold
           text-[var(--color5)]
-          drop-shadow-[0_0_10px_var(--primary-color)]
+          drop-shadow-[0_0_10px_var(--color5)]
         "
               >
                 Our Social Media Optimization Services
@@ -269,7 +269,7 @@ function SocialMediaOptimization() {
               backdrop-blur-xl bg-white/10 
               border border-white/10 
               shadow-[0_0_20px_rgba(0,255,255,0.15)]
-              hover:shadow-[0_0_25px_var(--primary-color)]
+              hover:shadow-[0_0_25px_var(--color5)]
               transition-all duration-300
               space-y-3 min-h-[240px]
               overflow-hidden
@@ -282,7 +282,7 @@ function SocialMediaOptimization() {
                         key={i}
                         className="
                     absolute left-0 w-full h-[2px]
-                    bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                    bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                     animate-smoScan
                   "
                         style={{
@@ -293,7 +293,7 @@ function SocialMediaOptimization() {
                     ))}
                   </div>
 
-                  <h3 className="text-xl font-semibold text-[var(--color5)] drop-shadow-[0_0_8px_var(--primary-color)]">
+                  <h3 className="text-xl font-semibold text-[var(--color5)] drop-shadow-[0_0_8px_var(--color5)]">
                     {item.title}
                   </h3>
 
@@ -311,12 +311,12 @@ function SocialMediaOptimization() {
               <h3
                 className="
           inline-block px-10 py-3 rounded-full 
-          border border-[var(--primary-color)]
-          shadow-[0_0_20px_var(--primary-color)]
+          border border-[var(--color5)]
+          shadow-[0_0_20px_var(--color5)]
           backdrop-blur-xl bg-white/5 
           text-3xl md:text-4xl font-bold
           text-[var(--color5)]
-          drop-shadow-[0_0_10px_var(--primary-color)]
+          drop-shadow-[0_0_10px_var(--color5)]
         "
               >
                 Platforms We Optimize
@@ -392,12 +392,12 @@ function SocialMediaOptimization() {
               <h3
                 className="
           inline-block px-10 py-3 rounded-full 
-          border border-[var(--primary-color)]
-          shadow-[0_0_20px_var(--primary-color)]
+          border border-[var(--color5)]
+          shadow-[0_0_20px_var(--color5)]
           backdrop-blur-xl bg-white/5 
           text-3xl md:text-4xl font-bold
           text-[var(--color5)]
-          drop-shadow-[0_0_10px_var(--primary-color)]
+          drop-shadow-[0_0_10px_var(--color5)]
         "
               >
                 Why Choose BigWig Digital for SMO Services?
@@ -413,7 +413,7 @@ function SocialMediaOptimization() {
               backdrop-blur-xl bg-white/10 
               border border-white/10 
               shadow-[0_0_20px_rgba(0,255,255,0.15)]
-              hover:shadow-[0_0_25px_var(--primary-color)]
+              hover:shadow-[0_0_25px_var(--color5)]
               transition-all duration-300
               min-h-[260px]
               overflow-hidden
@@ -427,7 +427,7 @@ function SocialMediaOptimization() {
                         key={i}
                         className="
                     absolute left-0 w-full h-[2px]
-                    bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                    bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                     animate-smoScan
                   "
                         style={{ top: `${60 + i * 45}px` }}
@@ -437,7 +437,7 @@ function SocialMediaOptimization() {
 
                   <div className="flex justify-center ">{item.icon}</div>
 
-                  <h4 className="text-lg font-semibold text-[var(--color5)] drop-shadow-[0_0_8px_var(--primary-color)]">
+                  <h4 className="text-lg font-semibold text-[var(--color5)] drop-shadow-[0_0_8px_var(--color5)]">
                     {item.title}
                   </h4>
 
@@ -463,6 +463,112 @@ function SocialMediaOptimization() {
 
       <OurProcess />
       <WhyBigwig />
+
+      <section className="py-12 relative overflow-hidden">
+        {/* Matrix glow background */}
+        <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
+
+        <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--color5)]">
+            Our Other Services
+          </h2>
+
+          {/* TABLE WRAPPER */}
+          <div
+            className="
+        rounded-2xl 
+        overflow-hidden 
+        backdrop-blur-xl bg-white/5 
+        border border-white/10 
+        shadow-[0_0_30px_rgba(0,255,255,0.15)] 
+        relative
+      "
+          >
+            {/* Scan Line */}
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent animate-scan"></div>
+
+            <table className="min-w-full text-sm text-gray-200 relative z-10">
+              <tbody>
+                {[
+                  [
+                    "Search Engine Optimization",
+                    "Social Media Marketing",
+                    "Performance Marketing",
+                  ],
+                  [
+                    "Content Marketing",
+                    "Website Designing & Development",
+                    "Email Marketing",
+                  ],
+                  [
+                    "Social Media Optimization",
+                    "Graphic Designing & Video Editing",
+                    "Influencer Marketing",
+                  ],
+                  ["Online Reputation Management", "", "Affiliate Marketing"],
+                ].map((row, rowIndex) => (
+                  <tr key={rowIndex} className="divide-x divide-white/10">
+                    {row.map((cell, colIndex) => (
+                      <td
+                        key={colIndex}
+                        className="
+                    h-20 
+                    border-b border-white/10 
+                    relative group overflow-hidden
+                  "
+                      >
+                        {cell && (
+                          <a
+                            href={`/services/${cell
+                              .toLowerCase()
+                              .replace(/ /g, "-")
+                              .replace(/\&/g, "and")}`}
+                            target="_blank"
+                            className="
+                        flex items-center justify-center 
+                        w-full h-full px-4 text-center 
+                        font-semibold
+                        text-gray-200
+                        transition-all duration-300
+                        hover:text-[var(--color5)]
+                      "
+                          >
+                            {/* Neon card effect */}
+                            <span
+                              className="
+                          absolute inset-0 
+                          rounded-xl 
+                          border border-transparent
+                          group-hover:border-[var(--color5)]
+                          group-hover:shadow-[0_0_20px_var(--color5)]
+                          transition-all duration-300
+                        "
+                            ></span>
+
+                            <span className="relative z-10">{cell}</span>
+                          </a>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Animations */}
+        <style>{`
+    @keyframes scan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-scan {
+      animation: scan 4s linear infinite;
+    }
+  `}</style>
+      </section>
       <GetInTouch />
       <PopupForm isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
 
