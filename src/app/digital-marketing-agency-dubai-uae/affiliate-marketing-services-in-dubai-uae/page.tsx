@@ -16,6 +16,7 @@ import { useState } from "react";
 import Link from "next/link";
 import ButtonFill from "../../../../components/Button";
 import GetInTouch from "../../../../components/GetInTouch";
+import ServicesNavigation from "../../../../components/UAEServicesDirectory";
 
 function AffiliateMarketingDubai() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -668,6 +669,7 @@ function AffiliateMarketingDubai() {
 
       <OurProcess />
       <WhyBigwig />
+      <ServicesNavigation />
       <GetInTouch />
 
       <Footer />

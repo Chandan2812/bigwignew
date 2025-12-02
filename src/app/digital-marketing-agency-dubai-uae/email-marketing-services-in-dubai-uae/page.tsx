@@ -13,6 +13,7 @@ import CTABanner from "../../../../components/CTABanner";
 
 import Image from "next/image";
 import GetInTouch from "../../../../components/GetInTouch";
+import ServicesNavigation from "../../../../components/UAEServicesDirectory";
 
 function EmailMarketingInDubai() {
   //   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -311,6 +312,7 @@ function EmailMarketingInDubai() {
 
       <OurProcess />
       <WhyBigwig />
+      <ServicesNavigation />
       <GetInTouch />
 
       <Footer />

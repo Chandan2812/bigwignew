@@ -28,6 +28,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import GetInTouch from "../../../../components/GetInTouch";
+import ServicesNavigation from "../../../../components/UAEServicesDirectory";
 
 const services = [
   {
@@ -163,22 +164,22 @@ function SmmServicesInDubai() {
         {/* Bullet Points */}
         <div className=" space-y-3 text-base">
           <div className="flex items-start gap-3">
-            <span className="text-[var(--primary-color)] text-xl">●</span>
+            <span className="text-[var(--color5)] text-xl">●</span>
             <p>Target audiences by location, interests, and behavior.</p>
           </div>
 
           <div className="flex items-start gap-3">
-            <span className="text-[var(--primary-color)] text-xl">●</span>
+            <span className="text-[var(--color5)] text-xl">●</span>
             <p>Reach both local UAE customers and international audiences.</p>
           </div>
 
           <div className="flex items-start gap-3">
-            <span className="text-[var(--primary-color)] text-xl">●</span>
+            <span className="text-[var(--color5)] text-xl">●</span>
             <p>Generate leads, traffic, sales, and brand visibility.</p>
           </div>
 
           <div className="flex items-start gap-3">
-            <span className="text-[var(--primary-color)] text-xl">●</span>
+            <span className="text-[var(--color5)] text-xl">●</span>
             <p>
               Compete effectively in industries like real estate, e-commerce,
               hospitality, education, and finance.
@@ -334,7 +335,7 @@ function SmmServicesInDubai() {
           >
             {/* Hologram scan line */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-              <div className="absolute top-0 h-[2px] inset-x-0 bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent animate-scan"></div>
+              <div className="absolute top-0 h-[2px] inset-x-0 bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent animate-scan"></div>
             </div>
 
             {/* Matrix overlay */}
@@ -355,7 +356,7 @@ function SmmServicesInDubai() {
                 "Scalable campaigns that grow with your business",
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-[var(--primary-color)] mt-1" />
+                  <CheckCircle className="w-6 h-6 text-[var(--color5)] mt-1" />
                   <p className="leading-relaxed">{item}</p>
                 </div>
               ))}
@@ -366,6 +367,7 @@ function SmmServicesInDubai() {
 
       <OurProcess />
       <WhyBigwig />
+      <ServicesNavigation />
       <GetInTouch />
       <Footer />
       {/* <PopupForm isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} /> */}

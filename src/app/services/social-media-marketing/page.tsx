@@ -235,7 +235,7 @@ function SocialMediaMarketing() {
             className=" relative p-6 rounded-xl overflow-hidden
         bg-[#0a0f14]/80 border border-[#1e293b]
         shadow-[0_0_25px_rgba(0,0,0,0.4)]
-        hover:border-[var(--primary-color)]
+        hover:border-[var(--color5)]
         hover:shadow-[0_0_30px_rgba(167,235,242,0.35)]
         transition-all duration-300"
           >
@@ -272,7 +272,7 @@ function SocialMediaMarketing() {
             className="mt-10  relative p-6 rounded-xl overflow-hidden
         bg-[#0a0f14]/80 border border-[#1e293b]
         shadow-[0_0_25px_rgba(0,0,0,0.4)]
-        hover:border-[var(--primary-color)]
+        hover:border-[var(--color5)]
         hover:shadow-[0_0_30px_rgba(167,235,242,0.35)]
         transition-all duration-300"
           >
@@ -295,12 +295,12 @@ function SocialMediaMarketing() {
             <div className="absolute inset-0 opacity-[0.06] bg-[url('https://i.imgur.com/2JYwQ7U.gif')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
 
             {/* Outer glow border */}
-            <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-[var(--primary-color)] transition-all duration-500 pointer-events-none"></div>
+            <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-[var(--color5)] transition-all duration-500 pointer-events-none"></div>
 
             <table className="min-w-full text-sm relative z-10 backdrop-blur-xl">
               {/* HEADER */}
               <thead className="bg-gradient-to-r from-[#0d1120] via-[#122033] to-[#0d1120] text-white shadow-[0_0_30px_rgba(0,255,255,0.2)]">
-                <tr className="uppercase tracking-wide text-[var(--primary-color)]">
+                <tr className="uppercase tracking-wide text-[var(--color5)]">
                   <th className="px-6 py-4 font-semibold border-r border-cyan-900/40 text-[var(--color5)]">
                     Factor
                   </th>
@@ -369,7 +369,7 @@ function SocialMediaMarketing() {
             </table>
 
             {/* SCAN LINE ANIMATION */}
-            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent animate-scan pointer-events-none"></div>
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent animate-scan pointer-events-none"></div>
           </div>
         </div>
       </section>
@@ -394,15 +394,15 @@ function SocialMediaMarketing() {
             relative group p-6 rounded-xl
             backdrop-blur-xl bg-white/5
             border border-white/10 shadow-xl
-            hover:shadow-[0_0_25px_var(--primary-color)]
+            hover:shadow-[0_0_25px_var(--color5)]
             transition-all duration-300 cursor-pointer
           "
             >
               {/* Outer Neon Border Glow */}
-              <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-[var(--primary-color)] transition-all duration-300"></div>
+              <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-[var(--color5)] transition-all duration-300"></div>
 
               {/* Inner Glow Line */}
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[var(--primary-color)]/0 via-[var(--primary-color)] to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[var(--color5)]/0 via-[var(--color5)] to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
               {/* MATRIX HOLOGRAM OVERLAY */}
               <div className="absolute inset-0 opacity-[0.22] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764576928/23148_rqpqvq.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
@@ -410,11 +410,11 @@ function SocialMediaMarketing() {
               {/* Content */}
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-2">
-                  <h4 className="text-xl font-semibold text-[var(--primary-color)] tracking-wide group-hover:drop-shadow-[0_0_6px_var(--primary-color)] transition">
+                  <h4 className="text-xl font-semibold text-[var(--color5)] tracking-wide group-hover:drop-shadow-[0_0_6px_var(--color5)] transition">
                     {item.title}
                   </h4>
 
-                  <div className="text-3xl text-[var(--primary-color)] group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_6px_var(--primary-color)]">
+                  <div className="text-3xl text-[var(--color5)] group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_6px_var(--color5)]">
                     {icons[item.title]}
                   </div>
                 </div>
@@ -447,7 +447,7 @@ function SocialMediaMarketing() {
       space-y-6
     "
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
               Why choose BigWig Media Digital for social media marketing in
               India
             </h2>
@@ -484,9 +484,9 @@ function SocialMediaMarketing() {
                 ],
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
-                  <div className="w-3 h-3 mt-2 rounded-full bg-[var(--primary-color)] shadow-[0_0_10px_var(--primary-color)]"></div>
+                  <div className="w-3 h-3 mt-2 rounded-full bg-[var(--color5)] shadow-[0_0_10px_var(--color5)]"></div>
                   <span>
-                    <span className="text-[var(--primary-color)] font-semibold">
+                    <span className="text-[var(--color5)] font-semibold">
                       {item[0]}
                     </span>{" "}
                     {item[1]}
@@ -498,7 +498,7 @@ function SocialMediaMarketing() {
 
           {/* WHAT YOU GET SECTION */}
           <div className="space-y-8">
-            <h3 className="text-2xl font-semibold text-[var(--primary-color)] tracking-wide drop-shadow-[0_0_10px_var(--primary-color)]">
+            <h3 className="text-2xl font-semibold text-[var(--color5)] tracking-wide drop-shadow-[0_0_10px_var(--color5)]">
               What You Get with Our Social Media Ad Management
             </h3>
 
@@ -519,13 +519,13 @@ function SocialMediaMarketing() {
               p-4 rounded-full 
               bg-white/5 backdrop-blur-xl 
               border border-white/10 
-              hover:border-[var(--primary-color)] 
-              shadow-md hover:shadow-[0_0_20px_var(--primary-color)]
+              hover:border-[var(--color5)] 
+              shadow-md hover:shadow-[0_0_20px_var(--color5)]
               transition-all duration-300
             "
                 >
                   <svg
-                    className="w-6 h-6 text-[var(--primary-color)] group-hover:scale-110 transition-transform"
+                    className="w-6 h-6 text-[var(--color5)] group-hover:scale-110 transition-transform"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -585,7 +585,7 @@ function SocialMediaMarketing() {
         <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
 
         <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--primary-color)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--color5)]">
             Our Other Services
           </h2>
 
@@ -601,7 +601,7 @@ function SocialMediaMarketing() {
       "
           >
             {/* Scan Line */}
-            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent animate-scan"></div>
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent animate-scan"></div>
 
             <table className="min-w-full text-sm text-gray-200 relative z-10">
               <tbody>
@@ -646,7 +646,7 @@ function SocialMediaMarketing() {
                         font-semibold
                         text-gray-200
                         transition-all duration-300
-                        hover:text-[var(--primary-color)]
+                        hover:text-[var(--color5)]
                       "
                           >
                             {/* Neon card effect */}
@@ -655,8 +655,8 @@ function SocialMediaMarketing() {
                           absolute inset-0 
                           rounded-xl 
                           border border-transparent
-                          group-hover:border-[var(--primary-color)]
-                          group-hover:shadow-[0_0_20px_var(--primary-color)]
+                          group-hover:border-[var(--color5)]
+                          group-hover:shadow-[0_0_20px_var(--color5)]
                           transition-all duration-300
                         "
                             ></span>

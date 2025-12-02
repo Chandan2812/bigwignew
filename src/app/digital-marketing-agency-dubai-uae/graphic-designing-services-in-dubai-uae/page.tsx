@@ -28,6 +28,7 @@ import Image from "next/image";
 import { useState } from "react";
 import GetInTouch from "../../../../components/GetInTouch";
 import ButtonFill from "../../../../components/Button";
+import ServicesNavigation from "../../../../components/UAEServicesDirectory";
 
 function SMODubai() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -571,6 +572,7 @@ function SMODubai() {
 
       <OurProcess />
       <WhyBigwig />
+      <ServicesNavigation />
       <GetInTouch />
 
       <Footer />

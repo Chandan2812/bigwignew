@@ -222,7 +222,7 @@ function ContentMarketing() {
         border border-white/20 shadow-[0_0_25px_rgba(0,255,255,0.25)]
       "
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-[var(--color5)] tracking-wide drop-shadow-[0_0_10px_var(--primary-color)] text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--color5)] tracking-wide drop-shadow-[0_0_10px_var(--color5)] text-center">
               Why Content Marketing Is the Future of Digital Success.
             </h2>
           </div>
@@ -231,7 +231,7 @@ function ContentMarketing() {
           <div className="space-y-6 text-gray-200 text-lg leading-relaxed">
             <p>
               Content marketing is more than writing—it&#39;s about building
-              <span className="text-[var(--primary-color)] font-semibold drop-shadow-[0_0_8px_var(--primary-color)]">
+              <span className="text-[var(--color5)] font-semibold drop-shadow-[0_0_8px_var(--color5)]">
                 {" "}
                 authority, trust, and long-term visibility
               </span>{" "}
@@ -246,7 +246,7 @@ function ContentMarketing() {
               <strong>
                 <a
                   href="https://www.bigwigdigital.in/"
-                  className="text-[var(--primary-color)] underline"
+                  className="text-[var(--color5)] underline"
                 >
                   content marketing company
                 </a>
@@ -266,12 +266,12 @@ function ContentMarketing() {
                 backdrop-blur-xl bg-white/10 
                 border border-white/10 
                 shadow-[0_0_20px_rgba(0,255,255,0.15)]
-                hover:border-[var(--primary-color)] 
-                hover:shadow-[0_0_25px_var(--primary-color)]
+                hover:border-[var(--color5)] 
+                hover:shadow-[0_0_25px_var(--color5)]
                 transition-all 
               "
                   >
-                    <div className="text-3xl text-[var(--primary-color)] drop-shadow-[0_0_10px_var(--primary-color)]">
+                    <div className="text-3xl text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
                       {item.icon}
                     </div>
                     <h4 className="text-xl font-semibold text-[var(--color5)] mt-3">
@@ -296,8 +296,8 @@ function ContentMarketing() {
             backdrop-blur-xl bg-white/5 
             border border-white/10
             shadow-[0_0_20px_rgba(0,255,255,0.15)]
-            hover:border-[var(--primary-color)] 
-            hover:shadow-[0_0_25px_var(--primary-color)]
+            hover:border-[var(--color5)] 
+            hover:shadow-[0_0_25px_var(--color5)]
             transition-all duration-300
             overflow-hidden group
           "
@@ -309,7 +309,7 @@ function ContentMarketing() {
                       key={i}
                       className="
                   absolute left-0 w-full h-[2px]
-                  bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                  bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                   animate-contentScan
                 "
                       style={{
@@ -320,7 +320,7 @@ function ContentMarketing() {
                   ))}
                 </div>
 
-                <div className="text-3xl drop-shadow-[0_0_10px_var(--primary-color)]">
+                <div className="text-3xl drop-shadow-[0_0_10px_var(--color5)]">
                   {item.icon}
                 </div>
 
@@ -337,7 +337,7 @@ function ContentMarketing() {
                   className="
               absolute inset-0 rounded-xl 
               border border-transparent 
-              group-hover:border-[var(--primary-color)] 
+              group-hover:border-[var(--color5)] 
               transition-all
             "
                 ></div>
@@ -375,7 +375,7 @@ function ContentMarketing() {
       text-2xl md:text-3xl font-bold 
       text-[var(--color5)] 
       text-center md:text-left
-      drop-shadow-[0_0_10px_var(--primary-color)]
+      drop-shadow-[0_0_10px_var(--color5)]
     "
           >
             Our Core Content Marketing Services
@@ -392,8 +392,8 @@ function ContentMarketing() {
                 backdrop-blur-xl bg-white/10 
                 border border-white/10 
                 shadow-[0_0_20px_rgba(0,255,255,0.15)]
-                hover:border-[var(--primary-color)]
-                hover:shadow-[0_0_25px_var(--primary-color)]
+                hover:border-[var(--color5)]
+                hover:shadow-[0_0_25px_var(--color5)]
                 transition-all
                 overflow-hidden group
               "
@@ -405,7 +405,7 @@ function ContentMarketing() {
                           key={i}
                           className="
                       absolute left-0 w-full h-[2px]
-                      bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                      bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                       animate-scanCore
                     "
                           style={{
@@ -424,7 +424,7 @@ function ContentMarketing() {
                     </p>
 
                     {/* Glow Border */}
-                    <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-[var(--primary-color)] transition-all"></div>
+                    <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
                   </div>
                 </div>
               ))}
@@ -441,8 +441,8 @@ function ContentMarketing() {
             backdrop-blur-xl bg-white/5 
             border border-white/10
             shadow-[0_0_20px_rgba(0,255,255,0.15)]
-            hover:border-[var(--primary-color)]
-            hover:shadow-[0_0_25px_var(--primary-color)]
+            hover:border-[var(--color5)]
+            hover:shadow-[0_0_25px_var(--color5)]
             transition-all duration-300
             overflow-hidden group
           "
@@ -454,7 +454,7 @@ function ContentMarketing() {
                       key={i}
                       className="
                   absolute left-0 w-full h-[2px]
-                  bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                  bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                   animate-scanCore
                 "
                       style={{
@@ -474,7 +474,7 @@ function ContentMarketing() {
                 </p>
 
                 {/* Glow Border */}
-                <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-[var(--primary-color)] transition-all"></div>
+                <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
               </div>
             ))}
           </div>
@@ -504,7 +504,7 @@ function ContentMarketing() {
       text-2xl md:text-3xl font-bold 
       text-[var(--color5)]
       text-center md:text-left
-      drop-shadow-[0_0_10px_var(--primary-color)]
+      drop-shadow-[0_0_10px_var(--color5)]
     "
           >
             What Makes BigWig Digital a Top Content Marketing Agency?
@@ -528,8 +528,8 @@ function ContentMarketing() {
                 backdrop-blur-xl bg-white/10 
                 border border-white/10
                 shadow-[0_0_20px_rgba(0,255,255,0.15)]
-                hover:border-[var(--primary-color)]
-                hover:shadow-[0_0_25px_var(--primary-color)]
+                hover:border-[var(--color5)]
+                hover:shadow-[0_0_25px_var(--color5)]
                 transition-all overflow-hidden group
               "
                   >
@@ -540,7 +540,7 @@ function ContentMarketing() {
                           key={i}
                           className="
                       absolute left-0 w-full h-[2px]
-                      bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                      bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                       animate-scanAgency
                     "
                           style={{
@@ -551,7 +551,7 @@ function ContentMarketing() {
                       ))}
                     </div>
 
-                    <div className="text-3xl text-[var(--primary-color)] drop-shadow-[0_0_10px_var(--primary-color)]">
+                    <div className="text-3xl text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
                       {item.icon}
                     </div>
 
@@ -567,7 +567,7 @@ function ContentMarketing() {
                       className="
                 absolute inset-0 rounded-xl 
                 border border-transparent 
-                group-hover:border-[var(--primary-color)]
+                group-hover:border-[var(--color5)]
                 transition-all
               "
                     ></div>
@@ -588,8 +588,8 @@ function ContentMarketing() {
             backdrop-blur-xl bg-white/5
             border border-white/10 
             shadow-[0_0_20px_rgba(0,255,255,0.15)]
-            hover:border-[var(--primary-color)]
-            hover:shadow-[0_0_25px_var(--primary-color)]
+            hover:border-[var(--color5)]
+            hover:shadow-[0_0_25px_var(--color5)]
             transition-all overflow-hidden group
           "
               >
@@ -600,7 +600,7 @@ function ContentMarketing() {
                       key={i}
                       className="
                   absolute left-0 w-full h-[2px]
-                  bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                  bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                   animate-scanAgency
                 "
                       style={{
@@ -611,7 +611,7 @@ function ContentMarketing() {
                   ))}
                 </div>
 
-                <div className="text-3xl text-[var(--primary-color)] drop-shadow-[0_0_10px_var(--primary-color)]">
+                <div className="text-3xl text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
                   {item.icon}
                 </div>
 
@@ -626,7 +626,7 @@ function ContentMarketing() {
                 <div
                   className="
             absolute inset-0 rounded-xl border border-transparent 
-            group-hover:border-[var(--primary-color)]
+            group-hover:border-[var(--color5)]
             transition-all
           "
                 ></div>
@@ -659,7 +659,7 @@ function ContentMarketing() {
         backdrop-blur-xl bg-white/10 border border-white/20 
         shadow-[0_0_20px_rgba(0,255,255,0.25)]"
           >
-            <h3 className="text-3xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)]">
+            <h3 className="text-3xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
               How We Build Your Content Engine
             </h3>
           </div>
@@ -690,7 +690,7 @@ function ContentMarketing() {
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-4">
                 {/* Neon bullet */}
-                <div className="w-3 h-3 mt-2 rounded-full bg-[var(--primary-color)] shadow-[0_0_10px_var(--primary-color)]"></div>
+                <div className="w-3 h-3 mt-2 rounded-full bg-[var(--color5)] shadow-[0_0_10px_var(--color5)]"></div>
 
                 <span>
                   <strong className="text-[var(--color5)]">{item[0]}</strong>{" "}
@@ -717,7 +717,7 @@ function ContentMarketing() {
                   key={i}
                   className="
               absolute left-0 w-full h-[2px]
-              bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+              bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
               animate-engineScan
             "
                   style={{
@@ -731,7 +731,7 @@ function ContentMarketing() {
             <h4
               className="
         text-2xl md:text-3xl font-bold text-[var(--color5)]
-        mb-4 drop-shadow-[0_0_10px_var(--primary-color)]
+        mb-4 drop-shadow-[0_0_10px_var(--color5)]
         relative z-10 text-center md:text-left
       "
             >
@@ -748,7 +748,7 @@ function ContentMarketing() {
               <strong>
                 <a
                   href="https://www.bigwigdigital.in/"
-                  className="text-[var(--primary-color)] underline"
+                  className="text-[var(--color5)] underline"
                 >
                   content marketing services
                 </a>
@@ -761,7 +761,7 @@ function ContentMarketing() {
               className="
           absolute inset-0 rounded-2xl
           border border-transparent 
-          group-hover:border-[var(--primary-color)]
+          group-hover:border-[var(--color5)]
           transition-all duration-300
         "
             ></div>
@@ -783,6 +783,112 @@ function ContentMarketing() {
 
       <OurProcess />
       <WhyBigwig />
+
+      <section className="py-12 relative overflow-hidden">
+        {/* Matrix glow background */}
+        <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
+
+        <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--color5)]">
+            Our Other Services
+          </h2>
+
+          {/* TABLE WRAPPER */}
+          <div
+            className="
+        rounded-2xl 
+        overflow-hidden 
+        backdrop-blur-xl bg-white/5 
+        border border-white/10 
+        shadow-[0_0_30px_rgba(0,255,255,0.15)] 
+        relative
+      "
+          >
+            {/* Scan Line */}
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent animate-scan"></div>
+
+            <table className="min-w-full text-sm text-gray-200 relative z-10">
+              <tbody>
+                {[
+                  [
+                    "Search Engine Optimization",
+                    "Social Media Marketing",
+                    "Performance Marketing",
+                  ],
+                  [
+                    "Content Marketing",
+                    "Website Designing & Development",
+                    "Email Marketing",
+                  ],
+                  [
+                    "Social Media Optimization",
+                    "Graphic Designing & Video Editing",
+                    "Influencer Marketing",
+                  ],
+                  ["Online Reputation Management", "", "Affiliate Marketing"],
+                ].map((row, rowIndex) => (
+                  <tr key={rowIndex} className="divide-x divide-white/10">
+                    {row.map((cell, colIndex) => (
+                      <td
+                        key={colIndex}
+                        className="
+                    h-20 
+                    border-b border-white/10 
+                    relative group overflow-hidden
+                  "
+                      >
+                        {cell && (
+                          <a
+                            href={`/services/${cell
+                              .toLowerCase()
+                              .replace(/ /g, "-")
+                              .replace(/\&/g, "and")}`}
+                            target="_blank"
+                            className="
+                        flex items-center justify-center 
+                        w-full h-full px-4 text-center 
+                        font-semibold
+                        text-gray-200
+                        transition-all duration-300
+                        hover:text-[var(--color5)]
+                      "
+                          >
+                            {/* Neon card effect */}
+                            <span
+                              className="
+                          absolute inset-0 
+                          rounded-xl 
+                          border border-transparent
+                          group-hover:border-[var(--color5)]
+                          group-hover:shadow-[0_0_20px_var(--color5)]
+                          transition-all duration-300
+                        "
+                            ></span>
+
+                            <span className="relative z-10">{cell}</span>
+                          </a>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Animations */}
+        <style>{`
+    @keyframes scan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-scan {
+      animation: scan 4s linear infinite;
+    }
+  `}</style>
+      </section>
       <GetInTouch />
 
       <PopupForm isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
