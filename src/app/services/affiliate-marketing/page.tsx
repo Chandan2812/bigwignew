@@ -6,6 +6,9 @@ import affiliate from "../../../../Assets/services/12.jpg";
 import OurProcess from "../../../../components/OurProcess";
 import WhyBigwig from "../../../../components/WhyBigwig";
 import Footer from "../../../../components/Footer";
+import ButtonFill from "../../../../components/Button";
+import PopupForm from "../../../../components/PopupForm";
+import GetInTouch from "../../../../components/GetInTouch";
 import {
   FaShoppingBag,
   FaLaptopCode,
@@ -161,6 +164,7 @@ const faqs = [
 
 function AffiliateMarketing() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const sliderSettings = {
     dots: true,
@@ -175,7 +179,7 @@ function AffiliateMarketing() {
   };
 
   return (
-    <div>
+    <div className="bg-[var(--color1)]">
       <title>Affiliate Marketing Management</title>
       <link
         rel="canonical"
@@ -191,7 +195,7 @@ function AffiliateMarketing() {
         className="relative bg-cover bg-center bg-no-repeat py-10 px-4"
         style={{ backgroundImage: `url(${hero.src})` }}
       >
-        <div className="bg-black/40 absolute inset-0 z-0" />
+        <div className="bg-black/60 absolute inset-0 z-0" />
 
         <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
@@ -202,7 +206,7 @@ function AffiliateMarketing() {
             </h1>
 
             <p
-              className="text-2xl md:text-4xl font-semibold text-[#4e6cba]"
+              className="text-2xl md:text-4xl font-semibold text-[var(--color5)]"
               style={{
                 textShadow: "0 2px 6px rgba(0,0,0,0.6)",
                 letterSpacing: "0.5px",
@@ -233,11 +237,10 @@ function AffiliateMarketing() {
               in India that scales your business, strengthens your reach, and
               drives measurable results.
             </p>
-            <a href="/contact">
-              <button className="mt-4 px-6 py-3 bg-[var(--primary-color)] text-white rounded-full font-semibold hover:bg-opacity-80 transition">
-                Contact Us
-              </button>
-            </a>
+            <ButtonFill
+              onClick={() => setIsPopupOpen(true)}
+              text="Contact Us"
+            />
           </div>
 
           {/* Right Form */}
@@ -245,321 +248,647 @@ function AffiliateMarketing() {
         </div>
       </section>
 
-      <section className="bg-white py-12">
-        <div className="w-11/12 md:w-5/6 mx-auto space-y-12">
-          {/* Title + Intro */}
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)]">
+      <section className="py-20 relative overflow-hidden">
+        {/* MATRIX / CYBER BACKGROUND */}
+        <div className="absolute inset-0 opacity-[0.18] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
+
+        <div className="w-11/12 md:w-5/6 mx-auto relative z-10 space-y-16">
+          {/* ====================== TITLE ====================== */}
+          <div className="text-center space-y-6">
+            <h2
+              className="
+          inline-block px-10 py-4 rounded-full
+          text-3xl md:text-4xl font-bold
+          text-[var(--color5)]
+          border border-[var(--primary-color)]
+          backdrop-blur-xl bg-white/5
+          shadow-[0_0_25px_var(--primary-color)]
+          drop-shadow-[0_0_10px_var(--primary-color)]
+        "
+            >
               Performance-Driven Affiliate Marketing Services in India
             </h2>
-            <p className="text-gray-700 text-lg max-w-3xl mx-auto">
+
+            <p className="text-gray-200 text-lg max-w-3xl mx-auto leading-relaxed">
               Power your brand’s growth with strategic, risk-free affiliate
               marketing campaigns that convert.
             </p>
           </div>
 
-          {/* Core Content Grid */}
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            {/* Left Side: Story */}
-            <div className="space-y-6">
-              <p className="text-gray-800 text-lg leading-relaxed">
-                Affiliate marketing is one of the most powerful and
-                budget-friendly ways to grow your business online. At{" "}
-                <strong>BigWig Media Digital</strong>, a performance-driven
-                affiliate marketing agency in India, we create strategic
-                affiliate programs that help brands generate consistent sales,
-                qualified leads, and greater visibility - without the heavy
-                upfront advertising costs.
-              </p>
-              <p className="text-gray-800 text-lg leading-relaxed">
-                Whether you’re a startup launching your first product or an
-                established eCommerce brand looking to expand, our customized
-                affiliate marketing services in India are designed to deliver
-                measurable results that truly matter.
-              </p>
-              <p className="text-gray-800 text-lg leading-relaxed">
-                By partnering with trusted affiliates and influencers, you can
-                reach new audiences, drive high-quality traffic, and pay only
-                for actual performance. That means zero wasted ad spend and
-                maximum ROI. With the right affiliate strategy, your marketing
-                efforts turn into a sustainable growth engine for your brand.
-              </p>
+          {/* ====================== GRID CONTENT ====================== */}
+          <div className="grid md:grid-cols-2 gap-14 items-start">
+            {/* LEFT: STORY SECTION */}
+            <div className="space-y-8">
+              {[
+                `Affiliate marketing is one of the most powerful and budget-friendly 
+           ways to grow your business online. At BigWig Media Digital, we design strategic affiliate programs 
+           that generate consistent sales, qualified leads, and high visibility — without heavy ad spend.`,
+
+                `Whether you're a startup or an established eCommerce brand, 
+           our tailored affiliate marketing services are built for scalable and measurable performance.`,
+
+                `Through trusted affiliates & influencers, you reach new audiences, 
+           drive high-quality traffic and pay only for actual results. 
+           No wasted ad budget — only ROI-driven performance that powers long-term growth.`,
+              ].map((text, i) => (
+                <div
+                  key={i}
+                  className="
+              relative p-6 rounded-2xl 
+              backdrop-blur-xl bg-white/10
+              border border-white/10
+              shadow-[0_0_20px_rgba(0,255,255,0.15)]
+              hover:shadow-[0_0_30px_var(--primary-color)]
+              transition-all duration-300
+              overflow-hidden
+            "
+                >
+                  {/* Scanlines */}
+                  <div className="absolute inset-0 opacity-30 pointer-events-none">
+                    {[...Array(5)].map((_, j) => (
+                      <div
+                        key={j}
+                        className="
+                    absolute left-0 w-full h-[2px]
+                    bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                    animate-affScan
+                  "
+                        style={{
+                          top: `${50 + j * 45}px`,
+                          animationDelay: `${j * 0.25}s`,
+                        }}
+                      ></div>
+                    ))}
+                  </div>
+
+                  <p className="text-gray-200 text-lg leading-relaxed">
+                    {text}
+                  </p>
+
+                  <div className="absolute inset-0 border border-transparent rounded-2xl transition-all"></div>
+                </div>
+              ))}
             </div>
 
-            {/* Right Side: Callout Box */}
-            <div className="bg-blue-50 border-l-4 border-[var(--primary-color)] p-8 rounded-2xl shadow-md space-y-4">
-              <h3 className="text-xl font-semibold text-[var(--primary-color)] mb-2">
+            {/* RIGHT: CALLOUT BOX */}
+            <div
+              className="
+          relative p-10 rounded-2xl 
+          backdrop-blur-xl bg-white/10
+          border border-[var(--primary-color)]
+          shadow-[0_0_25px_var(--primary-color)]
+          transition-all duration-300
+          overflow-hidden
+          space-y-6
+        "
+            >
+              {/* Scanlines */}
+              <div className="absolute inset-0 opacity-30 pointer-events-none">
+                {[...Array(7)].map((_, j) => (
+                  <div
+                    key={j}
+                    className="
+                absolute left-0 w-full h-[2px]
+                bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                animate-affScan
+              "
+                    style={{
+                      top: `${40 + j * 40}px`,
+                      animationDelay: `${j * 0.2}s`,
+                    }}
+                  ></div>
+                ))}
+              </div>
+
+              <h3 className="text-2xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)]">
                 Why Your Brand Needs Affiliate Marketing
               </h3>
-              <p className="text-gray-700">
-                Digital marketing is evolving rapidly, and paid ads are becoming
-                more expensive and competitive. Affiliate marketing offers a
-                smarter and more cost-effective alternative. Instead of paying
-                for impressions or clicks that may not convert, you only reward
-                affiliates when they bring in real results such as sales, leads,
-                or app installs.s.
+
+              <p className="text-gray-200 leading-relaxed">
+                Paid ads are getting costlier and more competitive. Affiliate
+                marketing gives you a safer, performance-only model — you pay
+                only when results happen.
               </p>
-              <p className="text-gray-700">
-                This performance-based model reduces risk, ensures better ROI,
-                and aligns your marketing budget directly with business growth.
-                For businesses looking to scale without overspending, affiliate
-                marketing becomes a reliable and sustainable channel.
+
+              <p className="text-gray-200 leading-relaxed">
+                This reduces risk, improves ROI, and ensures your budget
+                supports real growth. Perfect for scaling brands without
+                overspending.
               </p>
-              <p className="text-gray-700">
-                At BigWig Media Digital, a trusted affiliate marketing agency in
-                India, we specialize in building profitable and scalable
-                affiliate models tailored to your goals. Our strategies
-                integrate seamlessly with your existing marketing channels,
-                helping you expand reach, tap into new audiences, and generate
-                consistent conversions.
+
+              <p className="text-gray-200 leading-relaxed">
+                At BigWig Media Digital, we build profitable affiliate
+                frameworks that integrate seamlessly with your marketing
+                ecosystem — ensuring continuous and scalable conversions.
               </p>
-              <p className="text-gray-700">
-                Whether your priority is lead generation, product sales, or app
-                installs, our carefully chosen affiliate partnerships are built
-                to deliver measurable outcomes. With the right approach,
-                affiliate marketing doesn’t just support your brand - it becomes
-                a long-term growth engine.
+
+              <p className="text-gray-200 leading-relaxed">
+                Whether you want more leads, sales, or app installs, our
+                affiliate partners deliver measurable outcomes.
               </p>
             </div>
           </div>
         </div>
+
+        {/* SCANLINE ANIMATION */}
+        <style>{`
+    @keyframes affScan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-affScan {
+      animation: affScan 4.5s linear infinite;
+    }
+  `}</style>
       </section>
 
-      <section className=" py-12">
-        <div className="w-11/12 md:w-5/6 mx-auto space-y-20">
-          {/* SECTION 1: Where Affiliate Works Best */}
-          <div className="text-center space-y-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)]">
+      <section className="py-20 relative overflow-hidden">
+        {/* CYBER BACKGROUND */}
+        <div className="absolute inset-0 opacity-[0.15] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
+
+        <div className="w-11/12 md:w-5/6 mx-auto relative z-10 space-y-24">
+          {/* SECTION 1 — INDUSTRIES */}
+          <div className="text-center space-y-12">
+            <h2
+              className="
+        inline-block px-10 py-4 rounded-full 
+        text-3xl md:text-4xl font-bold 
+        text-[var(--color5)]
+        border border-[var(--primary-color)]
+        backdrop-blur-xl bg-white/5
+        shadow-[0_0_25px_var(--primary-color)]
+        drop-shadow-[0_0_10px_var(--primary-color)]
+      "
+            >
               Industries We Work With
             </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 text-left">
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8">
               {verticals.map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300"
+                  className="
+              group relative p-6 rounded-2xl 
+              backdrop-blur-xl bg-white/10 
+              border border-white/10
+              shadow-[0_0_20px_rgba(0,255,255,0.15)]
+              hover:shadow-[0_0_30px_var(--primary-color)]
+              transition-all duration-300
+              min-h-[240px]
+              overflow-hidden
+            "
                 >
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="p-3 rounded-full bg-gray-100">
+                  {/* Scan lines */}
+                  <div className="absolute inset-0 opacity-40 pointer-events-none">
+                    {[...Array(5)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="
+                    absolute left-0 w-full h-[2px]
+                    bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                    animate-scan
+                  "
+                        style={{
+                          top: `${60 + i * 40}px`,
+                          animationDelay: `${i * 0.25}s`,
+                        }}
+                      />
+                    ))}
+                  </div>
+
+                  <div className="flex items-center gap-4 mb-4 relative z-10">
+                    <div
+                      className="
+                  p-3 rounded-full 
+                  bg-white/10 border border-white/20 
+                  shadow-[0_0_10px_rgba(0,255,255,0.2)]
+                "
+                    >
                       {item.icon}
                     </div>
-                    <h4 className="text-lg font-semibold text-gray-900">
+                    <h4 className="text-base font-semibold text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)]">
                       {item.title}
                     </h4>
                   </div>
-                  <p className="text-gray-700 text-sm">{item.desc}</p>
+
+                  <p className="text-gray-200 text-sm relative z-10">
+                    {item.desc}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* SECTION 2: Scalable & Transparent */}
-          <div className="space-y-12">
-            {/* Two-column layout with image on right */}
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* Left Text Content */}
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-[var(--primary-color)]">
-                  Scalable, Transparent and Results-First
-                </h3>
-                <p className="text-gray-700 text-lg">
-                  Affiliate marketing is not a one-size-fits-all approach. Every
-                  brand has a different audience, product, and price point -
-                  which is why our affiliate marketing services in India are
-                  built on personalization. At BigWig Media Digital, a trusted
-                  affiliate marketing agency in India, we design programs that
-                  fit your unique business needs while ensuring measurable
-                  growth.
-                </p>
-                <p className="text-gray-700 text-lg">
-                  From identifying the right partners to tracking every
-                  conversion, our process is transparent and performance-driven.
-                  We don’t just connect you with affiliates - we equip them with
-                  the right tools, insights, and strategies to promote your
-                  brand effectively.
-                </p>
-                <p className="text-gray-700 text-lg">
-                  Here’s how we ensure long-term success for your affiliate
-                  program:
-                </p>
-                <ul className="list-disc list-inside space-y-2">
-                  <li>
-                    <strong>Strategic Partner Selection</strong> – We connect
-                    you with affiliates who match your niche and audience.
-                  </li>
-                  <li>
-                    <strong>End-to-End Management</strong> – From campaign setup
-                    to tracking and payments, we handle it all.
-                  </li>
-                  <li>
-                    <strong>Data-Driven Insights</strong> – Detailed performance
-                    reports keep you in control.
-                  </li>
-                  <li>
-                    <strong>Trusted Relationships</strong> – We focus on quality
-                    affiliates who build brand reputation, not just traffic.
-                  </li>
-                  <li>
-                    <strong>Scalable Growth</strong> – As your program expands,
-                    we help you tap into new audiences globally.
-                  </li>
-                </ul>
+          {/* SECTION 2 — SCALABLE & TRANSPARENT */}
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            {/* LEFT CONTENT */}
+            <div className="space-y-8">
+              <h3
+                className="
+            inline-block px-8 py-3 rounded-full 
+            text-2xl font-bold text-[var(--primary-color)]
+            border border-[var(--primary-color)]
+            bg-white/5 backdrop-blur-xl
+            shadow-[0_0_25px_var(--primary-color)]
+          "
+              >
+                Scalable, Transparent & Results-First
+              </h3>
 
-                <p className="text-gray-700 text-lg">
-                  With BigWig Media Digital, you’ll never have to worry about
-                  low-quality traffic or shady promotions. Instead, you gain a
-                  scalable affiliate model that strengthens your reputation,
-                  reach, and revenue through trusted digital voices.
-                </p>
-              </div>
+              {[
+                `Affiliate marketing is not a one-size-fits-all approach. Every brand has a different audience, product, and price point - which is why our affiliate marketing services in India are built on personalization. At BigWig Media Digital, a trusted affiliate marketing agency in India, we design programs that fit your unique business needs while ensuring measurable growth.`,
 
-              {/* Right Image */}
-              <div>
-                <Image
-                  src={affiliate}
-                  alt="Affiliate Marketing Services"
-                  className="w-full h-[60vh] rounded-xl shadow-lg"
-                />
-              </div>
+                `From identifying the right partners to tracking every conversion, our process is transparent and performance-driven. We don’t just connect you with affiliates - we equip them with the right tools, insights, and strategies to promote your brand effectively.`,
+
+                `Here’s how we ensure long-term success for your affiliate program:`,
+              ].map((txt, i) => (
+                <div
+                  key={i}
+                  className="
+              p-6 rounded-2xl backdrop-blur-xl bg-white/10 
+              border border-white/10 
+              shadow-[0_0_20px_rgba(0,255,255,0.15)]
+              hover:shadow-[0_0_30px_var(--primary-color)]
+              transition-all duration-300 relative overflow-hidden
+            "
+                >
+                  {/* SCANLINES */}
+                  <div className="absolute inset-0 opacity-30 pointer-events-none">
+                    {[...Array(5)].map((_, j) => (
+                      <div
+                        key={j}
+                        className="
+                    absolute left-0 w-full h-[2px]
+                    bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                    animate-scan
+                  "
+                        style={{
+                          top: `${50 + j * 45}px`,
+                          animationDelay: `${j * 0.2}s`,
+                        }}
+                      />
+                    ))}
+                  </div>
+
+                  <p className="text-gray-200 text-lg relative z-10">{txt}</p>
+                </div>
+              ))}
+
+              {/* LIST */}
+              <ul className="space-y-4 text-gray-200 text-lg">
+                {[
+                  "Strategic Partner Selection – We connect you with affiliates who match your niche and audience.",
+                  "End-to-End Management – From campaign setup to tracking and payments, we handle it all.",
+                  "Data-Driven Insights – Detailed performance reports keep you in control.",
+                  "Trusted Relationships – We focus on quality affiliates who build brand reputation, not just traffic.",
+                  "Scalable Growth – As your program expands, we help you tap into new audiences globally.",
+                ].map((point, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <div className="w-3 h-3 rounded-full bg-[var(--primary-color)] shadow-[0_0_10px_var(--primary-color)] mt-2"></div>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <p className="text-gray-200 text-lg">
+                With BigWig Media Digital, you’ll never have to worry about
+                low-quality traffic or shady promotions. Instead, you gain a
+                scalable affiliate model that strengthens your reputation,
+                reach, and revenue through trusted digital voices.
+              </p>
+            </div>
+
+            {/* RIGHT IMAGE */}
+            <div className="relative">
+              <Image
+                src={affiliate}
+                alt="Affiliate Marketing Services"
+                className="
+            w-full h-[60vh] object-cover rounded-2xl 
+            shadow-[0_0_30px_rgba(0,255,255,0.25)]
+            border border-white/10 backdrop-blur-xl
+          "
+              />
             </div>
           </div>
 
-          {/* SECTION 3: Why BigWig */}
-          <div className="bg-[var(--primary-color)] text-white p-4  rounded-3xl shadow-md text-center space-y-6">
-            <h3 className="text-3xl font-bold">
+          {/* SECTION 3 — WHY BIGWIG */}
+          <div
+            className="
+        relative p-10 rounded-3xl text-center 
+        backdrop-blur-xl bg-white/10 
+        border border-[var(--primary-color)]
+        shadow-[0_0_35px_var(--primary-color)]
+        space-y-6
+        overflow-hidden
+      "
+          >
+            {/* SCANLINES */}
+            <div className="absolute inset-0 opacity-20 pointer-events-none">
+              {[...Array(6)].map((_, j) => (
+                <div
+                  key={j}
+                  className="
+              absolute left-0 w-full h-[2px]
+              bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+              animate-scan
+            "
+                  style={{
+                    top: `${50 + j * 50}px`,
+                    animationDelay: `${j * 0.25}s`,
+                  }}
+                />
+              ))}
+            </div>
+
+            <h3 className="text-3xl font-bold text-[var(--color5)] drop-shadow-[0_0_15px_var(--primary-color)]">
               Why BigWig for Affiliate Marketing Services
             </h3>
-            <p className="text-lg  mx-auto">
-              When you work with BigWig Digital, you&#39;re choosing an agency
-              that understands how to blend strategy with performance. As
-              <span className="italic">
-                <a href="https://www.bigwigdigital.in/">
-                  {" "}
-                  A Top Affiliate Marketing Company over the world,
-                </a>
-              </span>{" "}
-              we use real-time tracking tools, smart campaign planning, and deep
-              industry experience to build affiliate programs that actually
-              work.
+
+            <p className="text-gray-200 text-lg max-w-3xl mx-auto leading-relaxed">
+              When you choose BigWig Digital, you partner with a strategic
+              affiliate agency that blends performance-driven systems with deep
+              industry understanding.
             </p>
-            <p className="text-lg max-w-4xl mx-auto">
-              Our focus is always on driving qualified traffic, high intent
-              users, and measurable conversions, not vanity metrics.
+
+            <p className="text-gray-200 text-lg max-w-4xl mx-auto leading-relaxed">
+              We focus entirely on high-intent traffic, real conversions, and
+              measurable ROI — not vanity metrics.
             </p>
           </div>
         </div>
+
+        {/* SCANLINE ANIMATION */}
+        <style>{`
+    @keyframes scan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-scan {
+      animation: scan 4s linear infinite;
+    }
+  `}</style>
       </section>
 
-      <section className="bg-white py-12">
-        <div className="w-11/12 md:w-5/6 mx-auto space-y-10">
-          {/* Title and Intro */}
+      <section className="py-20 relative overflow-hidden">
+        {/* Futuristic Background */}
+        <div className="absolute inset-0 opacity-[0.18] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center pointer-events-none mix-blend-screen"></div>
+
+        <div className="w-11/12 md:w-5/6 mx-auto relative z-10 space-y-16">
+          {/* ---------- Title Section ---------- */}
           <div className="text-center max-w-3xl mx-auto space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)]">
+            <h2
+              className="
+          inline-block px-10 py-4 rounded-full
+          text-3xl md:text-4xl font-bold 
+          text-[var(--color5)]
+          border border-[var(--color5)]
+          backdrop-blur-xl bg-white/10
+          shadow-[0_0_25px_var(--primary-color)]
+          drop-shadow-[0_0_15px_var(--primary-color)]
+        "
+            >
               Benefits of Affiliate Marketing Services
             </h2>
-            <p className="text-gray-700 text-lg">
-              Affiliate marketing isn’t just cost-effective - it’s one of the
+
+            <p className="text-gray-200 text-lg leading-relaxed">
+              Affiliate marketing isn’t just cost-effective it’s one of the
               smartest ways to scale your digital reach while paying only for
-              actual results. As a leading affiliate marketing agency in India,
-              BigWig Media Digital helps brands unlock these benefits:
+              real results. As a top affiliate marketing agency in India, BigWig
+              Media Digital helps you unlock unmatched growth advantages.
             </p>
           </div>
 
-          {/* Mobile Slider View */}
+          {/* ---------- Mobile Slider View ---------- */}
           <div className="block sm:hidden">
             <Slider {...sliderSettings}>
               {benefits.map((item, idx) => (
-                <div key={idx} className="p-4">
-                  <div className="bg-gray-50 hover:bg-gray-100 transition-all duration-300 p-6 rounded-xl shadow-sm border-l-4 border-[var(--primary-color)]">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="bg-white p-3 rounded-full shadow">
-                        {item.icon}
-                      </div>
-                      <h4 className="text-lg font-semibold text-gray-900">
-                        {item.title}
-                      </h4>
+                <div key={idx} className="px-3">
+                  <div
+                    className="
+                p-6 rounded-2xl overflow-hidden relative
+                min-h-[300px]
+                backdrop-blur-xl bg-white/10
+                border border-white/10
+                shadow-[0_0_25px_rgba(0,255,255,0.15)]
+                hover:shadow-[0_0_35px_var(--primary-color)]
+                transition-all duration-300
+                space-y-4
+              "
+                  >
+                    {/* Scan lines */}
+                    <div className="absolute inset-0 pointer-events-none opacity-40">
+                      {[...Array(5)].map((_, i) => (
+                        <div
+                          key={i}
+                          className="
+                      absolute left-0 w-full h-[2px]
+                      bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                      animate-scan
+                    "
+                          style={{
+                            top: `${60 + i * 45}px`,
+                            animationDelay: `${i * 0.25}s`,
+                          }}
+                        />
+                      ))}
                     </div>
-                    <p className="text-gray-700 text-sm">{item.desc}</p>
+
+                    {/* Icon */}
+                    <div className="bg-white/10 border border-white/20 backdrop-blur-lg shadow-[0_0_10px_var(--primary-color)] p-3 rounded-full w-fit mx-auto">
+                      {item.icon}
+                    </div>
+
+                    <h4 className="text-lg font-semibold text-[var(--color5)] text-center drop-shadow-[0_0_10px_var(--primary-color)]">
+                      {item.title}
+                    </h4>
+
+                    <p className="text-gray-200 text-sm text-center leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
               ))}
             </Slider>
           </div>
 
-          {/* Desktop Grid View */}
-          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* ---------- Desktop Grid View ---------- */}
+          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {benefits.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-gray-50 hover:bg-gray-100 transition-all duration-300 p-6 rounded-xl shadow-sm border-l-4 border-[var(--primary-color)]"
+                className="
+            group relative p-6 rounded-2xl overflow-hidden
+            backdrop-blur-xl bg-white/10 
+            border border-white/10
+            shadow-[0_0_25px_rgba(0,255,255,0.18)]
+            hover:shadow-[0_0_40px_var(--primary-color)]
+            transition-all duration-300
+            min-h-[220px] flex flex-col justify-between
+          "
               >
-                <div className="flex items-center gap-4 mb-4">
-                  <div>{item.icon}</div>
-                  <h4 className="text-lg font-semibold text-gray-900">
+                {/* Scan Lines */}
+                <div className="absolute inset-0 pointer-events-none opacity-30">
+                  {[...Array(6)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="
+                  absolute left-0 w-full h-[2px]
+                  bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                  animate-scan
+                "
+                      style={{
+                        top: `${50 + i * 45}px`,
+                        animationDelay: `${i * 0.25}s`,
+                      }}
+                    />
+                  ))}
+                </div>
+
+                <div className="flex items-center gap-4 relative z-10">
+                  <div
+                    className="
+                bg-white/10 border border-[var(--color5)] p-3 rounded-full 
+                shadow-[0_0_10px_var(--primary-color)]
+              "
+                  >
+                    {item.icon}
+                  </div>
+                  <h4 className="text-lg font-semibold text-[var(--color5)] drop-shadow-[0_0_8px_var(--primary-color)]">
                     {item.title}
                   </h4>
                 </div>
-                <p className="text-gray-700 text-sm">{item.desc}</p>
+
+                <p className="text-gray-200 text-sm leading-relaxed relative z-10">
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
         </div>
+
+        {/* Scan Animation */}
+        <style>{`
+    @keyframes scan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-scan {
+      animation: scan 4s linear infinite;
+    }
+  `}</style>
       </section>
 
       <OurProcess />
       <WhyBigwig />
 
       {/* Final Call-to-Action */}
-      <div className=" py-12 bg-[var(--primary-color)]">
-        <div className="w-5/6 mx-auto rounded-xl p-6 md:p-8 space-y-4 text-center">
-          <h2 className="text-3xl font-semibold text-white">
-            Ready to Build a Performance-Driven Partner Network?
-          </h2>
-          <p className="text-gray-200 max-w-3xl mx-auto">
-            Whether you want to launch a new affiliate program from the ground
-            up or scale an existing one, our tailored affiliate marketing
-            services in India are designed to deliver consistent and measurable
-            growth. At BigWig Media Digital, we work across multiple industries,
-            platforms, and campaign types to ensure you get the maximum value
-            from every partnership.
-          </p>
-          <p className="text-gray-200 max-w-3xl mx-auto">
-            By choosing us as your affiliate marketing agency in India, you gain
-            access to a trusted partner network, transparent reporting, and
-            strategies that align with your long-term business goals.
-          </p>
-          <p className="text-gray-200 max-w-3xl mx-auto">
-            Let’s start building your affiliate program today - and turn
-            partnerships into a powerful growth engine for your brand.
-          </p>
-        </div>
-      </div>
-      {/* Final Call-to-Action */}
-      <div className="py-12 bg-[var(--primary-color)]">
-        <div className="w-5/6 mx-auto rounded-xl p-6 md:p-8 space-y-4 text-center">
-          <h2 className="text-3xl font-semibold text-white">
-            Ready to Build a Performance-Driven Partner Network?
-          </h2>
-          <p className="text-gray-200 max-w-3xl mx-auto">
-            Whether you want to start an affiliate program from scratch or scale
-            an existing one, our <strong>affiliate marketing services </strong>{" "}
-            are tailored to deliver consistent, trackable growth. We work across
-            industries, platforms, and campaign types to help you get the most
-            from every partnership.
-          </p>
+      {/* ================= FINAL FUTURISTIC CTA ================= */}
+      <section className="py-20 relative overflow-hidden">
+        {/* Cyber Glow Background */}
+        <div className="absolute inset-0 opacity-[0.18] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
 
-          {/* Let's Connect Button */}
-          <a href="/contact">
-            <button className="mt-6 px-8 py-3 bg-white text-[var(--primary-color)] font-semibold rounded-full shadow hover:bg-gray-100 transition">
-              Let’s Connect
-            </button>
-          </a>
+        <div className="relative z-10 w-5/6 mx-auto">
+          <div
+            className="
+        relative rounded-3xl p-10 md:p-14 text-center 
+        backdrop-blur-2xl bg-white/10 
+        border border-white/10 
+        shadow-[0_0_30px_rgba(0,255,255,0.25)]
+        overflow-hidden
+      "
+          >
+            {/* Hologram Scan Lines */}
+            <div className="absolute inset-0 opacity-40 pointer-events-none">
+              {[...Array(7)].map((_, i) => (
+                <div
+                  key={i}
+                  className="
+              absolute left-0 w-full h-[2px]
+              bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+              animate-scanline
+            "
+                  style={{
+                    top: `${70 + i * 55}px`,
+                    animationDelay: `${i * 0.25}s`,
+                  }}
+                ></div>
+              ))}
+            </div>
+
+            {/* Title */}
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)] leading-snug">
+              Ready to Build a Performance-Driven Partner Network?
+            </h2>
+
+            {/* Paragraphs */}
+            <div className="space-y-5 mt-6 text-gray-200 max-w-3xl mx-auto leading-relaxed">
+              <p>
+                Whether you want to launch a new affiliate program from the
+                ground up or scale an existing one, our tailored affiliate
+                marketing services in India are designed to deliver consistent
+                and measurable growth. At BigWig Media Digital, we work across
+                multiple industries, platforms, and campaign types to ensure you
+                get the maximum value from every partnership.
+              </p>
+
+              <p>
+                By choosing us as your affiliate marketing agency in India, you
+                gain access to a trusted partner network, transparent reporting,
+                and strategies that align with your long-term business goals.
+              </p>
+
+              <p>
+                Let’s start building your affiliate program today - and turn
+                partnerships into a powe rful growth engine for your brand.
+              </p>
+            </div>
+
+            {/* Paragraphs */}
+            <div className="space-y-5 mt-6 text-gray-200 max-w-3xl mx-auto leading-relaxed">
+              <p>
+                Whether you want to start an affiliate program from scratch or
+                scale an existing one, our affiliate marketing services are
+                tailored to deliver consistent, trackable growth. We work across
+                industries, platforms, and campaign types to help you get the
+                most from every partnership.
+              </p>
+            </div>
+
+            {/* CTA Button */}
+
+            <div className="flex justify-center mt-8">
+              <ButtonFill
+                onClick={() => setIsPopupOpen(true)}
+                text="Contact Us"
+              />
+            </div>
+
+            {/* Neon Border Glow */}
+            <div className="absolute inset-0 rounded-3xl border border-transparent hover:border-[var(--primary-color)] transition-all duration-300 pointer-events-none"></div>
+          </div>
         </div>
-      </div>
+
+        {/* Scanline Animation */}
+        <style>{`
+    @keyframes scanline {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-scanline {
+      animation: scanline 5s linear infinite;
+    }
+  `}</style>
+      </section>
 
       {/* FAQ Section */}
-      <section className="bg-gray-50 py-12">
+      <section className=" py-12">
         <div className="w-11/12 md:w-5/6 mx-auto space-y-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)] text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--primary-color)]">
             Frequently Asked Questions
           </h2>
 
@@ -567,121 +896,137 @@ function AffiliateMarketing() {
             {faqs.map((item, index) => (
               <div
                 key={index}
-                className="border border-gray-200 rounded-lg shadow-sm bg-white"
+                className="border border-gray-200 rounded-lg shadow-sm "
               >
                 <button
-                  className="flex justify-between items-center w-full p-4 text-left text-gray-900 font-medium focus:outline-none"
+                  className="flex justify-between items-center w-full p-4 text-left text-white font-medium focus:outline-none"
                   onClick={() =>
                     setOpenIndex(openIndex === index ? null : index)
                   }
                 >
-                  <h3>{item.q}</h3>
+                  <span>{item.q}</span>
                   {openIndex === index ? (
-                    <ChevronUp className="w-5 h-5 text-gray-500" />
+                    <ChevronUp className="w-5 h-5 text-gray-200" />
                   ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-500" />
+                    <ChevronDown className="w-5 h-5 text-gray-200" />
                   )}
                 </button>
 
                 {openIndex === index && (
-                  <div className="p-4 pt-0 text-gray-700">{item.a}</div>
+                  <div className="p-4 pt-0 text-gray-200">{item.a}</div>
                 )}
               </div>
             ))}
           </div>
         </div>
       </section>
-      {/* Services Table Section */}
-      <section className="bg-white py-12">
-        <div className="w-11/12 md:w-5/6 mx-auto space-y-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)] text-center">
+      <section className="py-20 relative overflow-hidden">
+        {/* Matrix glow background */}
+        <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
+
+        <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--primary-color)]">
             Our Other Services
           </h2>
 
-          <div className="overflow-x-auto rounded-xl shadow-lg">
-            <table className="w-full table-auto border border-gray-300 border-collapse text-center">
+          {/* TABLE WRAPPER */}
+          <div
+            className="
+        rounded-2xl 
+        overflow-hidden 
+        backdrop-blur-xl bg-white/5 
+        border border-white/10 
+        shadow-[0_0_30px_rgba(0,255,255,0.15)] 
+        relative
+      "
+          >
+            {/* Scan Line */}
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent animate-scan"></div>
+
+            <table className="min-w-full text-sm text-gray-200 relative z-10">
               <tbody>
-                <tr className="">
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600  hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/search-engine-optimization">
-                      Search Engine Optimization
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600  hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/social-media-marketing">
-                      Social Media Marketing
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600  hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/performance-marketing">
-                      Performance Marketing
-                    </a>
-                  </td>
-                </tr>
+                {[
+                  [
+                    "Search Engine Optimization",
+                    "Social Media Marketing",
+                    "Performance Marketing",
+                  ],
+                  [
+                    "Content Marketing",
+                    "Website Designing & Development",
+                    "Email Marketing",
+                  ],
+                  [
+                    "Social Media Optimization",
+                    "Graphic Designing & Video Editing",
+                    "Influencer Marketing",
+                  ],
+                  ["Online Reputation Management", "", "Affiliate Marketing"],
+                ].map((row, rowIndex) => (
+                  <tr key={rowIndex} className="divide-x divide-white/10">
+                    {row.map((cell, colIndex) => (
+                      <td
+                        key={colIndex}
+                        className="
+                    h-20 
+                    border-b border-white/10 
+                    relative group overflow-hidden
+                  "
+                      >
+                        {cell && (
+                          <a
+                            href={`/services/${cell
+                              .toLowerCase()
+                              .replace(/ /g, "-")
+                              .replace(/\&/g, "and")}`}
+                            target="_blank"
+                            className="
+                        flex items-center justify-center 
+                        w-full h-full px-4 text-center 
+                        font-semibold
+                        text-gray-200
+                        transition-all duration-300
+                        hover:text-[var(--primary-color)]
+                      "
+                          >
+                            {/* Neon card effect */}
+                            <span
+                              className="
+                          absolute inset-0 
+                          rounded-xl 
+                          border border-transparent
+                          group-hover:border-[var(--primary-color)]
+                          group-hover:shadow-[0_0_20px_var(--primary-color)]
+                          transition-all duration-300
+                        "
+                            ></span>
 
-                <tr>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/content-marketing">Content Marketing</a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/website-design-development">
-                      Website Designing & Development
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/email-marketing">Email Marketing</a>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/social-media-optimization">
-                      Social Media Optimization
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/graphic-designing">Graphic Designing</a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/ai-cgi-marketing">
-                      AI and CGI Marketing
-                    </a>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/landing-page-optimization">
-                      Landing Page Optimization
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/video-shoot">Video Shoot</a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/public-relations">Public Relations</a>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/influencer-marketing">
-                      Influencer Marketing
-                    </a>
-                  </td>
-                  <td className="px-6 py-4 border border-gray-300"></td>
-                  <td className="px-6 py-4 border border-gray-300 text-blue-600 hover:underline cursor-pointer hover:bg-indigo-50 transition">
-                    <a href="/services/online-reputation-management">
-                      Online Reputation Management
-                    </a>
-                  </td>
-                </tr>
+                            <span className="relative z-10">{cell}</span>
+                          </a>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
         </div>
-      </section>
 
+        {/* Animations */}
+        <style>{`
+    @keyframes scan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-scan {
+      animation: scan 4s linear infinite;
+    }
+  `}</style>
+      </section>
+      <PopupForm isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+      <GetInTouch />
       <Footer />
     </div>
   );
