@@ -8,10 +8,15 @@ import Hero from "../../../../Assets/Services hero/Graphic_Design.jpg";
 import design from "../../../../Assets/services/9.jpg";
 import ContactForm from "../../../../components/ContactForm";
 import Image from "next/image";
-
+import ButtonFill from "../../../../components/Button";
+import PopupForm from "../../../../components/PopupForm";
+import GetInTouch from "../../../../components/GetInTouch";
+import { useState } from "react";
 function GraphicDesigning() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   return (
-    <div>
+    <div className="bg-[var(--color1)]">
       <title>Professional Graphic Designing</title>
       <link
         rel="canonical"
@@ -27,7 +32,7 @@ function GraphicDesigning() {
         className="relative bg-cover bg-center bg-no-repeat py-10 px-4"
         style={{ backgroundImage: `url(${Hero.src})` }}
       >
-        <div className="bg-black/40 absolute inset-0 z-0" />
+        <div className="bg-black/60 absolute inset-0 z-0" />
 
         <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
@@ -37,7 +42,7 @@ function GraphicDesigning() {
             </h1>
 
             <p
-              className="text-3xl md:text-4xl font-semibold flex items-center gap-2 text-[#5c85ee]"
+              className="text-3xl md:text-4xl font-semibold flex items-center gap-2 text-[var(--color5)]"
               style={{
                 textShadow: "0 2px 6px rgba(0,0,0,0.6)",
                 letterSpacing: "0.5px",
@@ -63,25 +68,24 @@ function GraphicDesigning() {
               we craft bold visuals and crazy concepts every second to keep your
               brand always trending.
             </p>
-            <a href="/contact">
-              <button className="mt-4 px-6 py-3 bg-[var(--primary-color)] text-white rounded-full font-semibold hover:bg-opacity-80 transition">
-                Contact Us
-              </button>
-            </a>
+            <ButtonFill
+              onClick={() => setIsPopupOpen(true)}
+              text="Contact Us"
+            />
           </div>
 
           {/* Right Form */}
           <ContactForm />
         </div>
       </section>
-      <section className="bg-white py-12">
+      <section className="py-12">
         <div className="w-11/12 md:w-5/6 mx-auto space-y-12">
           <div className="text-center space-y-4">
-            <h2 className="text-2xl md:text-4xl md:font-bold font-semibold text-[var(--primary-color)]">
+            <h2 className="text-2xl md:text-4xl md:font-bold font-semibold text-[var(--color5)]">
               A Creative Graphic Design Agency, NCR
             </h2>
 
-            <p className="text-lg text-gray-600 text-justify py-5">
+            <p className="text-lg text-white text-justify py-5">
               At
               <strong>
                 <a href="https://www.bigwigdigital.in/"> BigWig Digital </a>
@@ -98,7 +102,7 @@ function GraphicDesigning() {
               innovative and customized solutions.
             </p>
 
-            <p className="text-lg text-gray-600 text-justify py-5">
+            <p className="text-lg text-white text-justify py-5">
               <span className="italic">
                 <a href="https://www.bigwigdigital.in/">BigWig Digital&#39;s</a>
               </span>{" "}
@@ -147,10 +151,10 @@ function GraphicDesigning() {
                   <div key={idx} className="flex gap-4 items-start">
                     <div className="text-3xl">{item.icon}</div>
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-800">
+                      <h4 className="text-lg font-semibold text-[var(--color5)]">
                         {item.title}
                       </h4>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-gray-300">
                         {item.description}
                       </p>
                     </div>
@@ -170,12 +174,12 @@ function GraphicDesigning() {
           </div>
 
           <div className="space-y-6">
-            <h2 className="text-2xl md:text-3xl md:font-bold font-semibold text-[var(--primary-color)] text-center">
+            <h2 className="text-2xl md:text-3xl md:font-bold font-semibold text-[var(--color5)] text-center">
               We use advanced graphic designing tools to create impressive ideas
               for you
             </h2>
 
-            <p className="text-lg text-gray-600 text-justify">
+            <p className="text-lg text-white text-justify">
               <strong>Creative Visual Impact:</strong> BigWig Digital, the
               leading graphic design company, delivers visually compelling
               designs using text, symbols, logos, colors, and images to create
@@ -183,7 +187,7 @@ function GraphicDesigning() {
               brands, products, and services.
             </p>
 
-            <p className="text-lg text-gray-600 text-justify">
+            <p className="text-lg text-white  text-justify">
               <strong>Expert Team & Innovative Approach:</strong> Our skilled
               and imaginative design team transforms ideas into artistic
               marvels, blending creativity with client input to deliver
@@ -191,12 +195,43 @@ function GraphicDesigning() {
             </p>
           </div>
 
-          <div className="bg-[var(--primary-color)]/5 p-8 rounded-xl">
-            <h3 className="text-2xl md:text-3xl md:font-bold font-semibold text-[var(--primary-color)] mb-8 text-center md:text-left">
-              Graphic Design Services We Offer:-
+          <div className="relative bg-[var(--primary-color)]/5 p-10 rounded-2xl backdrop-blur-xl overflow-hidden">
+            {/* Hologram Lines Background */}
+            <div className="absolute inset-0 opacity-20 pointer-events-none">
+              {[...Array(6)].map((_, i) => (
+                <div
+                  key={i}
+                  className="
+          absolute left-0 w-full h-[2px]
+          bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+          animate-gfxScan
+        "
+                  style={{
+                    top: `${40 + i * 50}px`,
+                    animationDelay: `${i * 0.25}s`,
+                  }}
+                />
+              ))}
+            </div>
+
+            {/* Title */}
+            <h3
+              className="
+      text-2xl md:text-3xl font-bold 
+      text-[var(--color5)] 
+      mb-10 text-center md:text-left 
+      drop-shadow-[0_0_10px_var(--primary-color)]
+      inline-block px-8 py-3 rounded-full
+      border border-[var(--color5)]
+      shadow-[0_0_20px_var(--primary-color)]
+      bg-white/5 backdrop-blur-xl
+    "
+            >
+              Graphic Design Services We Offer :-
             </h3>
 
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {/* Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
               {[
                 { title: "Package design", icon: "📦" },
                 { title: "Logo designs", icon: "🎨" },
@@ -211,16 +246,75 @@ function GraphicDesigning() {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-4 p-4 rounded-lg bg-white shadow-sm hover:shadow-md transition duration-300"
+                  className="
+          group relative flex items-center gap-4 p-5 
+          rounded-2xl backdrop-blur-xl bg-white/10 
+          border border-[var(--color3)] 
+          hover:border-[var(--color5)] 
+          hover:shadow-[0_0_20px_var(--primary-color)]
+          transition-all duration-300 
+          min-h-[100px]
+          overflow-hidden
+        "
                 >
-                  <div className="text-3xl">{item.icon}</div>
-                  <div className="text-gray-800 font-medium">{item.title}</div>
+                  {/* Inner holo scan lines */}
+                  <div className="absolute inset-0 opacity-20 pointer-events-none">
+                    {[...Array(3)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="
+                absolute left-0 w-full h-[2px]
+                bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                animate-gfxScan
+              "
+                        style={{
+                          top: `${30 + i * 35}px`,
+                          animationDelay: `${i * 0.3}s`,
+                        }}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Icon */}
+                  <div
+                    className="
+            text-3xl p-3 rounded-full
+            bg-white/10 backdrop-blur-lg 
+            border border-white/20
+            shadow-[0_0_10px_rgba(0,255,255,0.3)]
+            group-hover:shadow-[0_0_15px_var(--primary-color)]
+            transition-all
+          "
+                  >
+                    {item.icon}
+                  </div>
+
+                  {/* Title */}
+                  <div className="text-[var(--color5)] font-medium text-sm md:text-base">
+                    {item.title}
+                  </div>
+
+                  {/* Hover neon border */}
+                  <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--primary-color)] transition-all"></div>
                 </div>
               ))}
             </div>
+
+            {/* Animations */}
+            <style>{`
+    @keyframes gfxScan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-gfxScan {
+      animation: gfxScan 4s linear infinite;
+    }
+  `}</style>
           </div>
+
           <div className="mt-10">
-            <p className="text-gray-700 text-lg leading-relaxed">
+            <p className="text-white text-lg leading-relaxed">
               Through our designs, we have assisted numerous well-known clients
               in achieving exceptional brand and commercial visibility. The best
               and most well-known type of advertising is branding, and our
@@ -238,85 +332,132 @@ function GraphicDesigning() {
           </div>
         </div>
       </section>
-      <section className="bg-white py-12 ">
-        <div className="w-11/12 md:w-5/6 mx-auto">
+      <section className="py-16 relative overflow-hidden">
+        {/* MATRIX CYBER BACKGROUND */}
+        <div className="absolute inset-0 opacity-[0.15] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
+
+        <div className="w-11/12 md:w-5/6 mx-auto relative z-10 space-y-12">
+          {/* ====================== HEADING ====================== */}
           <div className="flex justify-center">
-            <h2 className="text-2xl md:text-4xl md:font-bold font-semibold text-[var(--primary-color)] mb-6 text-center max-w-3xl">
+            <h2
+              className="
+          text-2xl md:text-4xl font-bold text-[var(--color5)]
+          px-10 py-3 rounded-full
+          border border-[var(--primary-color)]
+          shadow-[0_0_25px_var(--primary-color)]
+          backdrop-blur-xl bg-white/5
+          drop-shadow-[0_0_10px_var(--primary-color)]
+          text-center
+        "
+            >
               Why Is Professional Graphic Design Essential for Your Business?
             </h2>
           </div>
 
-          <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-10 text-center">
-            While it might not seem necessary right now, excellent graphic
-            design is crucial for long-term success; neglecting it is like
-            ignoring your health. Your company&#39;s visual identity requires
-            constant attention and investment, just like your health.
+          {/* INTRO TEXT */}
+          <p className="text-gray-200 text-base md:text-lg leading-relaxed text-center max-w-3xl mx-auto">
+            Excellent graphic design is essential for long-term success your
+            visual identity is the face of your brand. Just like your health, it
+            needs consistent care and investment.
             <br />
             <br />
-            People may be drawn to them by graphics. By investing graphic design
-            agency, you can use our superior design services to immediately
-            create a well-known and reliable brand.
+            With a skilled graphic design agency, you can craft a recognizable,
+            trustworthy, and visually impactful brand.
           </p>
 
-          {/* Grid Boxes */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Box 1 */}
-            <div className="p-6 bg-[var(--primary-color)]/5 rounded-lg border-l-4 border-[var(--primary-color)] shadow-sm">
-              <h4 className="font-semibold text-xl mb-2 text-[var(--primary-color)]">
-                It makes a powerful initial impression
-              </h4>
-              <p className="text-sm md:text-base text-justify text-gray-700">
-                The user encounters your goods or service initially. It&#39;s
-                the images of your brand. Customers&#39; perceptions of your
-                brand are shaped by the images they see. Visual appeal is
-                important in today&#39;s aesthetic-driven economy, despite its
-                apparent superficiality.
-              </p>
-            </div>
+          {/* ====================== GRID BOXES ====================== */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {[
+              {
+                title: "It makes a powerful initial impression",
+                content:
+                  "The user encounters your goods or service initially. It's the images of your brand. Customers' perceptions of your brand are shaped by the images they see. Visual appeal is important in today's aesthetic-driven economy, despite its apparent superficiality.",
+                border: "border-l-4",
+              },
+              {
+                title: "Increases Recognition of the Brand",
+                content:
+                  "A strong brand identity is built through consistent and creative design. Thankfully, our talented graphic designers are prepared to use their exceptional abilities to increase brand recognition.",
+                border: "border-r-4",
+              },
+              {
+                title: "Promotes Credibility & Trust",
+                content:
+                  "A polished and professional appearance inspires confidence in your audience. When consumers see your brand for the first time, they are drawn to it by its visuals, which increases credibility and trust.",
+                border: "border-l-4",
+              },
+              {
+                title: "Boosts Engagement and Conversions",
+                content:
+                  "Our graphic design firm uses visuals to highlight interactions and conversions, ensuring that it draws in more customers and boosts sales.",
+                border: "border-r-4",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className={`
+            relative p-6 rounded-2xl 
+            backdrop-blur-xl bg-white/10 
+            ${item.border} border-[var(--primary-color)] 
+            shadow-[0_0_20px_rgba(0,255,255,0.15)]
+            hover:shadow-[0_0_30px_var(--primary-color)]
+            transition-all duration-300
+            overflow-hidden min-h-[200px]
+          `}
+              >
+                {/* HOLOGRAM SCAN LINES */}
+                <div className="absolute inset-0 opacity-30 pointer-events-none">
+                  {[...Array(5)].map((_, j) => (
+                    <div
+                      key={j}
+                      className="
+                          absolute left-0 w-full h-[2px]
+                          bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                          animate-gdScan
+                "
+                      style={{
+                        top: `${50 + j * 40}px`,
+                        animationDelay: `${j * 0.25}s`,
+                      }}
+                    ></div>
+                  ))}
+                </div>
 
-            {/* Box 2 */}
-            <div className="p-6 bg-[var(--primary-color)]/5 rounded-lg border-r-4 border-[var(--primary-color)] shadow-sm">
-              <h4 className="font-semibold text-xl mb-2 text-[var(--primary-color)]">
-                Increases Recognition of the Brand
-              </h4>
-              <p className="text-sm md:text-base text-justify text-gray-700">
-                A strong brand identity is built through consistent and creative
-                design. Thankfully, our talented graphic designers are prepared
-                to use their exceptional abilities to increase brand
-                recognition.
-              </p>
-            </div>
+                {/* TITLE */}
+                <h4 className="font-semibold text-xl mb-3 text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)]">
+                  {item.title}
+                </h4>
 
-            {/* Box 3 */}
-            <div className="p-6 bg-[var(--primary-color)]/5 rounded-lg border-l-4 border-[var(--primary-color)] shadow-sm">
-              <h4 className="font-semibold text-xl mb-2 text-[var(--primary-color)]">
-                Promotes Credibility & Trust
-              </h4>
-              <p className="text-sm md:text-base text-justify text-gray-700">
-                A polished and professional appearance inspires confidence in
-                your audience. When consumers see your brand for the first time,
-                they are drawn to it by its visuals, which increases credibility
-                and trust.
-              </p>
-            </div>
+                {/* CONTENT */}
+                <p className="text-sm md:text-base text-gray-200 leading-relaxed text-justify">
+                  {item.content}
+                </p>
 
-            {/* Box 4 */}
-            <div className="p-6 bg-[var(--primary-color)]/5 rounded-lg border-r-4 border-[var(--primary-color)] shadow-sm">
-              <h4 className="font-semibold text-xl mb-2 text-[var(--primary-color)]">
-                Boosts Engagement and Conversions
-              </h4>
-              <p className="text-sm md:text-base text-justify text-gray-700">
-                Our graphic design firm uses visuals to highlight interactions
-                and conversions, ensuring that it draws in more customers and
-                boosts sales.
-              </p>
-            </div>
+                {/* HOVER NEON BORDER */}
+                <div className="absolute inset-0 border border-transparent rounded-2xl group-hover:border-[var(--primary-color)] transition-all"></div>
+              </div>
+            ))}
           </div>
         </div>
+
+        {/* ANIMATIONS */}
+        <style>{`
+    @keyframes gdScan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-gdScan {
+      animation: gdScan 4s linear infinite;
+    }
+  `}</style>
       </section>
 
       <OurProcess />
       <WhyBigwig />
+      <GetInTouch />
+      <PopupForm isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+
       <Footer />
     </div>
   );

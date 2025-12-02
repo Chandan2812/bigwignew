@@ -18,7 +18,10 @@ import Slider from "react-slick";
 
 import ContactForm from "../../../../components/ContactForm";
 import Image from "next/image";
-
+import GetInTouch from "../../../../components/GetInTouch";
+import ButtonFill from "../../../../components/Button";
+import PopupForm from "../../../../components/PopupForm";
+import { useState } from "react";
 const sections = [
   {
     icon: <BarChart3 className="text-[var(--primary-color)]" size={36} />,
@@ -61,6 +64,8 @@ const sections = [
 ];
 
 function Website() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -74,7 +79,7 @@ function Website() {
   };
 
   return (
-    <div>
+    <div className="bg-[var(--color1)]">
       <Nav />
 
       <title>Website Design & Development</title>
@@ -91,7 +96,7 @@ function Website() {
         className="relative bg-cover bg-center bg-no-repeat py-10 px-4"
         style={{ backgroundImage: `url(${hero.src})` }}
       >
-        <div className="bg-black/40 absolute inset-0 z-0" />
+        <div className="bg-black/60 absolute inset-0 z-0" />
 
         <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
@@ -101,7 +106,7 @@ function Website() {
             </h1>
 
             <p
-              className="text-3xl md:text-4xl font-semibold flex items-center gap-2 text-[#4e6cba]"
+              className="text-3xl md:text-4xl font-semibold flex items-center gap-2 text-[var(--color5)]"
               style={{
                 textShadow: "0 2px 6px rgba(0,0,0,0.6)",
                 letterSpacing: "0.5px",
@@ -120,11 +125,11 @@ function Website() {
               We are the Best website development company offering different
               Online Website Designing & Development services.
             </p>
-            <a href="/contact">
-              <button className="mt-4 px-6 py-3 bg-[var(--primary-color)] text-white rounded-full font-semibold hover:bg-opacity-80 transition">
-                Contact Us
-              </button>
-            </a>
+
+            <ButtonFill
+              onClick={() => setIsPopupOpen(true)}
+              text="Contact Us"
+            />
           </div>
 
           {/* Right Form */}
@@ -132,17 +137,17 @@ function Website() {
         </div>
       </section>
 
-      <section className="bg-white  py-12 px-4">
+      <section className=" py-12 px-4">
         <div className="w-11/12 md:w-5/6 mx-auto space-y-12">
           {/* Heading */}
-          <h2 className="text-3xl md:text-4xl font-semibold text-center text-[var(--primary-color)] mb-6">
+          <h2 className="text-3xl md:text-4xl font-semibold text-center text-[var(--color5)] mb-6">
             Best Web Development Company to Build Your Online Presence
           </h2>
 
           {/* Two-column layout */}
           <div className="grid md:grid-cols-2 gap-10 items-center">
             {/* Left Text Block */}
-            <div className="space-y-6 text-gray-700  text-lg leading-relaxed">
+            <div className="space-y-6 text-white text-lg leading-relaxed">
               <p>
                 Words like <strong>“web design”</strong> and{" "}
                 <strong>“web development”</strong> might sound overwhelming, and
@@ -173,102 +178,247 @@ function Website() {
           </div>
 
           {/* Highlight Box Below */}
-          <div className="bg-[var(--primary-color)] text-white p-8 md:p-10 rounded-2xl shadow-2xl space-y-6">
-            <h3 className="text-2xl font-bold mb-4">Why Clients Choose Us</h3>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 list-disc list-inside text-base">
-              <li>High-quality, mobile-responsive websites.</li>
-              <li>Cost-effective and easy-to-manage web solutions.</li>
-              <li>Attractive, conversion-focused landing pages.</li>
-              <li>SEO-friendly website structures.</li>
-              <li>More than 900 successful projects delivered.</li>
+          <div
+            className="
+    relative p-8 md:p-10 rounded-2xl 
+    backdrop-blur-xl bg-white/10 
+    border border-white/10 
+    shadow-[0_0_30px_rgba(0,255,255,0.2)]
+    overflow-hidden
+  "
+          >
+            {/* Neon Scan Lines */}
+            <div className="absolute inset-0 pointer-events-none opacity-40">
+              {[...Array(6)].map((_, i) => (
+                <div
+                  key={i}
+                  className="
+          absolute left-0 w-full h-[2px]
+          bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+          animate-clientScan
+        "
+                  style={{
+                    top: `${40 + i * 40}px`,
+                    animationDelay: `${i * 0.25}s`,
+                  }}
+                ></div>
+              ))}
+            </div>
+
+            {/* Content */}
+            <h3 className="text-2xl md:text-3xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)] mb-6 relative z-10">
+              Why Clients Choose Us
+            </h3>
+
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 text-gray-200 text-base relative z-10">
+              {[
+                "High-quality, mobile-responsive websites.",
+                "Cost-effective and easy-to-manage web solutions.",
+                "Attractive, conversion-focused landing pages.",
+                "SEO-friendly website structures.",
+                "More than 900 successful projects delivered.",
+              ].map((point, idx) => (
+                <li
+                  key={idx}
+                  className="flex items-start gap-3 group transition-all"
+                >
+                  {/* Neon bullet */}
+                  <span
+                    className="
+          w-3 h-3 mt-1 rounded-full 
+          bg-[var(--color5)] 
+          shadow-[0_0_10px_var(--primary-color)]
+          group-hover:shadow-[0_0_15px_var(--primary-color)]
+          transition-all 
+        "
+                  ></span>
+
+                  <span className="group-hover:text-[var(--primary-color)] transition-colors duration-300">
+                    {point}
+                  </span>
+                </li>
+              ))}
             </ul>
+
+            {/* Glow Border */}
+            <div
+              className="
+                absolute inset-0 rounded-2xl
+                border border-transparent 
+                hover:border-[var(--primary-color)]
+                transition-all duration-300"
+            ></div>
+
+            {/* ANIMATION */}
+            <style>{`
+              @keyframes clientScan {
+                0% { transform: translateX(-100%); opacity: 0; }
+                60% { opacity: 1; }
+                100% { transform: translateX(100%); opacity: 0; }
+              }
+              .animate-clientScan {
+                animation: clientScan 4.5s linear infinite;
+              }
+            `}</style>
           </div>
         </div>
       </section>
 
-      <section className="py-12 mx-auto w-11/12 md:w-5/6 ">
-        {/* Mobile View: Slider */}
-        <div className="block lg:hidden">
-          <Slider {...settings}>
+      <section className="py-16 w-11/12 md:w-5/6 mx-auto relative overflow-hidden">
+        <div className="relative z-10">
+          {/* ================= MOBILE SLIDER ================= */}
+          <div className="block lg:hidden">
+            <Slider {...settings}>
+              {sections.map((section, index) => (
+                <div key={index} className="px-2">
+                  <div
+                    className="
+                h-[470px] flex flex-col justify-between 
+                p-6 rounded-2xl 
+                backdrop-blur-xl bg-white/10 
+                border border-white/10 
+                shadow-[0_0_25px_rgba(0,255,255,0.15)]
+                space-y-5 relative overflow-hidden group
+              "
+                  >
+                    {/* Scan Lines */}
+                    <div className="absolute inset-0 opacity-40 pointer-events-none">
+                      {[...Array(5)].map((_, i) => (
+                        <div
+                          key={i}
+                          className="
+                      absolute left-0 w-full h-[2px]
+                      bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                      animate-cardScan
+                    "
+                          style={{
+                            top: `${60 + i * 55}px`,
+                            animationDelay: `${i * 0.2}s`,
+                          }}
+                        ></div>
+                      ))}
+                    </div>
+
+                    {/* Icon */}
+                    <div className="flex justify-center">
+                      <div
+                        className="
+                    p-4 rounded-full 
+                    bg-white/10 backdrop-blur-lg 
+                    border border-white/20 shadow-[0_0_10px_rgba(0,255,255,0.3)]
+                    group-hover:shadow-[0_0_20px_var(--primary-color)]
+                    transition-all
+                  "
+                      >
+                        {section.icon}
+                      </div>
+                    </div>
+
+                    <h3 className="text-xl font-semibold text-center text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)]">
+                      {section.title}
+                    </h3>
+
+                    <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify">
+                      {section.content}
+                    </p>
+
+                    {/* Glow Border */}
+                    <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--primary-color)] transition-all"></div>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </div>
+
+          {/* ================= DESKTOP GRID ================= */}
+          <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 auto-rows-fr">
             {sections.map((section, index) => (
-              <div key={index} className="px-2">
-                {" "}
-                {/* Add horizontal gap between slides */}
-                <div className="h-[450px] flex flex-col justify-between border border-gray-200 rounded-2xl p-6 shadow-lg bg-white  space-y-4">
+              <div
+                key={index}
+                className="
+            group relative overflow-hidden rounded-2xl 
+            transition-transform duration-300 
+            hover:-translate-y-2 h-full
+          "
+              >
+                <div
+                  className="
+              relative z-10 p-6 rounded-2xl 
+              backdrop-blur-xl bg-white/10 
+              border border-white/10 
+              shadow-[0_0_25px_rgba(0,255,255,0.2)]
+              flex flex-col justify-between 
+              h-full space-y-5
+            "
+                >
+                  {/* Hologram Scan Lines */}
+                  <div className="absolute inset-0 pointer-events-none opacity-40">
+                    {[...Array(6)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="
+                    absolute left-0 w-full h-[2px]
+                    bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                    animate-cardScan
+                  "
+                        style={{
+                          top: `${60 + i * 50}px`,
+                          animationDelay: `${i * 0.25}s`,
+                        }}
+                      ></div>
+                    ))}
+                  </div>
+
                   {/* Icon */}
                   <div className="flex justify-center">
-                    <div className="bg-gray-100 p-4 rounded-full shadow">
+                    <div
+                      className="
+                  p-4 rounded-full 
+                  bg-white/10 backdrop-blur-lg 
+                  border border-white/20 
+                  shadow-[0_0_10px_rgba(0,255,255,0.3)]
+                  group-hover:shadow-[0_0_20px_var(--color5)]
+                  transition-all
+                "
+                    >
                       {section.icon}
                     </div>
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-xl font-semibold text-center text-[var(--primary-color)]">
+                  <h3 className="text-xl font-semibold text-center text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)]">
                     {section.title}
                   </h3>
 
-                  {/* Content */}
-                  <p className="text-gray-700  text-sm md:text-base leading-relaxed text-justify">
+                  <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify">
                     {section.content}
                   </p>
+
+                  {/* Hover Glow Border */}
+                  <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--primary-color)] transition-all"></div>
                 </div>
               </div>
             ))}
-          </Slider>
-        </div>
+          </div>
 
-        {/* Desktop View: Grid */}
-        <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {sections.map((section, index) => (
-            <div
-              key={index}
-              className="group relative overflow-hidden rounded-2xl p-[2px] transition-all duration-300 h-full"
-            >
-              {/* Content */}
-              <div className="relative z-10 border border-gray-200  rounded-2xl p-6 shadow-lg bg-white  space-y-4 h-full flex flex-col justify-between min-h-[360px]">
-                <div className="flex justify-center">
-                  <div className="bg-gray-100  p-4 rounded-full shadow">
-                    {section.icon}
-                  </div>
-                </div>
-
-                <h3 className="text-xl font-semibold text-center text-[var(--primary-color)]">
-                  {section.title}
-                </h3>
-
-                <p className="text-gray-700  text-sm md:text-base leading-relaxed text-justify">
-                  {section.content}
-                </p>
-              </div>
-            </div>
-          ))}
+          {/* ANIMATIONS */}
+          <style>{`
+      @keyframes cardScan {
+        0% { transform: translateX(-100%); opacity: 0; }
+        50% { opacity: 1; }
+        100% { transform: translateX(100%); opacity: 0; }
+      }
+      .animate-cardScan {
+        animation: cardScan 4s linear infinite;
+      }
+    `}</style>
         </div>
       </section>
 
       <OurProcess />
       <WhyBigwig />
+      <GetInTouch />
+      <PopupForm isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
 
-      <section className="bg-white text-black  py-12 px-4">
-        <div className="w-11/12 md:w-5/6 mx-auto md:text-center text-justify">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6 leading-tight text-[var(--primary-color)] text-center">
-            Let&#39;s Build Your Digital Future Together
-          </h2>
-          <p className="text-lg md:text-xl mb-6 max-w-3xl mx-auto">
-            Looking for a website development company that understands your
-            goals?
-            <br className="hidden md:block" />
-            <span className="font-semibold text-[var(--primary-color)]">
-              BigWig Digital
-            </span>{" "}
-            brings you innovative, affordable, and customized web design
-            services to elevate your brand online.
-          </p>
-          <p className="text-md md:text-lg max-w-3xl mx-auto">
-            With our team of skilled designers and developers, we ensure your
-            digital presence stands out and supports your business growth.
-          </p>
-        </div>
-      </section>
       <Footer />
     </div>
   );

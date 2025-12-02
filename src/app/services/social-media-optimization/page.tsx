@@ -23,7 +23,10 @@ import {
 import { FaSearch, FaSnapchatGhost } from "react-icons/fa";
 import ContactForm from "../../../../components/ContactForm";
 import Image from "next/image";
-
+import ButtonFill from "../../../../components/Button";
+import PopupForm from "../../../../components/PopupForm";
+import GetInTouch from "../../../../components/GetInTouch";
+import { useState } from "react";
 const features = [
   {
     title: "Strategy Meets Creativity",
@@ -58,8 +61,10 @@ const features = [
 ];
 
 function SocialMediaOptimization() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   return (
-    <div>
+    <div className="bg-[var(--color1)]">
       <title>Social Media Optimization (SMO)</title>
       <link
         rel="canonical"
@@ -75,7 +80,7 @@ function SocialMediaOptimization() {
         className="relative bg-cover bg-center bg-no-repeat py-10 px-4"
         style={{ backgroundImage: `url(${hero.src})` }}
       >
-        <div className="bg-black/50 absolute inset-0 z-0" />
+        <div className="bg-black/60 absolute inset-0 z-0" />
 
         <div className="relative z-10 w-5/6 mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
           {/* Left Content - 2/3 */}
@@ -85,7 +90,7 @@ function SocialMediaOptimization() {
             </h1>
 
             <p
-              className="text-2xl md:text-4xl font-semibold text-[#4e6cba]"
+              className="text-2xl md:text-4xl font-semibold text-[var(--color5)]"
               style={{
                 textShadow: "0 2px 6px rgba(0,0,0,0.6)",
                 letterSpacing: "0.5px",
@@ -120,11 +125,10 @@ function SocialMediaOptimization() {
               major social media platform.
             </p>
 
-            <a href="/contact">
-              <button className="mt-4 px-6 py-3 bg-[var(--primary-color)] text-white rounded-full font-semibold hover:bg-opacity-80 transition">
-                Contact Us
-              </button>
-            </a>
+            <ButtonFill
+              onClick={() => setIsPopupOpen(true)}
+              text="Contact Us"
+            />
           </div>
 
           {/* Right Form - 1/3 */}
@@ -135,11 +139,11 @@ function SocialMediaOptimization() {
       <div className="w-11/12 md:w-5/6 mx-auto py-12 text-gray-900 space-y-10">
         {/* Section 1 - Full Width */}
         <div className="text-center md:text-left space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)] text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center">
             Smart social media strategies that connect your brand with the right
             audience.
           </h2>
-          <p className="text-lg text-gray-700  mx-auto md:mx-0">
+          <p className="text-lg text-white  mx-auto md:mx-0">
             Your social media profiles are more than just digital pages,
             they&#39;re your brand’s voice, vibe, and visibility. At
             <strong>
@@ -153,8 +157,8 @@ function SocialMediaOptimization() {
         </div>
 
         {/* Section 2 - Highlighted Statement */}
-        <div className="bg-[var(--primary-color)]/10 border border-[var(--primary-color)] rounded-lg p-6 md:p-8 text-center space-y-4">
-          <p className="text-lg text-gray-800 font-medium">
+        <div className="bg-[var(--primary-color)]/10 border border-[var(--color5)] rounded-full p-6 md:p-8 text-center space-y-4">
+          <p className="text-lg text-[var(--color5)] font-medium">
             We don’t just post, we create, optimize, engage, and build
             communities. If you&#39;re looking to establish authority, connect
             with your audience, and grow consistently online, our SMO services
@@ -166,20 +170,20 @@ function SocialMediaOptimization() {
         <div className="grid md:grid-cols-2 gap-10 items-start">
           {/* Left */}
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold text-[var(--primary-color)]">
+            <h3 className="text-xl font-semibold text-[var(--color5)]">
               Build a Powerful Organic Presence That Lasts
             </h3>
-            <p className="text-gray-700 text-base">
+            <p className="text-gray-200 text-base">
               In today’s crowded digital space, a strong organic presence isn’t
               optional; it’s essential. Social Media Optimization ensures your
               brand makes a lasting impression by keeping your profiles
               consistent, discoverable, and audience-friendly.
             </p>
 
-            <h3 className="text-xl font-semibold text-[var(--primary-color)]">
+            <h3 className="text-xl font-semibold text-[var(--color5)]">
               Optimized Profiles = Searchable Brands
             </h3>
-            <p className="text-gray-700 text-base">
+            <p className="text-gray-200 text-base">
               As social platforms increasingly function like search engines, a
               well-optimized profile not only enhances visibility but also
               builds long-term credibility. It’s not just about being present,
@@ -198,163 +202,270 @@ function SocialMediaOptimization() {
         </div>
       </div>
 
-      <div className="w-11/12 md:w-5/6 mx-auto py-12 space-y-20 text-gray-900">
-        {/* Section: Our Social Media Optimization Services */}
-        <div className="space-y-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-[var(--primary-color)]">
-            Our Social Media Optimization Services
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {[
-              {
-                title: "Profile Optimization",
-                content:
-                  "We optimize your bio, username, links, highlights, and keywords on platforms like Instagram, Facebook, LinkedIn, and Twitter for maximum discoverability.",
-              },
-              {
-                title: "Content Planning & Posting",
-                content:
-                  "From carousel posts to reels, infographics, and quotes, we create and manage content calendars that are platform-specific and audience-focused.",
-              },
-              {
-                title: "Hashtag Strategy",
-                content:
-                  "Custom hashtag research for each industry and platform to boost organic reach and content visibility.",
-              },
-              {
-                title: "Audience Engagement",
-                content:
-                  "We engage with your followers through DMs, comments, shares, and reactions to keep your community active and loyal.",
-              },
-              {
-                title: "Competitor & Trend Analysis",
-                content:
-                  "Stay ahead of the curve with regular competitor audits and trending content ideas that position your brand as a leader.",
-              },
-              {
-                title: "Story & Highlight Management",
-                content:
-                  "Strategically designed stories and highlight covers that reflect your brand’s personality and key services.",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="border-l-4 border-[var(--primary-color)] bg-white shadow-md rounded-lg p-4 space-y-2"
+      <div className="w-11/12 md:w-5/6 mx-auto py-16 space-y-24 relative text-gray-200">
+        {/* MATRIX BACKGROUND */}
+        {/* <div className="absolute inset-0 opacity-[0.15] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div> */}
+
+        <div className="relative z-10 space-y-24">
+          {/* ===================================================== */}
+          {/* 1. OUR SMO SERVICES */}
+
+          <div className="space-y-10">
+            {/* Neon Capsule Heading */}
+            <div className="text-center">
+              <h2
+                className="
+          inline-block px-10 py-3 rounded-full 
+          border border-[var(--primary-color)]
+          shadow-[0_0_20px_var(--primary-color)]
+          backdrop-blur-xl bg-white/5 
+          text-3xl md:text-4xl font-bold
+          text-[var(--color5)]
+          drop-shadow-[0_0_10px_var(--primary-color)]
+        "
               >
-                <h3 className="text-xl font-semibold text-[var(--primary-color)]">
-                  {item.title}
-                </h3>
-                <p className="text-gray-700">{item.content}</p>
-              </div>
-            ))}
+                Our Social Media Optimization Services
+              </h2>
+            </div>
+
+            {/* Services Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+              {[
+                {
+                  title: "Profile Optimization",
+                  content:
+                    "We optimize your bio, username, links, highlights, and keywords on platforms like Instagram, Facebook, LinkedIn, and Twitter for maximum discoverability.",
+                },
+                {
+                  title: "Content Planning & Posting",
+                  content:
+                    "From carousel posts to reels, infographics, and quotes, we create and manage content calendars that are platform-specific and audience-focused.",
+                },
+                {
+                  title: "Hashtag Strategy",
+                  content:
+                    "Custom hashtag research for each industry and platform to boost organic reach and content visibility.",
+                },
+                {
+                  title: "Audience Engagement",
+                  content:
+                    "We engage with your followers through DMs, comments, shares, and reactions to keep your community active and loyal.",
+                },
+                {
+                  title: "Competitor & Trend Analysis",
+                  content:
+                    "Stay ahead of the curve with regular competitor audits and trending content ideas that position your brand as a leader.",
+                },
+                {
+                  title: "Story & Highlight Management",
+                  content:
+                    "Strategically designed stories and highlight covers that reflect your brand’s personality and key services.",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="
+              relative p-6 rounded-2xl 
+              backdrop-blur-xl bg-white/10 
+              border border-white/10 
+              shadow-[0_0_20px_rgba(0,255,255,0.15)]
+              hover:shadow-[0_0_25px_var(--primary-color)]
+              transition-all duration-300
+              space-y-3 min-h-[240px]
+              overflow-hidden
+            "
+                >
+                  {/* Hologram Scan Lines */}
+                  <div className="absolute inset-0 opacity-30 pointer-events-none">
+                    {[...Array(5)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="
+                    absolute left-0 w-full h-[2px]
+                    bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                    animate-smoScan
+                  "
+                        style={{
+                          top: `${50 + i * 40}px`,
+                          animationDelay: `${i * 0.25}s`,
+                        }}
+                      ></div>
+                    ))}
+                  </div>
+
+                  <h3 className="text-xl font-semibold text-[var(--color5)] drop-shadow-[0_0_8px_var(--primary-color)]">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-gray-200">{item.content}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className="space-y-8">
-          <h3 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)] text-center">
-            Platforms We Optimize
-          </h3>
+          {/* ===================================================== */}
+          {/* 2. PLATFORMS WE OPTIMIZE */}
 
-          <div className="grid grid-cols-4 lg:flex lg:justify-between gap-6 text-center text-gray-700">
-            {[
-              {
-                icon: (
-                  <FaInstagram size={36} className="text-pink-500 mx-auto" />
-                ),
-                label: "Instagram",
-              },
-              {
-                icon: (
-                  <FaFacebookF size={36} className="text-blue-600 mx-auto" />
-                ),
-                label: "Facebook",
-              },
-              {
-                icon: (
-                  <FaLinkedinIn size={36} className="text-blue-700 mx-auto" />
-                ),
-                label: "LinkedIn",
-              },
-              {
-                icon: <FaXTwitter size={36} className="text-black mx-auto" />,
-                label: "Twitter (X)",
-              },
-              {
-                icon: <FaYoutube size={36} className="text-red-600 mx-auto" />,
-                label: "YouTube",
-              },
-              {
-                icon: (
-                  <FaPinterestP size={36} className="text-red-500 mx-auto" />
-                ),
-                label: "Pinterest",
-              },
-              {
-                icon: (
-                  <FaSnapchatGhost
-                    size={36}
-                    className="text-yellow-400 mx-auto"
-                  />
-                ),
-                label: "SnapChat",
-              },
-              {
-                icon: <FaTiktok size={36} className="text-black mx-auto" />,
-                label: "TikTok",
-              },
-            ].map((item, i) => (
-              <div key={i} className="space-y-2">
-                {item.icon}
-                <p className="text-sm">{item.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="space-y-10">
-          <h3 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)] text-center">
-            Why Choose BigWig Digital for SMO Services?
-          </h3>
-
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-            {features.map((item, index) => (
-              <div
-                key={index}
-                className="bg-white shadow-lg rounded-xl p-5 text-center hover:shadow-xl transition-all space-y-4"
+          <div className="space-y-10">
+            <div className="text-center">
+              <h3
+                className="
+          inline-block px-10 py-3 rounded-full 
+          border border-[var(--primary-color)]
+          shadow-[0_0_20px_var(--primary-color)]
+          backdrop-blur-xl bg-white/5 
+          text-3xl md:text-4xl font-bold
+          text-[var(--color5)]
+          drop-shadow-[0_0_10px_var(--primary-color)]
+        "
               >
-                {/* Center the icon */}
-                <div className="flex justify-center">{item.icon}</div>
-                <h4 className="text-lg font-semibold text-[var(--primary-color)]">
-                  {item.title}
-                </h4>
-                <p className="text-sm text-gray-700">{item.content}</p>
-              </div>
-            ))}
+                Platforms We Optimize
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-4 lg:flex lg:justify-between gap-8 text-center">
+              {[
+                {
+                  icon: (
+                    <FaInstagram size={40} className="text-pink-500 mx-auto" />
+                  ),
+                  label: "Instagram",
+                },
+                {
+                  icon: (
+                    <FaFacebookF size={40} className="text-blue-600 mx-auto" />
+                  ),
+                  label: "Facebook",
+                },
+                {
+                  icon: (
+                    <FaLinkedinIn size={40} className="text-blue-700 mx-auto" />
+                  ),
+                  label: "LinkedIn",
+                },
+                {
+                  icon: <FaXTwitter size={40} className="text-white mx-auto" />,
+                  label: "Twitter (X)",
+                },
+                {
+                  icon: (
+                    <FaYoutube size={40} className="text-red-600 mx-auto" />
+                  ),
+                  label: "YouTube",
+                },
+                {
+                  icon: (
+                    <FaPinterestP size={40} className="text-red-500 mx-auto" />
+                  ),
+                  label: "Pinterest",
+                },
+                {
+                  icon: (
+                    <FaSnapchatGhost
+                      size={40}
+                      className="text-yellow-400 mx-auto"
+                    />
+                  ),
+                  label: "Snapchat",
+                },
+                {
+                  icon: <FaTiktok size={40} className="text-white mx-auto" />,
+                  label: "TikTok",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="space-y-2 hover:scale-110 transition-all"
+                >
+                  {item.icon}
+                  <p className="text-sm text-gray-300">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ===================================================== */}
+          {/* 3. WHY CHOOSE BIGWIG FOR SMO */}
+
+          <div className="space-y-10">
+            <div className="text-center">
+              <h3
+                className="
+          inline-block px-10 py-3 rounded-full 
+          border border-[var(--primary-color)]
+          shadow-[0_0_20px_var(--primary-color)]
+          backdrop-blur-xl bg-white/5 
+          text-3xl md:text-4xl font-bold
+          text-[var(--color5)]
+          drop-shadow-[0_0_10px_var(--primary-color)]
+        "
+              >
+                Why Choose BigWig Digital for SMO Services?
+              </h3>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+              {features.map((item, index) => (
+                <div
+                  key={index}
+                  className="
+              relative p-6 rounded-xl text-center
+              backdrop-blur-xl bg-white/10 
+              border border-white/10 
+              shadow-[0_0_20px_rgba(0,255,255,0.15)]
+              hover:shadow-[0_0_25px_var(--primary-color)]
+              transition-all duration-300
+              min-h-[260px]
+              overflow-hidden
+              space-y-4
+            "
+                >
+                  {/* Scanlines */}
+                  <div className="absolute inset-0 opacity-25 pointer-events-none">
+                    {[...Array(4)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="
+                    absolute left-0 w-full h-[2px]
+                    bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                    animate-smoScan
+                  "
+                        style={{ top: `${60 + i * 45}px` }}
+                      ></div>
+                    ))}
+                  </div>
+
+                  <div className="flex justify-center ">{item.icon}</div>
+
+                  <h4 className="text-lg font-semibold text-[var(--color5)] drop-shadow-[0_0_8px_var(--primary-color)]">
+                    {item.title}
+                  </h4>
+
+                  <p className="text-sm text-gray-200">{item.content}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
+
+        {/* SCANLINE ANIMATION */}
+        <style>{`
+    @keyframes smoScan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-smoScan {
+      animation: smoScan 4s linear infinite;
+    }
+  `}</style>
       </div>
 
       <OurProcess />
       <WhyBigwig />
+      <GetInTouch />
+      <PopupForm isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
 
-      {/* Final Call-to-Action */}
-      <div className=" py-12 ">
-        <div className="w-5/6 mx-auto bg-[var(--primary-color)]/10 border border-[var(--primary-color)] rounded-xl p-6 md:p-8 space-y-4 text-center">
-          <h4 className="text-xl font-semibold text-[var(--primary-color)]">
-            Let’s Optimize Your Social Presence
-          </h4>
-          <p className="text-gray-800 max-w-3xl mx-auto">
-            Looking for consistent growth and real engagement without running
-            ads 24/7? Our Social Media Optimization services help you stay
-            active, attractive, and algorithm-friendly across all major
-            platforms.
-          </p>
-          <p className="text-gray-800 font-medium">
-            BigWig Digital helps you create a strong social identity that
-            attracts, retains, and converts organically.
-          </p>
-        </div>
-      </div>
       <Footer />
     </div>
   );
