@@ -75,7 +75,7 @@ const OurProcess: React.FC = () => {
               }`}
             >
               {/* Timeline Dot */}
-              <div className="absolute left-1/2 top-1 w-5 h-5 bg-[var(--primary-color)] rounded-full shadow-md transform -translate-x-1/2 z-20 border-4 border-white dark:border-zinc-900" />
+              <div className="absolute left-1/2 top-1 w-5 h-5 bg-[var(--color5)] rounded-full shadow-md transform -translate-x-1/2 z-20 border-4 border-white dark:border-zinc-900" />
 
               {/* Content */}
               <div
