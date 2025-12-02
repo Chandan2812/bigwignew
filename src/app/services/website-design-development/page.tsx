@@ -24,39 +24,37 @@ import PopupForm from "../../../../components/PopupForm";
 import { useState } from "react";
 const sections = [
   {
-    icon: <BarChart3 className="text-[var(--primary-color)]" size={36} />,
+    icon: <BarChart3 className="text-[var(--color5)]" size={36} />,
     title: "We Focus on Your Growth, Not Just Websites",
     content:
       "At BigWig Digital, we’re not just about making websites, we’re about building digital success stories. Whether it’s digital marketing, website design, or full-scale development, every service we deliver is rooted in excellence, backed by expertise, and focused on measurable outcomes. Our commitment to quality has made us a trusted web development partner for businesses across industries and regions.",
   },
   {
-    icon: <Code2 className="text-[var(--primary-color)]" size={36} />,
+    icon: <Code2 className="text-[var(--color5)]" size={36} />,
     title: "Custom Web Development for Every Business Need",
     content:
       "We pay attention to every detail to ensure a smooth and flawless web development process. Our custom web development services include creating user-friendly, high-performance websites, eCommerce platforms, CMS-based sites, web apps, SaaS solutions, and enterprise portals. Everything is tailored to ensure your brand shines online.",
   },
   {
-    icon: <Cpu className="text-[var(--primary-color)]" size={36} />,
+    icon: <Cpu className="text-[var(--color5)]" size={36} />,
     title: "Future-Ready Technologies for Scalable Solutions",
     content:
       "We build fast, scalable, and secure websites using modern technologies like React.js, Angular, Vue.js, Node.js, Progressive Web Apps (PWAs), and headless CMS systems. With AI-powered tools, intelligent automation, and seamless third-party integrations, we make sure your website is optimized for performance, security, and conversions.",
   },
   {
-    icon: (
-      <MonitorSmartphone className="text-[var(--primary-color)]" size={36} />
-    ),
+    icon: <MonitorSmartphone className="text-[var(--color5)]" size={36} />,
     title: "Designed for Experience and Engagement",
     content:
       "Our goal is to help you stand out and leave a lasting impression. That’s why we create visually appealing websites with smooth navigation and smart features like voice search, chatbots, and API integrations. Whether it's a business website, blog, or eCommerce platform, we ensure it delivers a seamless user experience across all devices.",
   },
   {
-    icon: <PenTool className="text-[var(--primary-color)]" size={36} />,
+    icon: <PenTool className="text-[var(--color5)]" size={36} />,
     title: "Creative Design Backed by Strategy",
     content:
       "We believe in designing for purpose. Our responsive websites not only look good but are also strategically built for your target audience and market segment. Every element of our website design focuses on driving engagement, building credibility, and growing your brand’s online reputation.",
   },
   {
-    icon: <ShieldCheck className="text-[var(--primary-color)]" size={36} />,
+    icon: <ShieldCheck className="text-[var(--color5)]" size={36} />,
     title: "Trusted by Brands Worldwide",
     content:
       "From startups to established businesses, we’ve delivered over 900 successful web projects to clients across diverse industries and geographies. Whether it's a portal for a pharmaceutical brand, a hospital website, or an educational platform, we have the experience to deliver exactly what your business needs.",
@@ -194,7 +192,7 @@ function Website() {
                   key={i}
                   className="
           absolute left-0 w-full h-[2px]
-          bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+          bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
           animate-clientScan
         "
                   style={{
@@ -206,7 +204,7 @@ function Website() {
             </div>
 
             {/* Content */}
-            <h3 className="text-2xl md:text-3xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)] mb-6 relative z-10">
+            <h3 className="text-2xl md:text-3xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)] mb-6 relative z-10">
               Why Clients Choose Us
             </h3>
 
@@ -227,13 +225,13 @@ function Website() {
                     className="
           w-3 h-3 mt-1 rounded-full 
           bg-[var(--color5)] 
-          shadow-[0_0_10px_var(--primary-color)]
-          group-hover:shadow-[0_0_15px_var(--primary-color)]
+          shadow-[0_0_10px_var(--color5)]
+          group-hover:shadow-[0_0_15px_var(--color5)]
           transition-all 
         "
                   ></span>
 
-                  <span className="group-hover:text-[var(--primary-color)] transition-colors duration-300">
+                  <span className="group-hover:text-[var(--color5)] transition-colors duration-300">
                     {point}
                   </span>
                 </li>
@@ -245,7 +243,7 @@ function Website() {
               className="
                 absolute inset-0 rounded-2xl
                 border border-transparent 
-                hover:border-[var(--primary-color)]
+                hover:border-[var(--color5)]
                 transition-all duration-300"
             ></div>
 
@@ -288,7 +286,7 @@ function Website() {
                           key={i}
                           className="
                       absolute left-0 w-full h-[2px]
-                      bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                      bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                       animate-cardScan
                     "
                           style={{
@@ -306,7 +304,7 @@ function Website() {
                     p-4 rounded-full 
                     bg-white/10 backdrop-blur-lg 
                     border border-white/20 shadow-[0_0_10px_rgba(0,255,255,0.3)]
-                    group-hover:shadow-[0_0_20px_var(--primary-color)]
+                    group-hover:shadow-[0_0_20px_var(--color5)]
                     transition-all
                   "
                       >
@@ -314,7 +312,7 @@ function Website() {
                       </div>
                     </div>
 
-                    <h3 className="text-xl font-semibold text-center text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)]">
+                    <h3 className="text-xl font-semibold text-center text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
                       {section.title}
                     </h3>
 
@@ -323,7 +321,7 @@ function Website() {
                     </p>
 
                     {/* Glow Border */}
-                    <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--primary-color)] transition-all"></div>
+                    <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
                   </div>
                 </div>
               ))}
@@ -358,7 +356,7 @@ function Website() {
                         key={i}
                         className="
                     absolute left-0 w-full h-[2px]
-                    bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+                    bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
                     animate-cardScan
                   "
                         style={{
@@ -370,31 +368,31 @@ function Website() {
                   </div>
 
                   {/* Icon */}
-                  <div className="flex justify-center">
+                  <div className="flex items-center gap-4">
                     <div
                       className="
-                  p-4 rounded-full 
-                  bg-white/10 backdrop-blur-lg 
-                  border border-white/20 
-                  shadow-[0_0_10px_rgba(0,255,255,0.3)]
-                  group-hover:shadow-[0_0_20px_var(--color5)]
-                  transition-all
-                "
+      p-4 rounded-full 
+      bg-white/10 backdrop-blur-lg 
+      border border-white/20 
+      shadow-[0_0_10px_rgba(0,255,255,0.3)]
+      group-hover:shadow-[0_0_20px_var(--color5)]
+      transition-all
+    "
                     >
                       {section.icon}
                     </div>
-                  </div>
 
-                  <h3 className="text-xl font-semibold text-center text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)]">
-                    {section.title}
-                  </h3>
+                    <h3 className="text-xl font-semibold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
+                      {section.title}
+                    </h3>
+                  </div>
 
                   <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify">
                     {section.content}
                   </p>
 
                   {/* Hover Glow Border */}
-                  <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--primary-color)] transition-all"></div>
+                  <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
                 </div>
               </div>
             ))}
@@ -416,6 +414,111 @@ function Website() {
 
       <OurProcess />
       <WhyBigwig />
+      <section className="py-12 relative overflow-hidden">
+        {/* Matrix glow background */}
+        <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
+
+        <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--color5)]">
+            Our Other Services
+          </h2>
+
+          {/* TABLE WRAPPER */}
+          <div
+            className="
+        rounded-2xl 
+        overflow-hidden 
+        backdrop-blur-xl bg-white/5 
+        border border-white/10 
+        shadow-[0_0_30px_rgba(0,255,255,0.15)] 
+        relative
+      "
+          >
+            {/* Scan Line */}
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent animate-scan"></div>
+
+            <table className="min-w-full text-sm text-gray-200 relative z-10">
+              <tbody>
+                {[
+                  [
+                    "Search Engine Optimization",
+                    "Social Media Marketing",
+                    "Performance Marketing",
+                  ],
+                  [
+                    "Content Marketing",
+                    "Website Designing & Development",
+                    "Email Marketing",
+                  ],
+                  [
+                    "Social Media Optimization",
+                    "Graphic Designing & Video Editing",
+                    "Influencer Marketing",
+                  ],
+                  ["Online Reputation Management", "", "Affiliate Marketing"],
+                ].map((row, rowIndex) => (
+                  <tr key={rowIndex} className="divide-x divide-white/10">
+                    {row.map((cell, colIndex) => (
+                      <td
+                        key={colIndex}
+                        className="
+                    h-20 
+                    border-b border-white/10 
+                    relative group overflow-hidden
+                  "
+                      >
+                        {cell && (
+                          <a
+                            href={`/services/${cell
+                              .toLowerCase()
+                              .replace(/ /g, "-")
+                              .replace(/\&/g, "and")}`}
+                            target="_blank"
+                            className="
+                        flex items-center justify-center 
+                        w-full h-full px-4 text-center 
+                        font-semibold
+                        text-gray-200
+                        transition-all duration-300
+                        hover:text-[var(--color5)]
+                      "
+                          >
+                            {/* Neon card effect */}
+                            <span
+                              className="
+                          absolute inset-0 
+                          rounded-xl 
+                          border border-transparent
+                          group-hover:border-[var(--color5)]
+                          group-hover:shadow-[0_0_20px_var(--color5)]
+                          transition-all duration-300
+                        "
+                            ></span>
+
+                            <span className="relative z-10">{cell}</span>
+                          </a>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Animations */}
+        <style>{`
+    @keyframes scan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-scan {
+      animation: scan 4s linear infinite;
+    }
+  `}</style>
+      </section>
       <GetInTouch />
       <PopupForm isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
 

@@ -452,7 +452,7 @@ function EmailMarketing() {
               </div>
 
               <p className="text-gray-200">
-                We're not just sending emails — we’re engineering RESULTS. A
+                We&#39;re not just sending emails — we’re engineering RESULTS. A
                 top-tier email agency like ours provides:
               </p>
 
@@ -581,7 +581,7 @@ function EmailMarketing() {
             {/* Capsule Heading */}
             <div className="inline-block px-8 py-2 rounded-full border border-[var(--primary-color)] shadow-[0_0_18px_var(--primary-color)] backdrop-blur-xl bg-white/5">
               <h3 className="text-3xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)]">
-                Wherever You Are — We've Got You Covered
+                Wherever You Are — We&#39;ve Got You Covered
               </h3>
             </div>
 

@@ -25,27 +25,27 @@ import GetInTouch from "../../../../components/GetInTouch";
 
 const stats = [
   {
-    icon: <Search size={32} className="text-[var(--primary-color)]" />,
+    icon: <Search size={32} className="text-[var(--color5)]" />,
     text: "Of all site visits, 53% are the result of organic search engine discovery.",
   },
   {
-    icon: <BarChart2 size={32} className="text-[var(--primary-color)]" />,
+    icon: <BarChart2 size={32} className="text-[var(--color5)]" />,
     text: "By 2028, the SEO market is expected to expand by $122.11 billion.",
   },
   {
-    icon: <PieChart size={32} className="text-[var(--primary-color)]" />,
+    icon: <PieChart size={32} className="text-[var(--color5)]" />,
     text: "68% of user interactions on the internet are started by search engines.",
   },
   {
-    icon: <Globe size={32} className="text-[var(--primary-color)]" />,
+    icon: <Globe size={32} className="text-[var(--color5)]" />,
     text: "Google accounts for 92.96% of all traffic worldwide (Search, Images, Google Maps).",
   },
   {
-    icon: <LineChart size={32} className="text-[var(--primary-color)]" />,
+    icon: <LineChart size={32} className="text-[var(--color5)]" />,
     text: "Within a year of publication, just five to six pages out of 100 will appear in the top ten search results.",
   },
   {
-    icon: <Smartphone size={32} className="text-[var(--primary-color)]" />,
+    icon: <Smartphone size={32} className="text-[var(--color5)]" />,
     text: "Mobile devices account for over 60% of organic search engine visits.",
   },
 ];
@@ -354,7 +354,7 @@ function Seo() {
                 relative p-6 rounded-xl overflow-hidden
                 bg-[#0a0f14]/80 border border-[#1e293b]
                 shadow-[0_0_25px_rgba(0,0,0,0.4)]
-                hover:border-[var(--primary-color)]
+                hover:border-[var(--color5)]
                 hover:shadow-[0_0_30px_rgba(167,235,242,0.35)]
                 transition-all duration-300
       "
@@ -378,7 +378,7 @@ function Seo() {
                 </div>
 
                 {/* Glow border animation */}
-                <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-[var(--primary-color)] transition-all duration-300"></div>
+                <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-[var(--color5)] transition-all duration-300"></div>
               </div>
             ))}
           </div>
@@ -386,18 +386,18 @@ function Seo() {
           <div className="relative overflow-hidden bg-[#06090f]/80 border border-white/10 backdrop-blur-xl rounded-3xl p-10 md:p-14 shadow-[0_0_30px_rgba(0,255,255,0.12)]">
             {/* HOLOGRAPHIC SCAN LINE */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-              <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent animate-scan"></div>
+              <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent animate-scan"></div>
             </div>
 
             {/* MATRIX PARTICLE BACKGROUND */}
             <div className="absolute inset-0 opacity-[0.20] mix-blend-screen bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center pointer-events-none"></div>
 
             {/* HOLOGRAPHIC GLOW BORDER */}
-            <div className="absolute inset-0 rounded-3xl border border-transparent hover:border-[var(--primary-color)] transition-all duration-500 shadow-[inset_0_0_40px_rgba(167,235,242,0.15)]"></div>
+            <div className="absolute inset-0 rounded-3xl border border-transparent hover:border-[var(--color5)] transition-all duration-500 shadow-[inset_0_0_40px_rgba(167,235,242,0.15)]"></div>
 
             <div className="relative z-10 space-y-10">
               {/* PREMIUM HEADING WITH ANIMATED CAPSULE */}
-              <div className="w-fit mx-auto px-8 py-3 rounded-full bg-white/5 backdrop-blur-2xl border border-[var(--primary-color)] shadow-[0_0_20px_rgba(167,235,242,0.35)] animate-pulseGlow">
+              <div className="w-fit mx-auto px-8 py-3 rounded-full bg-white/5 backdrop-blur-2xl border border-[var(--color5)] shadow-[0_0_20px_rgba(167,235,242,0.35)] animate-pulseGlow">
                 <h3 className="text-3xl md:text-4xl font-bold text-center text-[var(--color5)] tracking-wide">
                   The Best SEO Agency for SEO Services in India and Beyond!
                 </h3>
@@ -413,29 +413,29 @@ function Seo() {
 
               {/* SUBTITLE WITH HOLOGRAPHIC UNDERLINE */}
               <div className="relative inline-block">
-                <h3 className="text-xl font-semibold text-[var(--primary-color)] tracking-wide">
+                <h3 className="text-xl font-semibold text-[var(--color5)] tracking-wide">
                   Here’s what makes us different:
                 </h3>
 
-                <div className="absolute left-0 -bottom-1 h-[3px] w-full bg-gradient-to-r from-[var(--primary-color)]/80 via-cyan-400 to-transparent rounded-full animate-lineGlow"></div>
+                <div className="absolute left-0 -bottom-1 h-[3px] w-full bg-gradient-to-r from-[var(--color5)]/80 via-cyan-400 to-transparent rounded-full animate-lineGlow"></div>
               </div>
 
               {/* FUTURISTIC BULLET LIST */}
               <ul className="space-y-6 text-gray-300 text-base leading-relaxed">
                 {[
-                  `<strong class="text-[var(--primary-color)]">Tailored for You, Not Templates</strong> – Every business is unique, so our SEO strategies are fully customized.`,
-                  `<strong class="text-[var(--primary-color)]">SEO That Builds Brands</strong> – We don’t chase rankings… we build long-term brand authority.`,
-                  `<strong class="text-[var(--primary-color)]">Local + Global SEO Expertise</strong> – Scale within your city or dominate international markets.`,
-                  `<strong class="text-[var(--primary-color)]">Transparent Growth Tracking</strong> – Clean, crystal-clear reporting with zero jargon.`,
-                  `<strong class="text-[var(--primary-color)]">Ahead of Algorithm Updates</strong> – We future-proof your SEO strategy through trend intelligence.`,
-                  `<strong class="text-[var(--primary-color)]">More Than Visibility — True Impact</strong> – Gain authority, trust, and conversions that last.`,
+                  `<strong class="text-[var(--color5)]">Tailored for You, Not Templates</strong> – Every business is unique, so our SEO strategies are fully customized.`,
+                  `<strong class="text-[var(--color5)]">SEO That Builds Brands</strong> – We don’t chase rankings… we build long-term brand authority.`,
+                  `<strong class="text-[var(--color5)]">Local + Global SEO Expertise</strong> – Scale within your city or dominate international markets.`,
+                  `<strong class="text-[var(--color5)]">Transparent Growth Tracking</strong> – Clean, crystal-clear reporting with zero jargon.`,
+                  `<strong class="text-[var(--color5)]">Ahead of Algorithm Updates</strong> – We future-proof your SEO strategy through trend intelligence.`,
+                  `<strong class="text-[var(--color5)]">More Than Visibility — True Impact</strong> – Gain authority, trust, and conversions that last.`,
                 ].map((point, i) => (
                   <li
                     key={i}
                     className="relative pl-6 group"
                     dangerouslySetInnerHTML={{
                       __html: `
-            <span class='absolute left-0 top-2 w-3 h-3 rounded-full bg-[var(--primary-color)] shadow-[0_0_10px_var(--primary-color)] group-hover:shadow-[0_0_18px_var(--primary-color)] transition-all duration-300'></span>
+            <span class='absolute left-0 top-2 w-3 h-3 rounded-full bg-[var(--color5)] shadow-[0_0_10px_var(--color5)] group-hover:shadow-[0_0_18px_var(--color5)] transition-all duration-300'></span>
             ${point}
           `,
                     }}
@@ -450,17 +450,16 @@ function Seo() {
                 credibility, and sustained business impact that powers your
                 future.
               </p>
-            </div>
-          </div>
-
-          <div className="flex justify-center">
-            {/* <button className="mt-8 px-6 py-3 bg-[var(--primary-color)]  text-white rounded-full font-semibold hover:bg-opacity-80 transition">
+              <div className="flex justify-center">
+                {/* <button className="mt-8 px-6 py-3 bg-[var(--color5)]  text-white rounded-full font-semibold hover:bg-opacity-80 transition">
                 
               </button> */}
-            <ButtonFill
-              onClick={() => setIsPopupOpen(true)}
-              text="Let’s Connect"
-            />
+                <ButtonFill
+                  onClick={() => setIsPopupOpen(true)}
+                  text="Let’s Connect"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -468,12 +467,12 @@ function Seo() {
       <OurProcess />
       <WhyBigwig />
       {/* Services Table Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-12 relative overflow-hidden">
         {/* Matrix glow background */}
         <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
 
         <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--primary-color)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--color5)]">
             Our Other Services
           </h2>
 
@@ -489,7 +488,7 @@ function Seo() {
       "
           >
             {/* Scan Line */}
-            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent animate-scan"></div>
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent animate-scan"></div>
 
             <table className="min-w-full text-sm text-gray-200 relative z-10">
               <tbody>
@@ -534,7 +533,7 @@ function Seo() {
                         font-semibold
                         text-gray-200
                         transition-all duration-300
-                        hover:text-[var(--primary-color)]
+                        hover:text-[var(--color5)]
                       "
                           >
                             {/* Neon card effect */}
@@ -543,8 +542,8 @@ function Seo() {
                           absolute inset-0 
                           rounded-xl 
                           border border-transparent
-                          group-hover:border-[var(--primary-color)]
-                          group-hover:shadow-[0_0_20px_var(--primary-color)]
+                          group-hover:border-[var(--color5)]
+                          group-hover:shadow-[0_0_20px_var(--color5)]
                           transition-all duration-300
                         "
                             ></span>

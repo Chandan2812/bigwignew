@@ -285,8 +285,8 @@ function PerformanceMarketing() {
               <Slider {...featureSettings}>
                 {features.map((item, i) => (
                   <div key={i}>
-                    <div className="bg-white  border-l-4 border-[var(--primary-color)] p-6 rounded-xl shadow">
-                      <h4 className="text-lg font-semibold mb-2 text-[var(--primary-color)]">
+                    <div className="bg-white  border-l-4 border-[var(--color5)] p-6 rounded-xl shadow">
+                      <h4 className="text-lg font-semibold mb-2 text-[var(--color5)]">
                         {item.title}
                       </h4>
                       <p className="text-sm text-gray-700 ">{item.text}</p>
@@ -306,8 +306,8 @@ function PerformanceMarketing() {
         backdrop-blur-xl bg-white/5 
         border border-white/10 
         shadow-[0_0_20px_rgba(0,255,255,0.15)]
-        hover:shadow-[0_0_25px_var(--primary-color)]
-        hover:border-[var(--primary-color)]
+        hover:shadow-[0_0_25px_var(--color5)]
+        hover:border-[var(--color5)]
         transition-all duration-300
         overflow-hidden group
       "
@@ -319,7 +319,7 @@ function PerformanceMarketing() {
                         key={idx}
                         className="
               absolute left-0 w-full h-[2px]
-              bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+              bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
               animate-scanLine
             "
                         style={{
@@ -332,7 +332,7 @@ function PerformanceMarketing() {
 
                   {/* Content */}
                   <div className="relative z-10">
-                    <h4 className="text-lg font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)]">
+                    <h4 className="text-lg font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
                       {item.title}
                     </h4>
                     <p className="text-sm text-gray-200 leading-relaxed">
@@ -345,7 +345,7 @@ function PerformanceMarketing() {
                     className="
         absolute inset-0 rounded-xl 
         border border-transparent 
-        group-hover:border-[var(--primary-color)]
+        group-hover:border-[var(--color5)]
         transition-all duration-300
       "
                   ></div>
@@ -416,8 +416,8 @@ function PerformanceMarketing() {
         backdrop-blur-xl bg-white/5
         border border-white/10 
         shadow-[0_0_20px_rgba(0,255,255,0.15)]
-        hover:shadow-[0_0_25px_var(--primary-color)]
-        hover:border-[var(--primary-color)]
+        hover:shadow-[0_0_25px_var(--color5)]
+        hover:border-[var(--color5)]
         transition-all duration-300 
         flex flex-col items-center justify-center gap-3
         text-gray-200 overflow-hidden group
@@ -430,7 +430,7 @@ function PerformanceMarketing() {
                         key={i}
                         className="
               absolute left-0 w-full h-[2px]
-              bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+              bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
               animate-scanLine
             "
                         style={{
@@ -442,17 +442,17 @@ function PerformanceMarketing() {
                   </div>
 
                   {/* Icon */}
-                  <div className="text-[var(--primary-color)] text-4xl drop-shadow-[0_0_10px_var(--primary-color)] group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-[var(--color5)] text-4xl drop-shadow-[0_0_10px_var(--color5)] group-hover:scale-110 transition-transform duration-300">
                     {item.icon}
                   </div>
 
                   {/* Label */}
-                  <span className="text-lg font-medium group-hover:text-[var(--primary-color)] transition-colors duration-300">
+                  <span className="text-lg font-medium group-hover:text-[var(--color5)] transition-colors duration-300">
                     {item.label}
                   </span>
 
                   {/* Glow border */}
-                  <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-[var(--primary-color)] transition-all duration-300"></div>
+                  <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-[var(--color5)] transition-all duration-300"></div>
                 </div>
               ))}
 
@@ -482,8 +482,8 @@ function PerformanceMarketing() {
             <Slider {...sliderSettings}>
               {ppcBenefits.map((benefit, index) => (
                 <div key={index}>
-                  <div className="bg-white h-[300px] rounded-2xl gap-5 shadow-lg border-l-4 border-[var(--primary-color)] p-6 flex flex-col">
-                    <h3 className="text-lg font-semibold mb-2 text-[var(--primary-color)]">
+                  <div className="bg-white h-[300px] rounded-2xl gap-5 shadow-lg border-l-4 border-[var(--color5)] p-6 flex flex-col">
+                    <h3 className="text-lg font-semibold mb-2 text-[var(--color5)]">
                       {benefit.title}
                     </h3>
                     <p className="text-gray-700  text-sm leading-relaxed">
@@ -505,8 +505,8 @@ function PerformanceMarketing() {
         backdrop-blur-xl bg-white/5
         border border-white/10 
         shadow-[0_0_25px_rgba(0,255,255,0.15)]
-        hover:border-[var(--primary-color)]
-        hover:shadow-[0_0_25px_var(--primary-color)]
+        hover:border-[var(--color5)]
+        hover:shadow-[0_0_25px_var(--color5)]
         transition-all duration-300 
         overflow-hidden group
       "
@@ -518,7 +518,7 @@ function PerformanceMarketing() {
                       key={i}
                       className="
               absolute left-0 w-full h-[2px]
-              bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+              bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
               animate-scanBenefit
             "
                       style={{
@@ -530,7 +530,7 @@ function PerformanceMarketing() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_10px_var(--primary-color)] relative z-10">
+                <h3 className="text-lg font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)] relative z-10">
                   {benefit.title}
                 </h3>
 
@@ -544,7 +544,7 @@ function PerformanceMarketing() {
         absolute inset-0 
         rounded-2xl 
         border border-transparent 
-        group-hover:border-[var(--primary-color)]
+        group-hover:border-[var(--color5)]
         transition-all duration-300
       "
                 ></div>
@@ -579,7 +579,7 @@ function PerformanceMarketing() {
         shadow-[0_0_20px_rgba(0,255,255,0.25)]
       "
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-[var(--color5)] tracking-wide drop-shadow-[0_0_10px_var(--primary-color)]">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-[var(--color5)] tracking-wide drop-shadow-[0_0_10px_var(--color5)]">
               How is PPC Service Helpful for New Business?
             </h2>
           </div>
@@ -601,7 +601,7 @@ function PerformanceMarketing() {
                   key={i}
                   className="
               absolute left-0 w-full h-[2px]
-              bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent
+              bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
               animate-scanSlow
             "
                   style={{
@@ -616,7 +616,7 @@ function PerformanceMarketing() {
             <div className="relative z-10 space-y-6 text-lg text-gray-200 leading-relaxed">
               <p>
                 PPC advertising gives businesses{" "}
-                <span className="text-[var(--color5)] font-semibold drop-shadow-[0_0_8px_var(--primary-color)]">
+                <span className="text-[var(--color5)] font-semibold drop-shadow-[0_0_8px_var(--color5)]">
                   instant visibility and immediate results
                 </span>
                 . Unlike SEO or SMO, PPC delivers targeted visitors within
@@ -695,7 +695,7 @@ function PerformanceMarketing() {
         <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
 
         <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--primary-color)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--color5)]">
             Our Other Services
           </h2>
 
@@ -711,7 +711,7 @@ function PerformanceMarketing() {
       "
           >
             {/* Scan Line */}
-            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent animate-scan"></div>
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent animate-scan"></div>
 
             <table className="min-w-full text-sm text-gray-200 relative z-10">
               <tbody>
@@ -756,7 +756,7 @@ function PerformanceMarketing() {
                         font-semibold
                         text-gray-200
                         transition-all duration-300
-                        hover:text-[var(--primary-color)]
+                        hover:text-[var(--color5)]
                       "
                           >
                             {/* Neon card effect */}
@@ -765,8 +765,8 @@ function PerformanceMarketing() {
                           absolute inset-0 
                           rounded-xl 
                           border border-transparent
-                          group-hover:border-[var(--primary-color)]
-                          group-hover:shadow-[0_0_20px_var(--primary-color)]
+                          group-hover:border-[var(--color5)]
+                          group-hover:shadow-[0_0_20px_var(--color5)]
                           transition-all duration-300
                         "
                             ></span>
