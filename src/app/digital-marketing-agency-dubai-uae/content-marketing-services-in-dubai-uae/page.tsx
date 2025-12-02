@@ -21,6 +21,7 @@ import {
 
 import Image from "next/image";
 import GetInTouch from "../../../../components/GetInTouch";
+import ServicesNavigation from "../../../../components/UAEServicesDirectory";
 
 function ContentMarketingInDubai() {
   //   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -295,7 +296,7 @@ function ContentMarketingInDubai() {
             relative p-6 rounded-2xl overflow-hidden
             bg-[var(--color1)]/70 border border-white/10 backdrop-blur-xl
             shadow-[0_12px_30px_rgba(2,6,23,0.45)]
-            hover:border-[var(--primary-color)] hover:shadow-[0_0_30px_rgba(167,235,242,0.25)]
+            hover:border-[var(--color5)] hover:shadow-[0_0_30px_rgba(167,235,242,0.25)]
             transition-all duration-300
           "
               >
@@ -399,6 +400,7 @@ function ContentMarketingInDubai() {
 
       <OurProcess />
       <WhyBigwig />
+      <ServicesNavigation />
       <GetInTouch />
       <Footer />
       {/* <PopupForm isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} /> */}

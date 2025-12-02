@@ -16,6 +16,7 @@ import { useState } from "react";
 import Link from "next/link";
 import ButtonFill from "../../../../components/Button";
 import GetInTouch from "../../../../components/GetInTouch";
+import ServicesDirectory from "../../../../components/UAEServicesDirectory";
 
 function InfluenceDubai() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -517,6 +518,7 @@ function InfluenceDubai() {
 
       <OurProcess />
       <WhyBigwig />
+      <ServicesDirectory />
       <GetInTouch />
 
       <Footer />

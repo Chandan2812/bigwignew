@@ -42,6 +42,7 @@ import Image from "next/image";
 import { useState } from "react";
 import ButtonFill from "../../../../components/Button";
 import GetInTouch from "../../../../components/GetInTouch";
+import ServicesNavigation from "../../../../components/UAEServicesDirectory";
 
 function SMODubai() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -238,7 +239,7 @@ function SMODubai() {
           {/* SECTION HEADING */}
           <h2 className="text-3xl font-bold text-[var(--color5)] mb-6">
             Platforms We Optimize for{" "}
-            <span className="text-[var(--primary-color)]">Maximum Impact</span>
+            <span className="text-[var(--color5)]">Maximum Impact</span>
           </h2>
 
           <p className="text-white/80 leading-relaxed text-base mb-8 max-w-3xl">
@@ -316,7 +317,7 @@ function SMODubai() {
           {/* CTA CARD */}
           <div className="mt-16 bg-[var(--color1)]/70 border border-white/10 backdrop-blur-xl rounded-2xl p-10 shadow-[inset_0_0_25px_rgba(167,235,242,0.15)] text-center">
             {/* Glow Line */}
-            <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--primary-color)] to-transparent mb-6 animate-pulse" />
+            <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent mb-6 animate-pulse" />
 
             <h3 className="text-2xl md:text-3xl font-bold text-[var(--color5)] mb-4">
               💡 Your Audience Is Everywhere — Let’s Connect Everywhere.
@@ -644,6 +645,7 @@ function SMODubai() {
 
       <OurProcess />
       <WhyBigwig />
+      <ServicesNavigation />
       <GetInTouch />
 
       <Footer />

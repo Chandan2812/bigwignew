@@ -16,6 +16,7 @@ import { useState } from "react";
 import Link from "next/link";
 import ButtonFill from "../../../../components/Button";
 import GetInTouch from "../../../../components/GetInTouch";
+import ServicesNavigation from "../../../../components/UAEServicesDirectory";
 
 function InfluenceDubai() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -133,7 +134,7 @@ function InfluenceDubai() {
                      hover:shadow-[0_0_25px_rgba(167,235,242,0.25)] 
                      transition-all duration-300"
               >
-                <div className="w-4 h-2 mt-2 rounded-full bg-[var(--primary-color)] shadow-md"></div>
+                <div className="w-4 h-2 mt-2 rounded-full bg-[var(--color5)] shadow-md"></div>
                 <p className="text-gray-300 text-[17px] leading-relaxed">
                   {item}
                 </p>
@@ -144,7 +145,7 @@ function InfluenceDubai() {
           {/* FOOTER MESSAGE */}
           <p className="text-gray-300 mt-10 leading-relaxed text-lg">
             Our{" "}
-            <strong className="text-[var(--primary-color)]">
+            <strong className="text-[var(--color5)]">
               Influencer Marketing Services in Dubai
             </strong>{" "}
             help your brand earn trust, build engagement, and convert audiences
@@ -344,9 +345,7 @@ function InfluenceDubai() {
           <div>
             <h2 className="text-3xl  font-bold text-[var(--color5)] mb-6">
               Why Choose{" "}
-              <span className="text-[var(--primary-color)]">
-                BigWig Media Digital
-              </span>{" "}
+              <span className="text-[var(--color5)]">BigWig Media Digital</span>{" "}
               for Influencer Marketing in Dubai
             </h2>
 
@@ -368,7 +367,7 @@ function InfluenceDubai() {
                 "Transparent reporting with ROI-focused dashboards.",
               ].map((point, index) => (
                 <li key={index} className="flex items-start space-x-3">
-                  <div className="w-2 h-2 rounded-full bg-[var(--primary-color)] mt-2"></div>
+                  <div className="w-2 h-2 rounded-full bg-[var(--color5)] mt-2"></div>
                   <p className="text-gray-300">{point}</p>
                 </li>
               ))}
@@ -491,7 +490,7 @@ function InfluenceDubai() {
                 "Approval workflow for all creatives before publishing.",
               ].map((item, index) => (
                 <li key={index} className="flex items-start space-x-3">
-                  <div className="w-2 h-2 rounded-full bg-[var(--primary-color)] mt-2"></div>
+                  <div className="w-2 h-2 rounded-full bg-[var(--color5)] mt-2"></div>
                   <p className="text-gray-300">{item}</p>
                 </li>
               ))}
@@ -548,8 +547,8 @@ function InfluenceDubai() {
 
           <p className="text-gray-200 mt-8 font-semibold text-base">
             Don’t just advertise —{" "}
-            <span className="text-[var(--primary-color)]">influence</span>.
-            Partner with <strong>BigWig Media Digital</strong> — Dubai’s leading
+            <span className="text-[var(--color5)]">influence</span>. Partner
+            with <strong>BigWig Media Digital</strong> — Dubai’s leading
             influencer marketing agency.
           </p>
         </div>
@@ -557,6 +556,7 @@ function InfluenceDubai() {
 
       <OurProcess />
       <WhyBigwig />
+      <ServicesNavigation />
       <GetInTouch />
 
       <Footer />

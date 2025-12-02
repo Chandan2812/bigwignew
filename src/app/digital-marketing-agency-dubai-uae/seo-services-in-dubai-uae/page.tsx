@@ -12,6 +12,7 @@ import WhyBigwig from "../../../../components/WhyBigwig";
 import CTABanner from "../../../../components/CTABanner";
 import Image from "next/image";
 import GetInTouch from "../../../../components/GetInTouch";
+import ServicesNavigation from "../../../../components/UAEServicesDirectory";
 
 const services = [
   {
@@ -76,17 +77,17 @@ const points = [
   {
     title: "Local Expertise",
     desc: "Deep understanding of the Dubai business landscape & consumer behavior.",
-    icon: <Globe className="w-8 h-8 text-[var(--primary-color)]" />,
+    icon: <Globe className="w-8 h-8 text-[var(--color5)]" />,
   },
   {
     title: "Transparent Growth",
     desc: "Transparent reporting & measurable growth.",
-    icon: <BarChart3 className="w-8 h-8 text-[var(--primary-color)]" />,
+    icon: <BarChart3 className="w-8 h-8 text-[var(--color5)]" />,
   },
   {
     title: "Proven Success",
     desc: "Proven track record in real estate, hospitality, e-commerce, startups & corporates.",
-    icon: <CheckCircle2 className="w-8 h-8 text-[var(--primary-color)]" />,
+    icon: <CheckCircle2 className="w-8 h-8 text-[var(--color5)]" />,
   },
 ];
 
@@ -483,6 +484,7 @@ function SeoServicesInDubai() {
 
       <OurProcess />
       <WhyBigwig />
+      <ServicesNavigation />
       <GetInTouch />
       <Footer />
       {/* <PopupForm isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} /> */}
