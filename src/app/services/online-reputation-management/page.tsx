@@ -209,17 +209,17 @@ function OnlineReputationManagement() {
             {/* Paragraphs */}
             <p className="text-gray-200 mb-4 leading-relaxed relative z-10">
               Every click, comment, or complaint can impact your credibility.
-              Whether it's a negative customer review, outdated press coverage,
-              or a competitor's smear campaign, online reputation issues can
-              arise quickly and spread even faster.
+              Whether it&#39;s a negative customer review, outdated press
+              coverage, or a competitor&#39;s smear campaign, online reputation
+              issues can arise quickly and spread even faster.
             </p>
 
             <p className="text-gray-200 leading-relaxed relative z-10">
-              Effective ORM is not just about fixing what’s broken — it's about
-              building a trustworthy digital profile that reflects your true
-              value. BigWig Digital helps you take charge of your reputation
-              with proactive strategies that protect your name and restore
-              confidence among your customers, partners, and investors.
+              Effective ORM is not just about fixing what’s broken — it&#39;s
+              about building a trustworthy digital profile that reflects your
+              true value. BigWig Digital helps you take charge of your
+              reputation with proactive strategies that protect your name and
+              restore confidence among your customers, partners, and investors.
             </p>
 
             {/* Neon Border Hover */}
