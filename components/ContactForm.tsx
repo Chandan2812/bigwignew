@@ -129,7 +129,7 @@ const ContactForm = () => {
           />
           <div className="flex gap-3">
             <select
-              className="p-3 border border-white/30 rounded-lg   w-32 text-[var(--color5)] bg-[var(--color2)] "
+              className="p-3 border border-white/30 rounded-lg   w-32  bg-[var(--color3)] "
               value={formData.phone.split(" ")[0] || "+91"}
               onChange={(e) =>
                 setFormData({
