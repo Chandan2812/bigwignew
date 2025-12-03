@@ -272,7 +272,11 @@ const PopupForm: React.FC<PopupFormProps> = ({ isOpen, onClose }) => {
                 <option value="+91">🇮🇳 +91</option>
                 <option value="+1">🇺🇸 +1</option>
                 <option value="+44">🇬🇧 +44</option>
+                <option value="+61">🇦🇺 +61</option>
+                <option value="+64">🇳🇿 +64</option>
                 <option value="+971">🇦🇪 +971</option>
+                <option value="+81">🇯🇵 +81</option>
+                <option value="+49">🇩🇪 +49</option>
               </select>
 
               <input

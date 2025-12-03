@@ -55,7 +55,6 @@ const ContactForm = () => {
     e.preventDefault();
     setLoading(true);
     setError("");
-
     try {
       await axios.post(
         "https://bigwigdigitalbackend.onrender.com/api/lead/send-otp",
@@ -109,26 +108,16 @@ const ContactForm = () => {
       {/* ---------------- FORM STEP ---------------- */}
       {step === "form" && (
         <form onSubmit={handleFormSubmit} className="space-y-4">
-          <div className="flex gap-4">
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              required
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full px-4 py-2 rounded border border-white/30 bg-transparent text-white placeholder-white/70"
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone"
-              required
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full px-4 py-2 rounded border border-white/30 bg-transparent text-white placeholder-white/70"
-            />
-          </div>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            required
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full px-4 py-2 rounded border border-white/30 bg-transparent text-white placeholder-white/70"
+          />
+
           <input
             type="email"
             name="email"
@@ -138,6 +127,45 @@ const ContactForm = () => {
             onChange={handleChange}
             className="w-full px-4 py-2 rounded border border-white/30 bg-transparent text-white placeholder-white/70"
           />
+          <div className="flex gap-3">
+            <select
+              className="p-3 border border-white/30 rounded-lg   w-32 text-[var(--color5)] bg-[var(--color2)] "
+              value={formData.phone.split(" ")[0] || "+91"}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  phone: `${e.target.value} ${
+                    formData.phone.split(" ")[1] || ""
+                  }`,
+                })
+              }
+            >
+              <option value="+91">🇮🇳 +91</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+61">🇦🇺 +61</option>
+              <option value="+64">🇳🇿 +64</option>
+              <option value="+971">🇦🇪 +971</option>
+              <option value="+81">🇯🇵 +81</option>
+              <option value="+49">🇩🇪 +49</option>
+            </select>
+
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              className="w-full p-3 border border-white/30 rounded-lg text-white"
+              value={formData.phone.split(" ")[1] || ""}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  phone: `${formData.phone.split(" ")[0] || "+91"} ${
+                    e.target.value
+                  }`,
+                })
+              }
+              required
+            />
+          </div>
 
           {/* SERVICE SELECT (COLLAPSIBLE) */}
           <div className="space-y-2">
@@ -176,7 +204,6 @@ const ContactForm = () => {
           <textarea
             name="message"
             placeholder="Message"
-            required
             rows={3}
             value={formData.message}
             onChange={handleChange}
