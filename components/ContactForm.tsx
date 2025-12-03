@@ -1,7 +1,21 @@
 "use client";
 import { useState } from "react";
 import axios from "axios";
-import ButtonFill from "./Button"; // <-- import your component
+import ButtonFill from "./Button";
+
+const SERVICES_LIST = [
+  "Search Engine Optimization",
+  "Social Media Marketing",
+  "Performance Marketing",
+  "Content Marketing",
+  "Website Development",
+  "Social Media Optimization",
+  "Email Marketing",
+  "Graphic Designing",
+  "Influencer Marketing",
+  "Affiliate Marketing",
+  "Online Reputation Management",
+];
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +23,7 @@ const ContactForm = () => {
     email: "",
     phone: "",
     message: "",
+    services: [] as string[], // 🔥 NEW field
   });
 
   const [otp, setOtp] = useState("");
@@ -20,6 +35,20 @@ const ContactForm = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // 🔥 NEW — toggle selected services
+  const handleServiceToggle = (service: string) => {
+    setFormData((prev) => {
+      const alreadySelected = prev.services.includes(service);
+
+      return {
+        ...prev,
+        services: alreadySelected
+          ? prev.services.filter((s) => s !== service)
+          : [...prev.services, service],
+      };
+    });
   };
 
   const handleFormSubmit = async (e: React.FormEvent) => {
@@ -72,7 +101,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="w-full max-w-md lg:max-w-sm mx-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg p-6 space-y-4">
+    <div className="w-full max-w-md lg:max-w-md mx-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg p-6 space-y-4">
       <h3 className="text-xl font-bold text-white">
         {step === "done" ? "Thank You!" : "Get in Touch"}
       </h3>
@@ -80,15 +109,26 @@ const ContactForm = () => {
       {/* ---------------- FORM STEP ---------------- */}
       {step === "form" && (
         <form onSubmit={handleFormSubmit} className="space-y-4">
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            required
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full px-4 py-2 rounded border border-white/30 bg-transparent text-white placeholder-white/70"
-          />
+          <div className="flex gap-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full px-4 py-2 rounded border border-white/30 bg-transparent text-white placeholder-white/70"
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone"
+              required
+              value={formData.phone}
+              onChange={handleChange}
+              className="w-full px-4 py-2 rounded border border-white/30 bg-transparent text-white placeholder-white/70"
+            />
+          </div>
           <input
             type="email"
             name="email"
@@ -98,20 +138,46 @@ const ContactForm = () => {
             onChange={handleChange}
             className="w-full px-4 py-2 rounded border border-white/30 bg-transparent text-white placeholder-white/70"
           />
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Phone"
-            required
-            value={formData.phone}
-            onChange={handleChange}
-            className="w-full px-4 py-2 rounded border border-white/30 bg-transparent text-white placeholder-white/70"
-          />
+
+          {/* SERVICE SELECT (COLLAPSIBLE) */}
+          <div className="space-y-2">
+            <details className="bg-white/5 border border-white/20 rounded-lg p-3 open:bg-white/10 transition-all">
+              <summary className="cursor-pointer text-white select-none">
+                {formData.services.length > 0
+                  ? `${formData.services.length} Selected`
+                  : "Select Services"}
+              </summary>
+
+              {/* 2 COLUMN GRID INSIDE DROPDOWN */}
+              <div className="mt-3 grid grid-cols-2 gap-2 max-h-32 overflow-y-auto pr-1">
+                {SERVICES_LIST.map((service) => {
+                  const selected = formData.services.includes(service);
+
+                  return (
+                    <button
+                      type="button"
+                      key={service}
+                      onClick={() => handleServiceToggle(service)}
+                      className={`w-full text-left px-3 py-2 rounded border text-sm
+              ${
+                selected
+                  ? "bg-white text-black border-white"
+                  : "bg-transparent text-white border-white/40 hover:border-white"
+              }`}
+                    >
+                      {service}
+                    </button>
+                  );
+                })}
+              </div>
+            </details>
+          </div>
+
           <textarea
             name="message"
             placeholder="Message"
             required
-            rows={4}
+            rows={3}
             value={formData.message}
             onChange={handleChange}
             className="w-full px-4 py-2 rounded border border-white/30 bg-transparent text-white placeholder-white/70"

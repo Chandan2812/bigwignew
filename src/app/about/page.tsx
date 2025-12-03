@@ -373,10 +373,10 @@ export default function About() {
               Thank you for trusting us to power your digital presence, we’re
               committed to building success with you, every step of the way.”
             </p>
-            <h3 className="text-xl font-semibold text-gray-100 mb-1">
+            <h3 className="text-xl font-semibold text-[var(--color5)] mb-1">
               Amandeep Singh
             </h3>
-            <p className="text-gray-300">Founder & CEO</p>
+            <p className="text-gray-300">Founder</p>
           </div>
         </div>
       </section>
