@@ -332,7 +332,7 @@ function PerformanceMarketing() {
 
                   {/* Content */}
                   <div className="relative z-10">
-                    <h4 className="text-lg font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
+                    <h4 className="text-lg font-semibold mb-2 text-[var(--color5)] ">
                       {item.title}
                     </h4>
                     <p className="text-sm text-gray-200 leading-relaxed">
@@ -530,7 +530,7 @@ function PerformanceMarketing() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)] relative z-10">
+                <h3 className="text-lg font-semibold mb-2 text-[var(--color5)]  relative z-10">
                   {benefit.title}
                 </h3>
 
@@ -579,7 +579,7 @@ function PerformanceMarketing() {
         shadow-[0_0_20px_rgba(0,255,255,0.25)]
       "
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-[var(--color5)] tracking-wide drop-shadow-[0_0_10px_var(--color5)]">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-[var(--color5)] tracking-wide ">
               How is PPC Service Helpful for New Business?
             </h2>
           </div>
@@ -616,7 +616,7 @@ function PerformanceMarketing() {
             <div className="relative z-10 space-y-6 text-lg text-gray-200 leading-relaxed">
               <p>
                 PPC advertising gives businesses{" "}
-                <span className="text-[var(--color5)] font-semibold drop-shadow-[0_0_8px_var(--color5)]">
+                <span className="text-[var(--color5)] font-semibold ">
                   instant visibility and immediate results
                 </span>
                 . Unlike SEO or SMO, PPC delivers targeted visitors within
@@ -695,7 +695,7 @@ function PerformanceMarketing() {
         <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
 
         <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--color5)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider ">
             Our Other Services
           </h2>
 

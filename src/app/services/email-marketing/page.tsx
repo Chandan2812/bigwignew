@@ -160,7 +160,7 @@ function EmailMarketing() {
 
           <div className="pt-10 relative">
             {/* Title */}
-            <h3 className="text-3xl md:text-4xl text-[var(--color5)] font-bold mb-8 drop-shadow-[0_0_10px_var(--color5)]">
+            <h3 className="text-3xl md:text-4xl text-[var(--color5)] font-bold mb-8 ">
               Why Email Marketing Still Wins
             </h3>
 
@@ -232,7 +232,7 @@ function EmailMarketing() {
                   </div>
 
                   {/* Title */}
-                  <h4 className="font-bold text-lg text-center text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)] mt-4">
+                  <h4 className="font-bold text-lg text-center text-[var(--color5)]  mt-4">
                     {item.title}
                   </h4>
 
@@ -268,7 +268,6 @@ function EmailMarketing() {
           className="
     text-3xl md:text-4xl font-bold text-center 
     text-[var(--color5)]
-    drop-shadow-[0_0_10px_var(--color5)]
     mb-12
   "
         >
@@ -309,7 +308,7 @@ function EmailMarketing() {
                 ))}
               </div>
 
-              <h3 className="text-xl font-semibold text-[var(--color5)] drop-shadow-[0_0_6px_var(--color5)] relative z-10">
+              <h3 className="text-xl font-semibold text-[var(--color5)]  relative z-10">
                 {item.title}
               </h3>
 
@@ -412,7 +411,7 @@ function EmailMarketing() {
           <div className="py-16 text-center w-11/12 md:w-5/6 mx-auto space-y-6">
             {/* Capsule Heading */}
             <div className="inline-block px-8 py-3 rounded-full border border-[var(--color5)] shadow-[0_0_20px_var(--color5)] backdrop-blur-xl bg-white/5">
-              <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
+              <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] ">
                 Why Brands Trust Email Marketing Services
               </h2>
             </div>
@@ -446,7 +445,7 @@ function EmailMarketing() {
             <div className="space-y-6">
               {/* Capsule Heading */}
               <div className="inline-block px-6 py-2 rounded-full border border-[var(--color5)] shadow-[0_0_15px_var(--color5)] backdrop-blur-xl bg-white/5">
-                <h3 className="text-3xl font-semibold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
+                <h3 className="text-3xl font-semibold text-[var(--color5)] ">
                   Work With a Smart Email Marketing Agency
                 </h3>
               </div>
@@ -493,7 +492,7 @@ function EmailMarketing() {
               <div className="space-y-6">
                 {/* Capsule Heading */}
                 <div className="inline-block px-6 py-2 rounded-full border border-[var(--color5)] shadow-[0_0_15px_var(--color5)] backdrop-blur-xl bg-white/5">
-                  <h3 className="text-3xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
+                  <h3 className="text-3xl font-bold text-[var(--color5)] ">
                     Why Email Marketing Helps New Businesses
                   </h3>
                 </div>
@@ -558,7 +557,7 @@ function EmailMarketing() {
                       ))}
                     </div>
 
-                    <h4 className="text-lg font-semibold text-[var(--color5)] drop-shadow-[0_0_8px_var(--color5)] mb-2 relative z-10">
+                    <h4 className="text-lg font-semibold text-[var(--color5)]  mb-2 relative z-10">
                       {box.title}
                     </h4>
 
@@ -580,7 +579,7 @@ function EmailMarketing() {
           <div className="w-11/12 md:w-5/6 mx-auto py-16 text-center space-y-6">
             {/* Capsule Heading */}
             <div className="inline-block px-8 py-2 rounded-full border border-[var(--color5)] shadow-[0_0_18px_var(--color5)] backdrop-blur-xl bg-white/5">
-              <h3 className="text-3xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
+              <h3 className="text-3xl font-bold text-[var(--color5)] ">
                 Wherever You Are — We&#39;ve Got You Covered
               </h3>
             </div>
@@ -640,7 +639,7 @@ function EmailMarketing() {
         <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
 
         <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--color5)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider ">
             Our Other Services
           </h2>
 

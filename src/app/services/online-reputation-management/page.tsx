@@ -199,7 +199,6 @@ function OnlineReputationManagement() {
               className="
       text-xl font-semibold mb-4 
       text-[var(--color5)]
-      drop-shadow-[0_0_8px_var(--color5)]
       relative z-10
     "
             >
@@ -247,7 +246,7 @@ function OnlineReputationManagement() {
         <div className="relative w-11/12 md:w-5/6 mx-auto space-y-12 z-10">
           {/* Title */}
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] drop-shadow-[0_0_12px_var(--color5)]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] ">
               What Our ORM Services Can Help You With
             </h2>
           </div>
@@ -285,7 +284,7 @@ function OnlineReputationManagement() {
                       ))}
                     </div>
 
-                    <h4 className="text-xl font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_8px_var(--color5)] relative z-10">
+                    <h4 className="text-xl font-semibold mb-2 text-[var(--color5)]  relative z-10">
                       {item.title}
                     </h4>
                     <p className="text-gray-200 text-sm leading-relaxed relative z-10">
@@ -334,7 +333,7 @@ function OnlineReputationManagement() {
                 </div>
 
                 {/* Title */}
-                <h4 className="text-xl font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)] relative z-10">
+                <h4 className="text-xl font-semibold mb-2 text-[var(--color5)]  relative z-10">
                   {item.title}
                 </h4>
 
@@ -370,7 +369,7 @@ function OnlineReputationManagement() {
         <div className="relative z-10 w-11/12 md:w-5/6 mx-auto space-y-14">
           {/* Title */}
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] ">
               Why Your Online Reputation Deserves Serious Attention
             </h2>
           </div>
@@ -432,7 +431,7 @@ function OnlineReputationManagement() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-semibold text-[var(--color5)] drop-shadow-[0_0_8px_var(--color5)] relative z-10">
+                <h3 className="text-2xl font-semibold text-[var(--color5)]  relative z-10">
                   {item.title}
                 </h3>
                 <p className="text-gray-200 text-sm leading-relaxed relative z-10">
@@ -468,7 +467,7 @@ function OnlineReputationManagement() {
 
         <div className="relative w-11/12 md:w-5/6 mx-auto space-y-10 z-10">
           {/* Title */}
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center drop-shadow-[0_0_12px_var(--color5)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center ">
             Benefits of Strong Online Reputation Management
           </h2>
 
@@ -543,7 +542,7 @@ function OnlineReputationManagement() {
         <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
 
         <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--color5)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider">
             Our Other Services
           </h2>
 

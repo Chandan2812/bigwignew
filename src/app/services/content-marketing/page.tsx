@@ -222,7 +222,7 @@ function ContentMarketing() {
         border border-white/20 shadow-[0_0_25px_rgba(0,255,255,0.25)]
       "
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-[var(--color5)] tracking-wide drop-shadow-[0_0_10px_var(--color5)] text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--color5)] tracking-wide text-center">
               Why Content Marketing Is the Future of Digital Success.
             </h2>
           </div>
@@ -231,7 +231,7 @@ function ContentMarketing() {
           <div className="space-y-6 text-gray-200 text-lg leading-relaxed">
             <p>
               Content marketing is more than writing—it&#39;s about building
-              <span className="text-[var(--color5)] font-semibold drop-shadow-[0_0_8px_var(--color5)]">
+              <span className="text-[var(--color5)] font-semibold ">
                 {" "}
                 authority, trust, and long-term visibility
               </span>{" "}
@@ -375,7 +375,6 @@ function ContentMarketing() {
       text-2xl md:text-3xl font-bold 
       text-[var(--color5)] 
       text-center md:text-left
-      drop-shadow-[0_0_10px_var(--color5)]
     "
           >
             Our Core Content Marketing Services
@@ -504,7 +503,6 @@ function ContentMarketing() {
       text-2xl md:text-3xl font-bold 
       text-[var(--color5)]
       text-center md:text-left
-      drop-shadow-[0_0_10px_var(--color5)]
     "
           >
             What Makes BigWig Digital a Top Content Marketing Agency?
@@ -659,7 +657,7 @@ function ContentMarketing() {
         backdrop-blur-xl bg-white/10 border border-white/20 
         shadow-[0_0_20px_rgba(0,255,255,0.25)]"
           >
-            <h3 className="text-3xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
+            <h3 className="text-3xl font-bold text-[var(--color5)] ">
               How We Build Your Content Engine
             </h3>
           </div>
@@ -731,8 +729,7 @@ function ContentMarketing() {
             <h4
               className="
         text-2xl md:text-3xl font-bold text-[var(--color5)]
-        mb-4 drop-shadow-[0_0_10px_var(--color5)]
-        relative z-10 text-center md:text-left
+        mb-4 relative z-10 text-center md:text-left
       "
             >
               Why Settle for Ordinary Content?
@@ -789,7 +786,7 @@ function ContentMarketing() {
         <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
 
         <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--color5)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider">
             Our Other Services
           </h2>
 

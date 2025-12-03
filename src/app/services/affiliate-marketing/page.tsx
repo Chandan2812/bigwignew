@@ -263,7 +263,7 @@ function AffiliateMarketing() {
           border border-[var(--color5)]
           backdrop-blur-xl bg-white/5
           shadow-[0_0_25px_var(--color5)]
-          drop-shadow-[0_0_10px_var(--color5)]
+       
         "
             >
               Performance-Driven Affiliate Marketing Services in India
@@ -360,7 +360,7 @@ function AffiliateMarketing() {
                 ))}
               </div>
 
-              <h3 className="text-2xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
+              <h3 className="text-2xl font-bold text-[var(--color5)] ">
                 Why Your Brand Needs Affiliate Marketing
               </h3>
 
@@ -418,7 +418,7 @@ function AffiliateMarketing() {
         border border-[var(--color5)]
         backdrop-blur-xl bg-white/5
         shadow-[0_0_25px_var(--color5)]
-        drop-shadow-[0_0_10px_var(--color5)]
+   
       "
             >
               Industries We Work With
@@ -467,7 +467,7 @@ function AffiliateMarketing() {
                     >
                       {item.icon}
                     </div>
-                    <h4 className="text-base font-semibold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
+                    <h4 className="text-base font-semibold text-[var(--color5)] ">
                       {item.title}
                     </h4>
                   </div>
@@ -604,7 +604,7 @@ function AffiliateMarketing() {
               ))}
             </div>
 
-            <h3 className="text-3xl font-bold text-[var(--color5)] drop-shadow-[0_0_15px_var(--color5)]">
+            <h3 className="text-3xl font-bold text-[var(--color5)] ">
               Why BigWig for Affiliate Marketing Services
             </h3>
 
@@ -649,7 +649,7 @@ function AffiliateMarketing() {
           border border-[var(--color5)]
           backdrop-blur-xl bg-white/10
           shadow-[0_0_25px_var(--color5)]
-          drop-shadow-[0_0_15px_var(--color5)]
+          
         "
             >
               Benefits of Affiliate Marketing Services
@@ -703,7 +703,7 @@ function AffiliateMarketing() {
                       {item.icon}
                     </div>
 
-                    <h4 className="text-lg font-semibold text-[var(--color5)] text-center drop-shadow-[0_0_10px_var(--color5)]">
+                    <h4 className="text-lg font-semibold text-[var(--color5)] text-center ">
                       {item.title}
                     </h4>
 
@@ -758,7 +758,7 @@ function AffiliateMarketing() {
                   >
                     {item.icon}
                   </div>
-                  <h4 className="text-lg font-semibold text-[var(--color5)] drop-shadow-[0_0_8px_var(--color5)]">
+                  <h4 className="text-lg font-semibold text-[var(--color5)] ">
                     {item.title}
                   </h4>
                 </div>
@@ -822,7 +822,7 @@ function AffiliateMarketing() {
             </div>
 
             {/* Title */}
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)] leading-snug">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)]  leading-snug">
               Ready to Build a Performance-Driven Partner Network?
             </h2>
 
@@ -890,7 +890,7 @@ function AffiliateMarketing() {
       {/* FAQ Section */}
       <section className=" py-12">
         <div className="w-11/12 md:w-5/6 mx-auto space-y-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--color5)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider ">
             Frequently Asked Questions
           </h2>
 
@@ -927,7 +927,7 @@ function AffiliateMarketing() {
         <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
 
         <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--color5)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider">
             Our Other Services
           </h2>
 

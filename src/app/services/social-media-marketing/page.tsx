@@ -447,7 +447,7 @@ function SocialMediaMarketing() {
       space-y-6
     "
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] ">
               Why choose BigWig Media Digital for social media marketing in
               India
             </h2>
@@ -585,7 +585,7 @@ function SocialMediaMarketing() {
         <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
 
         <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--color5)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider ">
             Our Other Services
           </h2>
 

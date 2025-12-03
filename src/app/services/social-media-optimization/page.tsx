@@ -221,7 +221,6 @@ function SocialMediaOptimization() {
           backdrop-blur-xl bg-white/5 
           text-3xl md:text-4xl font-bold
           text-[var(--color5)]
-          drop-shadow-[0_0_10px_var(--color5)]
         "
               >
                 Our Social Media Optimization Services
@@ -293,7 +292,7 @@ function SocialMediaOptimization() {
                     ))}
                   </div>
 
-                  <h3 className="text-xl font-semibold text-[var(--color5)] drop-shadow-[0_0_8px_var(--color5)]">
+                  <h3 className="text-xl font-semibold text-[var(--color5)] ">
                     {item.title}
                   </h3>
 
@@ -316,7 +315,6 @@ function SocialMediaOptimization() {
           backdrop-blur-xl bg-white/5 
           text-3xl md:text-4xl font-bold
           text-[var(--color5)]
-          drop-shadow-[0_0_10px_var(--color5)]
         "
               >
                 Platforms We Optimize
@@ -397,7 +395,6 @@ function SocialMediaOptimization() {
           backdrop-blur-xl bg-white/5 
           text-3xl md:text-4xl font-bold
           text-[var(--color5)]
-          drop-shadow-[0_0_10px_var(--color5)]
         "
               >
                 Why Choose BigWig Digital for SMO Services?
@@ -437,7 +434,7 @@ function SocialMediaOptimization() {
 
                   <div className="flex justify-center ">{item.icon}</div>
 
-                  <h4 className="text-lg font-semibold text-[var(--color5)] drop-shadow-[0_0_8px_var(--color5)]">
+                  <h4 className="text-lg font-semibold text-[var(--color5)] ">
                     {item.title}
                   </h4>
 

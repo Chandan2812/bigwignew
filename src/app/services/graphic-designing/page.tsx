@@ -220,7 +220,6 @@ function GraphicDesigning() {
       text-2xl md:text-3xl font-bold 
       text-[var(--color5)] 
       mb-10 text-center md:text-left 
-      drop-shadow-[0_0_10px_var(--color5)]
       inline-block px-8 py-3 rounded-full
       border border-[var(--color5)]
       shadow-[0_0_20px_var(--color5)]
@@ -281,7 +280,6 @@ function GraphicDesigning() {
             text-3xl p-3 rounded-full
             bg-white/10 backdrop-blur-lg 
             border border-white/20
-            shadow-[0_0_10px_rgba(0,255,255,0.3)]
             group-hover:shadow-[0_0_15px_var(--color5)]
             transition-all
           "
@@ -346,7 +344,6 @@ function GraphicDesigning() {
           border border-[var(--color5)]
           shadow-[0_0_25px_var(--color5)]
           backdrop-blur-xl bg-white/5
-          drop-shadow-[0_0_10px_var(--color5)]
           text-center
         "
             >
@@ -424,7 +421,7 @@ function GraphicDesigning() {
                 </div>
 
                 {/* TITLE */}
-                <h4 className="font-semibold text-xl mb-3 text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
+                <h4 className="font-semibold text-xl mb-3 text-[var(--color5)] ">
                   {item.title}
                 </h4>
 

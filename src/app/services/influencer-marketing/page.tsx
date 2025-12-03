@@ -228,7 +228,7 @@ function InfluencerMarketing() {
         <div className="absolute inset-0 opacity-[0.18] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
 
         {/* Heading */}
-        <h2 className="relative z-10 text-3xl md:text-4xl font-bold text-[var(--color5)] mb-10 text-center drop-shadow-[0_0_10px_var(--color5)]">
+        <h2 className="relative z-10 text-3xl md:text-4xl font-bold text-[var(--color5)] mb-10 text-center ">
           Where Influencer Marketing Creates Maximum Impact
         </h2>
 
@@ -267,7 +267,7 @@ function InfluencerMarketing() {
                     ))}
                   </div>
 
-                  <h4 className="text-xl font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_8px_var(--color5)]">
+                  <h4 className="text-xl font-semibold mb-2 text-[var(--color5)] ">
                     {item.title}
                   </h4>
                   <p className="text-gray-200 text-sm leading-relaxed">
@@ -316,7 +316,7 @@ function InfluencerMarketing() {
                 ))}
               </div>
 
-              <h4 className="text-xl font-semibold mb-2 text-[var(--color5)] drop-shadow-[0_0_8px_var(--color5)]">
+              <h4 className="text-xl font-semibold mb-2 text-[var(--color5)] ">
                 {item.title}
               </h4>
 
@@ -378,7 +378,7 @@ function InfluencerMarketing() {
               ))}
             </div>
 
-            <h2 className="text-3xl font-semibold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
+            <h2 className="text-3xl font-semibold text-[var(--color5)] ">
               Influencer Campaigns That Balance Creativity and Strategy
             </h2>
 
@@ -437,7 +437,7 @@ function InfluencerMarketing() {
               ))}
             </div>
 
-            <h2 className="text-3xl font-semibold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)]">
+            <h2 className="text-3xl font-semibold text-[var(--color5)] ">
               Scalable Solutions for Brands of All Sizes
             </h2>
 
@@ -509,7 +509,7 @@ function InfluencerMarketing() {
               ))}
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] drop-shadow-[0_0_10px_var(--color5)] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)]  mb-6">
               Benefits of Influencer Marketing
             </h2>
 
@@ -600,7 +600,7 @@ function InfluencerMarketing() {
         <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
 
         <div className="w-11/12 md:w-5/6 mx-auto space-y-14 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider drop-shadow-[0_0_10px_var(--color5)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] text-center tracking-wider ">
             Our Other Services
           </h2>
 
