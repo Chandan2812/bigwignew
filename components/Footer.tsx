@@ -13,7 +13,7 @@ import {
   faLocation,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-import logo from "../Assets/bigwig digital logo (11).png";
+import logo from "../Assets/chrismass.svg";
 import line2 from "../Assets/line2.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -38,7 +38,7 @@ function Footer() {
                 <Image
                   src={logo}
                   alt="Bigwig Logo"
-                  className="w-60"
+                  className="w-60 md:w-80"
                   draggable="false"
                 />
               </div>
