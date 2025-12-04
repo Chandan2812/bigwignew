@@ -145,7 +145,7 @@ const WhyBigwig: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative py-12 px-4 overflow-hidden">
+    <section className="relative py-12 overflow-hidden">
       {/* PARTICLES CANVAS */}
       <canvas id="particles-canvas" className="absolute inset-0"></canvas>
 
@@ -155,7 +155,7 @@ const WhyBigwig: React.FC = () => {
       </h2>
 
       {/* Desktop Grid */}
-      <div className="hidden lg:grid max-w-6xl mx-auto grid-cols-4 gap-10 relative z-10">
+      <div className="hidden lg:grid w-11/12 md:w-5/6 mx-auto grid-cols-4 gap-10 relative z-10">
         {reasons.map(({ img, title, text }, i) => (
           <div
             key={title}

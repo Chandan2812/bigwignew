@@ -52,6 +52,8 @@ const nextConfig: NextConfig = {
       "www.stellarbinge.com",
       "www.khalsapropertydealers.com",
       "media.istockphoto.com",
+      "cdn.jsdelivr.net",
+      "cdn.worldvectorlogo.com",
     ],
   },
 };
