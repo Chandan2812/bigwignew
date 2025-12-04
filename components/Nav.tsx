@@ -47,7 +47,13 @@ type Service = {
 };
 
 const services: Service[] = [
+  {
+    title: "Website Development",
+    slug: "/services/website-design-development",
+    icon: Monitor,
+  },
   { title: "SEO", slug: "/services/search-engine-optimization", icon: Search },
+  { title: "SMO", slug: "/services/social-media-optimization", icon: ThumbsUp },
   { title: "SMM", slug: "/services/social-media-marketing", icon: Globe },
   {
     title: "Performance Marketing",
@@ -55,22 +61,16 @@ const services: Service[] = [
     icon: TrendingUp,
   },
   {
-    title: "Content Marketing",
-    slug: "/services/content-marketing",
-    icon: FileText,
+    title: "ORM",
+    slug: "/services/online-reputation-management",
+    icon: ShieldCheck,
   },
-  {
-    title: "Website Development",
-    slug: "/services/website-design-development",
-    icon: Monitor,
-  },
-  { title: "Email Marketing", slug: "/services/email-marketing", icon: Mail },
-  { title: "SMO", slug: "/services/social-media-optimization", icon: ThumbsUp },
   {
     title: "Graphic & Video",
     slug: "/services/graphic-designing",
     icon: PenTool,
   },
+  { title: "Email Marketing", slug: "/services/email-marketing", icon: Mail },
   {
     title: "Affiliate Marketing",
     slug: "/services/affiliate-marketing",
@@ -81,10 +81,11 @@ const services: Service[] = [
     slug: "/services/influencer-marketing",
     icon: Megaphone,
   },
+
   {
-    title: "ORM",
-    slug: "/services/online-reputation-management",
-    icon: ShieldCheck,
+    title: "Content Marketing",
+    slug: "/services/content-marketing",
+    icon: FileText,
   },
 ];
 

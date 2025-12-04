@@ -23,12 +23,28 @@ import GetInTouch from "../../../components/GetInTouch";
 
 const services = [
   {
+    title: "Website Designing & Development",
+    heading: "Your digital store front, built to impress!",
+    content:
+      "We craft stunning, responsive websites that turn visitors into customers.",
+    path: "/services/website-design-development",
+    image: website,
+  },
+  {
     title: "Search Engine Optimization",
     heading: "Be visible when it matters most!",
     content:
       "We rank your website on Google so your customers find you before your competitors.",
     path: "/services/search-engine-optimization",
     image: seo,
+  },
+  {
+    title: "Social Media Optimization",
+    heading: "Be everywhere your audience is!",
+    content:
+      "We optimize your profiles for visibility, engagement, and brand authority across platforms.",
+    path: "/services/social-media-optimization",
+    image: smo,
   },
   {
     title: "Social Media Marketing",
@@ -47,20 +63,20 @@ const services = [
     image: performance,
   },
   {
-    title: "Content Marketing",
-    heading: "Words that work for your brand!",
+    title: "Online Reputation Management",
+    heading: "Your online image matters,protect it!",
     content:
-      "From blogs to visuals, we create content that educates, engages, and builds trust.",
-    path: "/services/content-marketing",
-    image: content,
+      "We monitor, manage, and improve your digital reputation across platforms.",
+    path: "/services/online-reputation-management",
+    image: orm,
   },
   {
-    title: "Website Designing & Development",
-    heading: "Your digital store front, built to impress!",
+    title: "Graphic Designing & Video Editing",
+    heading: "Designs that speak louder than words!",
     content:
-      "We craft stunning, responsive websites that turn visitors into customers.",
-    path: "/services/website-design-development",
-    image: website,
+      "We create eye-catching visuals that reflect your brand and grab attention instantly.",
+    path: "/services/graphic-designing",
+    image: graphic,
   },
   {
     title: "Email Marketing",
@@ -71,21 +87,30 @@ const services = [
     image: email,
   },
   {
-    title: "Social Media Optimization",
-    heading: "Be everywhere your audience is!",
+    title: "Affiliate Marketing",
+    heading: "Let others sell for you, smartly!",
     content:
-      "We optimize your profiles for visibility, engagement, and brand authority across platforms.",
-    path: "/services/social-media-optimization",
-    image: smo,
+      "Grow your brand with trusted affiliates promoting your product for results-based returns.",
+    path: "/services/affiliate-marketing",
+    image: affiliate,
   },
   {
-    title: "Graphic Designing & Video Editing",
-    heading: "Designs that speak louder than words!",
+    title: "Influencer Marketing",
+    heading: "Real people. Real influence. Real results.",
     content:
-      "We create eye-catching visuals that reflect your brand and grab attention instantly.",
-    path: "/services/graphic-designing",
-    image: graphic,
+      "We connect your brand with the right influencers to boost reach and trust authentically.",
+    path: "/services/influencer-marketing",
+    image: influencer,
   },
+  {
+    title: "Content Marketing",
+    heading: "Words that work for your brand!",
+    content:
+      "From blogs to visuals, we create content that educates, engages, and builds trust.",
+    path: "/services/content-marketing",
+    image: content,
+  },
+
   // {
   //   title: "AI and CGI Marketing",
   //   heading: "Modern visuals for modern audiences!",
@@ -102,14 +127,7 @@ const services = [
   //   path: "/services/landing-page-optimization",
   //   image: landing,
   // },
-  {
-    title: "Affiliate Marketing",
-    heading: "Let others sell for you, smartly!",
-    content:
-      "Grow your brand with trusted affiliates promoting your product for results-based returns.",
-    path: "/services/affiliate-marketing",
-    image: affiliate,
-  },
+
   // {
   //   title: "Video Shoot",
   //   heading: "Lights. Camera. Convert.",
@@ -126,22 +144,6 @@ const services = [
   //   path: "/services/public-relations",
   //   image: publicRelation,
   // },
-  {
-    title: "Influencer Marketing",
-    heading: "Real people. Real influence. Real results.",
-    content:
-      "We connect your brand with the right influencers to boost reach and trust authentically.",
-    path: "/services/influencer-marketing",
-    image: influencer,
-  },
-  {
-    title: "Online Reputation Management",
-    heading: "Your online image matters,protect it!",
-    content:
-      "We monitor, manage, and improve your digital reputation across platforms.",
-    path: "/services/online-reputation-management",
-    image: orm,
-  },
 ];
 
 function Services() {
