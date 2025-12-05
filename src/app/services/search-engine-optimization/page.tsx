@@ -6,6 +6,7 @@ import { TypeAnimation } from "react-type-animation";
 import hero from "../../../../Assets/Services hero/seo.jpg";
 import seo from "../../../../Assets/services/3.jpg";
 import Footer from "../../../../components/Footer";
+import Slider from "react-slick";
 import {
   BarChart2,
   PieChart,
@@ -23,99 +24,140 @@ import ButtonFill from "../../../../components/Button";
 import PopupForm from "../../../../components/PopupForm";
 import GetInTouch from "../../../../components/GetInTouch";
 
-const stats = [
+const seoServices = [
   {
-    icon: <Search size={32} className="text-[var(--color5)]" />,
-    text: "Of all site visits, 53% are the result of organic search engine discovery.",
+    title: "Enterprise SEO",
+    content:
+      "At Bigwig Media Digital, we offer innovative Enterprise SEO solutions that help large businesses dominate search results and stay ahead of the competition in their industry. ",
   },
   {
-    icon: <BarChart2 size={32} className="text-[var(--color5)]" />,
-    text: "By 2028, the SEO market is expected to expand by $122.11 billion.",
+    title: "International SEO",
+    content:
+      "Expanding globally? We help optimize your website for multiple countries and languages so your brand can connect with audiences across borders. From hreflang implementation to region-specific keyword strategies, we ensure your global presence is strong, consistent, and search-friendly. ",
   },
   {
-    icon: <PieChart size={32} className="text-[var(--color5)]" />,
-    text: "68% of user interactions on the internet are started by search engines.",
+    title: "LLM SEO",
+    content:
+      "Our LLM SEO specialists optimise your content so it’s easy for large language models to understand, reference, and deliver in search answers. This boosts your authority and significantly improves your online visibility. ",
   },
   {
-    icon: <Globe size={32} className="text-[var(--color5)]" />,
-    text: "Google accounts for 92.96% of all traffic worldwide (Search, Images, Google Maps).",
+    title: "AI SEO",
+    content:
+      "We use AI-driven insights to refine keyword targeting, enhance content strategies, and elevate user experience, keeping your website competitive as search trends evolve. ",
   },
   {
-    icon: <LineChart size={32} className="text-[var(--color5)]" />,
-    text: "Within a year of publication, just five to six pages out of 100 will appear in the top ten search results.",
+    title: "Local SEO",
+    content:
+      "We optimise your Google Business Profile and create location-focused content that helps your business attract nearby customers, build trust, and stay visible in key areas. ",
   },
   {
-    icon: <Smartphone size={32} className="text-[var(--color5)]" />,
-    text: "Mobile devices account for over 60% of organic search engine visits.",
+    title: "E-commerce SEO",
+    content:
+      "Our team identifies the right keywords and optimises your product pages so customers can easily discover your products when they search online. ",
+  },
+  {
+    title: "Technical SEO",
+    content:
+      "We improve the technical foundation of your website for better crawlability, indexing, and performance. From mobile optimisation to faster loading times and improved search engine readability, we ensure your site runs seamlessly. ",
+  },
+  {
+    title: "JavaScript SEO",
+    content:
+      "For JavaScript-heavy websites, we ensure proper rendering and indexing so search engines can understand your content. This helps your site gain better visibility and rank higher on SERPs. ",
+  },
+  {
+    title: "ORM (Online Reputation Management)",
+    content:
+      "We help brands and professionals build, manage, and safeguard their online reputation, ensuring that their digital presence reflects trust and authority. ",
+  },
+  {
+    title: "Off-Page SEO",
+    content:
+      "Since backlinks play a major role in rankings, we audit and strengthen your backlink profile to support your overall SEO strategy and improve your website’s authority. ",
   },
 ];
-const faqs = [
+
+const seoBenefits = [
   {
-    q: "Is affiliate marketing only for eCommerce?",
-    a: "Not at all. Affiliate marketing works across industries like SaaS, fintech, education, wellness, and lead generation. At BigWig Media Digital, we design strategies tailored to your niche and goals.",
+    title: "Improve Organic Rankings",
+    content:
+      "Show up at the top of Google search results and make it easier for customers in Delhi and beyond to discover your business. ",
   },
   {
-    q: "Why should I hire an affiliate marketing agency?",
-    a: (
-      <>
-        <p>
-          Managing affiliates requires time, tools, and expertise. A trusted
-          affiliate marketing agency in India like BigWig Digital helps you:
-        </p>
-        <ul className="list-disc list-inside mt-2 space-y-1">
-          <li>Save time and reduce costs with expert program management.</li>
-          <li>
-            Access a strong network of affiliates, influencers, and creators.
-          </li>
-          <li>
-            Get transparent reports, compliance checks, and ROI-driven
-            campaigns.
-          </li>
-        </ul>
-      </>
-    ),
+    title: "Stay Visible in AI Search",
+    content:
+      "As AI-driven search becomes the new normal, SEO ensures your business appears in answer engines and AI search results, keeping you ahead of your competitors. ",
   },
   {
-    q: "How does affiliate marketing actually work?",
-    a: "Affiliate marketing is a performance-based model where businesses pay affiliates only when they generate results - like sales, leads, or app installs. This makes it a low-risk, high-reward marketing channel.",
+    title: "Attract Targeted Local Traffic",
+    content:
+      "Local SEO helps your business reach people actively searching for services in Delhi NCR - bringing in highly qualified and relevant leads. ",
   },
   {
-    q: "What’s your pricing model?",
-    a: "We offer flexible pricing options, including a one-time setup fee with a monthly retainer or performance-based commissions. This ensures you only pay for measurable growth.",
+    title: "Cost-Effective Marketing",
+    content:
+      "Reach your ideal audience without overspending on ads. SEO provides long-lasting results and delivers better value over time. ",
   },
   {
-    q: "Can you manage affiliate programs on platforms like CJ, Impact, or PartnerStack?",
-    a: "Yes. Our team has experience managing and scaling programs on all major affiliate platforms.",
+    title: "Higher Conversions & ROI",
+    content:
+      "By targeting the right keywords and understanding user intent, SEO turns your website visitors into actual leads - boosting conversions and overall ROI. ",
   },
   {
-    q: "How long before I see results?",
-    a: "Most clients see early traction within 30–45 days. By Month 2 onward, results typically become consistent as affiliate partnerships mature.",
+    title: "Long-Term Business Growth",
+    content:
+      "With consistent traffic, improved visibility, and better-quality leads, SEO helps your business grow steadily month after month. ",
+  },
+];
+
+const seoDifference = [
+  {
+    title: "Tailored for You, Not Templates",
+    content:
+      "Every business is unique - and your SEO strategy should be too. We create custom plans that match your goals, industry, and audience.",
   },
   {
-    q: "Will I get access to performance reports?",
-    a: "Absolutely. We provide real-time dashboards and detailed reports so you can track every click, conversion, and payout.",
+    title: "SEO That Builds Brands",
+    content:
+      "We don’t chase rankings for the sake of it. We help you build long-term authority that strengthens your brand.",
   },
   {
-    q: "How can I maximize my ROI from affiliate marketing?",
-    a: (
-      <>
-        <p>
-          Maximizing ROI comes down to two things: quality traffic + strong
-          conversion rates. Our team helps you by:
-        </p>
-        <ul className="list-disc list-inside mt-2 space-y-1">
-          <li>Matching you with high-performing affiliates.</li>
-          <li>Optimizing your funnels and offers.</li>
-          <li>Ensuring campaigns run ethically and transparently.</li>
-        </ul>
-      </>
-    ),
+    title: "Local + Global SEO Expertise",
+    content:
+      "Whether you want to dominate your city or expand internationally, our team knows how to scale your visibility effectively.",
+  },
+  {
+    title: "Transparent Growth Tracking",
+    content:
+      "Expect clear, easy-to-understand reports with zero jargon. You’ll always know exactly where your growth is coming from.",
+  },
+  {
+    title: "Ahead of Every Algorithm Update",
+    content:
+      "We stay on top of industry trends and updates so your SEO strategy remains future-proof.",
+  },
+  {
+    title: "More Than Just Visibility - Real Impact",
+    content:
+      "We focus on authority, trust, and conversions, turning your online presence into real business growth.",
   },
 ];
 
 function Seo() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
+    arrows: false,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    pauseOnHover: false,
+  };
 
   return (
     <div className="bg-[var(--color1)]">
@@ -140,28 +182,16 @@ function Seo() {
           {/* Left Content */}
           <div className="text-white space-y-6 md:pr-8">
             <h1 className="text-3xl md:text-4xl font-semibold text-white leading-snug">
-              Best SEO Company in India
+              SEO Services in Delhi NCR
             </h1>
 
-            <p
-              className="text-3xl md:text-4xl font-semibold flex items-center gap-2 text-[var(--color5)]"
-              style={{
-                textShadow: "0 2px 6px rgba(0,0,0,0.6)", // softer but effective
-                letterSpacing: "0.5px",
-              }}
-            >
-              More
-              <TypeAnimation
-                sequence={["Traffic", 2000, "Leads", 2000, "Sales", 2000]}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-              />
-            </p>
-
-            <p className="text-base md:text-lg max-w-md text-white/90">
-              We help businesses grow their online presence with tailored SEO
-              strategies in India. Connect with us and see the difference.
+            <p className="text-base md:text-lg max-w-xl text-white/90">
+              Your business deserves real, meaningful growth, the kind that
+              changes everything. At Bigwig Media Digital, we’re here to make
+              that happen. We help businesses across Delhi show up at the top of
+              Google search, again and again. And when your visibility
+              increases, so do your clicks, your leads, and ultimately, your
+              sales.
             </p>
 
             <ButtonFill
@@ -177,38 +207,46 @@ function Seo() {
 
       <section className="  py-12">
         <div className="w-11/12 md:w-5/6 mx-auto">
-          {/* Heading */}
-          <div className="mb-10 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)]">
-              What is SEO & Why is it Important for Your business?
-            </h2>
-          </div>
-
           {/* Main content layout */}
           <div className="grid md:grid-cols-2 gap-10 items-center">
             {/* Left content */}
             <div className="space-y-6">
-              <p className="text-white text-lg leading-relaxed text-justify">
-                Many people mistakenly believe that SEO is merely a business
-                etiquette. The process of increasing a website&#39;s or online
-                content&#39;s visibility in search engine results pages (SERPs),
-                mostly on sites like Google, Yahoo, and Bing, is known as search
-                engine optimization. Thus, the likelihood of showing up in
-                search queries increases with visibility. Usually, an SEO
-                strategy focuses on four important areas
+              <h2 className="text-xl md:text-2xl font-semibold text-[var(--color5)] mb-4">
+                SEO Company in Delhi Focused on Visibility, Traffic &
+                Conversions
+              </h2>
+              <p className="text-white leading-relaxed text-justify">
+                SEO plays a crucial role in strengthening your online presence
+                and boosting your visibility on the internet. And choosing the
+                right SEO services company in Delhi can be the difference
+                between a business that struggles and a business that grows year
+                after year. That’s exactly where Bigwig Media Digital comes in.
+                We dig deep into the world of search engine optimisation and use
+                it to fuel your business growth.
               </p>
 
-              <ul className="list-disc pl-6 space-y-2 text-gray-100 ">
-                <li>Analysis of Keywords</li>
-                <li>Establishing Backlinks</li>
-                <li>Production of Content</li>
-                <li>Upkeep of technical systems</li>
-              </ul>
+              <p className="text-white leading-relaxed text-justify">
+                As a dedicated SEO services company in Delhi, our goal is
+                simple: to create strategies that are tailored to the unique
+                needs of every client. Our team brings together technical
+                expertise and creative thinking to help your website rise to the
+                top of search engine results pages. With years of experience
+                behind us, we focus on driving organic traffic, increasing
+                visibility, and turning clicks into loyal customers.{" "}
+              </p>
 
-              <p className="text-white  text-lg leading-relaxed">
-                These elements form the foundation of the approaches used by
-                different <strong>SEO agencies</strong>, regardless of the kind
-                of SEO.
+              <p className="text-white leading-relaxed text-justify">
+                What truly sets us apart is our approach. We believe in
+                transparency and results you can measure. At Bigwig Media
+                Digital, we use advanced analytics and share clear, actionable
+                reports and roadmaps, so you always know what’s working. Our
+                services are designed for all kinds of businesses - whether
+                you&#39;re just starting out or already established. From
+                keyword research and content optimisation to high-quality
+                backlink building, we use a holistic SEO strategy that supports
+                long-term success for your brand. Choose Bigwig Media Digital, a
+                trusted SEO services company in Delhi, and watch your business
+                reach new heights.
               </p>
             </div>
 
@@ -224,244 +262,653 @@ function Seo() {
         </div>
       </section>
 
-      <div className="w-11/12 md:w-5/6 mx-auto flex flex-col md:flex-row items-center gap-8 py-12">
-        {/* Left Content */}
-        <div className="md:w-1/2 space-y-4 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)]">
-            Drive Organic Traffic with the Best SEO Agency in India
+      <section className="py-12 w-11/12 md:w-5/6 mx-auto relative overflow-hidden">
+        {/* Heading */}
+        <div className="mb-12">
+          <h2 className="text-xl md:text-2xl font-semibold text-[var(--color5)] mb-4">
+            Expert SEO Services in Delhi to Maximise Your Online Success
           </h2>
-          <p className="text-lg text-white  text-justify">
-            <a href="https://www.bigwigmediadigital.com/">
-              <strong className="text-[var(--color4)]">BigWig Digital</strong>
-            </a>{" "}
-            is recognized as a leading SEO Agency in India, delivering powerful
-            and result-driven SEO solutions for businesses worldwide. With more
-            than 10 years of proven expertise, we have successfully managed over
-            10,000 SEO campaigns and helped global brands achieve higher search
-            engine rankings, organic visibility, and measurable growth. Our 95%
-            client retention rate reflects the trust and results we deliver.
+
+          <p className="text-gray-200 text-base md:text-lg leading-relaxed">
+            Bigwig Media Digital has built a strong reputation for delivering
+            transformational growth across industries. Our SEO services evolve
+            with changing trends and best practices, ensuring long-term growth
+            and competitive advantage for our clients.
           </p>
         </div>
 
-        {/* Right stats with icons */}
-        <div className="md:w-1/2">
-          <div className="grid sm:grid-cols-3 gap-6">
-            {stats.map((item, i) => (
-              <div
-                key={i}
-                className="group relative overflow-hidden rounded-2xl p-6 backdrop-blur-md bg-white/10 border border-white/20 shadow-[0_0_20px_rgba(167,235,242,0.3)] hover:shadow-[0_0_35px_rgba(167,235,242,0.6)] transition-all duration-300
-               "
-              >
-                {/* Glow gradient line */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-[#A7EBF260] to-transparent"></div>
+        {/* Content Container */}
+        <div className="relative mb-10 z-10">
+          {/* ================= MOBILE SLIDER ================= */}
+          <div className="block lg:hidden">
+            <Slider {...settings}>
+              {seoServices.map((item, index) => (
+                <div key={index} className="px-2">
+                  <div
+                    className="
+                flex flex-col 
+                p-6 rounded-2xl 
+                backdrop-blur-xl bg-white/5
+                border border-transparent
+                hover:border-[var(--color5)]
+                shadow-[0_0_25px_rgba(0,255,255,0.15)]
+                hover:shadow-[0_0_35px_var(--color5)]
+                space-y-5 relative overflow-hidden group
+                transition-all duration-300
+              "
+                  >
+                    {/* Scan Lines */}
+                    <div className="absolute inset-0 opacity-40 pointer-events-none">
+                      {[...Array(5)].map((_, i) => (
+                        <div
+                          key={i}
+                          className="
+                      absolute left-0 w-full h-[2px]
+                      bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
+                      animate-cardScan
+                    "
+                          style={{
+                            top: `${60 + i * 55}px`,
+                            animationDelay: `${i * 0.2}s`,
+                          }}
+                        ></div>
+                      ))}
+                    </div>
 
-                {/* Icon */}
-                <div className="relative z-10 mb-4 text-[#A7EBF2] group-hover:scale-110 transition-transform duration-300">
-                  {item.icon}
+                    {/* Title */}
+                    <h3 className="text-xl font-semibold text-[var(--color5)] tracking-wide">
+                      {item.title}
+                    </h3>
+
+                    {/* Content */}
+                    <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify">
+                      {item.content}
+                    </p>
+
+                    {/* Glow Border */}
+                    <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
+                  </div>
                 </div>
-
-                {/* Text */}
-                <p className="relative z-10 text-white text-sm font-light tracking-wide">
-                  {item.text}
-                </p>
-
-                {/* Neon border animation */}
-                <span className="absolute top-0 left-0 w-full h-full border border-[#A7EBF2] opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></span>
-              </div>
-            ))}
+              ))}
+            </Slider>
           </div>
-        </div>
-      </div>
 
-      <section className="py-12 px-4">
-        <div className="w-11/12 md:w-5/6 mx-auto space-y-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-[var(--color5)]">
-            All in One SEO Services Under One Roof
-          </h2>
-          <p className="text-lg text-white  text-justify">
-            As a trusted SEO Agency in India, we combine advanced SEO
-            strategies, in-depth keyword research, and white-hat techniques to
-            drive sustainable organic traffic, improve rankings, and boost ROI.
-            Whether you are a startup or an enterprise, our tailored SEO
-            services ensure your brand stays ahead of the competition.
-          </p>
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                title: "Local search engine optimization",
-                points: [
-                  `We assist your company in showing up in "near me" searches, which generates local leads and foot traffic.`,
-                  `Your Google Business Profile is optimized by our expertise to improve visibility on maps and local packs.`,
-                  `To increase your local online authority, we create local citations.`,
-                  `We control your ratings and reviews to boost click-through rates and trust.`,
-                  `We use location-based sites as part of our content strategy to draw in local searchers.`,
-                ],
-              },
-              {
-                title: "App Store Optimization (ASO)",
-                points: [
-                  `We raise your app's visibility and ranking on the Apple App Store and Google Play.`,
-                  `The purpose of our content and creatives is to increase engagement and app downloads.`,
-                  `Utilizing competitive insights and keyword research, we improve discoverability.`,
-                  `We help you get good app reviews so you may succeed in the long run.`,
-                  `Our ASO tactics provide your app a competitive edge in a saturated market.`,
-                ],
-              },
-              {
-                title: "Answer Engine Optimization (AEO)",
-                points: [
-                  `We arrange your material to appear inside Google's "People Also Ask" and featured snippets.`,
-                  `Your chances of ranking as the top voice search answer improve with our strategies.`,
-                  `We produce structured conversational content aligned with human query patterns.`,
-                  `Schema markup increases your content’s visibility and authority.`,
-                  `AEO boosts trust and dramatically increases click-through rates.`,
-                ],
-              },
-              {
-                title: "Geotargeted SEO (GEO)",
-                points: [
-                  `We develop region-specific SEO strategies for multi-city or multi-state ranking.`,
-                  `Local landing pages create hyper-targeted traffic for each service area.`,
-                  `We optimize for geo-focused keywords to dominate local SERPs.`,
-                  `Localized content & backlinks strengthen authority.`,
-                  `Perfect for brands aiming to rank in multiple locations.`,
-                ],
-              },
-              {
-                title: "E-commerce SEO",
-                points: [
-                  `We optimize your online store for higher organic sales and visibility.`,
-                  `Search engine rankings for products are improved with our SEO methods.`,
-                  `We fix technical issues and enhance UX to maximize conversions.`,
-                  `SEO-friendly product descriptions & URLs attract buyers.`,
-                  `Achieve long-term ROI without relying heavily on paid ads.`,
-                ],
-              },
-              {
-                title: "International SEO",
-                points: [
-                  `We help your website rank globally across different languages & countries.`,
-                  `Proper hreflang setup ensures accurate geo-content delivery.`,
-                  `We localize strategy & content for each region’s culture.`,
-                  `We optimize for regional search engines like Baidu & Yandex.`,
-                  `Your brand becomes globally visible & competitive.`,
-                ],
-              },
-            ].map((item, index) => (
+          {/* ================= DESKTOP GRID ================= */}
+          <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 auto-rows-fr">
+            {seoServices.map((item, index) => (
               <div
                 key={index}
                 className="
-                relative p-6 rounded-xl overflow-hidden
-                bg-[#0a0f14]/80 border border-[#1e293b]
-                shadow-[0_0_25px_rgba(0,0,0,0.4)]
-                hover:border-[var(--color5)]
-                hover:shadow-[0_0_30px_rgba(167,235,242,0.35)]
-                transition-all duration-300
-      "
+            group relative overflow-hidden rounded-2xl 
+            transition-transform duration-300 
+            hover:-translate-y-2 h-full
+          "
               >
-                {/* Matrix background overlay */}
-                <div className="absolute inset-0 opacity-[0.20] pointer-events-none bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen"></div>
+                <div
+                  className="
+              relative z-10 p-6 rounded-2xl 
+              backdrop-blur-xl bg-white/5
+              border border-transparent
+              hover:border-[var(--color5)]
+              shadow-[0_0_25px_rgba(0,255,255,0.15)]
+              hover:shadow-[0_0_35px_var(--color5)]
+              flex flex-col 
+              h-full space-y-5
+              transition-all duration-300
+            "
+                >
+                  {/* Scan Lines */}
+                  <div className="absolute inset-0 pointer-events-none opacity-40">
+                    {[...Array(6)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="
+                    absolute left-0 w-full h-[2px]
+                    bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
+                    animate-cardScan
+                  "
+                        style={{
+                          top: `${60 + i * 50}px`,
+                          animationDelay: `${i * 0.25}s`,
+                        }}
+                      ></div>
+                    ))}
+                  </div>
 
-                {/* Content Layer */}
-                <div className="relative z-10">
-                  <h3 className="text-xl font-semibold text-[var(--color5)] mb-4 tracking-wide">
+                  {/* Title */}
+                  <h3 className="text-xl font-semibold text-[var(--color5)] tracking-wide">
                     {item.title}
                   </h3>
 
-                  <ul className="space-y-2 text-gray-300 text-sm leading-relaxed">
-                    {item.points.map((point, i) => (
-                      <li key={i} className="list-disc ml-4">
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  {/* Description */}
+                  <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify">
+                    {item.content}
+                  </p>
 
-                {/* Glow border animation */}
-                <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-[var(--color5)] transition-all duration-300"></div>
+                  <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
+                </div>
               </div>
             ))}
           </div>
 
-          <div className="relative overflow-hidden bg-[#06090f]/80 border border-white/10 backdrop-blur-xl rounded-3xl p-10 md:p-14 shadow-[0_0_30px_rgba(0,255,255,0.12)]">
-            {/* HOLOGRAPHIC SCAN LINE */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-              <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent animate-scan"></div>
-            </div>
-
-            {/* MATRIX PARTICLE BACKGROUND */}
-            <div className="absolute inset-0 opacity-[0.20] mix-blend-screen bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center pointer-events-none"></div>
-
-            {/* HOLOGRAPHIC GLOW BORDER */}
-            <div className="absolute inset-0 rounded-3xl border border-transparent hover:border-[var(--color5)] transition-all duration-500 shadow-[inset_0_0_40px_rgba(167,235,242,0.15)]"></div>
-
-            <div className="relative z-10 space-y-10">
-              {/* PREMIUM HEADING WITH ANIMATED CAPSULE */}
-              <div className="w-fit mx-auto px-8 py-3 rounded-full bg-white/5 backdrop-blur-2xl border border-[var(--color5)] shadow-[0_0_20px_rgba(167,235,242,0.35)] animate-pulseGlow">
-                <h3 className="text-3xl md:text-4xl font-bold text-center text-[var(--color5)] tracking-wide">
-                  The Best SEO Agency for SEO Services in India and Beyond!
-                </h3>
-              </div>
-
-              {/* LEAD PARAGRAPH */}
-              <p className="text-lg text-white/90 tracking-wide leading-relaxed text-justify">
-                Choosing the right partner for your digital growth is not just
-                about rankings — it’s about trust, transparency, and real
-                business impact. At BigWig Media Digital, we elevate SEO
-                services in India with strategies that push genuine growth.
-              </p>
-
-              {/* SUBTITLE WITH HOLOGRAPHIC UNDERLINE */}
-              <div className="relative inline-block">
-                <h3 className="text-xl font-semibold text-[var(--color5)] tracking-wide">
-                  Here’s what makes us different:
-                </h3>
-
-                <div className="absolute left-0 -bottom-1 h-[3px] w-full bg-gradient-to-r from-[var(--color5)]/80 via-cyan-400 to-transparent rounded-full animate-lineGlow"></div>
-              </div>
-
-              {/* FUTURISTIC BULLET LIST */}
-              <ul className="space-y-6 text-gray-300 text-base leading-relaxed">
-                {[
-                  `<strong class="text-[var(--color5)]">Tailored for You, Not Templates</strong> – Every business is unique, so our SEO strategies are fully customized.`,
-                  `<strong class="text-[var(--color5)]">SEO That Builds Brands</strong> – We don’t chase rankings… we build long-term brand authority.`,
-                  `<strong class="text-[var(--color5)]">Local + Global SEO Expertise</strong> – Scale within your city or dominate international markets.`,
-                  `<strong class="text-[var(--color5)]">Transparent Growth Tracking</strong> – Clean, crystal-clear reporting with zero jargon.`,
-                  `<strong class="text-[var(--color5)]">Ahead of Algorithm Updates</strong> – We future-proof your SEO strategy through trend intelligence.`,
-                  `<strong class="text-[var(--color5)]">More Than Visibility — True Impact</strong> – Gain authority, trust, and conversions that last.`,
-                ].map((point, i) => (
-                  <li
-                    key={i}
-                    className="relative pl-6 group"
-                    dangerouslySetInnerHTML={{
-                      __html: `
-            <span class='absolute left-0 top-2 w-3 h-3 rounded-full bg-[var(--color5)] shadow-[0_0_10px_var(--color5)] group-hover:shadow-[0_0_18px_var(--color5)] transition-all duration-300'></span>
-            ${point}
-          `,
-                    }}
-                  />
-                ))}
-              </ul>
-
-              {/* FOOTER PARAGRAPH */}
-              <p className="text-lg text-gray-300 text-justify pt-6 border-t border-white/10">
-                BigWig Media Digital isn’t just another SEO company — we’re your
-                long-term growth partner. We help you earn visibility,
-                credibility, and sustained business impact that powers your
-                future.
-              </p>
-              <div className="flex justify-center">
-                {/* <button className="mt-8 px-6 py-3 bg-[var(--color5)]  text-white rounded-full font-semibold hover:bg-opacity-80 transition">
-                
-              </button> */}
-                <ButtonFill
-                  onClick={() => setIsPopupOpen(true)}
-                  text="Let’s Connect"
-                />
-              </div>
-            </div>
-          </div>
+          {/* ANIMATION */}
+          <style>{`
+      @keyframes cardScan {
+        0% { transform: translateX(-100%); opacity: 0; }
+        50% { opacity: 1; }
+        100% { transform: translateX(100%); opacity: 0; }
+      }
+      .animate-cardScan {
+        animation: cardScan 4s linear infinite;
+      }
+    `}</style>
         </div>
+
+        {/* CTA Button */}
+        <div className="flex justify-center">
+          <ButtonFill
+            text="Boost Your Rankings Today"
+            onClick={() => setIsPopupOpen(true)}
+          />
+        </div>
+      </section>
+
+      <section className="py-12 w-11/12 md:w-5/6 mx-auto relative overflow-hidden">
+        {/* Heading */}
+        <div className="mb-12">
+          <h2 className="text-xl md:text-2xl font-semibold text-[var(--color5)] mb-4">
+            Why Your Business Should Invest in SEO Services in Delhi
+          </h2>
+
+          <p className="text-gray-200 text-base md:text-lg leading-relaxed">
+            SEO isn’t just about ranking higher on Google — it’s about boosting
+            visibility, connecting with the right audience, and building
+            long-term growth. Here’s why investing in SEO services in Delhi is
+            essential for every modern business:
+          </p>
+        </div>
+
+        {/* MOBILE SLIDER */}
+        <div className="block lg:hidden relative mb-10 z-10">
+          <Slider {...settings}>
+            {seoBenefits.map((item, index) => (
+              <div key={index} className="px-2">
+                <div
+                  className="
+              flex flex-col 
+              p-6 rounded-2xl 
+              backdrop-blur-xl bg-white/5
+              border border-transparent
+              hover:border-[var(--color5)]
+              shadow-[0_0_25px_rgba(0,255,255,0.15)]
+              hover:shadow-[0_0_35px_var(--color5)]
+              space-y-5 relative overflow-hidden group
+              transition-all duration-300
+            "
+                >
+                  {/* Scan Lines */}
+                  <div className="absolute inset-0 opacity-40 pointer-events-none">
+                    {[...Array(5)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="
+                    absolute left-0 w-full h-[2px]
+                    bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
+                    animate-cardScan
+                  "
+                        style={{
+                          top: `${60 + i * 55}px`,
+                          animationDelay: `${i * 0.2}s`,
+                        }}
+                      ></div>
+                    ))}
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-semibold text-[var(--color5)] tracking-wide">
+                    {item.title}
+                  </h3>
+
+                  {/* Content */}
+                  <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify">
+                    {item.content}
+                  </p>
+
+                  {/* Glow Border */}
+                  <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+
+        {/* DESKTOP GRID */}
+        <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 auto-rows-fr relative z-10 mb-10">
+          {seoBenefits.map((item, index) => (
+            <div
+              key={index}
+              className="
+          group relative overflow-hidden rounded-2xl 
+          transition-transform duration-300 
+          hover:-translate-y-2 h-full
+        "
+            >
+              <div
+                className="
+            relative z-10 p-6 rounded-2xl 
+            backdrop-blur-xl bg-white/5
+            border border-transparent
+            hover:border-[var(--color5)]
+            shadow-[0_0_25px_rgba(0,255,255,0.15)]
+            hover:shadow-[0_0_35px_var(--color5)]
+            flex flex-col  
+            h-full space-y-5
+            transition-all duration-300
+          "
+              >
+                {/* Scan Lines */}
+                <div className="absolute inset-0 pointer-events-none opacity-40">
+                  {[...Array(6)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="
+                  absolute left-0 w-full h-[2px]
+                  bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
+                  animate-cardScan
+                "
+                      style={{
+                        top: `${60 + i * 50}px`,
+                        animationDelay: `${i * 0.25}s`,
+                      }}
+                    ></div>
+                  ))}
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl font-semibold text-[var(--color5)] tracking-wide">
+                  {item.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify">
+                  {item.content}
+                </p>
+
+                <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* ANIMATION */}
+        <style>{`
+    @keyframes cardScan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-cardScan {
+      animation: cardScan 4s linear infinite;
+    }
+  `}</style>
+
+        {/* CTA Button */}
+        <div className="flex justify-center">
+          <ButtonFill
+            text="Start Growing with SEO"
+            onClick={() => setIsPopupOpen(true)}
+          />
+        </div>
+      </section>
+
+      <section className="py-12 w-11/12 md:w-5/6 mx-auto relative overflow-hidden">
+        {/* Heading */}
+        <div className="mb-12">
+          <h2 className="text-xl md:text-2xl font-semibold text-[var(--color5)] mb-4">
+            The Best SEO Services in Delhi - and Beyond!
+          </h2>
+
+          <p className="text-gray-200 text-base md:text-lg leading-relaxed">
+            Choosing the right digital growth partner isn’t just about getting
+            higher rankings. It’s about finding a team that values trust,
+            transparency, and real business impact. At Bigwig Media Digital, we
+            elevate SEO services in India with strategies designed for
+            meaningful, long-term growth.
+          </p>
+        </div>
+
+        <h3 className="text-2xl md:text-3xl font-semibold text-gray-300 mb-6">
+          What Makes Us Truly Different as an SEO Services Provider in Delhi?
+        </h3>
+
+        {/* MOBILE SLIDER */}
+        <div className="block lg:hidden relative mb-10 z-10">
+          <Slider {...settings}>
+            {seoDifference.map((item, index) => (
+              <div key={index} className="px-2">
+                <div
+                  className="
+              flex flex-col  
+              p-6 rounded-2xl 
+              backdrop-blur-xl bg-white/5
+              border border-transparent
+              hover:border-[var(--color5)]
+              shadow-[0_0_25px_rgba(0,255,255,0.15)]
+              hover:shadow-[0_0_35px_var(--color5)]
+              space-y-5 relative overflow-hidden group
+              transition-all duration-300
+            "
+                >
+                  {/* Scan Lines */}
+                  <div className="absolute inset-0 opacity-40 pointer-events-none">
+                    {[...Array(5)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="
+                    absolute left-0 w-full h-[2px]
+                    bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
+                    animate-cardScan
+                  "
+                        style={{
+                          top: `${60 + i * 55}px`,
+                          animationDelay: `${i * 0.2}s`,
+                        }}
+                      ></div>
+                    ))}
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-semibold text-[var(--color5)] tracking-wide">
+                    {item.title}
+                  </h3>
+
+                  {/* Content */}
+                  <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify">
+                    {item.content}
+                  </p>
+
+                  {/* Glow Border */}
+                  <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+
+        {/* DESKTOP GRID */}
+        <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 auto-rows-fr relative z-10 mb-10">
+          {seoDifference.map((item, index) => (
+            <div
+              key={index}
+              className="
+          group relative overflow-hidden rounded-2xl 
+          transition-transform duration-300 
+          hover:-translate-y-2 h-full
+        "
+            >
+              <div
+                className="
+            relative z-10 p-6 rounded-2xl 
+            backdrop-blur-xl bg-white/5
+            border border-transparent
+            hover:border-[var(--color5)]
+            shadow-[0_0_25px_rgba(0,255,255,0.15)]
+            hover:shadow-[0_0_35px_var(--color5)]
+            flex flex-col 
+            h-full space-y-5
+            transition-all duration-300
+          "
+              >
+                {/* Scan Lines */}
+                <div className="absolute inset-0 pointer-events-none opacity-40">
+                  {[...Array(6)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="
+                  absolute left-0 w-full h-[2px]
+                  bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
+                  animate-cardScan
+                "
+                      style={{
+                        top: `${60 + i * 50}px`,
+                        animationDelay: `${i * 0.25}s`,
+                      }}
+                    ></div>
+                  ))}
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl font-semibold text-[var(--color5)] tracking-wide">
+                  {item.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify">
+                  {item.content}
+                </p>
+
+                <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* ANIMATION */}
+        <style>{`
+    @keyframes cardScan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-cardScan {
+      animation: cardScan 4s linear infinite;
+    }
+  `}</style>
+
+        {/* CTA BUTTON */}
+        <div className="flex justify-center">
+          <ButtonFill
+            text="Explore SEO Solutions"
+            onClick={() => setIsPopupOpen(true)}
+          />
+        </div>
+      </section>
+
+      <section className="py-12 w-11/12 md:w-5/6 mx-auto relative overflow-hidden">
+        {/* Heading */}
+        <h2 className="text-xl md:text-2xl font-semibold text-[var(--color5)] mb-6">
+          Choosing the Right SEO Consultant for Your Business in Delhi
+        </h2>
+
+        {/* Content Box */}
+        <div
+          className="
+      relative p-8 md:p-10 rounded-2xl 
+      backdrop-blur-xl bg-white/5 
+      border border-white/10 
+      shadow-[0_0_25px_rgba(0,255,255,0.15)]
+      overflow-hidden
+      mb-10
+    "
+        >
+          {/* Scan Lines */}
+          <div className="absolute inset-0 pointer-events-none opacity-40">
+            {[...Array(6)].map((_, i) => (
+              <div
+                key={i}
+                className="
+            absolute left-0 w-full h-[2px]            
+          "
+                style={{
+                  top: `${50 + i * 55}px`,
+                  animationDelay: `${i * 0.3}s`,
+                }}
+              ></div>
+            ))}
+          </div>
+
+          {/* Paragraphs */}
+          <div className="relative z-10 space-y-6 text-gray-200 leading-relaxed ">
+            <p>
+              In today’s digital-first world, where online presence defines
+              business success, partnering with the best SEO consultant in Delhi
+              has become essential. A skilled SEO consultant in Delhi can
+              significantly enhance your website’s visibility, outrank
+              competitors, attract quality traffic, and ultimately boost
+              conversions and sales. Whether you&#39;re a small business in
+              Delhi, NCR, hiring a professional who offers expert SEO services
+              can bring remarkable benefits to your organisation.
+            </p>
+
+            <p>
+              A reliable SEO consultant brings deep market understanding and
+              strategic insight. They analyse your audience, your competitors,
+              and your industry landscape to ensure your business ranks high for
+              the most relevant search terms. Their work goes far beyond basic
+              optimisations - from keyword research and on-page optimisation to
+              link building and local SEO strategies. A dedicated SEO consultant
+              equips your business with the right tools, techniques, and
+              resources to reach your target audience effectively.
+            </p>
+
+            <p>
+              With the guidance of the right SEO consultant, your business in
+              Delhi can gain sustainable visibility, stronger brand authority,
+              and steady growth in both traffic and conversions.
+            </p>
+          </div>
+
+          {/* CTA BUTTON */}
+          <div className="flex justify-center">
+            <ButtonFill
+              text="Connect With an SEO Consultant"
+              onClick={() => setIsPopupOpen(true)}
+            />
+          </div>
+
+          {/* Glow Border */}
+          <div className="absolute inset-0 rounded-2xl border border-transparent hover:border-[var(--color5)] transition-all duration-300"></div>
+        </div>
+
+        {/* Scan Animation */}
+        <style>{`
+    @keyframes cardScan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-cardScan {
+      animation: cardScan 5s linear infinite;
+    }
+  `}</style>
+      </section>
+
+      <section className="py-12 w-11/12 md:w-5/6 mx-auto relative overflow-hidden">
+        {/* Heading */}
+        <div className="mb-12 text-center">
+          <h2 className="text-xl md:text-3xl font-semibold text-[var(--color5)] tracking-wide">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        {/* FAQ ACCORDION */}
+        <div className="space-y-6 relative z-10">
+          {[
+            {
+              q: "What can Bigwig Media Digital do for my business with SEO in Delhi?",
+              a: "The SEO services from Bigwig Media Digital help you improve visibility for the right search terms. This allows you to attract more qualified traffic and generate leads that truly matter. We have earned a strong reputation for delivering transformational growth for our clients, and we can do the same for you.",
+            },
+            {
+              q: "How long before we start seeing results?",
+              a: "SEO is a long-term strategy. Still, it usually takes 3 to 6 months to begin seeing measurable progress. Bigwig Media Digital focuses on building a strong foundational strategy to ensure your organic growth aligns with your business and revenue goals.",
+            },
+            {
+              q: "Do you offer local SEO for businesses targeting Delhi specifically?",
+              a: "Yes! Bigwig Media Digital provides local SEO services for businesses that want to reach customers in Delhi. Our services include optimising your Google Business Profile, improving local citations, and creating location-specific content to boost your visibility in “near me” searches and strengthen your presence in local markets.",
+            },
+            {
+              q: "What kind of reporting can we expect?",
+              a: "We believe transparency is essential. You’ll receive detailed monthly reports with keyword rankings, traffic insights, and complete campaign performance breakdowns. Our team is always available to walk you through the results and discuss strategies for the next phase.",
+            },
+            {
+              q: "Why should we choose Bigwig Media Digital over another SEO agency in Delhi?",
+              a: "Bigwig Media Digital is not just another vendor. We aim to be your trusted partner in driving real business growth - something many of our clients can confirm. With years of experience and proven expertise, we focus on delivering meaningful outcomes, not just rankings.",
+            },
+            {
+              q: "How to improve my website rankings in Delhi?",
+              a: "Improving rankings in Delhi requires targeted keywords, strong local SEO strategies, quality backlinks, fast-loading pages, and engaging content that resonates with Delhi audiences while meeting Google’s quality standards.",
+            },
+            {
+              q: "Can SEO help local Delhi businesses compete with national brands?",
+              a: "Yes. Local SEO helps build strong visibility for local intent searches, enabling Delhi-based businesses to appear for region-specific keywords, attract nearby customers, and effectively compete with much larger national brands.",
+            },
+            {
+              q: "What are the top SEO trends businesses in Delhi should focus on?",
+              a: "Delhi businesses should prioritise AI-ready SEO, voice search optimisation, local listings, high-quality content, mobile-first experiences, and strong E-E-A-T signals to build credibility and achieve long-term growth.",
+            },
+            {
+              q: "Does Bigwig Media Digital offer AI-driven or LLM-optimised SEO solutions?",
+              a: "Yes, Bigwig Media Digital delivers AI-driven and LLM-optimised SEO strategies that improve brand visibility across platforms such as ChatGPT, Gemini, and Perplexity by aligning your website content with evolving search and language model algorithms.",
+            },
+            {
+              q: "How does Bigwig Media Digital’s SEO strategy differ from other agencies in Delhi?",
+              a: "Bigwig Media Digital combines data-driven insights, AI tools, and proven SEO frameworks. Our strategies are built around measurable ROI, ethical SEO practices, and a deep understanding of Delhi’s competitive digital ecosystem.",
+            },
+          ].map((item, index) => (
+            <details
+              key={index}
+              className="
+          group p-6 rounded-2xl backdrop-blur-xl bg-white/5 
+          border border-white/10 transition-all duration-300
+          shadow-[0_0_20px_rgba(0,255,255,0.1)]
+          hover:border-[var(--color5)]
+          hover:shadow-[0_0_30px_var(--color5)]
+          cursor-pointer relative overflow-hidden
+        "
+            >
+              {/* Scan lines */}
+              <div className="absolute inset-0 opacity-30 pointer-events-none">
+                {[...Array(4)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="absolute left-0 w-full h-[2px]
+              bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
+              animate-cardScan"
+                    style={{
+                      top: `${40 + i * 45}px`,
+                      animationDelay: `${i * 0.25}s`,
+                    }}
+                  ></div>
+                ))}
+              </div>
+
+              {/* Question */}
+              <summary className="text-lg md:text-xl font-semibold text-[var(--color5)] tracking-wide relative z-10 cursor-pointer list-none flex justify-between items-center">
+                {item.q}
+                <span className="text-gray-300 group-open:rotate-180 transition-transform">
+                  ⌄
+                </span>
+              </summary>
+
+              {/* Answer */}
+              <p className="text-gray-200 mt-4 leading-relaxed whitespace-pre-line relative z-10">
+                {item.a}
+              </p>
+            </details>
+          ))}
+        </div>
+
+        {/* Animation */}
+        <style>{`
+    @keyframes cardScan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-cardScan {
+      animation: cardScan 5s linear infinite;
+    }
+  `}</style>
       </section>
 
       <OurProcess />
