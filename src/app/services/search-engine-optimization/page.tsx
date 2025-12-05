@@ -7,16 +7,7 @@ import hero from "../../../../Assets/Services hero/seo.jpg";
 import seo from "../../../../Assets/services/3.jpg";
 import Footer from "../../../../components/Footer";
 import Slider from "react-slick";
-import {
-  BarChart2,
-  PieChart,
-  Search,
-  Globe,
-  LineChart,
-  Smartphone,
-  ChevronUp,
-  ChevronDown,
-} from "lucide-react";
+
 import ContactForm from "../../../../components/ContactForm";
 import { useState } from "react";
 import Image from "next/image";
