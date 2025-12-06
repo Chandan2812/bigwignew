@@ -153,7 +153,7 @@ function SocialMediaOptimization() {
               SMO Services in Delhi to Boost Your Social Media Presence
             </h1>
 
-            <p className="text-base md:text-lg max-w-xl text-white/90">
+            <p className="text-base md:text-lg max-w-xl text-white/90 text-justify">
               In the fast-paced digital world, brands that stay active on social
               media grow faster, gain more trust, and convert more customers.
               Our SMO Services in Delhi are strategically designed to enhance

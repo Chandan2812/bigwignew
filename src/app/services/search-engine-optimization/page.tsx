@@ -176,7 +176,7 @@ function Seo() {
               SEO Services in Delhi NCR
             </h1>
 
-            <p className="text-base  max-w-xl text-white/90">
+            <p className="text-base md:text-lg  max-w-xl text-white/90 text-justify">
               Your business deserves real, meaningful growth, the kind that
               changes everything. At Bigwig Media Digital, we’re here to make
               that happen. We help businesses across Delhi show up at the top of
@@ -744,7 +744,7 @@ function Seo() {
           </div>
 
           {/* Paragraphs */}
-          <div className="relative z-10 space-y-6 text-gray-200 leading-relaxed ">
+          <div className="relative z-10 space-y-6 text-gray-200 leading-relaxed text-justify">
             <p>
               In today’s digital-first world, where online presence defines
               business success, partnering with the best SEO consultant in Delhi

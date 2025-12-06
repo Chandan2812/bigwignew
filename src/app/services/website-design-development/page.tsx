@@ -181,7 +181,7 @@ function Website() {
               innovative Web Design solutions.
             </h2>
 
-            <p className="text-base md:text-lg max-w-2xl text-white/90">
+            <p className="text-base md:text-lg max-w-2xl text-white/90 text-justify">
               We’re a leading website design company in Delhi NCR, creating
               custom web experiences that truly fit your business needs. Our
               team of skilled professionals works closely with you to enhance
@@ -206,23 +206,23 @@ function Website() {
           {/* Two-column layout */}
           <div className="grid md:grid-cols-2 gap-10 items-center">
             {/* Left Text Block */}
-            <div className="space-y-6 text-white text-lg leading-relaxed">
+            <div className="space-y-6 text-white leading-relaxed">
               <h2 className="text-xl font-semibold text-[var(--color5)] mb-4">
                 Give your brand a powerful online presence with personalized web
                 design solutions
               </h2>
               {/* Heading */}
-              <h1 className=" text-2xl md:text-3xl font-semibold  mb-2 tracking-widest ">
+              <h1 className=" text-2xl md:text-3xl font-semibold  mb-2 ">
                 Best Website Designing Company in Delhi NCR
               </h1>
-              <p>
+              <p className="text-justify">
                 As a top web design company in Delhi, we know exactly what it
                 takes to create websites that attract attention and bring in
                 more visitors. Our experienced designers craft custom websites
                 tailored to your industry and aligned with your business goals.
               </p>
 
-              <p>
+              <p className="text-justify">
                 So if you&#39;re searching for the best{" "}
                 <strong>“website designer near me”</strong>, we’re here to
                 deliver optimized digital experiences that help your brand grow,
