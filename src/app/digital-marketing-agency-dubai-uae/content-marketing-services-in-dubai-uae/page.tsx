@@ -154,7 +154,7 @@ function ContentMarketingInDubai() {
             into a thought leader.
           </p>
 
-          <div className="bg-gradient-to-r from-[var(color1)] to-[var(--color2)] p-8 rounded-2xl shadow-md border border-[var(--color5)]">
+          <div className="bg-gradient-to-r from-[var(--color1)] to-[var(--color2)] p-8 rounded-2xl shadow-md border border-[var(--color5)]">
             <h3 className="text-xl md:text-2xl font-semibold text-gray-300 mb-4">
               With years of expertise as a trusted content marketing agency in
               Dubai, UAE, we understand that impactful content must do three

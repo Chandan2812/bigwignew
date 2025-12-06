@@ -740,6 +740,180 @@ function OnlineReputationManagement() {
         </div>
       </section>
 
+      <section className="py-12 relative overflow-hidden">
+        {/* Heading */}
+        <div className="mb-12 text-center">
+          <h2 className="text-xl md:text-3xl font-semibold text-[var(--color5)] tracking-wide">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        {/* FAQ ACCORDION */}
+        <div className="space-y-6 relative z-10 w-11/12 md:w-5/6 mx-auto">
+          {[
+            {
+              q: "How long does it take to see results with ORM Services?",
+              a: `The timeline depends on the complexity of your reputation issues. Brands typically begin seeing results within 4 to 12 weeks.
+More severe cases may require additional time. A professional ORM Agency in Delhi designs a structured plan to ensure steady improvement and lasting results.`,
+            },
+            {
+              q: "How much do ORM Services cost?",
+              a: `Pricing varies depending on the level of monitoring, content removal needs, review management, and competition in your industry.
+To get accurate cost estimates, businesses often consult the Best ORM Company in Delhi for a customized package that matches their goals.`,
+            },
+            {
+              q: "Why is having a good Online Reputation necessary for businesses?",
+              a: `A strong reputation improves customer trust, conversions, and brand visibility.
+Since consumers check reviews before making decisions, maintaining a positive image through Online Reputation Management Delhi helps businesses attract more customers, increase sales, and stand out from competitors.`,
+            },
+            {
+              q: "How to fix a damaged reputation?",
+              a: `Fixing a damaged reputation requires:
+● Identifying harmful content
+● Publishing positive articles, blogs, and testimonials
+● Responding professionally to negative reviews
+● Promoting high-quality content to push down negative results
+● Continuous monitoring
+
+A skilled ORM Agency in Delhi uses tools and strategies to restore trust and strengthen your brand image.`,
+            },
+            {
+              q: "Is Online Reputation Management and SEO the same thing?",
+              a: `No. SEO focuses on ranking higher in search engines, while ORM focuses on shaping public perception of your brand.
+ORM may use SEO techniques, but the main goal is reputation improvement. Many businesses combine SEO with ORM Services in Delhi for a stronger online presence.`,
+            },
+            {
+              q: "Can negative reviews be deleted?",
+              a: `Negative reviews can only be removed if they violate platform policies (spam, fake, abusive, or misleading content).
+However, ORM specialists can reduce the impact of bad reviews by responding professionally and increasing positive feedback to balance your overall rating.`,
+            },
+            {
+              q: "Why is Online Reputation Management critical for my business?",
+              a: `Consumers trust online reviews as much as personal recommendations. A poor reputation harms credibility and sales.
+Online Reputation Management Delhi ensures your brand appears trustworthy, resolves negative impressions, and highlights positive customer experiences.`,
+            },
+            {
+              q: "How long does it take to improve my Online Reputation?",
+              a: `Minor reputation issues may improve within 30 days, while larger challenges may take 3–6 months or longer.
+Working with the Best ORM Company in Delhi ensures that improvements are consistent and long-lasting.`,
+            },
+            {
+              q: "How can you help in increasing my rating?",
+              a: `Reputation experts can:
+● Encourage satisfied customers to leave reviews
+● Respond professionally to negative reviews
+● Identify and report fake or harmful reviews
+● Improve overall brand visibility
+
+Boosting customer ratings is a key part of effective ORM Services in Delhi.`,
+            },
+            {
+              q: "Types of Online Reputation Management?",
+              a: `ORM includes:
+● Review management
+● Social media reputation management
+● Search result cleanup
+● Crisis management
+● Brand monitoring
+● Personal reputation management
+
+A qualified ORM Agency in Delhi selects the right combination of services based on your industry and goals.`,
+            },
+            {
+              q: "What is Online Reputation Management (ORM)?",
+              a: `ORM involves monitoring, influencing, and improving how your brand appears online.
+It includes review handling, content creation, social media management, and search result optimization.
+Businesses hire the Best ORM Company in Delhi to maintain a strong and positive digital identity.`,
+            },
+            {
+              q: "How soon can I expect results from ORM services?",
+              a: `Some improvements may appear within a few weeks, but full results take time depending on the severity of negative content.
+ORM is an ongoing effort that creates steady and lasting brand credibility.`,
+            },
+            {
+              q: "Can negative content or reviews be removed completely?",
+              a: `Only content that violates a platform’s rules can be directly removed.
+Otherwise, ORM strategies focus on suppressing negative content by improving positive search results and increasing favorable customer feedback.`,
+            },
+            {
+              q: "Is ORM only suitable for large businesses or brands?",
+              a: `No. ORM is important for local businesses, startups, professionals, and large companies alike.
+Even small businesses benefit from Online Reputation Management Delhi, since customers often decide based on online reviews.`,
+            },
+            {
+              q: "How does ORM help with SEO?",
+              a: `ORM supports SEO by creating high-quality content, improving brand trust, and boosting the visibility of positive pages.
+This pushes negative content down and enhances your overall digital presence.`,
+            },
+            {
+              q: "Why is ORM important for local businesses in Delhi?",
+              a: `Local consumers rely heavily on reviews and search results before visiting or purchasing.
+Strong ORM Services in Delhi help improve local search rankings, attract more customers, and build a reliable brand image in a competitive market.`,
+            },
+          ].map((item, index) => (
+            <details
+              key={index}
+              className="
+        group p-6 rounded-2xl backdrop-blur-xl bg-white/5 
+        border border-white/10 transition-all duration-300
+        shadow-[0_0_20px_rgba(0,255,255,0.1)]
+        hover:border-[var(--color5)]
+        hover:shadow-[0_0_30px_var(--color5)]
+        cursor-pointer relative overflow-hidden
+      "
+            >
+              {/* Scan lines */}
+              <div className="absolute inset-0 opacity-30 pointer-events-none">
+                {[...Array(4)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="absolute left-0 w-full h-[2px]
+            bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
+            animate-cardScan"
+                    style={{
+                      top: `${40 + i * 45}px`,
+                      animationDelay: `${i * 0.25}s`,
+                    }}
+                  ></div>
+                ))}
+              </div>
+
+              {/* Question */}
+              <summary className="text-lg md:text-xl font-semibold text-[var(--color5)] tracking-wide relative z-10 cursor-pointer list-none flex justify-between items-center">
+                {item.q}
+                <span className="text-gray-300 group-open:rotate-180 transition-transform">
+                  ⌄
+                </span>
+              </summary>
+
+              {/* Answer */}
+              <p className="text-gray-200 mt-4 leading-relaxed whitespace-pre-line relative z-10">
+                {item.a}
+              </p>
+            </details>
+          ))}
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <ButtonFill
+            text="Start Growing With ORM"
+            onClick={() => setIsPopupOpen(true)}
+          />
+        </div>
+
+        {/* Animation */}
+        <style>{`
+    @keyframes cardScan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-cardScan {
+      animation: cardScan 5s linear infinite;
+    }
+  `}</style>
+      </section>
+
       <OurProcess />
       <WhyBigwig />
       <section className="py-20 relative overflow-hidden">
