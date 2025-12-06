@@ -1,5 +1,4 @@
 "use client";
-import { TypeAnimation } from "react-type-animation";
 import Footer from "../../../../components/Footer";
 import Nav from "../../../../components/Nav";
 import OurProcess from "../../../../components/OurProcess";
@@ -11,17 +10,9 @@ import ppc from "../../../../Assets/services/7.jpg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {
-  FaSearchDollar,
-  FaPhotoVideo,
-  FaFacebookF,
-  FaRetweet,
-  FaMobileAlt,
-  FaShoppingCart,
-} from "react-icons/fa";
+
 import ContactForm from "../../../../components/ContactForm";
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
 import ButtonFill from "../../../../components/Button";
 import PopupForm from "../../../../components/PopupForm";
@@ -158,7 +149,7 @@ function PerformanceMarketing() {
               region, including Noida and Gurgaon.
             </p>
             <p className="text-base max-w-xl text-white/90 text-justify">
-              Whether you're searching for a reliable Google Ads agency in
+              Whether you&#39;re searching for a reliable Google Ads agency in
               Delhi, a trusted Google Ads company in Delhi, or simply a growth
               partner “near me,” our team is here to help you boost visibility,
               increase engagement, and maximize ROI with data-backed strategies
