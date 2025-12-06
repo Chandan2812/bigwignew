@@ -1086,6 +1086,26 @@ function Website() {
               img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
             },
             {
+              name: "GSAP",
+              img: "https://res.cloudinary.com/dcq2oziz4/image/upload/v1765007605/gsap_1_lkfznz.png",
+            },
+            {
+              name: "AOS",
+              img: "https://res.cloudinary.com/dcq2oziz4/image/upload/v1765007605/github_octocat_z05vbl.png",
+            },
+            {
+              name: "Framer Motion",
+              img: "https://res.cloudinary.com/dcq2oziz4/image/upload/v1765007711/framer-motion_ohdae2.svg",
+            },
+            {
+              name: "Vite",
+              img: "https://res.cloudinary.com/dcq2oziz4/image/upload/v1765007852/logo_eyrkoc.svg",
+            },
+            {
+              name: "MongoDB",
+              img: "https://www.svgrepo.com/show/331488/mongodb.svg",
+            },
+            {
               name: "WordPress",
               img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg",
             },
