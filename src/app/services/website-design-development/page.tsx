@@ -1156,10 +1156,7 @@ function Website() {
   `}</style>
       </section>
 
-      <OurProcess />
-      <WhyBigwig />
-
-      <section className="py-12 w-11/12 md:w-5/6 mx-auto relative overflow-hidden">
+      <section className="py-12 relative overflow-hidden">
         {/* Heading */}
         <div className="mb-12 text-center">
           <h2 className="text-xl md:text-3xl font-semibold text-[var(--color5)] tracking-wide">
@@ -1168,7 +1165,7 @@ function Website() {
         </div>
 
         {/* FAQ ACCORDION */}
-        <div className="space-y-6 relative z-10">
+        <div className="space-y-6 relative z-10 w-11/12 md:w-5/6 mx-auto ">
           {[
             {
               q: "Why should you hire a Web Design Company in Delhi?",
@@ -1271,6 +1268,9 @@ function Website() {
     }
   `}</style>
       </section>
+
+      <OurProcess />
+      <WhyBigwig />
 
       <section className="py-12 relative overflow-hidden">
         {/* Matrix glow background */}

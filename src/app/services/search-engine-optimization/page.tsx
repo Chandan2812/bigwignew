@@ -169,14 +169,14 @@ function Seo() {
       >
         <div className="bg-black/40 absolute inset-0 z-0" />
 
-        <div className="relative z-10 w-11/12 md:w-5/6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div className="relative z-10 w-11/12 md:w-5/6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           {/* Left Content */}
           <div className="text-white space-y-6 md:pr-8">
             <h1 className="text-3xl md:text-4xl font-semibold text-white leading-snug">
               SEO Services in Delhi NCR
             </h1>
 
-            <p className="text-base md:text-lg max-w-xl text-white/90">
+            <p className="text-base  max-w-xl text-white/90">
               Your business deserves real, meaningful growth, the kind that
               changes everything. At Bigwig Media Digital, we’re here to make
               that happen. We help businesses across Delhi show up at the top of
@@ -799,7 +799,7 @@ function Seo() {
   `}</style>
       </section>
 
-      <section className="py-12 w-11/12 md:w-5/6 mx-auto relative overflow-hidden">
+      <section className="py-12  relative overflow-hidden">
         {/* Heading */}
         <div className="mb-12 text-center">
           <h2 className="text-xl md:text-3xl font-semibold text-[var(--color5)] tracking-wide">
@@ -808,7 +808,7 @@ function Seo() {
         </div>
 
         {/* FAQ ACCORDION */}
-        <div className="space-y-6 relative z-10">
+        <div className="space-y-6 relative z-10 w-11/12 md:w-5/6 mx-auto">
           {[
             {
               q: "What can Bigwig Media Digital do for my business with SEO in Delhi?",

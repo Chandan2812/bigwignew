@@ -6,6 +6,7 @@ import smm from "../../../../Assets/services/5.jpg";
 import OurProcess from "../../../../components/OurProcess";
 import WhyBigwig from "../../../../components/WhyBigwig";
 import Footer from "../../../../components/Footer";
+import Slider from "react-slick";
 import {
   FaLinkedinIn,
   FaMeta,
@@ -86,6 +87,62 @@ const adPlatforms = [
   },
 ];
 
+const smoAds = [
+  {
+    title: "Meta Ads (Facebook & Instagram Advertising)",
+    content:
+      "Our advanced Social Media Marketing Services in Delhi include high-performing Meta Ads that capture attention and drive action. Whether your goal is brand awareness, engagement, or conversions, we design visually compelling and strategically optimized ad campaigns across Facebook and Instagram.",
+  },
+  {
+    title: "LinkedIn Ads for High-Intent B2B Marketing",
+    content:
+      "Reach CEOs, decision-makers, and industry leaders with precision. As part of our comprehensive Social Media Services in Delhi, we manage LinkedIn Ads that generate qualified B2B leads through sponsored content, lead-gen forms, and retargeting campaigns.",
+  },
+  {
+    title: "Snapchat Ads for Mobile-First Audiences",
+    content:
+      "Our Social Media Advertising expertise also includes Snapchat Ads designed for brands targeting younger, mobile-first users. Through immersive story ads, dynamic ads, and interactive formats, we help businesses boost engagement and build awareness.",
+  },
+  {
+    title: "Twitter (X) Ads for Real-Time Visibility",
+    content:
+      "Stay relevant with trending campaigns powered by Twitter (X) Ads. Using hashtag targeting, interest targeting, and keyword-based advertising, our Social Media Ads help brands spark conversations, increase visibility, and reach active audiences in real time.",
+  },
+  {
+    title: "YouTube Ads for Strong Video Branding",
+    content:
+      "As a key component of our Social Media Marketing Services in Delhi, we create YouTube ad campaigns that enhance brand recall and visibility. From skippable and non-skippable ads to bumper and in-feed formats, we ensure your message reaches the right viewers through high-impact video content.",
+  },
+];
+
+const chooseBigwig = [
+  {
+    title: "Platform-Specific Expertise",
+    content:
+      "Every platform works differently, and so do our strategies. Whether it’s Meta, LinkedIn, Snapchat, YouTube, or Twitter (X), we craft platform-specific Social Media Advertising campaigns based on real-time algorithms, ad formats, audience behavior, and industry trends. This ensures your Social Media Ads reach the right audience with the right message.",
+  },
+  {
+    title: "Creative + Strategy Approach",
+    content:
+      "Great results demand more than just good visuals. Our experts combine eye-catching creatives, persuasive copywriting, and data-driven targeting to craft campaigns that resonate with your audience. As a leading provider of SMM Services in Delhi, we ensure your brand’s message stays impactful and memorable.",
+  },
+  {
+    title: "Conversion-Focused Funnels",
+    content:
+      "From awareness to engagement to final purchase, we build full-funnel strategies that guide your audience through a seamless buyer journey. Our Social Media Services in Delhi focus on generating not just traffic, but actual leads and conversions.",
+  },
+  {
+    title: "Transparent Reporting & Weekly Optimization",
+    content:
+      "We believe in complete transparency. You get detailed insights on CPC, CTR, ROAS, CPL, and more. Our team conducts weekly optimization to improve performance continuously, ensuring your Social Media Marketing Services in Delhi investment delivers maximum value.",
+  },
+  {
+    title: "Budget-Friendly Scaling",
+    content:
+      "Whether you're starting with ₹5,000 or scaling up to ₹5,00,000, our smart budget allocation ensures your campaigns achieve maximum output with minimum wastage. Our goal is sustainable and profitable scaling across all Social Media Advertising platforms.",
+  },
+];
+
 function SocialMediaMarketing() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -104,6 +161,19 @@ function SocialMediaMarketing() {
       }
     });
   }, []);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
+    arrows: false,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    pauseOnHover: false,
+  };
+
   return (
     <div className="bg-[var(--color1)]">
       <title>Social Media Marketing Experts</title>
@@ -123,51 +193,26 @@ function SocialMediaMarketing() {
       >
         <div className="bg-black/40 absolute inset-0 z-0" />
 
-        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           {/* Left Content */}
           <div className="text-white space-y-6 md:pr-8">
             <h1 className="text-3xl md:text-4xl font-semibold text-white leading-snug">
-              Social Media Marketing Services in India that drive real ROI
+              Best SMM Services in Delhi to Grow Your Brand Online
             </h1>
 
-            <p
-              className="text-2xl md:text-4xl font-semibold text-[var(--color5)]"
-              style={{
-                letterSpacing: "0.5px",
-              }}
-            >
-              <span className="inline"> Social ads that Delhi </span>
-              <span className="inline-block whitespace-nowrap">
-                <TypeAnimation
-                  sequence={[
-                    " Stop the Scroll",
-                    2000,
-                    " Generate Leads",
-                    2000,
-                    " Target the Right",
-                    2000,
-                    " Build Recall",
-                    2000,
-                    " Capture Attention",
-                    2000,
-                    " Deliver ROI",
-                    2000,
-                  ]}
-                  wrapper="span"
-                  speed={50}
-                  repeat={Infinity}
-                />
-              </span>
-            </p>
-
-            <p className="text-base md:text-lg max-w-md text-white/90">
-              We’re here to help you grow, scale, and stand out, across every
-              major social media platform.
+            <p className=" max-w-xl text-white/90">
+              Looking for powerful and result-oriented SMM Services in Delhi
+              that can take your brand to the next level? Our agency offers
+              advanced Social Media Marketing Services in Delhi designed to
+              increase engagement, build brand authority, and generate quality
+              leads through strategic content creation and targeted campaigns.
+              With our expert Social Media Services in Delhi, your business gets
+              maximum visibility across all major social platforms.
             </p>
 
             <ButtonFill
               onClick={() => setIsPopupOpen(true)}
-              text="Contact Us"
+              text="Get Free SMM Consultation"
             />
           </div>
 
@@ -178,44 +223,28 @@ function SocialMediaMarketing() {
 
       <section className="py-12 space-y-10 text-white ">
         {/* Section Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[var(--color5)]">
-          Social Media Marketing Agency in India
-        </h2>
 
         {/* Two-column Layout */}
         <div className="w-11/12 md:w-5/6 mx-auto grid md:grid-cols-2 gap-10 items-start">
           {/* Left Content */}
           <div className="space-y-6 text-md leading-relaxed text-justify">
+            <h2 className="text-2xl md:text-3xl font-semibold text-[var(--color5)]">
+              Why Your Business Needs SMM Services in Delhi
+            </h2>
             <p>
-              Social media marketing is the process of leveraging platforms like
-              Facebook, Instagram, LinkedIn, and YouTube to build brand
-              awareness, engage audiences, and generate measurable business
-              results. Looking for a social media marketing agency in India that
-              understands performance marketing? At BigWig Digital, we deliver
-              paid ad campaigns that actually convert, not just drive traffic.
-              We’re here to help you grow, scale, and stand out across every
-              major social media platform.
+              In a competitive market like Delhi, businesses must stay active
+              and visible on social media platforms. Professional Social Media
+              Marketing Services in Delhi help you connect with your audience,
+              drive engagement, and build a strong brand presence. Whether you
+              want brand awareness, website traffic, or lead generation, our
+              specialized SMM Services in Delhi provide the perfect solution.
             </p>
 
             <p>
-              At
-              <strong>
-                {" "}
-                <a href="https://www.bigwigdigital.in/"> BigWig Digital</a>
-              </strong>
-              , we create performance-driven ad campaigns designed to get your
-              brand seen, clicked, and remembered. As a trusted social media
-              marketing agency in India, we specialize in high-converting paid
-              campaigns across today’s most powerful platforms. Whether your
-              goal is brand awareness, lead generation, website traffic, app
-              installs, or video views, our expert team crafts data-backed
-              strategies that deliver measurable growth. If you’re searching for
-              result-oriented <strong>social media marketing</strong> services
-              in India,{" "}
-              <strong>
-                <a href="https://www.bigwigdigital.in/">BigWig Media Digital</a>
-              </strong>{" "}
-              is your go-to partner for scalable ad solutions.
+              Social media is no longer optional - your customers expect active
+              communication and consistent content. With our Social Media
+              Services in Delhi, we ensure your brand remains ahead of
+              competitors.
             </p>
           </div>
 
@@ -224,363 +253,589 @@ function SocialMediaMarketing() {
             <Image
               src={smm}
               alt="Social Media Marketing Agency "
-              className="w-full h-[60vh] rounded-xl shadow-lg"
+              className="w-full h-[50vh] rounded-xl shadow-lg"
             />
-          </div>
-        </div>
-
-        {/* Box goes below */}
-        <div className="w-11/12 md:w-5/6 mx-auto">
-          <div
-            className=" relative p-6 rounded-xl overflow-hidden
-        bg-[#0a0f14]/80 border border-[#1e293b]
-        shadow-[0_0_25px_rgba(0,0,0,0.4)]
-        hover:border-[var(--color5)]
-        hover:shadow-[0_0_30px_rgba(167,235,242,0.35)]
-        transition-all duration-300"
-          >
-            {/* Matrix background overlay */}
-            <div className="absolute inset-0 opacity-[0.20] pointer-events-none bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen"></div>
-            <h3 className="text-2xl font-semibold">
-              Why Hiring a Social Media Marketing Agency in India is Essential
-              for Business Growth
-            </h3>
-
-            <ul className="list-disc space-y-3 text-base">
-              <li>
-                Organic reach is insufficient in 2025. Paid advertisements give
-                you the advantage you need to reach the right audience at the
-                right time in the face of changing algorithms and an abundance
-                of content.
-              </li>
-              <li>
-                Our strategy for social media advertising is based on accuracy,
-                originality, and output. We create effective, focused campaigns
-                that are suited to your objectives rather than promoting
-                arbitrary posts.
-              </li>
-              <li>
-                To get the most out of every rupee you spend, our results-driven
-                segmentation, ad creatives, copywriting, analytics, and A/B
-                testing.
-              </li>
-            </ul>
-          </div>
-
-          {/* Intro above the table */}
-          <div
-            className="mt-10  relative p-6 rounded-xl overflow-hidden
-        bg-[#0a0f14]/80 border border-[#1e293b]
-        shadow-[0_0_25px_rgba(0,0,0,0.4)]
-        hover:border-[var(--color5)]
-        hover:shadow-[0_0_30px_rgba(167,235,242,0.35)]
-        transition-all duration-300"
-          >
-            {/* Matrix background overlay */}
-            <div className="absolute inset-0 opacity-[0.20] pointer-events-none bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen"></div>
-            <h3 className="text-xl md:text-2xl font-semibold text-white">
-              Benefits of Hiring a Social Media Marketing Agency in India
-            </h3>
-            <p className="text-gray-300">
-              While many businesses consider building an in-house marketing
-              team, partnering with a social media marketing agency in India
-              often proves more effective and cost-efficient. The table below
-              highlights the key differences to help you make the right choice.
-            </p>
-          </div>
-
-          {/* ✅ Beautiful Comparison Table */}
-          <div className="mt-10 rounded-2xl overflow-hidden relative shadow-[0_0_25px_rgba(0,255,255,0.15)]">
-            {/* Matrix hologram background */}
-            <div className="absolute inset-0 opacity-[0.06] bg-[url('https://i.imgur.com/2JYwQ7U.gif')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
-
-            {/* Outer glow border */}
-            <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-[var(--color5)] transition-all duration-500 pointer-events-none"></div>
-
-            <table className="min-w-full text-sm relative z-10 backdrop-blur-xl">
-              {/* HEADER */}
-              <thead className="bg-gradient-to-r from-[#0d1120] via-[#122033] to-[#0d1120] text-white shadow-[0_0_30px_rgba(0,255,255,0.2)]">
-                <tr className="uppercase tracking-wide text-[var(--color5)]">
-                  <th className="px-6 py-4 font-semibold border-r border-cyan-900/40 text-[var(--color5)]">
-                    Factor
-                  </th>
-                  <th className="px-6 py-4 font-semibold border-r border-cyan-900/40 text-[var(--color5)]">
-                    In-House Marketing Team
-                  </th>
-                  <th className="px-6 py-4 font-semibold text-[var(--color5)]">
-                    Social Media Marketing Agency in India
-                  </th>
-                </tr>
-              </thead>
-
-              {/* BODY */}
-              <tbody className="divide-y divide-cyan-900/30 text-gray-200">
-                {[
-                  [
-                    "Expertise",
-                    "Limited to team’s knowledge and experience",
-                    "Access to specialists with deep multi-platform expertise",
-                  ],
-                  [
-                    "Tools & Technology",
-                    "Often rely on basic or free tools",
-                    "Advanced paid tools for analytics, automation, & targeting",
-                  ],
-                  [
-                    "Scalability",
-                    "Hard to scale without hiring",
-                    "Instant scale-up aligned with business goals",
-                  ],
-                  [
-                    "Cost Efficiency",
-                    "High long-term costs (salary, training, tools)",
-                    "Cost-efficient bundled services",
-                  ],
-                  [
-                    "Creativity & Innovation",
-                    "Internal creative limitations",
-                    "Fresh innovative strategies tailored to your brand",
-                  ],
-                  [
-                    "Time Management",
-                    "Team juggles multiple roles",
-                    "Agency focused on performance & ROI",
-                  ],
-                  [
-                    "Performance Tracking",
-                    "Basic KPIs, limited insights",
-                    "Data-driven insights, A/B tests & measurable results",
-                  ],
-                ].map((row, i) => (
-                  <tr
-                    key={i}
-                    className="transition-all duration-300 hover:bg-cyan-500/10 hover:shadow-[0_0_15px_rgba(0,255,255,0.2)]"
-                  >
-                    <td className="px-6 py-4 font-semibold text-[var(--color5)] border-r border-cyan-900/20">
-                      {row[0]}
-                    </td>
-                    <td className="px-6 py-4 border-r border-cyan-900/20">
-                      {row[1]}
-                    </td>
-                    <td className="px-6 py-4">{row[2]}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-
-            {/* SCAN LINE ANIMATION */}
-            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent animate-scan pointer-events-none"></div>
           </div>
         </div>
       </section>
 
-      <section className="py-12  text-black ">
-        {/* Section Heading */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[var(--color5)] mb-12">
-          Our main social media advertising services in India
-        </h2>
+      <section className="py-12 w-11/12 md:w-5/6 mx-auto relative overflow-hidden">
+        {/* Heading */}
+        <div className="mb-6">
+          <h2 className="text-xl md:text-2xl font-semibold text-[var(--color5)] mb-4">
+            Our Social Media Advertising Services in India
+          </h2>
 
-        <div className="w-11/12 md:w-5/6 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto relative">
-          {/* MATRIX BACKGROUND */}
-          <div className="absolute inset-0 opacity-[0.05] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764576928/23148_rqpqvq.jpg')] bg-cover bg-center pointer-events-none mix-blend-screen"></div>
+          <p className="text-gray-200 text-base md:text-lg leading-relaxed">
+            As part of our premium SMM Services in Delhi, we offer targeted and
+            result-driven Social Media Advertising solutions designed to
+            increase brand visibility, generate leads, and maximize ROI. Our
+            performance-focused Social Media Ads help businesses connect with
+            their ideal audience across the most influential platforms in India.
+          </p>
+        </div>
 
-          {adPlatforms.map((item, i) => (
-            <div
-              key={i}
-              ref={(el: HTMLDivElement | null) => {
-                tiltRefs.current[i] = el;
-              }}
-              className="
-            relative group p-6 rounded-xl
-            backdrop-blur-xl bg-white/5
-            border border-white/10 shadow-xl
-            hover:shadow-[0_0_25px_var(--color5)]
-            transition-all duration-300 cursor-pointer
-          "
-            >
-              {/* Outer Neon Border Glow */}
-              <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-[var(--color5)] transition-all duration-300"></div>
+        {/* CONTAINER */}
+        <div className="relative z-10">
+          {/* ========= MOBILE SLIDER ========= */}
+          <div className="block lg:hidden">
+            <Slider {...settings}>
+              {smoAds.map((item, index) => (
+                <div key={index} className="px-2">
+                  <div
+                    className="
+              relative flex flex-col p-6 rounded-2xl
+              backdrop-blur-xl bg-white/5 
+              border border-white/10
+              shadow-[0_0_25px_rgba(0,255,255,0.1)]
+              hover:shadow-[0_0_40px_var(--color5)]
+              space-y-5 overflow-hidden group
+              transition-all duration-500
+              hover:-translate-y-2
+            "
+                  >
+                    {/* Shine Line */}
+                    <div
+                      className="
+                absolute -top-full left-0 w-full h-full
+                bg-gradient-to-r from-transparent via-[var(--color5)]/20 to-transparent
+                rotate-45 group-hover:animate-shineLine
+              "
+                    />
 
-              {/* Inner Glow Line */}
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[var(--color5)]/0 via-[var(--color5)] to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    {/* Title */}
+                    <h3 className="text-xl font-semibold text-[var(--color5)] tracking-wide relative z-10">
+                      {item.title}
+                    </h3>
 
-              {/* MATRIX HOLOGRAM OVERLAY */}
-              <div className="absolute inset-0 opacity-[0.22] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764576928/23148_rqpqvq.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
+                    {/* Description */}
+                    <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify relative z-10">
+                      {item.content}
+                    </p>
 
-              {/* Content */}
-              <div className="relative z-10">
-                <div className="flex items-center justify-between mb-2">
-                  <h4 className="text-xl font-semibold text-[var(--color5)] tracking-wide group-hover:drop-shadow-[0_0_6px_var(--color5)] transition">
-                    {item.title}
-                  </h4>
-
-                  <div className="text-3xl text-[var(--color5)] group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_6px_var(--color5)]">
-                    {icons[item.title]}
+                    {/* Glow Border */}
+                    <div
+                      className="
+                absolute inset-0 rounded-2xl border border-transparent
+                group-hover:border-[var(--color5)] transition-all duration-500
+              "
+                    ></div>
                   </div>
                 </div>
+              ))}
+            </Slider>
+          </div>
 
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  {item.text}
+          {/* ========= DESKTOP GRID ========= */}
+          <div
+            className="
+      hidden lg:grid 
+      grid-cols-1 md:grid-cols-2 lg:grid-cols-3 
+      gap-10 auto-rows-fr
+    "
+          >
+            {smoAds.map((item, index) => (
+              <div
+                key={index}
+                className="
+            group relative overflow-hidden rounded-2xl 
+            transition-transform duration-500 
+            hover:-translate-y-3 h-full
+          "
+              >
+                <div
+                  className="
+              relative z-10 p-6 rounded-2xl 
+              backdrop-blur-xl bg-white/5
+              border border-white/10
+              shadow-[0_0_25px_rgba(0,255,255,0.15)]
+              hover:shadow-[0_0_45px_var(--color5)]
+              flex flex-col h-full space-y-5
+              transition-all duration-500
+            "
+                >
+                  {/* Shine Line */}
+                  <div
+                    className="
+              absolute -top-full left-0 w-full h-full
+              bg-gradient-to-r from-transparent via-[var(--color5)]/25 to-transparent
+              rotate-45 group-hover:animate-shineLine
+            "
+                  />
+
+                  {/* Title */}
+                  <h3 className="text-xl font-semibold text-[var(--color5)] tracking-wide relative z-10">
+                    {item.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify relative z-10">
+                    {item.content}
+                  </p>
+
+                  {/* Glow Border */}
+                  <div
+                    className="
+              absolute inset-0 rounded-2xl border border-transparent 
+              group-hover:border-[var(--color5)] transition-all duration-500
+            "
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Animations */}
+          <style>{`
+      @keyframes shineLine {
+        0% { transform: translateY(-150%); }
+        100% { transform: translateY(150%); }
+      }
+      .animate-shineLine {
+        animation: shineLine 1.5s ease-in-out forwards;
+      }
+    `}</style>
+        </div>
+      </section>
+
+      <section className="py-12 w-11/12 md:w-5/6 mx-auto">
+        {/* Heading */}
+        <h2 className="text-2xl md:text-3xl font-semibold text-[var(--color5)] tracking-wide mb-6">
+          Reach Targeted Results With Social Media Marketing Services
+        </h2>
+
+        {/* Paragraph 1 */}
+        <p className="text-gray-200 text-base md:text-lg leading-relaxed mb-6">
+          Your search for powerful and result-driven Social Media Marketing
+          Services in Delhi ends here. At Bigwig Media Digital, our expert team
+          crafts data-driven strategies, creative content, and high-impact
+          campaigns that help you connect with your ideal audience. With our
+          premium SMM Services in Delhi, we focus on building brand visibility,
+          boosting engagement, and driving measurable business growth.
+        </p>
+
+        {/* Paragraph 2 */}
+        <p className="text-gray-200 text-base md:text-lg leading-relaxed mb-10">
+          From strategic planning to content creation, campaign execution,
+          Social Media Advertising, and detailed performance analysis, we offer
+          fully customized Social Media Services in Delhi tailored to your
+          business goals. Whether you need organic growth or performance-based
+          Social Media Ads, we ensure every step leads to real, trackable
+          results.
+        </p>
+
+        {/* CTA */}
+        <div className="flex justify-center">
+          <ButtonFill
+            text="Start Growing With SMM"
+            onClick={() => setIsPopupOpen(true)}
+          />
+        </div>
+      </section>
+
+      <section className="py-12 w-11/12 md:w-5/6 mx-auto">
+        {/* Heading */}
+        <h2 className="text-2xl md:text-3xl font-semibold text-[var(--color5)] tracking-wide mb-6">
+          A Trusted SMM Company in Delhi Delivering Proven Results
+        </h2>
+
+        {/* TWO COLUMN LAYOUT */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
+          {/* LEFT COLUMN — PARAGRAPH 1 */}
+          <p className="text-gray-200 text-justify text-base leading-relaxed">
+            As a leading and trusted SMM company in Delhi, we specialize in
+            delivering result-driven social media solutions that help businesses
+            grow faster in today’s digital-first world. With years of experience
+            in providing premium SMM Services in Delhi, our team understands
+            what it takes to build a powerful brand presence across multiple
+            platforms. We use a strategic blend of creativity, data-driven
+            insights, and advanced tools to ensure your brand reaches the right
+            audience with maximum impact. Our comprehensive Social Media
+            Marketing Services in Delhi cover everything from content creation,
+            page management, and community engagement to full-funnel Social
+            Media Ads and high-performance Social Media Advertising campaigns
+            designed to boost visibility, engagement, and conversions.
+          </p>
+
+          {/* RIGHT COLUMN — PARAGRAPH 2 */}
+          <p className="text-gray-200 text-justify text-base leading-relaxed">
+            As experts in delivering tailored Social Media Services in Delhi, we
+            take the time to understand your business goals, target audience,
+            and competition. This allows us to craft customized strategies that
+            not only elevate your brand but also deliver measurable results
+            month after month. Whether you want to build brand awareness,
+            increase engagement, generate leads, or scale your sales, our proven
+            social media marketing frameworks provide a clear growth roadmap. We
+            continuously optimize campaigns, analyze performance metrics, and
+            refine strategies to ensure your brand stays ahead of competitors in
+            the ever-evolving digital landscape.
+          </p>
+        </div>
+
+        {/* FULL WIDTH PARAGRAPH */}
+        <p className="text-gray-200 text-justify text-base leading-relaxed">
+          Our success is driven by our commitment to excellence and long-term
+          client satisfaction. Businesses across industries trust us because we
+          deliver transparent reporting, consistent performance, and innovative
+          ideas that make their brand stand out. With our focused approach to
+          Social Media Marketing Services in Delhi, we help brands transform
+          their online identity, expand their reach, and achieve sustainable
+          digital growth. If you're looking for a reliable partner to handle
+          everything from organic marketing to high-impact Social Media
+          Advertising, we are the SMM company in Delhi you can count on for
+          proven and measurable results.
+        </p>
+      </section>
+
+      <section className="py-12 w-11/12 md:w-5/6 mx-auto relative overflow-hidden">
+        {/* HEADING */}
+        <div className="mb-12">
+          <h2 className="text-xl md:text-2xl font-semibold text-[var(--color5)] mb-4">
+            Why Choose BigWig Media Digital for Social Media Marketing in India
+          </h2>
+
+          <p className="text-gray-200 text-base md:text-lg leading-relaxed">
+            Selecting the right partner for your social media growth is crucial,
+            and BigWig Media Digital stands out as one of the most trusted
+            agencies offering high-impact Social Media Marketing Services in
+            Delhi and across India. We don’t just run basic campaigns—we build
+            strategic, conversion-focused digital ecosystems designed to amplify
+            your brand presence and deliver measurable results. Our team
+            combines creativity, analytics, and performance marketing expertise
+            to ensure every campaign drives maximum ROI.
+          </p>
+        </div>
+
+        {/* ================= MOBILE SLIDER ================= */}
+        <div className="block lg:hidden relative mb-10 z-10">
+          <Slider {...settings}>
+            {chooseBigwig.map((item, index) => (
+              <div key={index} className="px-2">
+                <div
+                  className="
+            relative flex flex-col p-6 rounded-2xl
+            backdrop-blur-xl bg-white/5 
+            border border-white/10
+            shadow-[0_0_25px_rgba(0,255,255,0.1)]
+            hover:shadow-[0_0_40px_var(--color5)]
+            space-y-5 overflow-hidden group
+            transition-all duration-500
+            hover:-translate-y-2
+          "
+                >
+                  {/* Shine Overlay */}
+                  <div
+                    className="
+              absolute inset-0 bg-gradient-to-br 
+              from-transparent via-white/5 to-transparent
+              opacity-0 group-hover:opacity-100
+              transition-opacity duration-500
+            "
+                  />
+
+                  {/* Diagonal Shine */}
+                  <div
+                    className="
+              absolute -top-full left-0 w-full h-full
+              bg-gradient-to-r from-transparent via-[var(--color5)]/25 to-transparent
+              rotate-45 group-hover:animate-shineLine
+            "
+                  />
+
+                  {/* Title */}
+                  <h3 className="text-xl font-semibold text-[var(--color5)] tracking-wide relative z-10">
+                    {item.title}
+                  </h3>
+
+                  {/* Content */}
+                  <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify relative z-10">
+                    {item.content}
+                  </p>
+
+                  {/* Border Glow */}
+                  <div
+                    className="
+              absolute inset-0 rounded-2xl border border-transparent 
+              group-hover:border-[var(--color5)] transition-all duration-500
+            "
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+
+        {/* ================= DESKTOP GRID ================= */}
+        <div
+          className="
+    hidden lg:grid 
+    grid-cols-1 md:grid-cols-2 lg:grid-cols-3 
+    gap-10 auto-rows-fr relative z-10
+  "
+        >
+          {chooseBigwig.map((item, index) => (
+            <div
+              key={index}
+              className="
+        group relative overflow-hidden rounded-2xl 
+        transition-transform duration-500 hover:-translate-y-3 h-full
+      "
+            >
+              <div
+                className="
+          relative z-10 p-6 rounded-2xl 
+          backdrop-blur-xl bg-white/5
+          border border-white/10
+          shadow-[0_0_25px_rgba(0,255,255,0.15)]
+          hover:shadow-[0_0_45px_var(--color5)]
+          flex flex-col h-full space-y-5
+          transition-all duration-500
+        "
+              >
+                {/* Diagonal Shine */}
+                <div
+                  className="
+            absolute -top-full left-0 w-full h-full
+            bg-gradient-to-r from-transparent via-[var(--color5)]/25 to-transparent
+            rotate-45 group-hover:animate-shineLine
+          "
+                />
+
+                {/* Title */}
+                <h3 className="text-xl font-semibold text-[var(--color5)] tracking-wide relative z-10">
+                  {item.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify relative z-10">
+                  {item.content}
                 </p>
+
+                {/* Glow Border */}
+                <div
+                  className="
+            absolute inset-0 rounded-2xl border border-transparent 
+            group-hover:border-[var(--color5)] transition-all duration-500
+          "
+                ></div>
               </div>
             </div>
           ))}
         </div>
-      </section>
 
-      {/* Why Choose Section */}
-      <section className="w-11/12 md:w-5/6 mx-auto py-16 space-y-14 relative">
-        {/* Matrix Cyber Background */}
-        <div className="absolute inset-0 opacity-[0.16]  mix-blend-screen pointer-events-none"></div>
+        {/* Shine Animation */}
+        <style>{`
+    @keyframes shineLine {
+      0% { transform: translateY(-150%); }
+      100% { transform: translateY(150%); }
+    }
+    .animate-shineLine {
+      animation: shineLine 1.5s ease-in-out forwards;
+    }
+  `}</style>
 
-        {/* MAIN CONTAINER */}
-        <div className="relative z-10 space-y-8">
-          {/* Title + Paragraph (inside capsule) */}
-          <div
-            className="
-      rounded-full 
-      bg-white/5 
-      backdrop-blur-xl  
-      border border-white/10 
-      shadow-[0_0_25px_rgba(0,255,255,0.15)] 
-      p-8 md:p-10
-      space-y-6
-    "
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color5)] ">
-              Why choose BigWig Media Digital for social media marketing in
-              India
-            </h2>
-
-            <p className="text-lg text-gray-200 leading-relaxed">
-              Choosing the right social media marketing agency in India can make
-              all the difference in your brand’s growth. At BigWig Media
-              Digital, we don’t just run campaigns—we craft data-driven
-              strategies designed for conversions.
-            </p>
-
-            {/* FUTURISTIC BULLET LIST */}
-            <ul className="space-y-4 text-gray-200 text-base md:text-lg">
-              {[
-                [
-                  "Platform-Specific Expertise:",
-                  "Custom campaigns based on platform algorithms, ad types & rules.",
-                ],
-                [
-                  "Creative + Strategy:",
-                  "Eye-catching visuals + persuasive copy + data-backed targeting.",
-                ],
-                [
-                  "Conversion-Focused Funnels:",
-                  "Full-funnel strategy from awareness to purchase.",
-                ],
-                [
-                  "Transparent Reporting & Optimization:",
-                  "Track CPC, CTR, ROAS, CPL with weekly optimization.",
-                ],
-                [
-                  "Budget-Friendly Scaling:",
-                  "Scale from ₹5,000 to ₹5,00,000 with maximum performance.",
-                ],
-              ].map((item, i) => (
-                <li key={i} className="flex gap-3">
-                  <div className="w-3 h-3 mt-2 rounded-full bg-[var(--color5)] shadow-[0_0_10px_var(--color5)]"></div>
-                  <span>
-                    <span className="text-[var(--color5)] font-semibold">
-                      {item[0]}
-                    </span>{" "}
-                    {item[1]}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* WHAT YOU GET SECTION */}
-          <div className="space-y-8">
-            <h3 className="text-2xl font-semibold text-[var(--color5)] tracking-wide drop-shadow-[0_0_10px_var(--color5)]">
-              What You Get with Our Social Media Ad Management
-            </h3>
-
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {[
-                "Campaign strategy and funnel design",
-                "Audience research and targeting setup",
-                "Ad creative (copy + visuals)",
-                "A/B testing of creatives and copy",
-                "Pixel and conversion tracking",
-                "Weekly reporting and performance analysis",
-                "Ongoing optimization and scaling",
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="
-              group flex items-center gap-3 
-              p-4 rounded-full 
-              bg-white/5 backdrop-blur-xl 
-              border border-white/10 
-              hover:border-[var(--color5)] 
-              shadow-md hover:shadow-[0_0_20px_var(--color5)]
-              transition-all duration-300
-            "
-                >
-                  <svg
-                    className="w-6 h-6 text-[var(--color5)] group-hover:scale-110 transition-transform"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414L8.414 15l-4.121-4.121a1 1 0 011.414-1.414L8.414 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="text-gray-200">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+        {/* CTA BUTTON */}
+        <div className="flex justify-center mt-10">
+          <ButtonFill
+            text="Start Your Growth Journey"
+            onClick={() => setIsPopupOpen(true)}
+          />
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className=" py-12">
-        <div className="w-11/12 md:w-5/6 mx-auto space-y-10">
-          <h2 className="text-3xl md:text-3xl font-bold text-[var(--color5)] text-center">
-            Frequently Asked Questions (FAQs) – Social Media Marketing Agency in
-            India
+      <section className="py-12 w-11/12 md:w-5/6 mx-auto">
+        {/* Heading */}
+        <div className="mb-6">
+          <h2 className="text-xl md:text-2xl font-semibold text-[var(--color5)] mb-4">
+            What You Get with Our Social Media Ad Management
           </h2>
 
-          <div className="space-y-4">
-            {faqs.map((item, index) => (
-              <div
-                key={index}
-                className="border border-gray-200 rounded-lg shadow-sm "
-              >
-                <button
-                  className="flex justify-between items-center w-full p-4 text-left text-white font-medium focus:outline-none"
-                  onClick={() =>
-                    setOpenIndex(openIndex === index ? null : index)
-                  }
-                >
-                  <span>{item.q}</span>
-                  {openIndex === index ? (
-                    <ChevronUp className="w-5 h-5 text-gray-200" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-200" />
-                  )}
-                </button>
-
-                {openIndex === index && (
-                  <div className="p-4 pt-0 text-gray-200">{item.a}</div>
-                )}
-              </div>
-            ))}
-          </div>
+          <p className="text-gray-200 text-base md:text-lg leading-relaxed">
+            Partnering with BigWig Media Digital means getting a complete
+            end-to-end solution for your Social Media Ads:
+          </p>
         </div>
+
+        {/* BULLET POINTS – TWO COLUMN LAYOUT */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+          <ul className="space-y-4">
+            <li className="flex items-start gap-3">
+              <span className="w-3 h-3 rounded-full bg-[var(--color5)] shadow-[0_0_10px_var(--color5)] mt-1"></span>
+              <p className="text-gray-200 leading-relaxed">
+                Campaign strategy & full-funnel design tailored to your business
+                goals
+              </p>
+            </li>
+
+            <li className="flex items-start gap-3">
+              <span className="w-3 h-3 rounded-full bg-[var(--color5)] shadow-[0_0_10px_var(--color5)] mt-1"></span>
+              <p className="text-gray-200 leading-relaxed">
+                Audience research & precise targeting setup for maximum reach
+              </p>
+            </li>
+
+            <li className="flex items-start gap-3">
+              <span className="w-3 h-3 rounded-full bg-[var(--color5)] shadow-[0_0_10px_var(--color5)] mt-1"></span>
+              <p className="text-gray-200 leading-relaxed">
+                High-converting ad creatives, including copywriting and visuals
+              </p>
+            </li>
+
+            <li className="flex items-start gap-3">
+              <span className="w-3 h-3 rounded-full bg-[var(--color5)] shadow-[0_0_10px_var(--color5)] mt-1"></span>
+              <p className="text-gray-200 leading-relaxed">
+                A/B testing of creatives, placements, and messaging
+              </p>
+            </li>
+          </ul>
+
+          <ul className="space-y-4">
+            <li className="flex items-start gap-3">
+              <span className="w-3 h-3 rounded-full bg-[var(--color5)] shadow-[0_0_10px_var(--color5)] mt-1"></span>
+              <p className="text-gray-200 leading-relaxed">
+                Pixel & conversion tracking for accurate performance measurement
+              </p>
+            </li>
+
+            <li className="flex items-start gap-3">
+              <span className="w-3 h-3 rounded-full bg-[var(--color5)] shadow-[0_0_10px_var(--color5)] mt-1"></span>
+              <p className="text-gray-200 leading-relaxed">
+                Weekly reporting & actionable insights
+              </p>
+            </li>
+
+            <li className="flex items-start gap-3">
+              <span className="w-3 h-3 rounded-full bg-[var(--color5)] shadow-[0_0_10px_var(--color5)] mt-1"></span>
+              <p className="text-gray-200 leading-relaxed">
+                Continuous optimization & scaling for consistent growth
+              </p>
+            </li>
+          </ul>
+        </div>
+        <p className="text-gray-200 text-base md:text-lg  leading-relaxed">
+          With BigWig Media Digital, you gain a strategic partner dedicated to
+          delivering high-impact, ROI-driven results through premium Social
+          Media Marketing Services in Delhi and across India.
+        </p>
       </section>
+
+      <section className="py-12 relative overflow-hidden">
+        {/* Heading */}
+        <div className="mb-12 text-center">
+          <h2 className="text-xl md:text-3xl font-semibold text-[var(--color5)] tracking-wide">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        {/* FAQ ACCORDION */}
+        <div className="space-y-6 relative z-10  w-11/12 md:w-5/6 mx-auto">
+          {[
+            {
+              q: "What is included in social media marketing services?",
+              a: "At BigWig Media Digital, our Social Media Marketing Services in Delhi include everything your brand needs to build a strong online presence—content creation, page management, audience engagement, hashtag research, competitor analysis, and strategic posting. We also provide creative design, reels, story creatives, monthly content calendars, and performance tracking. For brands looking to grow faster, we integrate Social Media Advertising and paid campaign management for maximum reach and conversions.",
+            },
+            {
+              q: "What are the benefits of social media marketing services?",
+              a: "Our SMM Services in Delhi help businesses increase brand awareness, engage with their audience, generate high-quality leads, and improve customer loyalty. With consistent posting, high-performing creatives, data-driven strategies, and ROI-focused Social Media Ads, you can grow your presence across platforms like Facebook, Instagram, LinkedIn, YouTube, Twitter (X), and Snapchat. Social media marketing also boosts website traffic, reputation, and conversions.",
+            },
+            {
+              q: "Why should you hire a social media marketing agency in India?",
+              a: "Hiring a professional agency like BigWig Media Digital ensures your brand gets expert-led strategy, creative direction, and performance-driven execution. Our team specializes in Social Media Services in Delhi, allowing you to focus on your business while we handle content creation, campaign management, audience targeting, and ongoing optimization. With deep industry insights, creative capabilities, and proven advertising frameworks, we help your brand achieve consistent, measurable results.",
+            },
+            {
+              q: "How often will you post content on my social media profiles?",
+              a: "Posting frequency depends on your package and marketing goals. Typically, we create a structured monthly content calendar that includes 12–20 posts per month, along with stories, reels, and engagement activities. Our Social Media Marketing Services in Delhi ensure your brand stays active, relevant, and consistently visible to your audience.",
+            },
+            {
+              q: "How does BigWig Media Digital measure the success of social media campaigns?",
+              a: "We use advanced tracking tools and detailed analytics to measure KPIs like engagement rate, reach, impressions, CPC, CTR, conversions, ROAS, and follower growth. Our performance reports offer complete transparency, and our team optimizes campaigns weekly to ensure continuous improvement. Whether it's organic growth or Social Media Advertising, we focus on delivering measurable and meaningful results.",
+            },
+            {
+              q: "Can you help with social media advertising?",
+              a: "Absolutely! BigWig Media Digital specializes in high-impact Social Media Advertising across Meta (Facebook & Instagram), LinkedIn, YouTube, Snapchat, and Twitter (X). We create conversion-focused Social Media Ads, handle audience targeting, A/B testing, funnel building, and ongoing optimization to help you generate leads, sales, and brand awareness at scale.",
+            },
+            {
+              q: "What platforms do you manage?",
+              a: `We manage all major social media platforms, including:
+        
+• Facebook
+• Instagram
+• LinkedIn
+• YouTube
+• Twitter (X)
+• Snapchat
+• Pinterest
+
+Our Social Media Services in Delhi ensure your brand performs consistently across every platform where your audience is active.`,
+            },
+          ].map((item, index) => (
+            <details
+              key={index}
+              className="
+          group p-6 rounded-2xl backdrop-blur-xl bg-white/5 
+          border border-white/10 transition-all duration-300
+          shadow-[0_0_20px_rgba(0,255,255,0.1)]
+          hover:border-[var(--color5)]
+          hover:shadow-[0_0_30px_var(--color5)]
+          cursor-pointer relative overflow-hidden
+        "
+            >
+              {/* Scan lines */}
+              <div className="absolute inset-0 opacity-30 pointer-events-none">
+                {[...Array(4)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="absolute left-0 w-full h-[2px]
+              bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
+              animate-cardScan"
+                    style={{
+                      top: `${40 + i * 45}px`,
+                      animationDelay: `${i * 0.25}s`,
+                    }}
+                  ></div>
+                ))}
+              </div>
+
+              {/* Question */}
+              <summary className="text-lg md:text-xl font-semibold text-[var(--color5)] tracking-wide relative z-10 cursor-pointer list-none flex justify-between items-center">
+                {item.q}
+                <span className="text-gray-300 group-open:rotate-180 transition-transform">
+                  ⌄
+                </span>
+              </summary>
+
+              {/* Answer */}
+              <p className="text-gray-200 mt-4 leading-relaxed whitespace-pre-line relative z-10">
+                {item.a}
+              </p>
+            </details>
+          ))}
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <ButtonFill
+            text="Start Growing With SMM"
+            onClick={() => setIsPopupOpen(true)}
+          />
+        </div>
+
+        {/* Animation */}
+        <style>{`
+    @keyframes cardScan {
+      0% { transform: translateX(-100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .animate-cardScan {
+      animation: cardScan 5s linear infinite;
+    }
+  `}</style>
+      </section>
+
+      <OurProcess />
+      <WhyBigwig />
       {/* Services Table Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-12 relative overflow-hidden">
         {/* Matrix glow background */}
         <div className="absolute inset-0 opacity-[0.20] bg-[url('https://res.cloudinary.com/dcq2oziz4/image/upload/v1764569855/5079835_mfzfld.jpg')] bg-cover bg-center mix-blend-screen pointer-events-none"></div>
 
@@ -685,10 +940,8 @@ function SocialMediaMarketing() {
     }
   `}</style>
       </section>
-
-      <OurProcess />
-      <WhyBigwig />
       <GetInTouch />
+      <PopupForm isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
       <Footer />
     </div>
   );
