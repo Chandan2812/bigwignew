@@ -297,8 +297,9 @@ function Website() {
       </section>
 
       <section className="py-12 w-11/12 md:w-5/6 mx-auto relative overflow-hidden">
-        <div className="mb-12">
-          <h2 className="text-xl font-semibold text-[var(--color5)] mb-4">
+        {/* Heading */}
+        <div className="mb-6">
+          <h2 className="text-xl md:text-2xl font-semibold text-[var(--color5)] mb-4">
             Web Design Company in Delhi
           </h2>
 
@@ -315,136 +316,126 @@ function Website() {
           </p>
         </div>
 
-        <div className="relative mb-10 z-10">
-          {/* ================= MOBILE SLIDER ================= */}
+        {/* CONTAINER */}
+        <div className="relative z-10">
+          {/* ========= MOBILE SLIDER ========= */}
           <div className="block lg:hidden">
             <Slider {...settings}>
-              {sections.map((section, index) => (
+              {sections.map((item, index) => (
                 <div key={index} className="px-2">
                   <div
                     className="
-                flex flex-col justify-between 
-                p-6 rounded-2xl 
-                backdrop-blur-xl bg-white/5
-                border border-transparent
-                hover:border-[var(--color5)]
-                shadow-[0_0_25px_rgba(0,255,255,0.15)]
-                hover:shadow-[0_0_35px_var(--color5)]
-                space-y-5 relative overflow-hidden group
-                transition-all duration-300
+                relative flex flex-col p-6 rounded-2xl
+                backdrop-blur-xl bg-white/5 
+                border border-white/10
+                shadow-[0_0_25px_rgba(0,255,255,0.1)]
+                hover:shadow-[0_0_40px_var(--color5)]
+                space-y-5 overflow-hidden group
+                transition-all duration-500
+                hover:-translate-y-2
               "
                   >
-                    {/* Scan Lines */}
-                    <div className="absolute inset-0 opacity-40 pointer-events-none">
-                      {[...Array(5)].map((_, i) => (
-                        <div
-                          key={i}
-                          className="
-                      absolute left-0 w-full h-[2px]
-                      bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
-                      animate-cardScan
-                    "
-                          style={{
-                            top: `${60 + i * 55}px`,
-                            animationDelay: `${i * 0.2}s`,
-                          }}
-                        ></div>
-                      ))}
-                    </div>
+                    {/* Shine Line */}
+                    <div
+                      className="
+                  absolute -top-full left-0 w-full h-full
+                  bg-gradient-to-r from-transparent via-[var(--color5)]/20 to-transparent
+                  rotate-45 group-hover:animate-shineLine
+                "
+                    />
 
                     {/* Title */}
-                    <h3 className="text-xl font-semibold  text-[var(--color5)] tracking-wide">
-                      {section.title}
+                    <h3 className="text-xl font-semibold text-[var(--color5)] tracking-wide relative z-10">
+                      {item.title}
                     </h3>
 
                     {/* Content */}
-                    <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify">
-                      {section.content}
+                    <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify relative z-10">
+                      {item.content}
                     </p>
 
                     {/* Glow Border */}
-                    <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
+                    <div
+                      className="
+                  absolute inset-0 rounded-2xl border border-transparent
+                  group-hover:border-[var(--color5)] transition-all duration-500
+                "
+                    ></div>
                   </div>
                 </div>
               ))}
             </Slider>
           </div>
 
-          {/* ================= DESKTOP GRID ================= */}
-          <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 auto-rows-fr">
-            {sections.map((section, index) => (
+          {/* ========= DESKTOP GRID ========= */}
+          <div
+            className="
+        hidden lg:grid 
+        grid-cols-1 md:grid-cols-2 lg:grid-cols-3 
+        gap-10 auto-rows-fr
+      "
+          >
+            {sections.map((item, index) => (
               <div
                 key={index}
                 className="
             group relative overflow-hidden rounded-2xl 
-            transition-transform duration-300 
-            hover:-translate-y-2 h-full
+            transition-transform duration-500 
+            hover:-translate-y-3 h-full
           "
               >
                 <div
                   className="
               relative z-10 p-6 rounded-2xl 
               backdrop-blur-xl bg-white/5
-              border border-transparent
-              hover:border-[var(--color5)]
+              border border-white/10
               shadow-[0_0_25px_rgba(0,255,255,0.15)]
-              hover:shadow-[0_0_35px_var(--color5)]
-              flex flex-col justify-between 
-              h-full space-y-5
-              transition-all duration-300
+              hover:shadow-[0_0_45px_var(--color5)]
+              flex flex-col h-full space-y-5
+              transition-all duration-500
             "
                 >
-                  {/* Scan Lines */}
-                  <div className="absolute inset-0 pointer-events-none opacity-40">
-                    {[...Array(6)].map((_, i) => (
-                      <div
-                        key={i}
-                        className="
-                    absolute left-0 w-full h-[2px]
-                    bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
-                    animate-cardScan
-                  "
-                        style={{
-                          top: `${60 + i * 50}px`,
-                          animationDelay: `${i * 0.25}s`,
-                        }}
-                      ></div>
-                    ))}
-                  </div>
+                  {/* Shine Line */}
+                  <div
+                    className="
+                absolute -top-full left-0 w-full h-full
+                bg-gradient-to-r from-transparent via-[var(--color5)]/25 to-transparent
+                rotate-45 group-hover:animate-shineLine
+              "
+                  />
 
                   {/* Title */}
-                  <h3 className="text-xl font-semibold text-[var(--color5)] tracking-wide">
-                    {section.title}
+                  <h3 className="text-xl font-semibold text-[var(--color5)] tracking-wide relative z-10">
+                    {item.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify">
-                    {section.content}
+                  <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify relative z-10">
+                    {item.content}
                   </p>
 
-                  <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
+                  {/* Glow Border */}
+                  <div
+                    className="
+                absolute inset-0 rounded-2xl border border-transparent 
+                group-hover:border-[var(--color5)] transition-all duration-500
+              "
+                  ></div>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* ANIMATIONS */}
+          {/* Animations */}
           <style>{`
-      @keyframes cardScan {
-        0% { transform: translateX(-100%); opacity: 0; }
-        50% { opacity: 1; }
-        100% { transform: translateX(100%); opacity: 0; }
+      @keyframes shineLine {
+        0% { transform: translateY(-150%); }
+        100% { transform: translateY(150%); }
       }
-      .animate-cardScan {
-        animation: cardScan 4s linear infinite;
+      .animate-shineLine {
+        animation: shineLine 1.5s ease-in-out forwards;
       }
     `}</style>
-        </div>
-        <div className="flex justify-center">
-          <ButtonFill
-            text="Get Started Today"
-            onClick={() => setIsPopupOpen(true)}
-          />
         </div>
       </section>
 
@@ -473,124 +464,106 @@ function Website() {
           {/* ================= MOBILE SLIDER ================= */}
           <div className="block lg:hidden">
             <Slider {...settings}>
-              {customSections.map((section, index) => (
+              {customSections.map((item, index) => (
                 <div key={index} className="px-2">
                   <div
                     className="
-                flex flex-col justify-between p-6 rounded-2xl 
-                backdrop-blur-xl bg-white/5 border border-transparent
-                hover:border-[var(--color5)]
-                shadow-[0_0_25px_rgba(0,255,255,0.15)]
-                hover:shadow-[0_0_35px_var(--color5)]
-                space-y-5 relative overflow-hidden group
-                transition-all duration-300
+                relative flex flex-col p-6 rounded-2xl
+                backdrop-blur-xl bg-white/5 
+                border border-white/10
+                shadow-[0_0_25px_rgba(0,255,255,0.1)]
+                hover:shadow-[0_0_40px_var(--color5)]
+                space-y-5 overflow-hidden group
+                transition-all duration-500
+                hover:-translate-y-2
               "
-                    // style={{
-                    //   backgroundImage:
-                    //     "url('https://res.cloudinary.com/dqrlkbsdq/image/upload/v1764850905/istockphoto-1305999733-612x612_ryfzqt.jpg')",
-                    //   backgroundSize: "cover",
-                    //   backgroundPosition: "center",
-                    // }}
                   >
-                    {/* DARK OVERLAY */}
-                    {/* <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div> */}
+                    {/* Shine Line */}
+                    <div
+                      className="
+                  absolute -top-full left-0 w-full h-full
+                  bg-gradient-to-r from-transparent via-[var(--color5)]/20 to-transparent
+                  rotate-45 group-hover:animate-shineLine
+                "
+                    />
 
-                    {/* Scan Lines */}
-                    <div className="absolute inset-0 opacity-40 pointer-events-none">
-                      {[...Array(5)].map((_, i) => (
-                        <div
-                          key={i}
-                          className="
-                      absolute left-0 w-full h-[2px]
-                      bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
-                      animate-cardScan
-                    "
-                          style={{
-                            top: `${60 + i * 55}px`,
-                            animationDelay: `${i * 0.2}s`,
-                          }}
-                        ></div>
-                      ))}
-                    </div>
+                    {/* Title */}
+                    <h3 className="text-xl font-semibold text-[var(--color5)] tracking-wide relative z-10">
+                      {item.title}
+                    </h3>
 
                     {/* Content */}
-                    <div className="relative z-10 space-y-3">
-                      <h4 className="text-xl font-semibold text-[var(--color5)] tracking-wide">
-                        {section.title}
-                      </h4>
-                      <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify">
-                        {section.content}
-                      </p>
-                    </div>
+                    <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify relative z-10">
+                      {item.content}
+                    </p>
 
                     {/* Glow Border */}
-                    <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
+                    <div
+                      className="
+                  absolute inset-0 rounded-2xl border border-transparent
+                  group-hover:border-[var(--color5)] transition-all duration-500
+                "
+                    ></div>
                   </div>
                 </div>
               ))}
             </Slider>
           </div>
 
-          {/* ================= DESKTOP GRID ================= */}
-          <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 auto-rows-fr">
-            {customSections.map((section, index) => (
+          {/* ========= DESKTOP GRID ========= */}
+          <div
+            className="
+        hidden lg:grid 
+        grid-cols-1 md:grid-cols-2 lg:grid-cols-3 
+        gap-10 auto-rows-fr
+      "
+          >
+            {customSections.map((item, index) => (
               <div
                 key={index}
                 className="
             group relative overflow-hidden rounded-2xl 
-            transition-transform duration-300 hover:-translate-y-2 h-full
+            transition-transform duration-500 
+            hover:-translate-y-3 h-full
           "
               >
                 <div
                   className="
               relative z-10 p-6 rounded-2xl 
-              backdrop-blur-xl bg-white/5 border border-transparent
-              hover:border-[var(--color5)]
+              backdrop-blur-xl bg-white/5
+              border border-white/10
               shadow-[0_0_25px_rgba(0,255,255,0.15)]
-              hover:shadow-[0_0_35px_var(--color5)]
-              flex flex-col justify-between 
-              h-full space-y-4 transition-all duration-300
+              hover:shadow-[0_0_45px_var(--color5)]
+              flex flex-col h-full space-y-5
+              transition-all duration-500
             "
-                  // style={{
-                  //   backgroundImage:
-                  //     "url('https://res.cloudinary.com/dqrlkbsdq/image/upload/v1764850905/istockphoto-1305999733-612x612_ryfzqt.jpg')",
-                  //   backgroundSize: "cover",
-                  //   backgroundPosition: "center",
-                  // }}
                 >
-                  {/* DARK OVERLAY */}
-                  {/* <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div> */}
+                  {/* Shine Line */}
+                  <div
+                    className="
+                absolute -top-full left-0 w-full h-full
+                bg-gradient-to-r from-transparent via-[var(--color5)]/25 to-transparent
+                rotate-45 group-hover:animate-shineLine
+              "
+                  />
 
-                  {/* Scan Lines */}
-                  <div className="absolute inset-0 pointer-events-none opacity-40">
-                    {[...Array(6)].map((_, i) => (
-                      <div
-                        key={i}
-                        className="
-                    absolute left-0 w-full h-[2px]
-                    bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
-                    animate-cardScan
-                  "
-                        style={{
-                          top: `${60 + i * 50}px`,
-                          animationDelay: `${i * 0.25}s`,
-                        }}
-                      ></div>
-                    ))}
-                  </div>
+                  {/* Title */}
+                  <h3 className="text-xl font-semibold text-[var(--color5)] tracking-wide relative z-10">
+                    {item.title}
+                  </h3>
 
-                  {/* Content */}
-                  <div className="relative z-10">
-                    <h4 className="text-xl font-semibold text-[var(--color5)] tracking-wide mb-3">
-                      {section.title}
-                    </h4>
-                    <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify">
-                      {section.content}
-                    </p>
-                  </div>
+                  {/* Description */}
+                  <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify relative z-10">
+                    {item.content}
+                  </p>
 
-                  {/* Border Glow */}
-                  <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
+                  {/* Glow Border */}
+                  <div
+                    className="
+                absolute inset-0 rounded-2xl border border-transparent 
+                group-hover:border-[var(--color5)] transition-all duration-500
+              "
+                  ></div>
                 </div>
               </div>
             ))}
@@ -645,124 +618,106 @@ function Website() {
           {/* ================= MOBILE SLIDER ================= */}
           <div className="block lg:hidden">
             <Slider {...settings}>
-              {benefitSections.map((section, index) => (
+              {benefitSections.map((item, index) => (
                 <div key={index} className="px-2">
                   <div
                     className="
-                flex flex-col justify-between p-6 rounded-2xl 
-                backdrop-blur-xl bg-white/5 border border-transparent
-                hover:border-[var(--color5)]
-                shadow-[0_0_25px_rgba(0,255,255,0.15)]
-                hover:shadow-[0_0_35px_var(--color5)]
-                space-y-5 relative overflow-hidden group
-                transition-all duration-300
+                relative flex flex-col p-6 rounded-2xl
+                backdrop-blur-xl bg-white/5 
+                border border-white/10
+                shadow-[0_0_25px_rgba(0,255,255,0.1)]
+                hover:shadow-[0_0_40px_var(--color5)]
+                space-y-5 overflow-hidden group
+                transition-all duration-500
+                hover:-translate-y-2
               "
-                    // style={{
-                    //   backgroundImage:
-                    //     "url('https://res.cloudinary.com/dqrlkbsdq/image/upload/v1764850905/istockphoto-1305999733-612x612_ryfzqt.jpg')",
-                    //   backgroundSize: "cover",
-                    //   backgroundPosition: "center",
-                    // }}
                   >
-                    {/* Overlay */}
-                    {/* <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div> */}
+                    {/* Shine Line */}
+                    <div
+                      className="
+                  absolute -top-full left-0 w-full h-full
+                  bg-gradient-to-r from-transparent via-[var(--color5)]/20 to-transparent
+                  rotate-45 group-hover:animate-shineLine
+                "
+                    />
 
-                    {/* Scan Lines */}
-                    <div className="absolute inset-0 opacity-40 pointer-events-none">
-                      {[...Array(5)].map((_, i) => (
-                        <div
-                          key={i}
-                          className="
-                      absolute left-0 w-full h-[2px]
-                      bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
-                      animate-cardScan
-                    "
-                          style={{
-                            top: `${60 + i * 55}px`,
-                            animationDelay: `${i * 0.2}s`,
-                          }}
-                        ></div>
-                      ))}
-                    </div>
+                    {/* Title */}
+                    <h3 className="text-xl font-semibold text-[var(--color5)] tracking-wide relative z-10">
+                      {item.title}
+                    </h3>
 
                     {/* Content */}
-                    <div className="relative z-10 space-y-3">
-                      <h4 className="text-xl font-semibold text-[var(--color5)] tracking-wide">
-                        {section.title}
-                      </h4>
-                      <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify">
-                        {section.content}
-                      </p>
-                    </div>
+                    <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify relative z-10">
+                      {item.content}
+                    </p>
 
                     {/* Glow Border */}
-                    <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
+                    <div
+                      className="
+                  absolute inset-0 rounded-2xl border border-transparent
+                  group-hover:border-[var(--color5)] transition-all duration-500
+                "
+                    ></div>
                   </div>
                 </div>
               ))}
             </Slider>
           </div>
 
-          {/* ================= DESKTOP GRID ================= */}
-          <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 auto-rows-fr">
-            {benefitSections.map((section, index) => (
+          {/* ========= DESKTOP GRID ========= */}
+          <div
+            className="
+        hidden lg:grid 
+        grid-cols-1 md:grid-cols-2 lg:grid-cols-3 
+        gap-10 auto-rows-fr
+      "
+          >
+            {benefitSections.map((item, index) => (
               <div
                 key={index}
                 className="
             group relative overflow-hidden rounded-2xl 
-            transition-transform duration-300 hover:-translate-y-2 h-full
+            transition-transform duration-500 
+            hover:-translate-y-3 h-full
           "
               >
                 <div
                   className="
               relative z-10 p-6 rounded-2xl 
-              backdrop-blur-xl bg-white/5 border border-transparent
-              hover:border-[var(--color5)]
+              backdrop-blur-xl bg-white/5
+              border border-white/10
               shadow-[0_0_25px_rgba(0,255,255,0.15)]
-              hover:shadow-[0_0_35px_var(--color5)]
-              flex flex-col justify-between 
-              h-full space-y-4 transition-all duration-300
+              hover:shadow-[0_0_45px_var(--color5)]
+              flex flex-col h-full space-y-5
+              transition-all duration-500
             "
-                  // style={{
-                  //   backgroundImage:
-                  //     "url('https://res.cloudinary.com/dqrlkbsdq/image/upload/v1764850905/istockphoto-1305999733-612x612_ryfzqt.jpg')",
-                  //   backgroundSize: "cover",
-                  //   backgroundPosition: "center",
-                  // }}
                 >
-                  {/* Overlay */}
-                  {/* <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div> */}
+                  {/* Shine Line */}
+                  <div
+                    className="
+                absolute -top-full left-0 w-full h-full
+                bg-gradient-to-r from-transparent via-[var(--color5)]/25 to-transparent
+                rotate-45 group-hover:animate-shineLine
+              "
+                  />
 
-                  {/* Scan Lines */}
-                  <div className="absolute inset-0 pointer-events-none opacity-40">
-                    {[...Array(6)].map((_, i) => (
-                      <div
-                        key={i}
-                        className="
-                    absolute left-0 w-full h-[2px]
-                    bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
-                    animate-cardScan
-                  "
-                        style={{
-                          top: `${60 + i * 50}px`,
-                          animationDelay: `${i * 0.25}s`,
-                        }}
-                      ></div>
-                    ))}
-                  </div>
+                  {/* Title */}
+                  <h3 className="text-xl font-semibold text-[var(--color5)] tracking-wide relative z-10">
+                    {item.title}
+                  </h3>
 
-                  {/* Content */}
-                  <div className="relative z-10">
-                    <h4 className="text-xl font-semibold text-[var(--color5)] tracking-wide mb-3">
-                      {section.title}
-                    </h4>
-                    <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify">
-                      {section.content}
-                    </p>
-                  </div>
+                  {/* Description */}
+                  <p className="text-gray-200 text-sm md:text-base leading-relaxed text-justify relative z-10">
+                    {item.content}
+                  </p>
 
-                  {/* Border Glow */}
-                  <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[var(--color5)] transition-all"></div>
+                  {/* Glow Border */}
+                  <div
+                    className="
+                absolute inset-0 rounded-2xl border border-transparent 
+                group-hover:border-[var(--color5)] transition-all duration-500
+              "
+                  ></div>
                 </div>
               </div>
             ))}
@@ -1189,12 +1144,8 @@ function Website() {
                     className="
                 absolute left-0 w-full h-[2px]
                 bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
-                animate-techScan
+               
               "
-                    style={{
-                      top: `${40 + i * 50}px`,
-                      animationDelay: `${i * 0.3}s`,
-                    }}
                   ></div>
                 ))}
               </div>
