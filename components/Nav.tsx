@@ -66,7 +66,7 @@ const services: Service[] = [
     icon: ShieldCheck,
   },
   {
-    title: "Graphic & Video",
+    title: "Graphic designing & Video Editing",
     slug: "/services/graphic-designing",
     icon: PenTool,
   },

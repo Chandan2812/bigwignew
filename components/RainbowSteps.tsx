@@ -129,7 +129,7 @@ export default function RainbowSteps() {
       </div>
 
       {/* ---------- MOBILE + TABLET GRID VERSION (Unchanged) ---------- */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-11/12 max-w-4xl mt-10 lg:hidden">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mx-auto w-11/12 mt-10 lg:hidden">
         {data.map((item, i) => {
           const Icon = item.Icon;
           return (
