@@ -52,16 +52,28 @@ const services: Service[] = [
     slug: "/services/website-design-development",
     icon: Monitor,
   },
-  { title: "SEO", slug: "/services/search-engine-optimization", icon: Search },
-  { title: "SMO", slug: "/services/social-media-optimization", icon: ThumbsUp },
-  { title: "SMM", slug: "/services/social-media-marketing", icon: Globe },
+  {
+    title: "Search Engine Optimization",
+    slug: "/services/search-engine-optimization",
+    icon: Search,
+  },
+  {
+    title: "Social Media Optimization",
+    slug: "/services/social-media-optimization",
+    icon: ThumbsUp,
+  },
+  {
+    title: "Social Media Marketing",
+    slug: "/services/social-media-marketing",
+    icon: Globe,
+  },
   {
     title: "Performance Marketing",
     slug: "/services/performance-marketing",
     icon: TrendingUp,
   },
   {
-    title: "ORM",
+    title: "Online Reputation Management",
     slug: "/services/online-reputation-management",
     icon: ShieldCheck,
   },
@@ -235,7 +247,7 @@ const Nav: React.FC = () => {
               >
                 <Link
                   href="/services"
-                  className="px-2 py-8 flex items-center gap-1 hover:text-[#A7EBF2] font-medium"
+                  className="px-2 py-10 flex items-center gap-1 hover:text-[#A7EBF2] font-medium"
                 >
                   Services
                   <svg
@@ -278,9 +290,7 @@ const Nav: React.FC = () => {
                               className="flex items-start gap-3 p-2 rounded"
                             >
                               <Icon className="w-5 h-5 mt-1 text-[#A7EBF2]" />
-                              <div className="font-semibold text-sm">
-                                {svc.title}
-                              </div>
+                              <div className=" text-sm">{svc.title}</div>
                             </Link>
                           );
                         })}
