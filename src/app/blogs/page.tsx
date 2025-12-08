@@ -104,10 +104,10 @@ export default function Blogs() {
       <Nav />
 
       {/* Page Main Wrapper */}
-      <div className="w-11/12 md:w-5/6 mx-auto flex gap-8 px-4 py-12 ">
+      <div className="w-11/12 md:w-5/6 mx-auto flex gap-8 py-12 ">
         {/* LEFT SECTION (BLOG GRID AREA INSIDE WHITE BOX) */}
         <div className="flex-1 ">
-          <div className="bg-white rounded-3xl shadow-sm p-8 md:p-10 bg-gradient-to-bl from-[var(--color2)] via-[var(--color1)] to-[var(--color2)]">
+          <div className="bg-white rounded-3xl shadow-sm py-4 px-2 md:p-10 bg-gradient-to-bl from-[var(--color2)] via-[var(--color1)] to-[var(--color2)]">
             {/* HEADING */}
             <h1 className="text-center text-[var(--color5)] text-3xl md:text-4xl font-semibold mb-10">
               Featured Blogs
