@@ -9,7 +9,7 @@ import Footer from "../../../../components/Footer";
 import Slider from "react-slick";
 
 import ContactForm from "../../../../components/ContactForm";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import Image from "next/image";
 import ButtonFill from "../../../../components/Button";
 import PopupForm from "../../../../components/PopupForm";
@@ -134,9 +134,56 @@ const seoDifference = [
   },
 ];
 
+const faqs = [
+  {
+    q: "What can Bigwig Media Digital do for my business with SEO in Delhi?",
+    a: "The SEO services from Bigwig Media Digital help you improve visibility for the right search terms. This allows you to attract more qualified traffic and generate leads that truly matter. We have earned a strong reputation for delivering transformational growth for our clients, and we can do the same for you.",
+  },
+  {
+    q: "How long before we start seeing results?",
+    a: "SEO is a long-term strategy. Still, it usually takes 3 to 6 months to begin seeing measurable progress. Bigwig Media Digital focuses on building a strong foundational strategy to ensure your organic growth aligns with your business and revenue goals.",
+  },
+  {
+    q: "Do you offer local SEO for businesses targeting Delhi specifically?",
+    a: "Yes! Bigwig Media Digital provides local SEO services for businesses that want to reach customers in Delhi. Our services include optimising your Google Business Profile, improving local citations, and creating location-specific content to boost your visibility in “near me” searches and strengthen your presence in local markets.",
+  },
+  {
+    q: "What kind of reporting can we expect?",
+    a: "We believe transparency is essential. You’ll receive detailed monthly reports with keyword rankings, traffic insights, and complete campaign performance breakdowns. Our team is always available to walk you through the results and discuss strategies for the next phase.",
+  },
+  {
+    q: "Why should we choose Bigwig Media Digital over another SEO agency in Delhi?",
+    a: "Bigwig Media Digital is not just another vendor. We aim to be your trusted partner in driving real business growth - something many of our clients can confirm. With years of experience and proven expertise, we focus on delivering meaningful outcomes, not just rankings.",
+  },
+  {
+    q: "How to improve my website rankings in Delhi?",
+    a: "Improving rankings in Delhi requires targeted keywords, strong local SEO strategies, quality backlinks, fast-loading pages, and engaging content that resonates with Delhi audiences while meeting Google’s quality standards.",
+  },
+  {
+    q: "Can SEO help local Delhi businesses compete with national brands?",
+    a: "Yes. Local SEO helps build strong visibility for local intent searches, enabling Delhi-based businesses to appear for region-specific keywords, attract nearby customers, and effectively compete with much larger national brands.",
+  },
+  {
+    q: "What are the top SEO trends businesses in Delhi should focus on?",
+    a: "Delhi businesses should prioritise AI-ready SEO, voice search optimisation, local listings, high-quality content, mobile-first experiences, and strong E-E-A-T signals to build credibility and achieve long-term growth.",
+  },
+  {
+    q: "Does Bigwig Media Digital offer AI-driven or LLM-optimised SEO solutions?",
+    a: "Yes, Bigwig Media Digital delivers AI-driven and LLM-optimised SEO strategies that improve brand visibility across platforms such as ChatGPT, Gemini, and Perplexity by aligning your website content with evolving search and language model algorithms.",
+  },
+  {
+    q: "How does Bigwig Media Digital’s SEO strategy differ from other agencies in Delhi?",
+    a: "Bigwig Media Digital combines data-driven insights, AI tools, and proven SEO frameworks. Our strategies are built around measurable ROI, ethical SEO practices, and a deep understanding of Delhi’s competitive digital ecosystem.",
+  },
+];
+
 function Seo() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const toggleItem = (index: SetStateAction<number | null>) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   const settings = {
     dots: true,
@@ -799,7 +846,7 @@ function Seo() {
   `}</style>
       </section>
 
-      <section className="py-12  relative overflow-hidden">
+      <section className="py-12 relative overflow-hidden">
         {/* Heading */}
         <div className="mb-12 text-center">
           <h2 className="text-xl md:text-3xl font-semibold text-[var(--color5)] tracking-wide">
@@ -807,69 +854,29 @@ function Seo() {
           </h2>
         </div>
 
-        {/* FAQ ACCORDION */}
-        <div className="space-y-6 relative z-10 w-11/12 md:w-5/6 mx-auto">
-          {[
-            {
-              q: "What can Bigwig Media Digital do for my business with SEO in Delhi?",
-              a: "The SEO services from Bigwig Media Digital help you improve visibility for the right search terms. This allows you to attract more qualified traffic and generate leads that truly matter. We have earned a strong reputation for delivering transformational growth for our clients, and we can do the same for you.",
-            },
-            {
-              q: "How long before we start seeing results?",
-              a: "SEO is a long-term strategy. Still, it usually takes 3 to 6 months to begin seeing measurable progress. Bigwig Media Digital focuses on building a strong foundational strategy to ensure your organic growth aligns with your business and revenue goals.",
-            },
-            {
-              q: "Do you offer local SEO for businesses targeting Delhi specifically?",
-              a: "Yes! Bigwig Media Digital provides local SEO services for businesses that want to reach customers in Delhi. Our services include optimising your Google Business Profile, improving local citations, and creating location-specific content to boost your visibility in “near me” searches and strengthen your presence in local markets.",
-            },
-            {
-              q: "What kind of reporting can we expect?",
-              a: "We believe transparency is essential. You’ll receive detailed monthly reports with keyword rankings, traffic insights, and complete campaign performance breakdowns. Our team is always available to walk you through the results and discuss strategies for the next phase.",
-            },
-            {
-              q: "Why should we choose Bigwig Media Digital over another SEO agency in Delhi?",
-              a: "Bigwig Media Digital is not just another vendor. We aim to be your trusted partner in driving real business growth - something many of our clients can confirm. With years of experience and proven expertise, we focus on delivering meaningful outcomes, not just rankings.",
-            },
-            {
-              q: "How to improve my website rankings in Delhi?",
-              a: "Improving rankings in Delhi requires targeted keywords, strong local SEO strategies, quality backlinks, fast-loading pages, and engaging content that resonates with Delhi audiences while meeting Google’s quality standards.",
-            },
-            {
-              q: "Can SEO help local Delhi businesses compete with national brands?",
-              a: "Yes. Local SEO helps build strong visibility for local intent searches, enabling Delhi-based businesses to appear for region-specific keywords, attract nearby customers, and effectively compete with much larger national brands.",
-            },
-            {
-              q: "What are the top SEO trends businesses in Delhi should focus on?",
-              a: "Delhi businesses should prioritise AI-ready SEO, voice search optimisation, local listings, high-quality content, mobile-first experiences, and strong E-E-A-T signals to build credibility and achieve long-term growth.",
-            },
-            {
-              q: "Does Bigwig Media Digital offer AI-driven or LLM-optimised SEO solutions?",
-              a: "Yes, Bigwig Media Digital delivers AI-driven and LLM-optimised SEO strategies that improve brand visibility across platforms such as ChatGPT, Gemini, and Perplexity by aligning your website content with evolving search and language model algorithms.",
-            },
-            {
-              q: "How does Bigwig Media Digital’s SEO strategy differ from other agencies in Delhi?",
-              a: "Bigwig Media Digital combines data-driven insights, AI tools, and proven SEO frameworks. Our strategies are built around measurable ROI, ethical SEO practices, and a deep understanding of Delhi’s competitive digital ecosystem.",
-            },
-          ].map((item, index) => (
-            <details
+        {/* FAQ Boxes */}
+        <div className="space-y-6 w-11/12 md:w-5/6 mx-auto relative z-10">
+          {faqs.map((item, index) => (
+            <div
               key={index}
+              onClick={() => toggleItem(index)}
               className="
-          group p-6 rounded-2xl backdrop-blur-xl bg-white/5 
-          border border-white/10 transition-all duration-300
-          shadow-[0_0_20px_rgba(0,255,255,0.1)]
-          hover:border-[var(--color5)]
-          hover:shadow-[0_0_30px_var(--color5)]
-          cursor-pointer relative overflow-hidden
-        "
+              p-6 rounded-2xl backdrop-blur-xl bg-white/5 
+              border border-white/10 transition-all duration-300
+              shadow-[0_0_20px_rgba(0,255,255,0.1)]
+              hover:border-[var(--color5)]
+              hover:shadow-[0_0_30px_var(--color5)]
+              cursor-pointer relative overflow-hidden
+            "
             >
-              {/* Scan lines */}
+              {/* Scan Lines */}
               <div className="absolute inset-0 opacity-30 pointer-events-none">
                 {[...Array(4)].map((_, i) => (
                   <div
                     key={i}
                     className="absolute left-0 w-full h-[2px]
-              bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
-              animate-cardScan"
+                    bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
+                    animate-cardScan"
                     style={{
                       top: `${40 + i * 45}px`,
                       animationDelay: `${i * 0.25}s`,
@@ -878,33 +885,52 @@ function Seo() {
                 ))}
               </div>
 
-              {/* Question */}
-              <summary className="text-lg md:text-xl font-semibold text-[var(--color5)] tracking-wide relative z-10 cursor-pointer list-none flex justify-between items-center">
-                {item.q}
-                <span className="text-gray-300 group-open:rotate-180 transition-transform">
-                  ⌄
+              {/* Question Row */}
+              <div className="flex justify-between items-center relative z-10">
+                <h3 className="text-lg md:text-xl font-semibold text-[var(--color5)]">
+                  {item.q}
+                </h3>
+
+                <span className="text-[var(--color5)] text-2xl font-bold transition-all">
+                  {openIndex === index ? "−" : "+"}
                 </span>
-              </summary>
+              </div>
 
               {/* Answer */}
-              <p className="text-gray-200 mt-4 leading-relaxed whitespace-pre-line relative z-10">
-                {item.a}
-              </p>
-            </details>
+              <div
+                className={`transition-all duration-300 text-gray-200 overflow-hidden relative z-10 ${
+                  openIndex === index
+                    ? "max-h-96 mt-4 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <p className="leading-relaxed">{item.a}</p>
+              </div>
+            </div>
           ))}
         </div>
 
+        {/* CTA Button */}
+        <div className="mt-10 flex justify-center">
+          <ButtonFill
+            text="Start Your Project Today"
+            onClick={() => setIsPopupOpen(true)}
+          />
+        </div>
+
         {/* Animation */}
-        <style>{`
-    @keyframes cardScan {
-      0% { transform: translateX(-100%); opacity: 0; }
-      50% { opacity: 1; }
-      100% { transform: translateX(100%); opacity: 0; }
-    }
-    .animate-cardScan {
-      animation: cardScan 5s linear infinite;
-    }
-  `}</style>
+        <style>
+          {`
+          @keyframes cardScan {
+            0% { transform: translateX(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0; }
+          }
+          .animate-cardScan {
+            animation: cardScan 5s linear infinite;
+          }
+        `}
+        </style>
       </section>
 
       <OurProcess />

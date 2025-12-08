@@ -13,7 +13,7 @@ import Image from "next/image";
 import GetInTouch from "../../../../components/GetInTouch";
 import ButtonFill from "../../../../components/Button";
 import PopupForm from "../../../../components/PopupForm";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 const sections = [
   {
     title: "Responsive Web Design",
@@ -138,8 +138,62 @@ const benefitSections = [
   },
 ];
 
+const faqs = [
+  {
+    q: "Why should you hire a Web Design Company in Delhi?",
+    a: "Partnering with a professional web design company helps increase website traffic, enhance user engagement, and support business growth. A high-quality website is more visually appealing, easier to navigate, and significantly improves user experience. If you're searching for the best website designers near me, our team delivers custom-designed solutions tailored to your brand.",
+  },
+  {
+    q: "How do I hire a web design company?",
+    a: `To hire a reliable web design company, follow these steps:
+        • Set a clear project budget.
+        • Create a detailed job description.
+        • Review portfolios and case studies.
+        • Prepare interview questions to assess skills.
+        • Finalize the contract and define the scope properly.`,
+  },
+  {
+    q: "How much time does website design take?",
+    a: "A typical website takes about 4 to 8 weeks depending on design complexity, content readiness, and revision cycles. More advanced custom websites may require additional time.",
+  },
+  {
+    q: "How much does a custom website design cost?",
+    a: "The total cost depends on page count, design complexity, functionalities, and integrations. After the first consultation, we share a clear, transparent pricing estimate.",
+  },
+  {
+    q: "How can I get started with your website design services?",
+    a: "Simply reach out via our website, phone, or email. We’ll schedule a discussion to understand your goals and begin crafting the perfect strategy for your website.",
+  },
+  {
+    q: "What important features do you consider when designing a web page?",
+    a: "We strategically incorporate branding elements, colors, typography, infographics, navigation structure, white spacing, and layout design to enhance credibility and improve conversions.",
+  },
+  {
+    q: "What is the best website design company?",
+    a: "The best website design company provides custom solutions at fair prices and blends creativity with technical expertise. Their work should reflect the brand identity clearly and professionally.",
+  },
+  {
+    q: "Do you provide ongoing assistance and protection after the website is launched?",
+    a: "Yes, we offer complete post-launch care including updates, backups, security checks, troubleshooting, and continuous performance optimization.",
+  },
+  {
+    q: "Will I be able to update the website myself once it’s live?",
+    a: "Absolutely. Our websites use user-friendly CMS platforms like WordPress, allowing you to update content easily. We also provide training to help you manage everything confidently.",
+  },
+  {
+    q: "Why is your agency the top choice for website design in Delhi?",
+    a: "We focus on innovation, strategy, and customer satisfaction. Our designers follow the latest trends and build websites optimized for usability, speed, and conversions—aligned with your business goals.",
+  },
+];
+
 function Website() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleItem = (index: SetStateAction<number | null>) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   const settings = {
     dots: true,
@@ -1184,74 +1238,29 @@ function Website() {
           </h2>
         </div>
 
-        {/* FAQ ACCORDION */}
-        <div className="space-y-6 relative z-10 w-11/12 md:w-5/6 mx-auto ">
-          {[
-            {
-              q: "Why should you hire a Web Design Company in Delhi?",
-              a: "Partnering with a professional web design company helps increase website traffic, enhance user engagement, and support business growth. A high-quality website is more visually appealing, easier to navigate, and significantly improves user experience. If you're searching for the best website designers near me, our team delivers custom-designed solutions tailored to your brand.",
-            },
-            {
-              q: "How do I hire a web design company?",
-              a: `To hire a reliable web design company, follow these steps:
-        • Set a clear project budget.
-        • Create a detailed job description.
-        • Review portfolios and case studies.
-        • Prepare interview questions to assess skills.
-        • Finalize the contract and define the scope properly.`,
-            },
-            {
-              q: "How much time does website design take?",
-              a: "A typical website takes about 4 to 8 weeks depending on design complexity, content readiness, and revision cycles. More advanced custom websites may require additional time.",
-            },
-            {
-              q: "How much does a custom website design cost?",
-              a: "The total cost depends on page count, design complexity, functionalities, and integrations. After the first consultation, we share a clear, transparent pricing estimate.",
-            },
-            {
-              q: "How can I get started with your website design services?",
-              a: "Simply reach out via our website, phone, or email. We’ll schedule a discussion to understand your goals and begin crafting the perfect strategy for your website.",
-            },
-            {
-              q: "What important features do you consider when designing a web page?",
-              a: "We strategically incorporate branding elements, colors, typography, infographics, navigation structure, white spacing, and layout design to enhance credibility and improve conversions.",
-            },
-            {
-              q: "What is the best website design company?",
-              a: "The best website design company provides custom solutions at fair prices and blends creativity with technical expertise. Their work should reflect the brand identity clearly and professionally.",
-            },
-            {
-              q: "Do you provide ongoing assistance and protection after the website is launched?",
-              a: "Yes, we offer complete post-launch care including updates, backups, security checks, troubleshooting, and continuous performance optimization.",
-            },
-            {
-              q: "Will I be able to update the website myself once it’s live?",
-              a: "Absolutely. Our websites use user-friendly CMS platforms like WordPress, allowing you to update content easily. We also provide training to help you manage everything confidently.",
-            },
-            {
-              q: "Why is your agency the top choice for website design in Delhi?",
-              a: "We focus on innovation, strategy, and customer satisfaction. Our designers follow the latest trends and build websites optimized for usability, speed, and conversions—aligned with your business goals.",
-            },
-          ].map((item, index) => (
-            <details
+        {/* FAQ Boxes */}
+        <div className="space-y-6 w-11/12 md:w-5/6 mx-auto relative z-10">
+          {faqs.map((item, index) => (
+            <div
               key={index}
+              onClick={() => toggleItem(index)}
               className="
-          group p-6 rounded-2xl backdrop-blur-xl bg-white/5 
-          border border-white/10 transition-all duration-300
-          shadow-[0_0_20px_rgba(0,255,255,0.1)]
-          hover:border-[var(--color5)]
-          hover:shadow-[0_0_30px_var(--color5)]
-          cursor-pointer relative overflow-hidden
-        "
+              p-6 rounded-2xl backdrop-blur-xl bg-white/5 
+              border border-white/10 transition-all duration-300
+              shadow-[0_0_20px_rgba(0,255,255,0.1)]
+              hover:border-[var(--color5)]
+              hover:shadow-[0_0_30px_var(--color5)]
+              cursor-pointer relative overflow-hidden
+            "
             >
-              {/* Scan lines */}
+              {/* Scan Lines */}
               <div className="absolute inset-0 opacity-30 pointer-events-none">
                 {[...Array(4)].map((_, i) => (
                   <div
                     key={i}
                     className="absolute left-0 w-full h-[2px]
-              bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
-              animate-cardScan"
+                    bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
+                    animate-cardScan"
                     style={{
                       top: `${40 + i * 45}px`,
                       animationDelay: `${i * 0.25}s`,
@@ -1260,33 +1269,52 @@ function Website() {
                 ))}
               </div>
 
-              {/* Question */}
-              <summary className="text-lg md:text-xl font-semibold text-[var(--color5)] tracking-wide relative z-10 cursor-pointer list-none flex justify-between items-center">
-                {item.q}
-                <span className="text-gray-300 group-open:rotate-180 transition-transform">
-                  ⌄
+              {/* Question Row */}
+              <div className="flex justify-between items-center relative z-10">
+                <h3 className="text-lg md:text-xl font-semibold text-[var(--color5)]">
+                  {item.q}
+                </h3>
+
+                <span className="text-[var(--color5)] text-2xl font-bold transition-all">
+                  {openIndex === index ? "−" : "+"}
                 </span>
-              </summary>
+              </div>
 
               {/* Answer */}
-              <p className="text-gray-200 mt-4 leading-relaxed whitespace-pre-line relative z-10">
-                {item.a}
-              </p>
-            </details>
+              <div
+                className={`transition-all duration-300 text-gray-200 overflow-hidden relative z-10 ${
+                  openIndex === index
+                    ? "max-h-96 mt-4 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <p className="leading-relaxed">{item.a}</p>
+              </div>
+            </div>
           ))}
         </div>
 
+        {/* CTA Button */}
+        <div className="mt-10 flex justify-center">
+          <ButtonFill
+            text="Start Your Project Today"
+            onClick={() => setIsPopupOpen(true)}
+          />
+        </div>
+
         {/* Animation */}
-        <style>{`
-    @keyframes cardScan {
-      0% { transform: translateX(-100%); opacity: 0; }
-      50% { opacity: 1; }
-      100% { transform: translateX(100%); opacity: 0; }
-    }
-    .animate-cardScan {
-      animation: cardScan 5s linear infinite;
-    }
-  `}</style>
+        <style>
+          {`
+          @keyframes cardScan {
+            0% { transform: translateX(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0; }
+          }
+          .animate-cardScan {
+            animation: cardScan 5s linear infinite;
+          }
+        `}
+        </style>
       </section>
 
       <OurProcess />

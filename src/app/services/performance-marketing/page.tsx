@@ -12,7 +12,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import ContactForm from "../../../../components/ContactForm";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import Image from "next/image";
 import ButtonFill from "../../../../components/Button";
 import PopupForm from "../../../../components/PopupForm";
@@ -94,6 +94,99 @@ const industriesData = [
   },
 ];
 
+const faqs = [
+  {
+    q: "What is Performance Marketing, and How Can a Performance Marketing Agency in Delhi Benefit My Business?",
+    a: `Performance marketing is a results-driven approach where you pay only for measurable actions such as clicks, leads, sales, or conversions.
+Partnering with a performance marketing agency in Delhi helps you scale faster using data, targeting, and optimization techniques to reach the right audience and maximize ROI. Whether you're a startup or an established business, performance marketing ensures every rupee spent moves you closer to growth.`,
+  },
+  {
+    q: "How Do Performance Marketing Agencies in Delhi Measure Success?",
+    a: `A performance marketing company in Delhi measures success using metrics such as:
+
+• Click-through rates (CTR)
+• Cost per lead (CPL)
+• Return on ad spend (ROAS)
+• Conversion rate
+• Customer acquisition cost (CAC)
+
+These KPIs ensure transparency and help refine campaigns for better performance.`,
+  },
+  {
+    q: "What Makes a Performance Marketing Company in Delhi Different From Traditional Marketing Agencies?",
+    a: `Traditional agencies focus on reach and visibility, while a performance-based digital marketing agency prioritizes measurable outcomes.
+Unlike traditional marketing, performance marketing offers:
+
+• Real-time tracking
+• Targeted campaigns
+• ROI-focused strategies
+• Pay-for-performance models
+
+This means you only invest in strategies that bring tangible results.`,
+  },
+  {
+    q: "Can Performance-Based Digital Marketing Agencies Help with Brand Awareness?",
+    a: `Absolutely. While performance marketing is known for conversions, it also boosts brand visibility.
+A performance-based marketing agency uses precise audience targeting, engaging creatives, and strategic placements to increase brand recall and build trust.`,
+  },
+  {
+    q: "What Services Do Performance-Based Marketing Agencies Offer?",
+    a: `A full-service performance marketing agency in Delhi typically provides:
+
+• Google Ads & PPC
+• Social Media Ads (Meta, Instagram, YouTube, LinkedIn)
+• SEO (Search Engine Optimization)
+• Content marketing
+• Landing page optimization
+• Email & automation funnels
+• Conversion rate optimization (CRO)
+
+These services work together to attract, nurture, and convert customers.`,
+  },
+  {
+    q: "How Do I Choose the Right Performance Marketing Services in Delhi for My Business?",
+    a: `Look for a performance marketing agency near you that offers:
+
+• Proven industry experience
+• Transparent reporting
+• Data-driven decision-making
+• Customized strategies
+• A strong portfolio of results
+
+Choose an agency that understands your goals and aligns strategies accordingly.`,
+  },
+  {
+    q: "What Can We Do for You to Be the Best?",
+    a: `As a dedicated performance marketing company in Delhi, we focus on:
+
+• Understanding your business deeply – goals, audience, challenges
+• Building high-impact marketing systems for consistent growth
+• Continuous optimization to stay ahead of competitors
+
+Our mission: help you outperform your market with smart, scalable performance marketing.`,
+  },
+  {
+    q: "Is Performance Marketing Expensive?",
+    a: `Costs depend on goals, competition, and industry. The good news?
+
+Performance marketing is one of the most cost-effective digital strategies because you only pay for measurable outcomes.
+
+With the right agency, even small budgets can generate strong returns through precise targeting and optimization.`,
+  },
+  {
+    q: "Is Performance Marketing Necessary?",
+    a: `Yes, especially in today’s competitive digital ecosystem. Performance marketing:
+
+• Reduces wasted ad spend
+• Improves targeting accuracy
+• Delivers faster results
+• Provides clear, trackable ROI
+• Helps businesses scale predictably
+
+For any brand aiming for growth, performance marketing is a strategic necessity.`,
+  },
+];
+
 const settings = {
   dots: false,
   infinite: true,
@@ -108,6 +201,12 @@ const settings = {
 
 function PerformanceMarketing() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleItem = (index: SetStateAction<number | null>) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <div className="bg-[var(--color1)]">
@@ -694,119 +793,29 @@ function PerformanceMarketing() {
           </h2>
         </div>
 
-        {/* FAQ ACCORDION */}
-        <div className="space-y-6 relative z-10  w-11/12 md:w-5/6 mx-auto">
-          {[
-            {
-              q: "What is Performance Marketing, and How Can a Performance Marketing Agency in Delhi Benefit My Business?",
-              a: `Performance marketing is a results-driven approach where you pay only for measurable actions such as clicks, leads, sales, or conversions.
-Partnering with a performance marketing agency in Delhi helps you scale faster using data, targeting, and optimization techniques to reach the right audience and maximize ROI. Whether you're a startup or an established business, performance marketing ensures every rupee spent moves you closer to growth.`,
-            },
-            {
-              q: "How Do Performance Marketing Agencies in Delhi Measure Success?",
-              a: `A performance marketing company in Delhi measures success using metrics such as:
-
-• Click-through rates (CTR)
-• Cost per lead (CPL)
-• Return on ad spend (ROAS)
-• Conversion rate
-• Customer acquisition cost (CAC)
-
-These KPIs ensure transparency and help refine campaigns for better performance.`,
-            },
-            {
-              q: "What Makes a Performance Marketing Company in Delhi Different From Traditional Marketing Agencies?",
-              a: `Traditional agencies focus on reach and visibility, while a performance-based digital marketing agency prioritizes measurable outcomes.
-Unlike traditional marketing, performance marketing offers:
-
-• Real-time tracking
-• Targeted campaigns
-• ROI-focused strategies
-• Pay-for-performance models
-
-This means you only invest in strategies that bring tangible results.`,
-            },
-            {
-              q: "Can Performance-Based Digital Marketing Agencies Help with Brand Awareness?",
-              a: `Absolutely. While performance marketing is known for conversions, it also boosts brand visibility.
-A performance-based marketing agency uses precise audience targeting, engaging creatives, and strategic placements to increase brand recall and build trust.`,
-            },
-            {
-              q: "What Services Do Performance-Based Marketing Agencies Offer?",
-              a: `A full-service performance marketing agency in Delhi typically provides:
-
-• Google Ads & PPC
-• Social Media Ads (Meta, Instagram, YouTube, LinkedIn)
-• SEO (Search Engine Optimization)
-• Content marketing
-• Landing page optimization
-• Email & automation funnels
-• Conversion rate optimization (CRO)
-
-These services work together to attract, nurture, and convert customers.`,
-            },
-            {
-              q: "How Do I Choose the Right Performance Marketing Services in Delhi for My Business?",
-              a: `Look for a performance marketing agency near you that offers:
-
-• Proven industry experience
-• Transparent reporting
-• Data-driven decision-making
-• Customized strategies
-• A strong portfolio of results
-
-Choose an agency that understands your goals and aligns strategies accordingly.`,
-            },
-            {
-              q: "What Can We Do for You to Be the Best?",
-              a: `As a dedicated performance marketing company in Delhi, we focus on:
-
-• Understanding your business deeply – goals, audience, challenges
-• Building high-impact marketing systems for consistent growth
-• Continuous optimization to stay ahead of competitors
-
-Our mission: help you outperform your market with smart, scalable performance marketing.`,
-            },
-            {
-              q: "Is Performance Marketing Expensive?",
-              a: `Costs depend on goals, competition, and industry. The good news?
-
-Performance marketing is one of the most cost-effective digital strategies because you only pay for measurable outcomes.
-
-With the right agency, even small budgets can generate strong returns through precise targeting and optimization.`,
-            },
-            {
-              q: "Is Performance Marketing Necessary?",
-              a: `Yes, especially in today’s competitive digital ecosystem. Performance marketing:
-
-• Reduces wasted ad spend
-• Improves targeting accuracy
-• Delivers faster results
-• Provides clear, trackable ROI
-• Helps businesses scale predictably
-
-For any brand aiming for growth, performance marketing is a strategic necessity.`,
-            },
-          ].map((item, index) => (
-            <details
+        {/* FAQ Boxes */}
+        <div className="space-y-6 w-11/12 md:w-5/6 mx-auto relative z-10">
+          {faqs.map((item, index) => (
+            <div
               key={index}
+              onClick={() => toggleItem(index)}
               className="
-          group p-6 rounded-2xl backdrop-blur-xl bg-white/5 
-          border border-white/10 transition-all duration-300
-          shadow-[0_0_20px_rgba(0,255,255,0.1)]
-          hover:border-[var(--color5)]
-          hover:shadow-[0_0_30px_var(--color5)]
-          cursor-pointer relative overflow-hidden
-        "
+              p-6 rounded-2xl backdrop-blur-xl bg-white/5 
+              border border-white/10 transition-all duration-300
+              shadow-[0_0_20px_rgba(0,255,255,0.1)]
+              hover:border-[var(--color5)]
+              hover:shadow-[0_0_30px_var(--color5)]
+              cursor-pointer relative overflow-hidden
+            "
             >
-              {/* Scan lines */}
+              {/* Scan Lines */}
               <div className="absolute inset-0 opacity-30 pointer-events-none">
                 {[...Array(4)].map((_, i) => (
                   <div
                     key={i}
                     className="absolute left-0 w-full h-[2px]
-              bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
-              animate-cardScan"
+                    bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
+                    animate-cardScan"
                     style={{
                       top: `${40 + i * 45}px`,
                       animationDelay: `${i * 0.25}s`,
@@ -815,40 +824,52 @@ For any brand aiming for growth, performance marketing is a strategic necessity.
                 ))}
               </div>
 
-              {/* Question */}
-              <summary className="text-lg md:text-xl font-semibold text-[var(--color5)] tracking-wide relative z-10 cursor-pointer list-none flex justify-between items-center">
-                {item.q}
-                <span className="text-gray-300 group-open:rotate-180 transition-transform">
-                  ⌄
+              {/* Question Row */}
+              <div className="flex justify-between items-center relative z-10">
+                <h3 className="text-lg md:text-xl font-semibold text-[var(--color5)]">
+                  {item.q}
+                </h3>
+
+                <span className="text-[var(--color5)] text-2xl font-bold transition-all">
+                  {openIndex === index ? "−" : "+"}
                 </span>
-              </summary>
+              </div>
 
               {/* Answer */}
-              <p className="text-gray-200 mt-4 leading-relaxed whitespace-pre-line relative z-10">
-                {item.a}
-              </p>
-            </details>
+              <div
+                className={`transition-all duration-300 text-gray-200 overflow-hidden relative z-10 ${
+                  openIndex === index
+                    ? "max-h-96 mt-4 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <p className="leading-relaxed">{item.a}</p>
+              </div>
+            </div>
           ))}
         </div>
 
+        {/* CTA Button */}
         <div className="mt-10 flex justify-center">
           <ButtonFill
-            text="Start Growing With SMM"
+            text="Start Your Project Today"
             onClick={() => setIsPopupOpen(true)}
           />
         </div>
 
         {/* Animation */}
-        <style>{`
-    @keyframes cardScan {
-      0% { transform: translateX(-100%); opacity: 0; }
-      50% { opacity: 1; }
-      100% { transform: translateX(100%); opacity: 0; }
-    }
-    .animate-cardScan {
-      animation: cardScan 5s linear infinite;
-    }
-  `}</style>
+        <style>
+          {`
+          @keyframes cardScan {
+            0% { transform: translateX(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0; }
+          }
+          .animate-cardScan {
+            animation: cardScan 5s linear infinite;
+          }
+        `}
+        </style>
       </section>
 
       <OurProcess />

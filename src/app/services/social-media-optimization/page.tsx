@@ -21,7 +21,7 @@ import Image from "next/image";
 import ButtonFill from "../../../../components/Button";
 import PopupForm from "../../../../components/PopupForm";
 import GetInTouch from "../../../../components/GetInTouch";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 const socialPlatforms = [
   { name: "Facebook", icon: <FaFacebookF color="#1877F2" /> },
   { name: "Instagram", icon: <FaInstagram color="#E4405F" /> },
@@ -112,8 +112,48 @@ const benefits = [
   },
 ];
 
+const faqs = [
+  {
+    q: "What are the services that will come under the social media optimization? ",
+    a: "At Bigwig Media Digital, our SMO Services in Delhi include everything your brand needs to build a strong and engaging online presence. Our Social Media Optimization Services in Delhi cover profile setup, profile optimization, creative content creation, post scheduling, hashtag strategy, audience engagement, trend analysis, brand monitoring, reputation management, and performance reporting. We ensure your social media channels grow consistently with strategic and data-driven execution. ",
+  },
+  {
+    q: "What are the social media portals that Bigwig Media Digital works for? ",
+    a: "We provide complete Social Media Services in Delhi across all major platforms, including Facebook, Instagram, LinkedIn, Twitter, Pinterest, and YouTube. Our team ensures your brand maintains a strong presence on the platforms where your audience is most active, helping you achieve maximum visibility and engagement through our expert SMO Services in Delhi. ",
+  },
+  {
+    q: "What is your approach to creating and curating content for social media? ",
+    a: "Our content creation approach is backed by research, creativity, and industry-specific insights. As a trusted provider of Social Media Optimization Services in Delhi, we follow a strategic process that includes understanding your target audience, analyzing competitors, researching trending formats, and producing high-quality graphics, captions, videos, reels, and stories. Every piece of content is designed to reflect your brand identity and boost engagement. ",
+  },
+  {
+    q: "How do you engage with our target audience on social media platforms",
+    a: "With our professional SMO Services in Delhi, we ensure continuous audience interaction through comments, messages, polls, stories, and community-building activities. Our team actively responds to queries, encourages conversations, monitors mentions, and builds meaningful connections that strengthen your brand loyalty. Engagement is a core part of our Social Media Services in Delhi, helping your business stay top-of-mind. ",
+  },
+  {
+    q: "Does the strategies of the company change according to the size of the company?",
+    a: "Yes, absolutely. At Bigwig Media Digital, we customize our Social Media Optimization Services in Delhi based on your company size, goals, audience, and industry. Whether you’re a startup, SME, or enterprise, our strategies are tailored to meet your unique requirements. This ensures you get a personalized and scalable SMO approach that delivers the right results for your business. ",
+  },
+  {
+    q: "How do we trust the optimization we would get? ",
+    a: "As one of the most reliable providers of SMO Services in Delhi, we believe in complete transparency. You receive regular performance reports, growth metrics, insights, and detailed updates on everything we optimize. Our results, client testimonials, and proven track record reflect the quality and reliability of our Social Media Services in Delhi. Your trust is earned through consistent performance and measurable improvements. ",
+  },
+  {
+    q: "Do you conduct competitor analysis as part of your SMO strategy",
+    a: "Yes, competitor analysis is a crucial part of our Social Media Optimization Services in Delhi. We analyze your competitors’ content strategies, engagement patterns, hashtags, posting frequency, and audience behavior. This helps us identify opportunities, differentiate your brand, and create content that gives you a strong competitive advantage across platforms. ",
+  },
+  {
+    q: "How do you measure the SMO campaign’s success and provide performance reports? ",
+    a: "We measure the success of your SMO campaigns using detailed metrics such as follower growth, reach, impressions, engagement rate, click-through rate, content performance, and community interactions. As part of our SMO Services in Delhi, you receive monthly or weekly reports that clearly outline progress, insights, and future recommendations. Our transparent reporting helps you understand the real impact of our Social Media Services in Delhi on your brand’s growth.",
+  },
+];
+
 function SocialMediaOptimization() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleItem = (index: SetStateAction<number | null>) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   const settings = {
     dots: true,
@@ -671,7 +711,7 @@ function SocialMediaOptimization() {
         </p>
       </section>
 
-      <section className="py-12  relative overflow-hidden">
+      <section className="py-12 relative overflow-hidden">
         {/* Heading */}
         <div className="mb-12 text-center">
           <h2 className="text-xl md:text-3xl font-semibold text-[var(--color5)] tracking-wide">
@@ -679,61 +719,29 @@ function SocialMediaOptimization() {
           </h2>
         </div>
 
-        {/* FAQ ACCORDION */}
+        {/* FAQ Boxes */}
         <div className="space-y-6 w-11/12 md:w-5/6 mx-auto relative z-10">
-          {[
-            {
-              q: "What are the services that will come under the social media optimization? ",
-              a: "At Bigwig Media Digital, our SMO Services in Delhi include everything your brand needs to build a strong and engaging online presence. Our Social Media Optimization Services in Delhi cover profile setup, profile optimization, creative content creation, post scheduling, hashtag strategy, audience engagement, trend analysis, brand monitoring, reputation management, and performance reporting. We ensure your social media channels grow consistently with strategic and data-driven execution. ",
-            },
-            {
-              q: "What are the social media portals that Bigwig Media Digital works for? ",
-              a: "We provide complete Social Media Services in Delhi across all major platforms, including Facebook, Instagram, LinkedIn, Twitter, Pinterest, and YouTube. Our team ensures your brand maintains a strong presence on the platforms where your audience is most active, helping you achieve maximum visibility and engagement through our expert SMO Services in Delhi. ",
-            },
-            {
-              q: "What is your approach to creating and curating content for social media? ",
-              a: "Our content creation approach is backed by research, creativity, and industry-specific insights. As a trusted provider of Social Media Optimization Services in Delhi, we follow a strategic process that includes understanding your target audience, analyzing competitors, researching trending formats, and producing high-quality graphics, captions, videos, reels, and stories. Every piece of content is designed to reflect your brand identity and boost engagement. ",
-            },
-            {
-              q: "How do you engage with our target audience on social media platforms",
-              a: "With our professional SMO Services in Delhi, we ensure continuous audience interaction through comments, messages, polls, stories, and community-building activities. Our team actively responds to queries, encourages conversations, monitors mentions, and builds meaningful connections that strengthen your brand loyalty. Engagement is a core part of our Social Media Services in Delhi, helping your business stay top-of-mind. ",
-            },
-            {
-              q: "Does the strategies of the company change according to the size of the company?",
-              a: "Yes, absolutely. At Bigwig Media Digital, we customize our Social Media Optimization Services in Delhi based on your company size, goals, audience, and industry. Whether you’re a startup, SME, or enterprise, our strategies are tailored to meet your unique requirements. This ensures you get a personalized and scalable SMO approach that delivers the right results for your business. ",
-            },
-            {
-              q: "How do we trust the optimization we would get? ",
-              a: "As one of the most reliable providers of SMO Services in Delhi, we believe in complete transparency. You receive regular performance reports, growth metrics, insights, and detailed updates on everything we optimize. Our results, client testimonials, and proven track record reflect the quality and reliability of our Social Media Services in Delhi. Your trust is earned through consistent performance and measurable improvements. ",
-            },
-            {
-              q: "Do you conduct competitor analysis as part of your SMO strategy",
-              a: "Yes, competitor analysis is a crucial part of our Social Media Optimization Services in Delhi. We analyze your competitors’ content strategies, engagement patterns, hashtags, posting frequency, and audience behavior. This helps us identify opportunities, differentiate your brand, and create content that gives you a strong competitive advantage across platforms. ",
-            },
-            {
-              q: "How do you measure the SMO campaign’s success and provide performance reports? ",
-              a: "We measure the success of your SMO campaigns using detailed metrics such as follower growth, reach, impressions, engagement rate, click-through rate, content performance, and community interactions. As part of our SMO Services in Delhi, you receive monthly or weekly reports that clearly outline progress, insights, and future recommendations. Our transparent reporting helps you understand the real impact of our Social Media Services in Delhi on your brand’s growth.",
-            },
-          ].map((item, index) => (
-            <details
+          {faqs.map((item, index) => (
+            <div
               key={index}
+              onClick={() => toggleItem(index)}
               className="
-          group p-6 rounded-2xl backdrop-blur-xl bg-white/5 
-          border border-white/10 transition-all duration-300
-          shadow-[0_0_20px_rgba(0,255,255,0.1)]
-          hover:border-[var(--color5)]
-          hover:shadow-[0_0_30px_var(--color5)]
-          cursor-pointer relative overflow-hidden
-        "
+              p-6 rounded-2xl backdrop-blur-xl bg-white/5 
+              border border-white/10 transition-all duration-300
+              shadow-[0_0_20px_rgba(0,255,255,0.1)]
+              hover:border-[var(--color5)]
+              hover:shadow-[0_0_30px_var(--color5)]
+              cursor-pointer relative overflow-hidden
+            "
             >
-              {/* Scan lines */}
+              {/* Scan Lines */}
               <div className="absolute inset-0 opacity-30 pointer-events-none">
                 {[...Array(4)].map((_, i) => (
                   <div
                     key={i}
                     className="absolute left-0 w-full h-[2px]
-              bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
-              animate-cardScan"
+                    bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
+                    animate-cardScan"
                     style={{
                       top: `${40 + i * 45}px`,
                       animationDelay: `${i * 0.25}s`,
@@ -742,33 +750,52 @@ function SocialMediaOptimization() {
                 ))}
               </div>
 
-              {/* Question */}
-              <summary className="text-lg md:text-xl font-semibold text-[var(--color5)] tracking-wide relative z-10 cursor-pointer list-none flex justify-between items-center">
-                {item.q}
-                <span className="text-gray-300 group-open:rotate-180 transition-transform">
-                  ⌄
+              {/* Question Row */}
+              <div className="flex justify-between items-center relative z-10">
+                <h3 className="text-lg md:text-xl font-semibold text-[var(--color5)]">
+                  {item.q}
+                </h3>
+
+                <span className="text-[var(--color5)] text-2xl font-bold transition-all">
+                  {openIndex === index ? "−" : "+"}
                 </span>
-              </summary>
+              </div>
 
               {/* Answer */}
-              <p className="text-gray-200 mt-4 leading-relaxed whitespace-pre-line relative z-10">
-                {item.a}
-              </p>
-            </details>
+              <div
+                className={`transition-all duration-300 text-gray-200 overflow-hidden relative z-10 ${
+                  openIndex === index
+                    ? "max-h-96 mt-4 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <p className="leading-relaxed">{item.a}</p>
+              </div>
+            </div>
           ))}
         </div>
 
+        {/* CTA Button */}
+        <div className="mt-10 flex justify-center">
+          <ButtonFill
+            text="Start Your Project Today"
+            onClick={() => setIsPopupOpen(true)}
+          />
+        </div>
+
         {/* Animation */}
-        <style>{`
-    @keyframes cardScan {
-      0% { transform: translateX(-100%); opacity: 0; }
-      50% { opacity: 1; }
-      100% { transform: translateX(100%); opacity: 0; }
-    }
-    .animate-cardScan {
-      animation: cardScan 5s linear infinite;
-    }
-  `}</style>
+        <style>
+          {`
+          @keyframes cardScan {
+            0% { transform: translateX(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0; }
+          }
+          .animate-cardScan {
+            animation: cardScan 5s linear infinite;
+          }
+        `}
+        </style>
       </section>
 
       <OurProcess />

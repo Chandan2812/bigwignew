@@ -7,7 +7,7 @@ import WhyBigwig from "../../../../components/WhyBigwig";
 import Footer from "../../../../components/Footer";
 import Slider from "react-slick";
 import ContactForm from "../../../../components/ContactForm";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import Image from "next/image";
 import ButtonFill from "../../../../components/Button";
 import PopupForm from "../../../../components/PopupForm";
@@ -71,9 +71,56 @@ const chooseBigwig = [
   },
 ];
 
+const faqs = [
+  {
+    q: "What is included in social media marketing services?",
+    a: "At BigWig Media Digital, our Social Media Marketing Services in Delhi include everything your brand needs to build a strong online presence—content creation, page management, audience engagement, hashtag research, competitor analysis, and strategic posting. We also provide creative design, reels, story creatives, monthly content calendars, and performance tracking. For brands looking to grow faster, we integrate Social Media Advertising and paid campaign management for maximum reach and conversions.",
+  },
+  {
+    q: "What are the benefits of social media marketing services?",
+    a: "Our SMM Services in Delhi help businesses increase brand awareness, engage with their audience, generate high-quality leads, and improve customer loyalty. With consistent posting, high-performing creatives, data-driven strategies, and ROI-focused Social Media Ads, you can grow your presence across platforms like Facebook, Instagram, LinkedIn, YouTube, Twitter (X), and Snapchat. Social media marketing also boosts website traffic, reputation, and conversions.",
+  },
+  {
+    q: "Why should you hire a social media marketing agency in India?",
+    a: "Hiring a professional agency like BigWig Media Digital ensures your brand gets expert-led strategy, creative direction, and performance-driven execution. Our team specializes in Social Media Services in Delhi, allowing you to focus on your business while we handle content creation, campaign management, audience targeting, and ongoing optimization. With deep industry insights, creative capabilities, and proven advertising frameworks, we help your brand achieve consistent, measurable results.",
+  },
+  {
+    q: "How often will you post content on my social media profiles?",
+    a: "Posting frequency depends on your package and marketing goals. Typically, we create a structured monthly content calendar that includes 12–20 posts per month, along with stories, reels, and engagement activities. Our Social Media Marketing Services in Delhi ensure your brand stays active, relevant, and consistently visible to your audience.",
+  },
+  {
+    q: "How does BigWig Media Digital measure the success of social media campaigns?",
+    a: "We use advanced tracking tools and detailed analytics to measure KPIs like engagement rate, reach, impressions, CPC, CTR, conversions, ROAS, and follower growth. Our performance reports offer complete transparency, and our team optimizes campaigns weekly to ensure continuous improvement. Whether it's organic growth or Social Media Advertising, we focus on delivering measurable and meaningful results.",
+  },
+  {
+    q: "Can you help with social media advertising?",
+    a: "Absolutely! BigWig Media Digital specializes in high-impact Social Media Advertising across Meta (Facebook & Instagram), LinkedIn, YouTube, Snapchat, and Twitter (X). We create conversion-focused Social Media Ads, handle audience targeting, A/B testing, funnel building, and ongoing optimization to help you generate leads, sales, and brand awareness at scale.",
+  },
+  {
+    q: "What platforms do you manage?",
+    a: `We manage all major social media platforms, including:
+        
+• Facebook
+• Instagram
+• LinkedIn
+• YouTube
+• Twitter (X)
+• Snapchat
+• Pinterest
+
+Our Social Media Services in Delhi ensure your brand performs consistently across every platform where your audience is active.`,
+  },
+];
+
 function SocialMediaMarketing() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const tiltRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleItem = (index: SetStateAction<number | null>) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   useEffect(() => {
     tiltRefs.current.forEach((card) => {
@@ -724,67 +771,29 @@ function SocialMediaMarketing() {
           </h2>
         </div>
 
-        {/* FAQ ACCORDION */}
-        <div className="space-y-6 relative z-10  w-11/12 md:w-5/6 mx-auto">
-          {[
-            {
-              q: "What is included in social media marketing services?",
-              a: "At BigWig Media Digital, our Social Media Marketing Services in Delhi include everything your brand needs to build a strong online presence—content creation, page management, audience engagement, hashtag research, competitor analysis, and strategic posting. We also provide creative design, reels, story creatives, monthly content calendars, and performance tracking. For brands looking to grow faster, we integrate Social Media Advertising and paid campaign management for maximum reach and conversions.",
-            },
-            {
-              q: "What are the benefits of social media marketing services?",
-              a: "Our SMM Services in Delhi help businesses increase brand awareness, engage with their audience, generate high-quality leads, and improve customer loyalty. With consistent posting, high-performing creatives, data-driven strategies, and ROI-focused Social Media Ads, you can grow your presence across platforms like Facebook, Instagram, LinkedIn, YouTube, Twitter (X), and Snapchat. Social media marketing also boosts website traffic, reputation, and conversions.",
-            },
-            {
-              q: "Why should you hire a social media marketing agency in India?",
-              a: "Hiring a professional agency like BigWig Media Digital ensures your brand gets expert-led strategy, creative direction, and performance-driven execution. Our team specializes in Social Media Services in Delhi, allowing you to focus on your business while we handle content creation, campaign management, audience targeting, and ongoing optimization. With deep industry insights, creative capabilities, and proven advertising frameworks, we help your brand achieve consistent, measurable results.",
-            },
-            {
-              q: "How often will you post content on my social media profiles?",
-              a: "Posting frequency depends on your package and marketing goals. Typically, we create a structured monthly content calendar that includes 12–20 posts per month, along with stories, reels, and engagement activities. Our Social Media Marketing Services in Delhi ensure your brand stays active, relevant, and consistently visible to your audience.",
-            },
-            {
-              q: "How does BigWig Media Digital measure the success of social media campaigns?",
-              a: "We use advanced tracking tools and detailed analytics to measure KPIs like engagement rate, reach, impressions, CPC, CTR, conversions, ROAS, and follower growth. Our performance reports offer complete transparency, and our team optimizes campaigns weekly to ensure continuous improvement. Whether it's organic growth or Social Media Advertising, we focus on delivering measurable and meaningful results.",
-            },
-            {
-              q: "Can you help with social media advertising?",
-              a: "Absolutely! BigWig Media Digital specializes in high-impact Social Media Advertising across Meta (Facebook & Instagram), LinkedIn, YouTube, Snapchat, and Twitter (X). We create conversion-focused Social Media Ads, handle audience targeting, A/B testing, funnel building, and ongoing optimization to help you generate leads, sales, and brand awareness at scale.",
-            },
-            {
-              q: "What platforms do you manage?",
-              a: `We manage all major social media platforms, including:
-        
-• Facebook
-• Instagram
-• LinkedIn
-• YouTube
-• Twitter (X)
-• Snapchat
-• Pinterest
-
-Our Social Media Services in Delhi ensure your brand performs consistently across every platform where your audience is active.`,
-            },
-          ].map((item, index) => (
-            <details
+        {/* FAQ Boxes */}
+        <div className="space-y-6 w-11/12 md:w-5/6 mx-auto relative z-10">
+          {faqs.map((item, index) => (
+            <div
               key={index}
+              onClick={() => toggleItem(index)}
               className="
-          group p-6 rounded-2xl backdrop-blur-xl bg-white/5 
-          border border-white/10 transition-all duration-300
-          shadow-[0_0_20px_rgba(0,255,255,0.1)]
-          hover:border-[var(--color5)]
-          hover:shadow-[0_0_30px_var(--color5)]
-          cursor-pointer relative overflow-hidden
-        "
+              p-6 rounded-2xl backdrop-blur-xl bg-white/5 
+              border border-white/10 transition-all duration-300
+              shadow-[0_0_20px_rgba(0,255,255,0.1)]
+              hover:border-[var(--color5)]
+              hover:shadow-[0_0_30px_var(--color5)]
+              cursor-pointer relative overflow-hidden
+            "
             >
-              {/* Scan lines */}
+              {/* Scan Lines */}
               <div className="absolute inset-0 opacity-30 pointer-events-none">
                 {[...Array(4)].map((_, i) => (
                   <div
                     key={i}
                     className="absolute left-0 w-full h-[2px]
-              bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
-              animate-cardScan"
+                    bg-gradient-to-r from-transparent via-[var(--color5)] to-transparent
+                    animate-cardScan"
                     style={{
                       top: `${40 + i * 45}px`,
                       animationDelay: `${i * 0.25}s`,
@@ -793,40 +802,52 @@ Our Social Media Services in Delhi ensure your brand performs consistently acros
                 ))}
               </div>
 
-              {/* Question */}
-              <summary className="text-lg md:text-xl font-semibold text-[var(--color5)] tracking-wide relative z-10 cursor-pointer list-none flex justify-between items-center">
-                {item.q}
-                <span className="text-gray-300 group-open:rotate-180 transition-transform">
-                  ⌄
+              {/* Question Row */}
+              <div className="flex justify-between items-center relative z-10">
+                <h3 className="text-lg md:text-xl font-semibold text-[var(--color5)]">
+                  {item.q}
+                </h3>
+
+                <span className="text-[var(--color5)] text-2xl font-bold transition-all">
+                  {openIndex === index ? "−" : "+"}
                 </span>
-              </summary>
+              </div>
 
               {/* Answer */}
-              <p className="text-gray-200 mt-4 leading-relaxed whitespace-pre-line relative z-10">
-                {item.a}
-              </p>
-            </details>
+              <div
+                className={`transition-all duration-300 text-gray-200 overflow-hidden relative z-10 ${
+                  openIndex === index
+                    ? "max-h-96 mt-4 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <p className="leading-relaxed">{item.a}</p>
+              </div>
+            </div>
           ))}
         </div>
 
+        {/* CTA Button */}
         <div className="mt-10 flex justify-center">
           <ButtonFill
-            text="Start Growing With SMM"
+            text="Start Your Project Today"
             onClick={() => setIsPopupOpen(true)}
           />
         </div>
 
         {/* Animation */}
-        <style>{`
-    @keyframes cardScan {
-      0% { transform: translateX(-100%); opacity: 0; }
-      50% { opacity: 1; }
-      100% { transform: translateX(100%); opacity: 0; }
-    }
-    .animate-cardScan {
-      animation: cardScan 5s linear infinite;
-    }
-  `}</style>
+        <style>
+          {`
+          @keyframes cardScan {
+            0% { transform: translateX(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100%); opacity: 0; }
+          }
+          .animate-cardScan {
+            animation: cardScan 5s linear infinite;
+          }
+        `}
+        </style>
       </section>
 
       <OurProcess />
