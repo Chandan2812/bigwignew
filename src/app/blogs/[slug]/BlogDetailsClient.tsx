@@ -258,25 +258,25 @@ export default function BlogDetailsClient({ slug }: { slug: string }) {
                     key={idx}
                     onClick={() => router.push(`/blogs/category/${slug}`)}
                     className={`
-    group relative cursor-pointer select-none
-    pl-6 pr-4 py-2 rounded-xl text-sm capitalize transition-all duration-300 
-    ${
-      active
-        ? "translate-x-[-8px] bg-blue-100 text-blue-700 font-semibold shadow-lg"
-        : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:-translate-y-1 hover:translate-x-1 hover:shadow-lg"
-    }
-  `}
+                    group relative cursor-pointer select-none
+                    pl-6 pr-4 py-2 rounded-xl text-sm capitalize transition-all duration-300 
+                    ${
+                      active
+                        ? "translate-x-[-8px] bg-blue-100 text-blue-700 font-semibold shadow-lg"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:-translate-y-1 hover:translate-x-1 hover:shadow-lg"
+                    }
+                  `}
                   >
                     {/* Glow Border */}
                     <div
                       className={`
-      absolute inset-0 rounded-xl pointer-events-none transition-all duration-300
-      ${
-        active
-          ? "opacity-100 border border-blue-400/60 shadow-[0_0_15px_3px_rgba(59,130,246,0.55)]"
-          : "opacity-0 group-hover:opacity-100 border border-blue-300/40 shadow-[0_0_10px_2px_rgba(59,130,246,0.3)]"
-      }
-    `}
+                      absolute inset-0 rounded-xl pointer-events-none transition-all duration-300
+                      ${
+                        active
+                          ? "opacity-100 border border-blue-400/60 shadow-[0_0_15px_3px_rgba(59,130,246,0.55)]"
+                          : "opacity-0 group-hover:opacity-100 border border-blue-300/40 shadow-[0_0_10px_2px_rgba(59,130,246,0.3)]"
+                      }
+                    `}
                     ></div>
 
                     {cat}
