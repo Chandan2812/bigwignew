@@ -165,7 +165,7 @@ const CaseCard: React.FC = () => {
                     {caseItem.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className={`text-sm md:text-md font-medium px-4 py-2 rounded-full ${
+                        className={`text-sm md:text-md font-medium px-3 py-2 rounded-full ${
                           tagColorMap[tag] || "bg-gray-200"
                         } text-gray-700`}
                       >

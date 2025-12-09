@@ -189,7 +189,7 @@ const ToggleFAQ = () => {
                   className="w-full text-left flex items-center justify-between"
                   onClick={() => toggleFaq(index)}
                 >
-                  <span className="text-lg font-medium">{faq.question}</span>
+                  <span className="text-base font-medium">{faq.question}</span>
                   <ChevronDown
                     className={`transition-transform duration-300 ${
                       openIndex === index ? "rotate-180" : ""
