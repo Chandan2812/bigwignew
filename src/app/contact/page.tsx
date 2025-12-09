@@ -5,6 +5,7 @@ import { Phone, MapPin, Clock } from "lucide-react";
 
 import Nav from "../../../components/Nav";
 import Footer from "../../../components/Footer";
+import ButtonFill from "../../../components/Button";
 
 export default function ContactPage() {
   const SERVICES_LIST = [
@@ -71,7 +72,7 @@ export default function ContactPage() {
     });
   };
 
-  const handleSendOtp = async (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSendOtp = async (e: React.FormEvent<HTMLFormElement>) => {
     // console.log(formData);
     e.preventDefault();
     setStatusMessage("");
@@ -103,7 +104,7 @@ export default function ContactPage() {
     }
   };
 
-  const handleVerifyOtp = async (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleVerifyOtp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setStatusMessage("");
@@ -193,7 +194,7 @@ export default function ContactPage() {
           {/* RIGHT SIDE – FORM */}
           <div className="w-full">
             {step === "form" ? (
-              <div className="space-y-4">
+              <form onSubmit={handleSendOtp} className="space-y-4">
                 <div className="flex flex-col md:flex-row gap-5 w-full">
                   {/* Name */}
                   <div className="flex-1">
@@ -314,15 +315,13 @@ export default function ContactPage() {
                 </div>
 
                 {/* SEND OTP */}
-                <button
-                  onClick={handleSendOtp}
-                  className="w-full bg-[var(--color5)] hover:bg-[var(--color4)] text-black font-semibold py-3 rounded-full transition"
-                >
-                  {loading ? "Sending OTP..." : "SUBMIT"}
-                </button>
-              </div>
+                <ButtonFill
+                  type="submit"
+                  text={loading ? "Sending OTP..." : "SUBMIT"}
+                />
+              </form>
             ) : (
-              <div className="space-y-10">
+              <form onSubmit={handleVerifyOtp} className="space-y-10">
                 <input
                   type="text"
                   placeholder="Enter OTP"
@@ -331,13 +330,11 @@ export default function ContactPage() {
                   className="w-full bg-transparent border-b border-gray-400 p-2 outline-none"
                 />
 
-                <button
-                  onClick={handleVerifyOtp}
-                  className="w-full bg-[var(--color5)] hover:bg-[var(--color4)] text-white py-3 rounded-full"
-                >
-                  {loading ? "Verifying..." : "VERIFY OTP"}
-                </button>
-              </div>
+                <ButtonFill
+                  type="submit"
+                  text={loading ? "Verifying..." : "VERIFY OTP"}
+                />
+              </form>
             )}
 
             {statusMessage && (
