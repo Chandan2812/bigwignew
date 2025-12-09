@@ -113,6 +113,18 @@ export default function BlogDetailsClient({ slug }: { slug: string }) {
 
   return (
     <div className="bg-[var(--color1)] text-white min-h-screen">
+      {/* <!-- Open Graph Meta Tags --> */}
+      <meta property="og:title" content={blog.title} />
+      <meta property="og:description" content={blog.excerpt} />
+      <meta property="og:type" content="article" />
+      <meta
+        property="og:url"
+        content={`https://www.bigwigmediadigital.com/blogs/${blog.slug}`}
+      />
+      <meta property="og:image" content={blog.coverImage} />
+      <meta property="og:site_name" content="Bigwig Media Digital" />
+      <meta property="og:locale" content="en_IN" />
+
       {/* ================== AUTO BREADCRUMB SCHEMA ================== */}
       <script
         type="application/ld+json"
@@ -125,7 +137,7 @@ export default function BlogDetailsClient({ slug }: { slug: string }) {
                 "@type": "ListItem",
                 position: 1,
                 name: "Home",
-                item: "https://www.bigwigmediadigital.com/",
+                item: "https://www.bigwigmediadigital.com",
               },
               {
                 "@type": "ListItem",
