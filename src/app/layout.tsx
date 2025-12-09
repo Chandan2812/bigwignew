@@ -1,4 +1,5 @@
 // import type { Metadata } from "next";
+import ScrollToTopButton from "../../components/ScrollToTopButton";
 import "./globals.css";
 import Script from "next/script";
 // export const metadata: Metadata = {
@@ -178,6 +179,7 @@ export default function RootLayout({
             })(window, document, 'script', 'dataLayer', 'GTM-TMMX5VTN');
           `}
         </Script>
+        <ScrollToTopButton />
       </body>
     </html>
   );
