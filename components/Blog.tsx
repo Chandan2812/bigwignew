@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import BlogSkeleton from "./BlogSkeleton";
 
 interface BlogPost {
   _id: string;
@@ -16,15 +17,14 @@ interface BlogPost {
 }
 
 const Blogs = () => {
+  const [loading, setLoading] = useState(true);
   const [blogs, setBlogs] = useState<BlogPost[]>([]);
   const router = useRouter();
 
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await fetch(
-          "https://bigwigdigitalbackend.onrender.com/viewblog"
-        );
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/viewblog`);
         const data = await res.json();
 
         const sorted = data
@@ -38,6 +38,8 @@ const Blogs = () => {
         setBlogs(sorted);
       } catch (error) {
         console.error("Error fetching blogs:", error);
+      } finally {
+        setLoading(false); // <-- IMPORTANT
       }
     };
 
@@ -63,7 +65,13 @@ const Blogs = () => {
         </div>
 
         {/* Blog Cards */}
-        {blogs.length === 0 ? (
+        {loading ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {Array.from({ length: 4 }).map((_, i) => (
+              <BlogSkeleton key={i} />
+            ))}
+          </div>
+        ) : blogs.length === 0 ? (
           <p className="text-center text-gray-400">
             No blog posts available at the moment.
           </p>
@@ -73,7 +81,7 @@ const Blogs = () => {
               <div
                 key={post._id}
                 className="group cursor-pointer rounded-xl bg-white/10 backdrop-blur-md border border-white/20 
-                         shadow-md hover:shadow-2xl  transition-all duration-300"
+                 shadow-md hover:shadow-2xl transition-all duration-300"
                 onClick={() => handlePostClick(post.slug)}
               >
                 {/* Image */}
