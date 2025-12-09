@@ -8,17 +8,17 @@ import Footer from "../../../components/Footer";
 
 export default function ContactPage() {
   const SERVICES_LIST = [
-    "Search Engine Optimization",
-    "Social Media Marketing",
+    "SEO",
+    "SMM",
     "Performance Marketing",
     "Content Marketing",
     "Website Development",
-    "Social Media Optimization",
+    "SMO",
     "Email Marketing",
     "Graphic Designing",
     "Influencer Marketing",
     "Affiliate Marketing",
-    "Online Reputation Management",
+    "ORM",
   ];
 
   const [formData, setFormData] = useState({
@@ -34,13 +34,23 @@ export default function ContactPage() {
   const [step, setStep] = useState<"form" | "otp">("form");
   const [statusMessage, setStatusMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState<{ email?: string; phone?: string }>({});
+  const [errors, setErrors] = useState<{
+    fullName?: string;
+    email?: string;
+    phone?: string;
+  }>({});
+
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
   const validateInputs = () => {
     const newErrors: typeof errors = {};
+
+    if (!formData.fullName.trim())
+      newErrors.fullName = "Please enter your name.";
+
     if (!formData.email.includes("@"))
       newErrors.email = "Please enter a valid email address.";
+
     if (!formData.phone || formData.phone.length < 10)
       newErrors.phone = "Please enter a valid phone number.";
 
@@ -62,6 +72,7 @@ export default function ContactPage() {
   };
 
   const handleSendOtp = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    // console.log(formData);
     e.preventDefault();
     setStatusMessage("");
 
@@ -182,33 +193,47 @@ export default function ContactPage() {
           {/* RIGHT SIDE – FORM */}
           <div className="w-full">
             {step === "form" ? (
-              <div className="space-y-6">
-                {/* Email */}
-                <div>
-                  <label>Email</label>
-                  <input
-                    type="email"
-                    className="w-full bg-transparent border-b border-gray-400 p-2 outline-none focus:border-yellow-400"
-                    placeholder="Enter a valid email address"
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
-                  />
-                </div>
+              <div className="space-y-4">
+                <div className="flex flex-col md:flex-row gap-5 w-full">
+                  {/* Name */}
+                  <div className="flex-1">
+                    <label>Name</label>
+                    <input
+                      type="text"
+                      required
+                      className="w-full bg-transparent border-b border-gray-400 p-2 outline-none focus:border-[var(--color5)]"
+                      placeholder="Enter your Name"
+                      value={formData.fullName}
+                      onChange={(e) =>
+                        setFormData({ ...formData, fullName: e.target.value })
+                      }
+                    />
+                    {errors.fullName && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.fullName}
+                      </p>
+                    )}
+                  </div>
 
-                {/* Name */}
-                <div>
-                  <label>Name</label>
-                  <input
-                    type="text"
-                    className="w-full bg-transparent border-b border-gray-400 p-2 outline-none focus:border-yellow-400"
-                    placeholder="Enter your Name"
-                    value={formData.fullName}
-                    onChange={(e) =>
-                      setFormData({ ...formData, fullName: e.target.value })
-                    }
-                  />
+                  {/* Email */}
+                  <div className="flex-1">
+                    <label>Email</label>
+                    <input
+                      type="email"
+                      required
+                      className="w-full bg-transparent border-b border-gray-400 p-2 outline-none focus:border-[var(--color5)]"
+                      placeholder="Enter a valid email address"
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
+                    />
+                    {errors.email && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.email}
+                      </p>
+                    )}
+                  </div>
                 </div>
 
                 {/* Phone */}
@@ -216,7 +241,8 @@ export default function ContactPage() {
                   <label>Phone</label>
                   <div className="flex gap-3 items-center mt-2">
                     <select
-                      className="p-3 rounded-md bg-[#050504] text-white outline-none focus:ring-2 focus:ring-yellow-400"
+                      required
+                      className="p-3 rounded-md bg-[#050504] text-white outline-none focus:ring-2 focus:ring-[var(--color5)]"
                       value={formData.countryCode}
                       onChange={(e) =>
                         setFormData({
@@ -237,20 +263,25 @@ export default function ContactPage() {
 
                     <input
                       type="text"
-                      className="bg-transparent border-b border-gray-400 p-2 flex-1 outline-none focus:border-yellow-400"
+                      className="bg-transparent border-b border-gray-400 p-2 flex-1 outline-none focus:border-[var(--color5)]"
                       placeholder="Enter phone number"
                       value={formData.phone}
                       onChange={(e) =>
                         setFormData({ ...formData, phone: e.target.value })
                       }
                     />
+                    {errors.phone && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.phone}
+                      </p>
+                    )}
                   </div>
                 </div>
 
                 {/* SERVICES CHECKBOX */}
                 <div>
                   <label>Services</label>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid gap-3 mt-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mt-2">
                     {SERVICES_LIST.map((service) => (
                       <label
                         key={service}
@@ -272,8 +303,8 @@ export default function ContactPage() {
                 <div>
                   <label>Message</label>
                   <textarea
-                    rows={3}
-                    className="w-full bg-transparent border-b border-gray-400 p-2 outline-none focus:border-yellow-400"
+                    rows={2}
+                    className="w-full bg-transparent border-b border-gray-400 p-2 outline-none focus:border-[var(--color5)]"
                     placeholder="Enter your message"
                     value={formData.message}
                     onChange={(e) =>
