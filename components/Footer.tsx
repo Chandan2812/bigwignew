@@ -38,7 +38,7 @@ function Footer() {
                 <Image
                   src={logo}
                   alt="Bigwig Logo"
-                  className="w-60 md:w-80"
+                  className="w-32 md:w-64"
                   draggable="false"
                 />
               </div>
