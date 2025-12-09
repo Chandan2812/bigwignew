@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-import slide1 from "../Assets/hero/banner-slider-3.jpg";
-import slide2 from "../Assets/Services hero/Content_Marketing.jpg";
-import slide3 from "../Assets/Services hero/Email Marketing.jpg";
+import slide1 from "../Assets/12983062_5109267.jpg";
+import slide2 from "../Assets/52267.jpg";
+import slide3 from "../Assets/53607.jpg";
+import ButtonFill from "./Button";
+import PopupForm from "./PopupForm";
 
 const slides = [
   {
@@ -18,13 +20,13 @@ const slides = [
     image: slide2,
     title: "Where Ideas Come Alive",
     subtitle: "Transforming brands with innovation and strategy",
-    cta: "Explore Services",
+    cta: "Get Started",
   },
   {
     image: slide3,
     title: "Build Something Exceptional",
     subtitle: "Your story deserves powerful visuals and great execution",
-    cta: "Contact Us",
+    cta: "Get Started",
   },
 ];
 
@@ -39,6 +41,7 @@ export default function SliceRevealSlider() {
   const [titleWordsVisible, setTitleWordsVisible] = useState(0);
   const [subtitleWordsVisible, setSubtitleWordsVisible] = useState(0);
   const [showCTA, setShowCTA] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const titleWords = slides[active].title.split(" ");
   const subtitleWords = slides[active].subtitle.split(" ");
@@ -169,11 +172,10 @@ export default function SliceRevealSlider() {
             ))}
           </p>
 
-          {/* CTA */}
-          <button
+          {/* CTA → UPDATED TO USE ButtonFill */}
+          <div
             className={`
-              mt-10 px-8 py-3 bg-white text-black font-semibold rounded-lg shadow-lg w-max
-              transition-all duration-[900ms] ease-out
+              mt-10 transition-all duration-[900ms] ease-out w-max
               ${
                 showCTA
                   ? "opacity-100 translate-y-0 scale-100"
@@ -181,13 +183,18 @@ export default function SliceRevealSlider() {
               }
             `}
           >
-            {slides[active].cta}
-          </button>
+            <ButtonFill
+              onClick={() => setIsPopupOpen(true)}
+              text={slides[active].cta}
+              className="px-8 py-3"
+            />
+          </div>
         </div>
       )}
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/70 z-10" />
+      <PopupForm isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </div>
   );
 }

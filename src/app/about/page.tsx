@@ -4,8 +4,9 @@ import Image from "next/image";
 import Nav from "../../../components/Nav";
 import Footer from "../../../components/Footer";
 
-import heroImg from "../../../Assets/hero/banner-slider-3.jpg"; // replace with your hero image
-import aboutImg from "../../../Assets/Handleey-SMS-New-removebg-preview.webp"; // replace with your image
+import heroImg from "../../../Assets/Who are we.svg"; // replace with your hero image
+import aboutImg from "../../../Assets/1759473431835.jpg"; // replace with your image
+import aboutImg2 from "../../../Assets/map-lying-wooden-table.jpg";
 import { useState } from "react";
 import PopupForm from "../../../components/PopupForm";
 import ButtonFill from "../../../components/Button";
@@ -32,6 +33,7 @@ import GetInTouch from "../../../components/GetInTouch";
 import Client from "../../../components/Clients";
 import RainbowSteps from "../../../components/RainbowSteps";
 import process from "../../../Assets/ircle.svg";
+import imgae3 from "../../../Assets/Untitled design (1).svg";
 
 export default function About() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -40,7 +42,7 @@ export default function About() {
       <Nav />
 
       {/* ================= HERO SECTION ================= */}
-      <section className="relative w-full h-[50vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[50vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <Image
           src={heroImg}
@@ -134,7 +136,7 @@ export default function About() {
         {/* RIGHT SIDE IMAGE */}
         <div className="w-full md:w-1/2">
           <Image
-            src={aboutImg}
+            src={aboutImg2}
             alt="About Bigwig Digital"
             className="rounded-2xl  w-full object-cover"
           />
@@ -333,9 +335,9 @@ export default function About() {
           {/* Right Image Side */}
           <div className="md:w-1/2">
             <Image
-              src={why}
+              src={imgae3}
               alt="Why Choose Us"
-              className="w-full rounded-lg shadow-lg"
+              className="w-full rounded-lg "
             />
           </div>
         </div>
