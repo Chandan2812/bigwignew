@@ -13,7 +13,7 @@ import {
   faLocation,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-import logo from "../Assets/chrismass.svg";
+import logo from "../Assets/Bigwig_logo__final.png";
 import line2 from "../Assets/line2.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -34,7 +34,7 @@ function Footer() {
           <div className="flex flex-col md:flex-row gap-14 mb-8">
             {/* Branding */}
             <div className="md:w-1/3">
-              <div className="py-2 flex justify-center md:justify-start mb-4">
+              <div className=" flex justify-center md:justify-start ">
                 <Image
                   src={logo}
                   alt="Bigwig Logo"

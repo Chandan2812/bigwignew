@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../Assets/chrismass.svg";
+import logo from "../Assets/Bigwig_logo__final.png";
 import {
   Search,
   Globe,
@@ -231,7 +231,7 @@ const Nav: React.FC = () => {
               <Image
                 src={logo}
                 alt="Bigwig Digital"
-                className="w-36 md:w-52"
+                className="w-36 md:w-28"
                 draggable={false}
               />
             </Link>

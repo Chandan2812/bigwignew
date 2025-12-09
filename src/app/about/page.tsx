@@ -51,18 +51,6 @@ export default function About() {
           priority
           className="object-cover brightness-50"
         />
-
-        {/* Text Overlay */}
-        {/* <div className="relative z-10 text-center px-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-white">
-            Strategic Digital Marketing Agency
-          </h1>
-
-          <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-200">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            dictum leo nec sem facilisis, id faucibus velit elementum.
-          </p>
-        </div> */}
       </section>
 
       {/* ================= ABOUT SECTION ================= */}
@@ -93,38 +81,6 @@ export default function About() {
             data-powered strategies that help businesses grow, compete, and
             dominate their digital landscapes.
           </p>
-
-          {/* STATS BOXES */}
-          {/* <div className="grid grid-cols-2 gap-5 mt-6">
-          
-            <div className="bg-[#1E293B]/60 border border-white/10 rounded-xl p-5 shadow-md hover:shadow-lg transition flex items-center gap-4">
-              <div className="w-12 h-12 rounded-lg bg-[#38BDF8]/20 flex items-center justify-center">
-                <BarChart3 className="text-[#38BDF8] w-6 h-6" />
-              </div>
-
-              <div>
-                <h3 className="text-3xl font-bold text-white leading-tight">
-                  94%
-                </h3>
-                <p className="text-gray-400 text-sm">Client Satisfaction</p>
-              </div>
-            </div>
-
-          
-            <div className="bg-[#1E293B]/60 border border-white/10 rounded-xl p-5 shadow-md hover:shadow-lg transition flex items-center gap-4">
-              <div className="w-12 h-12 rounded-lg bg-[#38BDF8]/20 flex items-center justify-center">
-                <TrendingUp className="text-[#38BDF8] w-6 h-6" />
-              </div>
-
-              <div>
-                <h3 className="text-3xl font-bold text-white leading-tight">
-                  65%
-                </h3>
-                <p className="text-gray-400 text-sm">Average Growth</p>
-              </div>
-            </div>
-          </div> */}
-
           {/* BUTTON */}
           <ButtonFill
             onClick={() => setIsPopupOpen(true)}
