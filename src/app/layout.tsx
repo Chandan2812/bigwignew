@@ -15,7 +15,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="canonical" href="https://www.bigwigmediadigital.com/" />
         <link
           rel="alternate"
           href="https://www.bigwigmediadigital.com/"
@@ -36,13 +35,7 @@ export default function RootLayout({
           href="https://www.bigwigmediadigital.com/"
           hrefLang="x-default"
         />
-        <title>
-          BigWig Digital | Result-Driven Digital Marketing Agency in India
-        </title>
-        <meta
-          name="description"
-          content="BigWig Digital is a full-service digital marketing agency helping businesses grow with expert SEO, social media marketing, Google Ads, and creative campaigns. Drive traffic, leads, and sales with our proven strategies"
-        />
+
         <meta
           name="google-site-verification"
           content="CQRj6Bls-OQCYgV4ne5XEQJ8-6KlU7L2JfhusyIuiwM"
@@ -68,7 +61,6 @@ export default function RootLayout({
             }),
           }}
         />
-
         {/* JSON-LD Organization */}
         <script
           type="application/ld+json"
